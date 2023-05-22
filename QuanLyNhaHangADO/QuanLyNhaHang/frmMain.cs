@@ -47,9 +47,14 @@ namespace QuanLyNhaHang
             AddControls(new productForm());
         }
 
-        private void btnHome_Click_1(object sender, EventArgs e)
+        private void btnStaff_Click(object sender, EventArgs e)
         {
-            AddControls(new homeForm());
+            AddControls(new staffForm());
+        }
+
+        private void btnTables_Click(object sender, EventArgs e)
+        {
+            AddControls(new tableForm());
         }
     }
 }

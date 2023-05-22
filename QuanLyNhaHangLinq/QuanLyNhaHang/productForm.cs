@@ -59,8 +59,11 @@ namespace QuanLyNhaHang
             {
                 if (dgvProduct.CurrentCell.OwningColumn.Name == "dgvEdit")
                 {
-                    frmProductAdd frm = new frmProductAdd();                    
+
+                    frmProductAdd frm = new frmProductAdd();
+                    
                     List<byte[]> dsIMG = dbSP.LayHinh(dgvProduct.CurrentRow.Cells["dgvMaSP"].Value.ToString());
+
                     if (dsIMG.Count > 0)
                     {
                         if (!DBNull.Value.Equals(dsIMG[0]))
@@ -70,10 +73,6 @@ namespace QuanLyNhaHang
                             {
                                 frm.txtImage.Image = System.Drawing.Image.FromStream(ms);
                             }
-                        }
-                        else
-                        {
-                            frm.txtImage.Image = global::QuanLyNhaHang.Properties.Resources.brand_identity;
                         }
                     }
                     frm.cbbCateID.DataSource = dbDM.LayDanhSachMaDanhMuc();
