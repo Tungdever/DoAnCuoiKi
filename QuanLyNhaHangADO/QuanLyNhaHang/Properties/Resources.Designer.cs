@@ -163,6 +163,86 @@ namespace QuanLyNhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_hand_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-hand-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_KOT_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-KOT-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_motorcycle_delivery_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-motorcycle-delivery-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_new_ticket_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-new-ticket-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_restaurant {
+            get {
+                object obj = ResourceManager.GetObject("icons8-restaurant", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_restaurant_din_in {
+            get {
+                object obj = ResourceManager.GetObject("icons8-restaurant-din-in", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_shutdown_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-shutdown-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_take_away_food_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-take-away-food-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap identity_document_computer_icons_business_clip_art_id_card_removebg_preview__1_ {
             get {
                 object obj = ResourceManager.GetObject("identity-document-computer-icons-business-clip-art-id-card-removebg-preview (1)", resourceCulture);
@@ -186,6 +266,16 @@ namespace QuanLyNhaHang.Properties {
         internal static System.Drawing.Bitmap padlock {
             get {
                 object obj = ResourceManager.GetObject("padlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pizza_Free_PNG_Image {
+            get {
+                object obj = ResourceManager.GetObject("Pizza-Free-PNG-Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="BS_layer\BLDanhMuc.cs" />
     <Compile Include="BS_layer\BLNhanVien.cs" />
+    <Compile Include="BS_layer\BLPOS.cs" />
     <Compile Include="BS_layer\BLSanPham.cs" />
     <Compile Include="BS_layer\BLTable.cs" />
     <Compile Include="BS_layer\BLTaiKhoan.cs" />
@@ -70,6 +71,12 @@
     <Compile Include="frmCategoryAdd.Designer.cs">
       <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKitchen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKitchen.Designer.cs">
+      <DependentUpon>frmKitchen.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +88,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOS.Designer.cs">
+      <DependentUpon>frmPOS.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProductAdd.cs">
       <SubType>Form</SubType>
@@ -120,6 +133,12 @@
     <Compile Include="tableForm.Designer.cs">
       <DependentUpon>tableForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucProduct.Designer.cs">
+      <DependentUpon>ucProduct.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="categoryForm.resx">
       <DependentUpon>categoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPOS.resx">
+      <DependentUpon>frmPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductAdd.resx">
       <DependentUpon>frmProductAdd.cs</DependentUpon>
@@ -159,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="tableForm.resx">
       <DependentUpon>tableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucProduct.resx">
+      <DependentUpon>ucProduct.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -236,6 +261,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\677252.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-restaurant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-new-ticket-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-hand-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-KOT-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-motorcycle-delivery-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-take-away-food-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-restaurant-din-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pizza-Free-PNG-Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-shutdown-96.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

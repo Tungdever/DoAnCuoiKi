@@ -87,3 +87,27 @@ C:\Users\DELL\Downloads\DoAnCuoiKi-main (ADO)(2)\DoAnCuoiKi-main\QuanLyNhaHangAD
 C:\Users\DELL\Downloads\DoAnCuoiKi-main (ADO)(2)\DoAnCuoiKi-main\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
 C:\Users\DELL\Downloads\DoAnCuoiKi-main (ADO)(2)\DoAnCuoiKi-main\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
 C:\Users\DELL\Downloads\DoAnCuoiKi-main (ADO)(2)\DoAnCuoiKi-main\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe.config
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.pdb
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\Guna.UI2.dll
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.AssemblyReference.cache
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.SuggestedBindingRedirects.cache
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.categoryForm.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmCategoryAdd.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmLogin.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmMain.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmPOS.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmProductAdd.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmStaffAdd.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmTableAdd.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.productForm.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.Properties.Resources.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.staffForm.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.tableForm.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.ucProduct.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.GenerateResource.cache
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CoreCompileInputs.cache
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb

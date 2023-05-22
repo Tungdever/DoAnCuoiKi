@@ -56,5 +56,15 @@ namespace QuanLyNhaHang
         {
             AddControls(new tableForm());
         }
+
+        private void btnPOS_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmPOS());
+        }
+
+        private void btnKitchen_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmKitchen());
+        }
     }
 }
