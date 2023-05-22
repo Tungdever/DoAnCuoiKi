@@ -59,4 +59,47 @@ C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanL
 C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\Guna.UI2.dll
 C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
 C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.productForm.resources
-C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.homeForm.resources
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe.config
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.pdb
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\Guna.UI2.dll
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.AssemblyReference.cache
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.SuggestedBindingRedirects.cache
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.categoryForm.resources
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmCategoryAdd.resources
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmLogin.resources
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmMain.resources
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmProductAdd.resources
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmTableAdd.resources
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.productForm.resources
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.Properties.Resources.resources
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.tableForm.resources
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.GenerateResource.cache
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CoreCompileInputs.cache
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmStaffAdd.resources
+D:\DoAnCuoiKi-main (Linq)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.staffForm.resources
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe.config
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.pdb
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\Guna.UI2.dll
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.AssemblyReference.cache
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.SuggestedBindingRedirects.cache
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.categoryForm.resources
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmCategoryAdd.resources
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmLogin.resources
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmMain.resources
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmProductAdd.resources
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmStaffAdd.resources
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmTableAdd.resources
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.productForm.resources
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.Properties.Resources.resources
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.staffForm.resources
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.tableForm.resources
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.GenerateResource.cache
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
+C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb

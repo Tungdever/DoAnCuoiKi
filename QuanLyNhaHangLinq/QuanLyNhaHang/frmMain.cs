@@ -10,9 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
-using System.IO;
-using System.Web.UI;
-
 namespace QuanLyNhaHang
 {
     public partial class frmMain : Form
@@ -32,7 +29,7 @@ namespace QuanLyNhaHang
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            AddControls(new homeForm());
+
         }
 
 
@@ -51,9 +48,14 @@ namespace QuanLyNhaHang
             AddControls(new productForm());
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        private void btnTables_Click(object sender, EventArgs e)
         {
-            AddControls(new homeForm());
+            AddControls(new tableForm());
+        }
+
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            AddControls(new staffForm());
         }
     }
 }

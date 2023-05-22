@@ -5,12 +5,29 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="QuanLyNhaHangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BAN">
+          <Key>
+            <PropertyRef Name="Tid" />
+          </Key>
+          <Property Name="Tid" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tname" Type="varchar" MaxLength="50" />
+          <Property Name="Tstate" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="DANHMUC">
           <Key>
             <PropertyRef Name="MaDM" />
           </Key>
           <Property Name="MaDM" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TenDM" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="Manv" />
+          </Key>
+          <Property Name="Manv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ten" Type="varchar" MaxLength="50" />
+          <Property Name="SDT" Type="varchar" MaxLength="50" />
+          <Property Name="ChucVu" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="SANPHAM">
           <Key>
@@ -45,7 +62,9 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="QuanLyNhaHangModelStoreContainer">
+          <EntitySet Name="BAN" EntityType="Self.BAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DANHMUC" EntityType="Self.DANHMUC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__SANPHAM__AnhSP__5441852A" Association="Self.FK__SANPHAM__AnhSP__5441852A">
@@ -106,7 +125,26 @@
             <End Role="DANHMUC" EntitySet="DANHMUCs" />
             <End Role="SANPHAM" EntitySet="SANPHAMs" />
           </AssociationSet>
+          <EntitySet Name="NHANVIENs" EntityType="QuanLyNhaHangModel.NHANVIEN" />
+          <EntitySet Name="BANs" EntityType="QuanLyNhaHangModel.BAN" />
         </EntityContainer>
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="Manv" />
+          </Key>
+          <Property Name="Manv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BAN">
+          <Key>
+            <PropertyRef Name="Tid" />
+          </Key>
+          <Property Name="Tid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tstate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -140,6 +178,25 @@
                 <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="CapDoQuyen" ColumnName="CapDoQuyen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHANVIENs">
+            <EntityTypeMapping TypeName="QuanLyNhaHangModel.NHANVIEN">
+              <MappingFragment StoreEntitySet="NHANVIEN">
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="Manv" ColumnName="Manv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BANs">
+            <EntityTypeMapping TypeName="QuanLyNhaHangModel.BAN">
+              <MappingFragment StoreEntitySet="BAN">
+                <ScalarProperty Name="Tstate" ColumnName="Tstate" />
+                <ScalarProperty Name="Tname" ColumnName="Tname" />
+                <ScalarProperty Name="Tid" ColumnName="Tid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

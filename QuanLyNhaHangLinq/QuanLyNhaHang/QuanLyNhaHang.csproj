@@ -54,7 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BS_layer\BLDanhMuc.cs" />
+    <Compile Include="BS_layer\BLNhanVien.cs" />
     <Compile Include="BS_layer\BLSanPham.cs" />
+    <Compile Include="BS_layer\BLTable.cs" />
     <Compile Include="BS_layer\BLTaiKhoan.cs" />
     <Compile Include="categoryForm.cs">
       <SubType>Form</SubType>
@@ -86,11 +88,17 @@
     <Compile Include="frmProductAdd.Designer.cs">
       <DependentUpon>frmProductAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="homeForm.cs">
+    <Compile Include="frmStaffAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="homeForm.Designer.cs">
-      <DependentUpon>homeForm.cs</DependentUpon>
+    <Compile Include="frmStaffAdd.Designer.cs">
+      <DependentUpon>frmStaffAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTableAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTableAdd.Designer.cs">
+      <DependentUpon>frmTableAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="productForm.cs">
       <SubType>Form</SubType>
@@ -104,6 +112,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyNhaHang.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="staffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staffForm.Designer.cs">
+      <DependentUpon>staffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tableForm.Designer.cs">
+      <DependentUpon>tableForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="categoryForm.resx">
       <DependentUpon>categoryForm.cs</DependentUpon>
@@ -120,8 +140,11 @@
     <EmbeddedResource Include="frmProductAdd.resx">
       <DependentUpon>frmProductAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="homeForm.resx">
-      <DependentUpon>homeForm.cs</DependentUpon>
+    <EmbeddedResource Include="frmStaffAdd.resx">
+      <DependentUpon>frmStaffAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTableAdd.resx">
+      <DependentUpon>frmTableAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="productForm.resx">
       <DependentUpon>productForm.cs</DependentUpon>
@@ -136,6 +159,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="staffForm.resx">
+      <DependentUpon>staffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tableForm.resx">
+      <DependentUpon>tableForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -219,22 +248,10 @@
     <None Include="Resources\products.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\brand-identity.png" />
+    <None Include="Resources\677252.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\back.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\next.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\4.png" />
+    <None Include="Resources\identity-document-computer-icons-business-clip-art-id-card-removebg-preview %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

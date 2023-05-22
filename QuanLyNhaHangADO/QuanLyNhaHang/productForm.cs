@@ -77,10 +77,6 @@ namespace QuanLyNhaHang
                                 frm.txtImage.Image = System.Drawing.Image.FromStream(ms);
                             }
                         }
-                        else
-                        {
-                            frm.txtImage.Image = global::QuanLyNhaHang.Properties.Resources.brand_identity;
-                        }
                     }
                     frm.cbbCateID.DataSource = dbDM.LayDanhSachMaDanhMuc();
                     frm.cbbCateID.DisplayMember = "MaDM";

@@ -72,10 +72,6 @@ namespace QuanLyNhaHang
                                 frm.txtImage.Image = System.Drawing.Image.FromStream(ms);
                             }
                         }
-                        else
-                        {
-                            frm.txtImage.Image = global::QuanLyNhaHang.Properties.Resources.brand_identity;
-                        }
                     }
                     // đưa danh sách MaDanhMuc cho cbbCateID
                     frm.cbbCateID.DataSource = dbDM.LayDanhSachMaDanhMuc();
