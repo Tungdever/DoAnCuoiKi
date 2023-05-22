@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPOS = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -42,6 +42,8 @@
             this.dgvQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlProduct = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlCategory = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -50,11 +52,6 @@
             this.lblTable = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.txtSearchProduct = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
             this.PtbExit = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnDinIn = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnTakeAway = new Guna.UI2.WinForms.Guna2TileButton();
@@ -64,6 +61,9 @@
             this.btnHold = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnNew = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtSearchProduct = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPOS)).BeginInit();
             this.pnlCategory.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -104,19 +104,19 @@
             this.dgvPOS.AllowUserToDeleteRows = false;
             this.dgvPOS.AllowUserToResizeColumns = false;
             this.dgvPOS.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            this.dgvPOS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
+            this.dgvPOS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
             this.dgvPOS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.dgvPOS.ColumnHeadersHeight = 40;
             this.dgvPOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvPOS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -128,31 +128,31 @@
             this.dgvAmount,
             this.dgvEdit,
             this.dgvDel});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPOS.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPOS.DefaultCellStyle = dataGridViewCellStyle33;
             this.dgvPOS.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPOS.Location = new System.Drawing.Point(1111, 117);
             this.dgvPOS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvPOS.Name = "dgvPOS";
             this.dgvPOS.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPOS.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPOS.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.dgvPOS.RowHeadersVisible = false;
             this.dgvPOS.RowHeadersWidth = 51;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.IndianRed;
-            this.dgvPOS.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.dgvPOS.RowsDefaultCellStyle = dataGridViewCellStyle35;
             this.dgvPOS.RowTemplate.Height = 35;
             this.dgvPOS.Size = new System.Drawing.Size(674, 748);
             this.dgvPOS.TabIndex = 17;
@@ -225,6 +225,30 @@
             this.dgvAmount.MinimumWidth = 8;
             this.dgvAmount.Name = "dgvAmount";
             this.dgvAmount.ReadOnly = true;
+            // 
+            // dgvEdit
+            // 
+            this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvEdit.FillWeight = 50F;
+            this.dgvEdit.HeaderText = "";
+            this.dgvEdit.Image = global::QuanLyNhaHang.Properties.Resources.edit__1_;
+            this.dgvEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dgvEdit.MinimumWidth = 50;
+            this.dgvEdit.Name = "dgvEdit";
+            this.dgvEdit.ReadOnly = true;
+            this.dgvEdit.Width = 50;
+            // 
+            // dgvDel
+            // 
+            this.dgvDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvDel.FillWeight = 50F;
+            this.dgvDel.HeaderText = "";
+            this.dgvDel.Image = global::QuanLyNhaHang.Properties.Resources.delete__1_;
+            this.dgvDel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dgvDel.MinimumWidth = 50;
+            this.dgvDel.Name = "dgvDel";
+            this.dgvDel.ReadOnly = true;
+            this.dgvDel.Width = 50;
             // 
             // pnlProduct
             // 
@@ -332,6 +356,206 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1785, 121);
             this.guna2Panel1.TabIndex = 13;
             // 
+            // PtbExit
+            // 
+            this.PtbExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PtbExit.BackColor = System.Drawing.Color.Transparent;
+            this.PtbExit.BorderRadius = 10;
+            this.PtbExit.FillColor = System.Drawing.Color.Transparent;
+            this.PtbExit.Image = global::QuanLyNhaHang.Properties.Resources.icons8_shutdown_96;
+            this.PtbExit.ImageRotate = 0F;
+            this.PtbExit.Location = new System.Drawing.Point(1647, 0);
+            this.PtbExit.Name = "PtbExit";
+            this.PtbExit.Size = new System.Drawing.Size(96, 96);
+            this.PtbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PtbExit.TabIndex = 5;
+            this.PtbExit.TabStop = false;
+            this.PtbExit.UseTransparentBackground = true;
+            this.PtbExit.Click += new System.EventHandler(this.PtbExit_Click);
+            // 
+            // btnDinIn
+            // 
+            this.btnDinIn.BackColor = System.Drawing.Color.Transparent;
+            this.btnDinIn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnDinIn.BorderRadius = 16;
+            this.btnDinIn.BorderThickness = 4;
+            this.btnDinIn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnDinIn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDinIn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDinIn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDinIn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDinIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnDinIn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDinIn.ForeColor = System.Drawing.Color.White;
+            this.btnDinIn.Image = global::QuanLyNhaHang.Properties.Resources.icons8_restaurant_din_in;
+            this.btnDinIn.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnDinIn.Location = new System.Drawing.Point(989, 9);
+            this.btnDinIn.Name = "btnDinIn";
+            this.btnDinIn.Size = new System.Drawing.Size(116, 112);
+            this.btnDinIn.TabIndex = 2;
+            this.btnDinIn.Text = "Din in";
+            this.btnDinIn.UseTransparentBackground = true;
+            this.btnDinIn.Click += new System.EventHandler(this.btnDinIn_Click);
+            // 
+            // btnTakeAway
+            // 
+            this.btnTakeAway.BackColor = System.Drawing.Color.Transparent;
+            this.btnTakeAway.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnTakeAway.BorderRadius = 16;
+            this.btnTakeAway.BorderThickness = 4;
+            this.btnTakeAway.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnTakeAway.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTakeAway.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTakeAway.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTakeAway.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTakeAway.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnTakeAway.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTakeAway.ForeColor = System.Drawing.Color.White;
+            this.btnTakeAway.Image = global::QuanLyNhaHang.Properties.Resources.icons8_take_away_food_100;
+            this.btnTakeAway.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnTakeAway.Location = new System.Drawing.Point(856, 6);
+            this.btnTakeAway.Name = "btnTakeAway";
+            this.btnTakeAway.Size = new System.Drawing.Size(116, 115);
+            this.btnTakeAway.TabIndex = 2;
+            this.btnTakeAway.Text = "Take away";
+            this.btnTakeAway.UseTransparentBackground = true;
+            this.btnTakeAway.Click += new System.EventHandler(this.btnTakeAway_Click);
+            // 
+            // btnDelivery
+            // 
+            this.btnDelivery.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelivery.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnDelivery.BorderRadius = 16;
+            this.btnDelivery.BorderThickness = 4;
+            this.btnDelivery.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnDelivery.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelivery.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelivery.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelivery.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelivery.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnDelivery.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDelivery.ForeColor = System.Drawing.Color.White;
+            this.btnDelivery.Image = global::QuanLyNhaHang.Properties.Resources.icons8_motorcycle_delivery_100;
+            this.btnDelivery.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnDelivery.Location = new System.Drawing.Point(723, 6);
+            this.btnDelivery.Name = "btnDelivery";
+            this.btnDelivery.Size = new System.Drawing.Size(116, 115);
+            this.btnDelivery.TabIndex = 2;
+            this.btnDelivery.Text = "Delivery";
+            this.btnDelivery.UseTransparentBackground = true;
+            this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
+            // 
+            // btnKOT
+            // 
+            this.btnKOT.BackColor = System.Drawing.Color.Transparent;
+            this.btnKOT.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnKOT.BorderRadius = 16;
+            this.btnKOT.BorderThickness = 4;
+            this.btnKOT.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnKOT.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnKOT.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnKOT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnKOT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnKOT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnKOT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnKOT.ForeColor = System.Drawing.Color.White;
+            this.btnKOT.Image = global::QuanLyNhaHang.Properties.Resources.icons8_KOT_64;
+            this.btnKOT.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnKOT.Location = new System.Drawing.Point(592, 5);
+            this.btnKOT.Name = "btnKOT";
+            this.btnKOT.Size = new System.Drawing.Size(116, 115);
+            this.btnKOT.TabIndex = 2;
+            this.btnKOT.Text = "KOT";
+            this.btnKOT.UseTransparentBackground = true;
+            this.btnKOT.Click += new System.EventHandler(this.btnKOT_Click);
+            // 
+            // btnBillList
+            // 
+            this.btnBillList.BackColor = System.Drawing.Color.Transparent;
+            this.btnBillList.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnBillList.BorderRadius = 16;
+            this.btnBillList.BorderThickness = 4;
+            this.btnBillList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnBillList.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBillList.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBillList.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBillList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBillList.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnBillList.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBillList.ForeColor = System.Drawing.Color.White;
+            this.btnBillList.Image = global::QuanLyNhaHang.Properties.Resources.point_of_sale__1_;
+            this.btnBillList.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnBillList.Location = new System.Drawing.Point(449, 6);
+            this.btnBillList.Name = "btnBillList";
+            this.btnBillList.Size = new System.Drawing.Size(116, 115);
+            this.btnBillList.TabIndex = 2;
+            this.btnBillList.Text = "Bill List";
+            this.btnBillList.UseTransparentBackground = true;
+            this.btnBillList.Click += new System.EventHandler(this.btnBillList_Click);
+            // 
+            // btnHold
+            // 
+            this.btnHold.BackColor = System.Drawing.Color.Transparent;
+            this.btnHold.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnHold.BorderRadius = 16;
+            this.btnHold.BorderThickness = 4;
+            this.btnHold.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnHold.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHold.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHold.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHold.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHold.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnHold.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHold.ForeColor = System.Drawing.Color.White;
+            this.btnHold.Image = global::QuanLyNhaHang.Properties.Resources.icons8_hand_100;
+            this.btnHold.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnHold.Location = new System.Drawing.Point(316, 6);
+            this.btnHold.Name = "btnHold";
+            this.btnHold.Size = new System.Drawing.Size(116, 115);
+            this.btnHold.TabIndex = 2;
+            this.btnHold.Text = "Hold";
+            this.btnHold.UseTransparentBackground = true;
+            this.btnHold.Click += new System.EventHandler(this.btnHold_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.BackColor = System.Drawing.Color.Transparent;
+            this.btnNew.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnNew.BorderRadius = 16;
+            this.btnNew.BorderThickness = 4;
+            this.btnNew.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnNew.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNew.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNew.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNew.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnNew.ForeColor = System.Drawing.Color.White;
+            this.btnNew.Image = global::QuanLyNhaHang.Properties.Resources.icons8_new_ticket_80;
+            this.btnNew.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnNew.Location = new System.Drawing.Point(182, 9);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(116, 112);
+            this.btnNew.TabIndex = 2;
+            this.btnNew.Text = "New";
+            this.btnNew.UseTransparentBackground = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.BorderRadius = 10;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::QuanLyNhaHang.Properties.Resources.icons8_restaurant;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(102, 103);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -380,223 +604,6 @@
             this.txtSearchProduct.Size = new System.Drawing.Size(727, 47);
             this.txtSearchProduct.TabIndex = 12;
             this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
-            // 
-            // dgvEdit
-            // 
-            this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvEdit.FillWeight = 50F;
-            this.dgvEdit.HeaderText = "";
-            this.dgvEdit.Image = global::QuanLyNhaHang.Properties.Resources.edit__1_;
-            this.dgvEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvEdit.MinimumWidth = 50;
-            this.dgvEdit.Name = "dgvEdit";
-            this.dgvEdit.ReadOnly = true;
-            this.dgvEdit.Width = 50;
-            // 
-            // dgvDel
-            // 
-            this.dgvDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvDel.FillWeight = 50F;
-            this.dgvDel.HeaderText = "";
-            this.dgvDel.Image = global::QuanLyNhaHang.Properties.Resources.delete__1_;
-            this.dgvDel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvDel.MinimumWidth = 50;
-            this.dgvDel.Name = "dgvDel";
-            this.dgvDel.ReadOnly = true;
-            this.dgvDel.Width = 50;
-            // 
-            // PtbExit
-            // 
-            this.PtbExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PtbExit.BackColor = System.Drawing.Color.Transparent;
-            this.PtbExit.BorderRadius = 10;
-            this.PtbExit.FillColor = System.Drawing.Color.Transparent;
-            this.PtbExit.Image = global::QuanLyNhaHang.Properties.Resources.icons8_shutdown_96;
-            this.PtbExit.ImageRotate = 0F;
-            this.PtbExit.Location = new System.Drawing.Point(1647, 0);
-            this.PtbExit.Name = "PtbExit";
-            this.PtbExit.Size = new System.Drawing.Size(96, 96);
-            this.PtbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PtbExit.TabIndex = 5;
-            this.PtbExit.TabStop = false;
-            this.PtbExit.UseTransparentBackground = true;
-            this.PtbExit.Click += new System.EventHandler(this.PtbExit_Click);
-            // 
-            // btnDinIn
-            // 
-            this.btnDinIn.BackColor = System.Drawing.Color.Transparent;
-            this.btnDinIn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnDinIn.BorderRadius = 16;
-            this.btnDinIn.BorderThickness = 4;
-            this.btnDinIn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnDinIn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDinIn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDinIn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDinIn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDinIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnDinIn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDinIn.ForeColor = System.Drawing.Color.White;
-            this.btnDinIn.Image = global::QuanLyNhaHang.Properties.Resources.icons8_restaurant_din_in;
-            this.btnDinIn.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnDinIn.Location = new System.Drawing.Point(989, 9);
-            this.btnDinIn.Name = "btnDinIn";
-            this.btnDinIn.Size = new System.Drawing.Size(116, 112);
-            this.btnDinIn.TabIndex = 2;
-            this.btnDinIn.Text = "Din in";
-            this.btnDinIn.UseTransparentBackground = true;
-            // 
-            // btnTakeAway
-            // 
-            this.btnTakeAway.BackColor = System.Drawing.Color.Transparent;
-            this.btnTakeAway.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnTakeAway.BorderRadius = 16;
-            this.btnTakeAway.BorderThickness = 4;
-            this.btnTakeAway.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnTakeAway.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTakeAway.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTakeAway.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTakeAway.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTakeAway.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnTakeAway.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnTakeAway.ForeColor = System.Drawing.Color.White;
-            this.btnTakeAway.Image = global::QuanLyNhaHang.Properties.Resources.icons8_take_away_food_100;
-            this.btnTakeAway.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnTakeAway.Location = new System.Drawing.Point(856, 6);
-            this.btnTakeAway.Name = "btnTakeAway";
-            this.btnTakeAway.Size = new System.Drawing.Size(116, 115);
-            this.btnTakeAway.TabIndex = 2;
-            this.btnTakeAway.Text = "Take away";
-            this.btnTakeAway.UseTransparentBackground = true;
-            // 
-            // btnDelivery
-            // 
-            this.btnDelivery.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelivery.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnDelivery.BorderRadius = 16;
-            this.btnDelivery.BorderThickness = 4;
-            this.btnDelivery.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnDelivery.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelivery.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelivery.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDelivery.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelivery.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnDelivery.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDelivery.ForeColor = System.Drawing.Color.White;
-            this.btnDelivery.Image = global::QuanLyNhaHang.Properties.Resources.icons8_motorcycle_delivery_100;
-            this.btnDelivery.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnDelivery.Location = new System.Drawing.Point(723, 6);
-            this.btnDelivery.Name = "btnDelivery";
-            this.btnDelivery.Size = new System.Drawing.Size(116, 115);
-            this.btnDelivery.TabIndex = 2;
-            this.btnDelivery.Text = "Delivery";
-            this.btnDelivery.UseTransparentBackground = true;
-            // 
-            // btnKOT
-            // 
-            this.btnKOT.BackColor = System.Drawing.Color.Transparent;
-            this.btnKOT.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnKOT.BorderRadius = 16;
-            this.btnKOT.BorderThickness = 4;
-            this.btnKOT.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnKOT.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnKOT.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnKOT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnKOT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnKOT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnKOT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnKOT.ForeColor = System.Drawing.Color.White;
-            this.btnKOT.Image = global::QuanLyNhaHang.Properties.Resources.icons8_KOT_64;
-            this.btnKOT.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnKOT.Location = new System.Drawing.Point(592, 5);
-            this.btnKOT.Name = "btnKOT";
-            this.btnKOT.Size = new System.Drawing.Size(116, 115);
-            this.btnKOT.TabIndex = 2;
-            this.btnKOT.Text = "KOT";
-            this.btnKOT.UseTransparentBackground = true;
-            // 
-            // btnBillList
-            // 
-            this.btnBillList.BackColor = System.Drawing.Color.Transparent;
-            this.btnBillList.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnBillList.BorderRadius = 16;
-            this.btnBillList.BorderThickness = 4;
-            this.btnBillList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnBillList.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBillList.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBillList.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBillList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBillList.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnBillList.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnBillList.ForeColor = System.Drawing.Color.White;
-            this.btnBillList.Image = global::QuanLyNhaHang.Properties.Resources.point_of_sale__1_;
-            this.btnBillList.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnBillList.Location = new System.Drawing.Point(449, 6);
-            this.btnBillList.Name = "btnBillList";
-            this.btnBillList.Size = new System.Drawing.Size(116, 115);
-            this.btnBillList.TabIndex = 2;
-            this.btnBillList.Text = "Bill List";
-            this.btnBillList.UseTransparentBackground = true;
-            // 
-            // btnHold
-            // 
-            this.btnHold.BackColor = System.Drawing.Color.Transparent;
-            this.btnHold.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnHold.BorderRadius = 16;
-            this.btnHold.BorderThickness = 4;
-            this.btnHold.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnHold.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHold.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnHold.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHold.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHold.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnHold.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnHold.ForeColor = System.Drawing.Color.White;
-            this.btnHold.Image = global::QuanLyNhaHang.Properties.Resources.icons8_hand_100;
-            this.btnHold.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnHold.Location = new System.Drawing.Point(316, 6);
-            this.btnHold.Name = "btnHold";
-            this.btnHold.Size = new System.Drawing.Size(116, 115);
-            this.btnHold.TabIndex = 2;
-            this.btnHold.Text = "Hold";
-            this.btnHold.UseTransparentBackground = true;
-            // 
-            // btnNew
-            // 
-            this.btnNew.BackColor = System.Drawing.Color.Transparent;
-            this.btnNew.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnNew.BorderRadius = 16;
-            this.btnNew.BorderThickness = 4;
-            this.btnNew.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnNew.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNew.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNew.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNew.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnNew.ForeColor = System.Drawing.Color.White;
-            this.btnNew.Image = global::QuanLyNhaHang.Properties.Resources.icons8_new_ticket_80;
-            this.btnNew.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnNew.Location = new System.Drawing.Point(182, 9);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(116, 112);
-            this.btnNew.TabIndex = 2;
-            this.btnNew.Text = "New";
-            this.btnNew.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BorderRadius = 10;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::QuanLyNhaHang.Properties.Resources.icons8_restaurant;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(102, 103);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // frmPOS
             // 

@@ -52,18 +52,20 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(535, 152);
+            this.guna2Panel1.Size = new System.Drawing.Size(602, 190);
             this.guna2Panel1.TabIndex = 6;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // lblAdd
             // 
             this.lblAdd.AutoSize = true;
             this.lblAdd.BackColor = System.Drawing.Color.Transparent;
             this.lblAdd.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdd.Location = new System.Drawing.Point(227, 63);
+            this.lblAdd.Location = new System.Drawing.Point(255, 79);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(133, 31);
+            this.lblAdd.Size = new System.Drawing.Size(161, 38);
             this.lblAdd.TabIndex = 1;
             this.lblAdd.Text = "Table Detail";
             // 
@@ -72,9 +74,10 @@
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = global::QuanLyNhaHang.Properties.Resources._677252;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(43, 23);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(48, 29);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(178, 105);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(200, 131);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
@@ -83,16 +86,16 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(18, 197);
+            this.lblID.Location = new System.Drawing.Point(20, 246);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(95, 31);
+            this.lblID.Size = new System.Drawing.Size(116, 38);
             this.lblID.TabIndex = 8;
             this.lblID.Text = "Table ID";
             // 
             // txtTableID
             // 
             this.txtTableID.AutoRoundedCorners = true;
-            this.txtTableID.BorderRadius = 32;
+            this.txtTableID.BorderRadius = 41;
             this.txtTableID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTableID.DefaultText = "";
             this.txtTableID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -102,15 +105,15 @@
             this.txtTableID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTableID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTableID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTableID.Location = new System.Drawing.Point(190, 178);
-            this.txtTableID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtTableID.Location = new System.Drawing.Point(214, 222);
+            this.txtTableID.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.txtTableID.Name = "txtTableID";
             this.txtTableID.PasswordChar = '\0';
             this.txtTableID.PlaceholderText = "";
             this.txtTableID.ReadOnly = true;
             this.txtTableID.SelectedText = "";
             this.txtTableID.SelectionStart = "".Length;
-            this.txtTableID.Size = new System.Drawing.Size(278, 67);
+            this.txtTableID.Size = new System.Drawing.Size(313, 84);
             this.txtTableID.TabIndex = 12;
             // 
             // guna2Panel2
@@ -118,16 +121,17 @@
             this.guna2Panel2.Controls.Add(this.btnSave);
             this.guna2Panel2.Controls.Add(this.btnClose);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 642);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 803);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(535, 100);
+            this.guna2Panel2.Size = new System.Drawing.Size(602, 125);
             this.guna2Panel2.TabIndex = 13;
             // 
             // btnSave
             // 
             this.btnSave.AutoRoundedCorners = true;
             this.btnSave.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnSave.BorderRadius = 21;
+            this.btnSave.BorderRadius = 27;
             this.btnSave.CustomizableEdges.TopRight = false;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -136,9 +140,10 @@
             this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(54, 21);
+            this.btnSave.Location = new System.Drawing.Point(61, 26);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(144, 45);
+            this.btnSave.Size = new System.Drawing.Size(162, 56);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -147,7 +152,7 @@
             // 
             this.btnClose.AutoRoundedCorners = true;
             this.btnClose.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnClose.BorderRadius = 21;
+            this.btnClose.BorderRadius = 27;
             this.btnClose.CustomizableEdges.TopLeft = false;
             this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -156,9 +161,10 @@
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(274, 21);
+            this.btnClose.Location = new System.Drawing.Point(308, 26);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(144, 45);
+            this.btnClose.Size = new System.Drawing.Size(162, 56);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -167,16 +173,16 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(18, 337);
+            this.lblName.Location = new System.Drawing.Point(20, 421);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(134, 31);
+            this.lblName.Size = new System.Drawing.Size(163, 38);
             this.lblName.TabIndex = 16;
             this.lblName.Text = "Table Name";
             // 
             // txtTableName
             // 
             this.txtTableName.AutoRoundedCorners = true;
-            this.txtTableName.BorderRadius = 32;
+            this.txtTableName.BorderRadius = 41;
             this.txtTableName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTableName.DefaultText = "";
             this.txtTableName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -186,23 +192,23 @@
             this.txtTableName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTableName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTableName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTableName.Location = new System.Drawing.Point(190, 319);
-            this.txtTableName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtTableName.Location = new System.Drawing.Point(214, 399);
+            this.txtTableName.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.txtTableName.Name = "txtTableName";
             this.txtTableName.PasswordChar = '\0';
             this.txtTableName.PlaceholderText = "";
             this.txtTableName.SelectedText = "";
             this.txtTableName.SelectionStart = "".Length;
-            this.txtTableName.Size = new System.Drawing.Size(278, 67);
+            this.txtTableName.Size = new System.Drawing.Size(313, 84);
             this.txtTableName.TabIndex = 17;
             // 
             // lblState
             // 
             this.lblState.AutoSize = true;
             this.lblState.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblState.Location = new System.Drawing.Point(18, 459);
+            this.lblState.Location = new System.Drawing.Point(20, 574);
             this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(65, 31);
+            this.lblState.Size = new System.Drawing.Size(78, 38);
             this.lblState.TabIndex = 18;
             this.lblState.Text = "State";
             // 
@@ -216,16 +222,17 @@
             this.cbbTstate.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbbTstate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbTstate.ItemHeight = 30;
-            this.cbbTstate.Location = new System.Drawing.Point(190, 454);
+            this.cbbTstate.Location = new System.Drawing.Point(214, 568);
+            this.cbbTstate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbTstate.Name = "cbbTstate";
-            this.cbbTstate.Size = new System.Drawing.Size(292, 36);
+            this.cbbTstate.Size = new System.Drawing.Size(328, 36);
             this.cbbTstate.TabIndex = 20;
             // 
             // frmTableAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 742);
+            this.ClientSize = new System.Drawing.Size(602, 928);
             this.Controls.Add(this.cbbTstate);
             this.Controls.Add(this.lblState);
             this.Controls.Add(this.txtTableName);
@@ -235,6 +242,7 @@
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmTableAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTableAdd";

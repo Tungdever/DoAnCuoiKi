@@ -27,6 +27,8 @@ namespace QuanLyNhaHang
         {
             InitializeComponent();
         }
+        public int MainID = 0;
+        public string OrderType;
 
         private void PtbExit_Click(object sender, EventArgs e)
         {
@@ -153,6 +155,56 @@ namespace QuanLyNhaHang
                 var pro = (ucProduct)item;
                 pro.Visible = pro.PName.ToLower().Contains(txtSearchProduct.Text.Trim().ToLower());
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTable.Visible = false;
+            lblWaiter.Visible   = false;
+            MainID = 0;
+            lblTotal.Text = "0.00";
+            dgvPOS.Rows.Clear();    
+        }
+
+        private void btnHold_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBillList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKOT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelivery_Click(object sender, EventArgs e)
+        {
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            OrderType = "Delivery";
+        }
+
+        private void btnTakeAway_Click(object sender, EventArgs e)
+        {
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            OrderType = "Take Away";
+        }
+
+        private void btnDinIn_Click(object sender, EventArgs e)
+        {
+            //create form for Table select n waiter selec
+
         }
     }
 }

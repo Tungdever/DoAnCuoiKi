@@ -111,3 +111,5 @@ C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\Qua
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmTableSelect.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmWaiterSelect.resources
