@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,7 +16,6 @@ namespace QuanLyNhaHang
         DataTable dtDM = null;
         string err;
         BLDanhMuc dbDM = new BLDanhMuc();
-
         public frmCategoryAdd()
         {
             InitializeComponent();
@@ -33,8 +31,6 @@ namespace QuanLyNhaHang
             if (txtID.ReadOnly == true )
             {               
                 
-                dbDM.CapNhatDanhMuc(txtID.Text,txtName.Text, ref err);
-                MessageBox.Show("Đã sửa xong!");
             }
             else
             {
