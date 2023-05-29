@@ -46,5 +46,10 @@ namespace QuanLyNhaHang
             }
             this.Close();
         }
+
+        private void txtStaffName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

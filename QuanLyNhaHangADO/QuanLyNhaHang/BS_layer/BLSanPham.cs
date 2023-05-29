@@ -34,6 +34,7 @@ namespace QuanLyNhaHang.BS_layer
 
             string sqlString = "Insert Into SanPham (MaSP, TenSP, MaLoaiSP, TenLoaiSP, GiaSP, AnhSP) Values ('" +
     MaSP + "', N'" + TenSP + "', N'" + MaLoaiSP + "', N'" + TenLoaiSP + "', " + GiaSP + ", 0x" + imageHex + ")";
+          
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 

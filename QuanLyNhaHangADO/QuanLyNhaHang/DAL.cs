@@ -55,5 +55,16 @@ namespace QuanLyNhaHang
             }
             return f;
         }
+        public int MyExecuteScalar(string strSQL, CommandType ct)
+        {
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+            comm.CommandText = strSQL;
+            comm.CommandType = ct;
+            return Convert.ToInt32(comm.ExecuteScalar());
+        }
+
+
     }
 }

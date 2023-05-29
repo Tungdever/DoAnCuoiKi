@@ -133,5 +133,10 @@ namespace QuanLyNhaHang
         {
             LoadData();
         }
+
+        private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

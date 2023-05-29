@@ -66,5 +66,17 @@ namespace QuanLyNhaHang
         {
             AddControls(new frmKitchen());
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmLogin frm = new frmLogin();
+            frm.ShowDialog();
+        }
+
+        private void btnHome_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

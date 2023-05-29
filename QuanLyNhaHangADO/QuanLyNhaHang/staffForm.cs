@@ -1,4 +1,4 @@
-﻿using QuanLyNhaHang.BS_layer;
+﻿    using QuanLyNhaHang.BS_layer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

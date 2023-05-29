@@ -25,7 +25,7 @@ namespace QuanLyNhaHang
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmCategoryAdd frm = new frmCategoryAdd();
-            frm.txtID.ReadOnly = false;
+            frm.txtID.ReadOnly = false; //  Vì là thêm nên ReadOnly = false;
             frm.ShowDialog();
             LoadData();
         }
@@ -102,6 +102,11 @@ namespace QuanLyNhaHang
             {
                 MessageBox.Show("Không lấy được nội dung trong table DanhMuc. Lỗi rồi!!!");
             }
+        }
+
+        private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

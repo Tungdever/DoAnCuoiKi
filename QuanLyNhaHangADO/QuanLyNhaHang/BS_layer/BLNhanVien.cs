@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Management;
 
 namespace QuanLyNhaHang.BS_layer
 {
@@ -18,6 +19,15 @@ namespace QuanLyNhaHang.BS_layer
         public DataSet LayNhanVien()
         {
             return db.ExecuteQueryDataSet("SELECT * FROM NHANVIEN", CommandType.Text);
+        }
+        public DataSet LayPhucVu()
+        {
+            return db.ExecuteQueryDataSet("SELECT * FROM NHANVIEN WHERE ChucVu = 'Phuc vu'", CommandType.Text);
+        }
+
+        public DataSet LayGiaoHang()
+        {
+            return db.ExecuteQueryDataSet("SELECT Manv , Ten FROM NHANVIEN WHERE ChucVu = 'Giao Hang'", CommandType.Text);
         }
         public DataSet TimKiemNhanVien(string str)
         {

@@ -42,7 +42,7 @@ namespace QuanLyNhaHang
                 try
                 {
                     dbSP.ThemSanPham(txtProductID.Text, txtProductName.Text, cbbCateID.Text, txtCateName.Text, float.Parse(txtPrice.Text), txtImage.Image, ref err);
-                    MessageBox.Show("Đã thêm xong!");
+                    MessageBox.Show("Đã thêm xong!");   
                 }
                 catch (SqlException)
                 {
@@ -74,6 +74,11 @@ namespace QuanLyNhaHang
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtProductID_TextChanged(object sender, EventArgs e)
         {
 
         }

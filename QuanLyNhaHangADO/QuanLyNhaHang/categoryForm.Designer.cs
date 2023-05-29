@@ -55,9 +55,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSearchCate.AutoSize = true;
             this.lblSearchCate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchCate.Location = new System.Drawing.Point(1015, 71);
+            this.lblSearchCate.Location = new System.Drawing.Point(1142, 89);
             this.lblSearchCate.Name = "lblSearchCate";
-            this.lblSearchCate.Size = new System.Drawing.Size(75, 25);
+            this.lblSearchCate.Size = new System.Drawing.Size(89, 29);
             this.lblSearchCate.TabIndex = 1;
             this.lblSearchCate.Text = "Search";
             // 
@@ -65,9 +65,9 @@
             // 
             this.lblCategories.AutoSize = true;
             this.lblCategories.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategories.Location = new System.Drawing.Point(88, 20);
+            this.lblCategories.Location = new System.Drawing.Point(99, 25);
             this.lblCategories.Name = "lblCategories";
-            this.lblCategories.Size = new System.Drawing.Size(177, 38);
+            this.lblCategories.Size = new System.Drawing.Size(208, 45);
             this.lblCategories.TabIndex = 1;
             this.lblCategories.Text = "Category List";
             // 
@@ -75,9 +75,10 @@
             // 
             this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator1.Location = new System.Drawing.Point(32, 212);
+            this.guna2Separator1.Location = new System.Drawing.Point(36, 265);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(1282, 10);
+            this.guna2Separator1.Size = new System.Drawing.Size(1442, 12);
             this.guna2Separator1.TabIndex = 3;
             // 
             // dgvCategory
@@ -114,7 +115,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCategory.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCategory.Location = new System.Drawing.Point(32, 247);
+            this.dgvCategory.Location = new System.Drawing.Point(36, 309);
+            this.dgvCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCategory.Name = "dgvCategory";
             this.dgvCategory.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -130,7 +132,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
             this.dgvCategory.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCategory.RowTemplate.Height = 35;
-            this.dgvCategory.Size = new System.Drawing.Size(1282, 513);
+            this.dgvCategory.Size = new System.Drawing.Size(1442, 641);
             this.dgvCategory.TabIndex = 4;
             this.dgvCategory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvCategory.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -154,6 +156,7 @@
             this.dgvCategory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellClick);
+            this.dgvCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellContentClick);
             // 
             // dgvID
             // 
@@ -225,10 +228,11 @@
             this.btnAdd.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnAdd.ImageRotate = 0F;
             this.btnAdd.IndicateFocus = true;
-            this.btnAdd.Location = new System.Drawing.Point(68, 71);
+            this.btnAdd.Location = new System.Drawing.Point(76, 89);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAdd.Size = new System.Drawing.Size(112, 102);
+            this.btnAdd.Size = new System.Drawing.Size(126, 128);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -246,21 +250,21 @@
             this.txtSearchCategories.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearchCategories.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearchCategories.IconLeft = global::QuanLyNhaHang.Properties.Resources.magnifying_glass;
-            this.txtSearchCategories.Location = new System.Drawing.Point(1020, 110);
-            this.txtSearchCategories.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearchCategories.Location = new System.Drawing.Point(1148, 138);
+            this.txtSearchCategories.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtSearchCategories.Name = "txtSearchCategories";
             this.txtSearchCategories.PasswordChar = '\0';
             this.txtSearchCategories.PlaceholderText = "";
             this.txtSearchCategories.SelectedText = "";
-            this.txtSearchCategories.Size = new System.Drawing.Size(241, 48);
+            this.txtSearchCategories.Size = new System.Drawing.Size(271, 60);
             this.txtSearchCategories.TabIndex = 0;
             this.txtSearchCategories.TextChanged += new System.EventHandler(this.txtSearchCategories_TextChanged);
             // 
             // categoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1337, 779);
+            this.ClientSize = new System.Drawing.Size(1504, 974);
             this.Controls.Add(this.dgvCategory);
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.btnAdd);
@@ -268,6 +272,7 @@
             this.Controls.Add(this.lblSearchCate);
             this.Controls.Add(this.txtSearchCategories);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "categoryForm";
             this.Text = "categoryForm";
             this.Load += new System.EventHandler(this.categoryForm_Load);

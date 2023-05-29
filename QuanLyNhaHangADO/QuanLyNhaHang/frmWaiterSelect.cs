@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace QuanLyNhaHang
     {
         DataTable dtNV = null;
         BLNhanVien dbNV = new BLNhanVien();
-        string err;
+        
         public string WaiterName;
         public frmWaiterSelect()
         {
@@ -25,24 +26,33 @@ namespace QuanLyNhaHang
 
         private void frmWaiterSelect_Load(object sender, EventArgs e)
         {
-
+            LoadData();
         }
         private void LoadData()
         {
-            dtNV = new DataTable();
-            dtNV.Clear();
-            DataSet ds = dbNV.LayNhanVien();
-            dtNV = ds.Tables[0];
-            foreach (DataRow row in dtNV.Rows)
+            try
             {
-                Guna.UI2.WinForms.Guna2Button b = new Guna.UI2.WinForms.Guna2Button();
-                b.Text = row["Tname"].ToString();
-                b.Width = 510;
-                b.Height = 50;
-                b.FillColor = Color.FromArgb(241, 85, 126);
-                b.HoverState.FillColor = Color.FromArgb(50, 55, 89);
+                dtNV = new DataTable();
+                dtNV.Clear();
+                DataSet ds = dbNV.LayPhucVu();
+                dtNV = ds.Tables[0];
+                foreach (DataRow row in dtNV.Rows)
+                {
+                    Guna.UI2.WinForms.Guna2Button b = new Guna.UI2.WinForms.Guna2Button();
+                    b.Text = row["Ten"].ToString();
+                    b.Width = 150;
+                    b.Height = 50;
+                    b.FillColor = Color.FromArgb(241, 85, 126);
+                    b.HoverState.FillColor = Color.FromArgb(50, 55, 89);
 
-                b.Click += new EventHandler(b_Click);
+                    b.Click += new EventHandler(b_Click);
+                    flowLayoutPanel1.Controls.Add(b);
+                }
+            }
+            
+            catch (SqlException)
+{
+                MessageBox.Show("Không lấy được Waiter trong Staff. Lỗi rồi!!!");
             }
         }
 
@@ -50,6 +60,11 @@ namespace QuanLyNhaHang
         {
             WaiterName = (sender as Guna.UI2.WinForms.Guna2Button).Text.ToString();
             this.Close();
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -34,6 +34,7 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblAdd = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblID = new System.Windows.Forms.Label();
             this.txtProductName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblName = new System.Windows.Forms.Label();
@@ -47,11 +48,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbbCateID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtImage = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtImage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel2
@@ -59,10 +59,10 @@
             this.guna2Panel2.Controls.Add(this.btnSave);
             this.guna2Panel2.Controls.Add(this.btnClose);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 867);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 730);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1601, 125);
+            this.guna2Panel2.Size = new System.Drawing.Size(1602, 178);
             this.guna2Panel2.TabIndex = 6;
             // 
             // btnSave
@@ -116,7 +116,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1601, 190);
+            this.guna2Panel1.Size = new System.Drawing.Size(1602, 146);
             this.guna2Panel1.TabIndex = 5;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
@@ -125,11 +125,24 @@
             this.lblAdd.AutoSize = true;
             this.lblAdd.BackColor = System.Drawing.Color.Transparent;
             this.lblAdd.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdd.Location = new System.Drawing.Point(255, 64);
+            this.lblAdd.Location = new System.Drawing.Point(255, 55);
             this.lblAdd.Name = "lblAdd";
             this.lblAdd.Size = new System.Drawing.Size(193, 38);
             this.lblAdd.TabIndex = 1;
             this.lblAdd.Text = "Product Detail";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::QuanLyNhaHang.Properties.Resources.products;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(59, 4);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(178, 112);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // lblID
             // 
@@ -197,6 +210,7 @@
             this.txtProductID.SelectionStart = "".Length;
             this.txtProductID.Size = new System.Drawing.Size(313, 84);
             this.txtProductID.TabIndex = 11;
+            this.txtProductID.TextChanged += new System.EventHandler(this.txtProductID_TextChanged);
             // 
             // label1
             // 
@@ -315,7 +329,7 @@
             this.cbbCateID.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbbCateID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbCateID.ItemHeight = 30;
-            this.cbbCateID.Location = new System.Drawing.Point(262, 532);
+            this.cbbCateID.Location = new System.Drawing.Point(262, 541);
             this.cbbCateID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbCateID.Name = "cbbCateID";
             this.cbbCateID.Size = new System.Drawing.Size(312, 36);
@@ -334,24 +348,11 @@
             this.txtImage.TabIndex = 19;
             this.txtImage.TabStop = false;
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::QuanLyNhaHang.Properties.Resources.products;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(48, 15);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(220, 139);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // frmProductAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1601, 992);
+            this.ClientSize = new System.Drawing.Size(1602, 908);
             this.Controls.Add(this.cbbCateID);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBrowse);
@@ -376,8 +377,8 @@
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

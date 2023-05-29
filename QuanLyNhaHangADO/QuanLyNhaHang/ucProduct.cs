@@ -19,7 +19,7 @@ namespace QuanLyNhaHang
         public event EventHandler onSelect = null;
         public string PId { get; set; }
         public float PPrice { get; set; }
-        public string PCategory { get; set; }
+        public string PCategory { get; set; } // Tên Danh mục
 
         public string PName
         {
