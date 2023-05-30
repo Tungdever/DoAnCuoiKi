@@ -20,6 +20,10 @@ namespace QuanLyNhaHang.BS_layer
         {
             return db.ExecuteQueryDataSet("select MaSP, TenSP, MaLoaiSP, TenLoaiSP, GiaSP from SanPham", CommandType.Text);
         }
+        public DataSet LoadMenu()
+        {
+            return db.ExecuteQueryDataSet("select * from SanPham", CommandType.Text);
+        }
         public DataSet TimKiemSanPham(string str)
         {
             return db.ExecuteQueryDataSet("select MaSP, TenSP, MaLoaiSP, TenLoaiSP, GiaSP from SanPham where TenSP like '%" + str + "%' ", CommandType.Text);

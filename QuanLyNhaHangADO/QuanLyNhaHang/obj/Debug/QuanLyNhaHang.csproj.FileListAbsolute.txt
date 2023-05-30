@@ -135,3 +135,5 @@ C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\Cry
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\stdole.dll
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmPrint.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmReport.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmSaleCatReport.resources

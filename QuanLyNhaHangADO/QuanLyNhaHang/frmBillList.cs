@@ -87,9 +87,9 @@ namespace QuanLyNhaHang
                 }    
             }
 
-            catch (SqlException)
+            catch (SqlException error)
             {
-                MessageBox.Show("Không xóa được. Lỗi rồi!");
+                MessageBox.Show("Không xóa được. Lỗi rồi!"+error);
             }
         }
 

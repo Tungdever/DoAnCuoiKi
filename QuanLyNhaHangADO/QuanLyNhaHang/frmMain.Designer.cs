@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReport = new Guna.UI2.WinForms.Guna2Button();
             this.btnKitchen = new Guna.UI2.WinForms.Guna2Button();
             this.btnPOS = new Guna.UI2.WinForms.Guna2Button();
             this.btnStaff = new Guna.UI2.WinForms.Guna2Button();
@@ -52,6 +53,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.panel1.Controls.Add(this.btnLogOut);
+            this.panel1.Controls.Add(this.btnReport);
             this.panel1.Controls.Add(this.btnKitchen);
             this.panel1.Controls.Add(this.btnPOS);
             this.panel1.Controls.Add(this.btnStaff);
@@ -64,7 +66,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(213, 1125);
+            this.panel1.Size = new System.Drawing.Size(198, 1125);
             this.panel1.TabIndex = 0;
             // 
             // btnLogOut
@@ -84,13 +86,38 @@
             this.btnLogOut.Image = global::QuanLyNhaHang.Properties.Resources.icons8_logout_100;
             this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogOut.ImageSize = new System.Drawing.Size(70, 70);
-            this.btnLogOut.Location = new System.Drawing.Point(-15, 855);
+            this.btnLogOut.Location = new System.Drawing.Point(-16, 901);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(288, 77);
             this.btnLogOut.TabIndex = 6;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // btnReport
+            // 
+            this.btnReport.AutoRoundedCorners = true;
+            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnReport.BorderRadius = 27;
+            this.btnReport.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnReport.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReport.FillColor = System.Drawing.Color.Transparent;
+            this.btnReport.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReport.ForeColor = System.Drawing.Color.White;
+            this.btnReport.Image = global::QuanLyNhaHang.Properties.Resources.icons8_report_64__1_;
+            this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnReport.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnReport.Location = new System.Drawing.Point(3, 797);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(237, 56);
+            this.btnReport.TabIndex = 6;
+            this.btnReport.Text = "Report";
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnKitchen
             // 
@@ -109,7 +136,7 @@
             this.btnKitchen.Image = global::QuanLyNhaHang.Properties.Resources.chef__1_;
             this.btnKitchen.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnKitchen.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnKitchen.Location = new System.Drawing.Point(3, 737);
+            this.btnKitchen.Location = new System.Drawing.Point(3, 707);
             this.btnKitchen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKitchen.Name = "btnKitchen";
             this.btnKitchen.Size = new System.Drawing.Size(237, 56);
@@ -134,7 +161,7 @@
             this.btnPOS.Image = global::QuanLyNhaHang.Properties.Resources.point_of_sale__1_;
             this.btnPOS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPOS.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnPOS.Location = new System.Drawing.Point(0, 652);
+            this.btnPOS.Location = new System.Drawing.Point(0, 603);
             this.btnPOS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPOS.Name = "btnPOS";
             this.btnPOS.Size = new System.Drawing.Size(237, 56);
@@ -159,7 +186,7 @@
             this.btnStaff.Image = global::QuanLyNhaHang.Properties.Resources.staff;
             this.btnStaff.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStaff.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnStaff.Location = new System.Drawing.Point(3, 546);
+            this.btnStaff.Location = new System.Drawing.Point(0, 499);
             this.btnStaff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(237, 56);
@@ -184,7 +211,7 @@
             this.btnTables.Image = global::QuanLyNhaHang.Properties.Resources.table;
             this.btnTables.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTables.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnTables.Location = new System.Drawing.Point(0, 433);
+            this.btnTables.Location = new System.Drawing.Point(0, 418);
             this.btnTables.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTables.Name = "btnTables";
             this.btnTables.Size = new System.Drawing.Size(237, 56);
@@ -209,7 +236,7 @@
             this.btnCategory.Image = global::QuanLyNhaHang.Properties.Resources.category__1_;
             this.btnCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCategory.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnCategory.Location = new System.Drawing.Point(3, 247);
+            this.btnCategory.Location = new System.Drawing.Point(3, 228);
             this.btnCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Size = new System.Drawing.Size(237, 56);
@@ -234,7 +261,7 @@
             this.btnProduct.Image = global::QuanLyNhaHang.Properties.Resources.products__1_;
             this.btnProduct.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProduct.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnProduct.Location = new System.Drawing.Point(3, 354);
+            this.btnProduct.Location = new System.Drawing.Point(3, 329);
             this.btnProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(237, 56);
@@ -274,7 +301,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(213, 114);
+            this.pictureBox1.Size = new System.Drawing.Size(198, 114);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -285,10 +312,10 @@
             this.pnlControlBox.Controls.Add(this.btnMaxSize);
             this.pnlControlBox.Controls.Add(this.btnClose);
             this.pnlControlBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlControlBox.Location = new System.Drawing.Point(213, 0);
+            this.pnlControlBox.Location = new System.Drawing.Point(198, 0);
             this.pnlControlBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlControlBox.Name = "pnlControlBox";
-            this.pnlControlBox.Size = new System.Drawing.Size(1611, 78);
+            this.pnlControlBox.Size = new System.Drawing.Size(1626, 78);
             this.pnlControlBox.TabIndex = 1;
             // 
             // btnMinSize
@@ -297,7 +324,7 @@
             this.btnMinSize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btnMinSize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
             this.btnMinSize.IconColor = System.Drawing.Color.White;
-            this.btnMinSize.Location = new System.Drawing.Point(1385, 15);
+            this.btnMinSize.Location = new System.Drawing.Point(1400, 15);
             this.btnMinSize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMinSize.Name = "btnMinSize";
             this.btnMinSize.Size = new System.Drawing.Size(63, 46);
@@ -309,7 +336,7 @@
             this.btnMaxSize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             this.btnMaxSize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
             this.btnMaxSize.IconColor = System.Drawing.Color.White;
-            this.btnMaxSize.Location = new System.Drawing.Point(1455, 15);
+            this.btnMaxSize.Location = new System.Drawing.Point(1470, 15);
             this.btnMaxSize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMaxSize.Name = "btnMaxSize";
             this.btnMaxSize.Size = new System.Drawing.Size(63, 46);
@@ -321,7 +348,7 @@
             this.btnClose.CustomClick = true;
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
             this.btnClose.IconColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1525, 15);
+            this.btnClose.Location = new System.Drawing.Point(1540, 15);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(63, 46);
@@ -331,10 +358,10 @@
             // CenterPanel
             // 
             this.CenterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CenterPanel.Location = new System.Drawing.Point(213, 78);
+            this.CenterPanel.Location = new System.Drawing.Point(198, 78);
             this.CenterPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(1611, 1047);
+            this.CenterPanel.Size = new System.Drawing.Size(1626, 1047);
             this.CenterPanel.TabIndex = 2;
             // 
             // frmMain
@@ -375,5 +402,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox btnClose;
         private System.Windows.Forms.Panel CenterPanel;
         private Guna.UI2.WinForms.Guna2Button btnLogOut;
+        private Guna.UI2.WinForms.Guna2Button btnReport;
     }
 }
