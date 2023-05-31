@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,7 @@ namespace QuanLyNhaHang
         private void GetOrders()
         {
             flowLayoutPanel1.Controls.Clear();
+
             DataSet ds = dbTblMain.GetOrders();
             dtTblMain = ds.Tables[0];
             FlowLayoutPanel p1;
@@ -41,22 +43,25 @@ namespace QuanLyNhaHang
                     //Thêm các tiêu đề bằng label
                     p1 = new FlowLayoutPanel();
                     p1.AutoSize = true;
-                    p1.Width = 250;
-                    p1.Height = 350;
+                    p1.Width = 300;
+                    p1.Height = 600;
                     p1.FlowDirection = FlowDirection.TopDown;
                     p1.BorderStyle = BorderStyle.FixedSingle;
-                    p1.Margin = new Padding(10, 10, 10, 10);
+                    p1.Margin = new Padding(10, 10, 10,10);
 
                     FlowLayoutPanel p2 = new FlowLayoutPanel();
                     p2 = new FlowLayoutPanel();
                     p2.BackColor = Color.FromArgb(50, 55, 89);
                     p2.AutoSize = true;
-                    p2.Width = 250;
+                    p2.Width = 300;
                     p2.Height = 130;
                     p2.FlowDirection = FlowDirection.TopDown;
                     p2.BorderStyle = BorderStyle.FixedSingle;
-                    p2.Margin = new Padding(0, 0, 0, 0);
-
+                    p2.Margin = new Padding(0,0,0,0);
+                    p2.Dock = DockStyle.Top;
+                    //     Console.WriteLine(p1.Size.Width);
+                    ///     Console.WriteLine(p2.Size.Width);
+                    
                     Label lb1 = new Label();
                     lb1.ForeColor = Color.White;
                     lb1.Margin = new Padding(10, 10, 3, 0);
@@ -74,7 +79,7 @@ namespace QuanLyNhaHang
 
                     Label lb4 = new Label();
                     lb4.ForeColor = Color.White;
-                    lb4.Margin = new Padding(10, 5, 3, 0);
+                    lb4.Margin = new Padding(10, 5, 3, 10);
                     lb4.AutoSize = true;
 
                     lb1.Text = "Table: " + dtTblMain.Rows[i]["TableName"].ToString();
@@ -94,17 +99,27 @@ namespace QuanLyNhaHang
                     //Vi MaBill trong database bat dau tu 0 , nen dung UINT de dung duoc nhieu gia tri hon
                     int MaBill = 0;
                     MaBill = Convert.ToInt32(dtTblMain.Rows[i]["MaBill"].ToString());
-
-                    DataSet ds2 = dbTblMain.GetJoin(MaBill);
+                    DataSet ds2= new DataSet();
+                    try
+                    {
+                       ds2 = dbTblMain.GetJoin(MaBill);
+                    }
+                    catch (SqlException error)
+                    {
+                        MessageBox.Show(error.Message) ;
+                    }
+                    
                     dtTblJoin = ds2.Tables[0];
                     for (int j = 0; j < dtTblJoin.Rows.Count; j++)
                     {
                         Label lb5 = new Label();
-                        lb5.ForeColor = Color.White;
+                        lb5.ForeColor = Color.Black;
                         lb5.Margin = new Padding(10, 5, 3, 0);
                         lb5.AutoSize = true;
                         int no = j + 1;
                         lb5.Text = "" + no + " " + dtTblJoin.Rows[j]["proName"].ToString() + " " + dtTblJoin.Rows[j]["qty"].ToString();
+
+                   //     Console.WriteLine(lb5.Text);
                         p1.Controls.Add(lb5);
                     }
 
@@ -114,7 +129,7 @@ namespace QuanLyNhaHang
                     b.AutoRoundedCorners = true;
                     b.Size = new Size(100, 35);
                     b.FillColor = Color.FromArgb(241, 85, 126);
-                    b.Margin = new Padding(30, 5, 3, 10);
+                    b.Margin = new Padding(40, 5, 3, 10);
                     b.Text = "Complete";
                     b.Tag = dtTblMain.Rows[i]["MaBill"].ToString(); //store the id
                     b.Click += new EventHandler(b_click);
@@ -122,6 +137,9 @@ namespace QuanLyNhaHang
 
                     flowLayoutPanel1.Controls.Add(p1);
 
+                    
+                        Console.WriteLine(p1.Width);
+                       Console.WriteLine(p2.Width);
                 }
             }
 

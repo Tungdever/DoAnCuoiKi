@@ -58,7 +58,7 @@ namespace QuanLyNhaHang
 
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            Console.WriteLine(dgvProduct.CurrentCell.OwningColumn.Name);
             try
             {
                 if (dgvProduct.CurrentCell.OwningColumn.Name == "dgvEdit")
@@ -82,11 +82,14 @@ namespace QuanLyNhaHang
                     frm.cbbCateID.DisplayMember = "MaDM";
                     frm.txtProductID.ReadOnly = true;
 
-                    frm.txtProductID.Text = dgvProduct.CurrentRow.Cells["dgvMaSP"].Value.ToString();
-                    frm.txtProductName.Text = dgvProduct.CurrentRow.Cells["dgvTenSP"].Value.ToString();
+                    frm.txtProductID.SelectedText = dgvProduct.CurrentRow.Cells["dgvMaSP"].Value.ToString();
+                    frm.txtProductName.SelectedText = dgvProduct.CurrentRow.Cells["dgvTenSP"].Value.ToString();
+                    frm.cbbCateID.Text = dgvProduct.CurrentRow.Cells["dgvpCatID"].Value.ToString();
                     frm.txtCateName.Text = dgvProduct.CurrentRow.Cells["dgvpCatName"].Value.ToString();
                     frm.txtPrice.Text = dgvProduct.CurrentRow.Cells["dgvPrice"].Value.ToString();
-                    frm.cbbCateID.SelectedText = dgvProduct.CurrentRow.Cells["dgvpCatID"].Value.ToString();                 
+                    frm.cbbCateID.SelectedText = dgvProduct.CurrentRow.Cells["dgvpCatID"].Value.ToString();
+                   
+
                     frm.ShowDialog();
                     LoadData();
                 }
@@ -101,9 +104,9 @@ namespace QuanLyNhaHang
                     }
                 }
             }
-            catch (SqlException)
+            catch (SqlException error)
             {
-                MessageBox.Show("Không xóa được. Lỗi rồi!");
+                MessageBox.Show("Không xóa được. Lỗi rồi!" + error);
             }
 
         }
@@ -123,9 +126,9 @@ namespace QuanLyNhaHang
                 // Thay đổi độ rộng cột
                 dgvProduct.AutoResizeColumns();
             }
-            catch (SqlException)
+            catch (SqlException error)
             {
-                MessageBox.Show("Không lấy được nội dung trong table DanhMuc. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được nội dung trong table DanhMuc. Lỗi rồi!!!" + error);
             }
         }
 

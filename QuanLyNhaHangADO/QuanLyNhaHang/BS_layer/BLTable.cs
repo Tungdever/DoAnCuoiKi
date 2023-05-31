@@ -37,5 +37,11 @@ namespace QuanLyNhaHang.BS_layer
             string sqlString = "UPDATE BAN SET Tname = N'" + Tname + "', Tstate = N'" + Tstate + "' WHERE Tid = '" + Tid + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
+        public bool UpdateStateTable(string Tid, string Tname, string Tstate, ref string err)
+        {
+            string sqlString = "UPDATE BAN SET Tname = N'" + Tname + "', Tstate = N'" + Tstate + "' WHERE Tid = '" + Tid + "'";
+            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+
     }
 }

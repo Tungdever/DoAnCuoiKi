@@ -35,7 +35,7 @@ namespace QuanLyNhaHang.BS_layer
 
             /*qry2 = @"Update tblDetails Set proID = @proID, qty = @qty,price = @price, amount =@amount where DetailID = @ID ";*/
 
-            string sqlString = "UPDATE tblDetails SET ProID = '"+ProID +"', ProName = '"+ ProName + "', qty = " + qty+ ", price = "+ price + ", amount = " + amount + " WHERE DetailID = " + DetailID + "";
+            string sqlString = "UPDATE tblDetails SET ProID = '"+ProID +"', ProName = N'"+ ProName + "', qty = " + qty+ ", price = "+ price + ", amount = " + amount + " WHERE DetailID = " + DetailID + "";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
 
         }

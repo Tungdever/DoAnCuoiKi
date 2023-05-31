@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -22,6 +23,7 @@ namespace QuanLyNhaHang
         string err;
         public int MainID = 0;
         public bool bonus;
+        public string OrderType = "";
         public frmBillList()
         {
             InitializeComponent();
@@ -61,6 +63,7 @@ namespace QuanLyNhaHang
                     //Cap nhat gia tri cho bool Them ben formPos
                     bonus = false;
                     MainID = Convert.ToInt32(dgvBillList.CurrentRow.Cells["dgvMaBill"].Value);
+                    OrderType = dgvBillList.CurrentRow.Cells["dgvOrderType"].Value.ToString();
                     this.Close();
                     // Cập nhật MainID và thót khỏi form BillList, trở lại formPos và hiển thị đơn lên lại dgvPOS để edit
                 }

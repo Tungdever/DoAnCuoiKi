@@ -44,7 +44,7 @@ namespace QuanLyNhaHang.BS_layer
 
 
             string sqlString = "Insert Into tblMain ( aDate, aTime, TableName, WaiterName, Status, orderType, total, received, change ,driverID, cusName, cusPhone) Values  (" + "'" +
-date.ToString("yyyy-MM-dd") + "', '" + time + "', '" + TableName + "',N'" + WaiterName + "', '" + Status + "', '" + orderType + "', " +
+date.ToString("yyyy-MM-dd") + "', '" + time + "', N'" + TableName + "',N'" + WaiterName + "', '" + Status + "', '" + orderType + "', " +
 Total + ", " + received + ", " + change + ", '"+ driverID + "', '" + cusName + "', '" + cusPhone + "' ); " + " SELECT SCOPE_IDENTITY()";
             /*string sqlString = @"Insert into tblMain Values (@aDate,@aTime,@TableName,@WaiterName, @status, @lorderType,@total,@received,@change);
  Select SCOPE_IDENTITY()";*/
@@ -58,7 +58,7 @@ Total + ", " + received + ", " + change + ", '"+ driverID + "', '" + cusName + "
             /*string sqlString = "UPDATE SanPham SET TenSP = N'" + TenSP + "', MaLoaiSP = N'" + MaLoaiSP + "', TenLoaiSP = N'"
         + TenLoaiSP + "', GiaSP = " + GiaSP + ", AnhSP = 0x" + imageHex + " WHERE MaSP = '" + MaSP + "'";*/
 
-            string sqlString = "UPDATE tblMain SET aDate = '" + date.ToString("yyyy-MM-dd") + "', aTime = '" + time + "', TableName = '"
+            string sqlString = "UPDATE tblMain SET aDate = '" + date.ToString("yyyy-MM-dd") + "', aTime = '" + time + "', TableName = N'"
         + TableName + "', WaiterName = N'" + WaiterName + "', Status = '" + Status + "', orderType = '"+ orderType + "', total = "+ Total +" , received = "+ received + " ,  change = " + change + " WHERE MaBill = " + MainID;
                 return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
             
@@ -83,6 +83,10 @@ Total + ", " + received + ", " + change + ", '"+ driverID + "', '" + cusName + "
         public DataSet GetJoin(int MaBill)
         {
             return db.ExecuteQueryDataSet("Select * from tblMain m inner join tblDetails d on m.MaBill = d.MaBill WHERE m.MaBill = " + MaBill +"", CommandType.Text);
+        }
+        public DataSet GetJoinTABLE(int MaBill)
+        {
+            return db.ExecuteQueryDataSet("Select * from tblMain m inner join tblDetails d on m.MaBill = d.MaBill  inner join BAN t on m.TableName = t.Tname  WHERE m.MaBill = " + MaBill + "", CommandType.Text);
         }
     }
 }

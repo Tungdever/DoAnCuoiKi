@@ -31,7 +31,8 @@ namespace QuanLyNhaHang
         BLPOS dbPOS = new BLPOS();
         BLSanPham dbSP = new BLSanPham();
         BLTblMain dbTblMain = new BLTblMain();
-        BLTblDetail dbTblDetail = new BLTblDetail();    
+        BLTblDetail dbTblDetail = new BLTblDetail();
+        BLTable dbTable = new BLTable();
         double total;
         public bool Them = true; // CHo khởi tạo ban đầu bằng true 
         public frmPOS()
@@ -41,7 +42,8 @@ namespace QuanLyNhaHang
         }
         public int MainID = 0;
         public string OrderType = "";
-
+        public string TableName = "";
+        public string TableID = "";
 
         string DriverID ;
 
@@ -344,6 +346,7 @@ namespace QuanLyNhaHang
                 // Ra khỏi form Bill List 
                 Them = frm.bonus; //  Them  = false lúc này sẽ hiển thị Bill cần sửa lên dgvPOS
                 BillID = frm.MainID;
+                OrderType = frm.OrderType; //Lấy ordertype để xác định có phải din in ko , nếu là din in thì inner join với BAN để lấy idTable
                 LoadEntries();
               //  LoadData();
 
@@ -357,8 +360,25 @@ namespace QuanLyNhaHang
             {
                 dtTblJoin = new DataTable();
                 dtTblJoin.Clear();
-                DataSet ds = dbTblMain.GetJoin(BillID);
-                dtTblJoin = ds.Tables[0]; //Lay Du lieu cua BillID
+                DataSet ds = new DataSet();
+                if (OrderType.Equals("Din in"))
+                {
+                    ds = dbTblMain.GetJoinTABLE(BillID);
+                    dtTblJoin = ds.Tables[0];
+                    TableName = dtTblJoin.Rows[0]["Tname"].ToString();
+                    TableID = dtTblJoin.Rows[0]["Tid"].ToString();
+                    btnDinIn.Checked = true;
+                    lblWaiter.Visible = true;
+                    lblTable.Visible = true;
+                }
+                else
+                {
+                    ds = dbTblMain.GetJoin(BillID);
+                    dtTblJoin = ds.Tables[0];
+                }
+                
+
+                 //Lay Du lieu cua BillID
                 if (dtTblJoin.Rows[0]["orderType"].ToString() == "Delivery")
                 {
                     btnDelivery.Checked = true;
@@ -370,12 +390,7 @@ namespace QuanLyNhaHang
                     btnTakeAway.Checked = true; lblWaiter.Visible = false; 
                     lblTable.Visible = false;
                 }
-                else
-                {
-                    btnDinIn.Checked = true;
-                    lblWaiter.Visible = true;
-                    lblTable.Visible = true;
-                }
+                
                 dgvPOS.Rows.Clear();
                 foreach (DataRow item in dtTblJoin.Rows)
                 {
@@ -390,6 +405,7 @@ namespace QuanLyNhaHang
                     object[] obj = { detailIDD,proID, proName, qty, price, amount };
                     dgvPOS.Rows.Add(obj);
                 }
+                
                 GetTotal();
 
             }
@@ -529,9 +545,9 @@ received = @received, change = @change where MainID = @ID";
                         dbTblDetail.AddTblDetail(BillID, row.Cells["dgvMaSP"].Value.ToString(), row.Cells["dgvTenSP"].Value.ToString(), int.Parse(row.Cells["dgvQty"].Value.ToString()), float.Parse(row.Cells["dgvPrice"].Value.ToString()), float.Parse(row.Cells["dgvAmount"].Value.ToString()), ref err);
 
                     }
-                    catch (SqlException)
+                    catch (SqlException error)
                     {
-                        MessageBox.Show("Không thêm được. Lỗi rồi!");
+                        MessageBox.Show("Không thêm được. Lỗi rồi!" + error.Message);
                     }
                 }
                 else // Gía trị trong cột dgvDetailID của dgvPOS đã ko còn là 0 mà là giá trị từ tblDetail đổ xuống ( vì khi này là chỉnh sửa , tức giá trị detailID đó đã có trong database
@@ -622,6 +638,9 @@ received = @received, change = @change where MainID = @ID";
             if (frm.TableName != "")
             {
                 lblTable.Text = frm.TableName;
+                TableName = frm.TableName;
+                TableID = frm.TableID;
+                
                 lblTable.Visible = true;
             }
             else
@@ -687,10 +706,11 @@ received = @received, change = @change where MainID = @ID";
                         MessageBox.Show("Xoá thành công!");
                     }
                 }
+                GetTotal();
             }
-            catch (SqlException)
+            catch (SqlException err)
             {
-                MessageBox.Show("Không xóa được. Lỗi rồi!");
+                MessageBox.Show("Không xóa được. Lỗi rồi!" + err.Message);
             }
         }
 
@@ -700,15 +720,25 @@ received = @received, change = @change where MainID = @ID";
             frm.billID = BillID; // Lấy giá trị Bill hiện tại truyền cho frm để có thể update cho dat
             frm.amt = Convert.ToDouble(lblTotal.Text); //truyền vào giá trị để khi ấn checkout hiện lên , giá trị Total hiện lên txtBillAmount
             frm.ShowDialog();
-
-          //  guna2MessageDialog1.Show("Saved Success");
+            Console.WriteLine(TableName + "*****");
+            //  guna2MessageDialog1.Show("Saved Success");
             lblTable.Text = "";
             lblWaiter.Text = "";
             lblWaiter.Visible = false;
             lblTable.Visible = false;
             lblTotal.Text = "0";
-            dgvPOS.Rows.Clear();    
+            dgvPOS.Rows.Clear();
+            UpdateSTATETABLE(TableID, TableName);
 
+        }
+        private void UpdateSTATETABLE(string TID, string TName) // Sau khi thanh toán , chuyển bàn từ đã đặt thành trống
+        {
+            if (dbTable.UpdateStateTable(TID, TName, "Bàn Trống", ref err))
+            {
+                MessageBox.Show("Đã dọn bàn");
+            }
+            else
+                MessageBox.Show(err);
         }
 
         private void hScrollBar1_ValueChanged(object sender, EventArgs e)

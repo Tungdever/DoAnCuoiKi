@@ -83,7 +83,7 @@
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(1343, 15);
+            this.lblTotal.Location = new System.Drawing.Point(1205, 15);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(68, 38);
             this.lblTotal.TabIndex = 1;
@@ -96,7 +96,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1189, 15);
+            this.label2.Location = new System.Drawing.Point(985, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 38);
             this.label2.TabIndex = 1;
@@ -141,7 +141,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPOS.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPOS.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPOS.Location = new System.Drawing.Point(830, 160);
+            this.dgvPOS.Location = new System.Drawing.Point(804, 160);
             this.dgvPOS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvPOS.Name = "dgvPOS";
             this.dgvPOS.ReadOnly = true;
@@ -158,7 +158,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
             this.dgvPOS.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPOS.RowTemplate.Height = 35;
-            this.dgvPOS.Size = new System.Drawing.Size(771, 665);
+            this.dgvPOS.Size = new System.Drawing.Size(609, 665);
             this.dgvPOS.TabIndex = 17;
             this.dgvPOS.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvPOS.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -259,13 +259,12 @@
             // 
             // pnlProduct
             // 
-            this.pnlProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlProduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlProduct.AutoScroll = true;
             this.pnlProduct.Location = new System.Drawing.Point(135, 160);
             this.pnlProduct.Name = "pnlProduct";
-            this.pnlProduct.Size = new System.Drawing.Size(671, 665);
+            this.pnlProduct.Size = new System.Drawing.Size(663, 665);
             this.pnlProduct.TabIndex = 15;
             // 
             // pnlCategory
@@ -276,7 +275,7 @@
             this.pnlCategory.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlCategory.Location = new System.Drawing.Point(3, 160);
             this.pnlCategory.Name = "pnlCategory";
-            this.pnlCategory.Size = new System.Drawing.Size(132, 665);
+            this.pnlCategory.Size = new System.Drawing.Size(130, 665);
             this.pnlCategory.TabIndex = 16;
             // 
             // guna2Button1
@@ -306,12 +305,12 @@
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.guna2Panel2.Location = new System.Drawing.Point(0, 832);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1613, 124);
+            this.guna2Panel2.Size = new System.Drawing.Size(1425, 124);
             this.guna2Panel2.TabIndex = 14;
             // 
             // hScrollBar1
             // 
-            this.hScrollBar1.Location = new System.Drawing.Point(3, 62);
+            this.hScrollBar1.Location = new System.Drawing.Point(-36, 62);
             this.hScrollBar1.Maximum = 300;
             this.hScrollBar1.Name = "hScrollBar1";
             this.hScrollBar1.Size = new System.Drawing.Size(1757, 22);
@@ -330,7 +329,7 @@
             this.btnCheckOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Location = new System.Drawing.Point(998, 4);
+            this.btnCheckOut.Location = new System.Drawing.Point(689, 4);
             this.btnCheckOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(169, 54);
@@ -357,7 +356,7 @@
             this.lblDriverName.BackColor = System.Drawing.Color.Transparent;
             this.lblDriverName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDriverName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDriverName.Location = new System.Drawing.Point(459, 114);
+            this.lblDriverName.Location = new System.Drawing.Point(462, 125);
             this.lblDriverName.Name = "lblDriverName";
             this.lblDriverName.Size = new System.Drawing.Size(69, 32);
             this.lblDriverName.TabIndex = 3;
@@ -394,7 +393,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1613, 106);
+            this.guna2Panel1.Size = new System.Drawing.Size(1425, 118);
             this.guna2Panel1.TabIndex = 13;
             // 
             // PtbExit
@@ -405,7 +404,7 @@
             this.PtbExit.FillColor = System.Drawing.Color.Transparent;
             this.PtbExit.Image = global::QuanLyNhaHang.Properties.Resources.icons8_shutdown_96;
             this.PtbExit.ImageRotate = 0F;
-            this.PtbExit.Location = new System.Drawing.Point(1400, 5);
+            this.PtbExit.Location = new System.Drawing.Point(1212, 5);
             this.PtbExit.Name = "PtbExit";
             this.PtbExit.Size = new System.Drawing.Size(96, 96);
             this.PtbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -440,6 +439,7 @@
             this.btnDinIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnDinIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDinIn.ForeColor = System.Drawing.Color.White;
+            this.btnDinIn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.btnDinIn.Image = global::QuanLyNhaHang.Properties.Resources.icons8_restaurant_din_in;
             this.btnDinIn.ImageSize = new System.Drawing.Size(40, 40);
             this.btnDinIn.Location = new System.Drawing.Point(980, 3);
@@ -464,6 +464,7 @@
             this.btnTakeAway.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnTakeAway.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTakeAway.ForeColor = System.Drawing.Color.White;
+            this.btnTakeAway.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.btnTakeAway.Image = global::QuanLyNhaHang.Properties.Resources.icons8_take_away_food_100;
             this.btnTakeAway.ImageSize = new System.Drawing.Size(40, 40);
             this.btnTakeAway.Location = new System.Drawing.Point(852, 4);
@@ -481,6 +482,7 @@
             this.btnDelivery.BorderRadius = 25;
             this.btnDelivery.BorderThickness = 4;
             this.btnDelivery.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnDelivery.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnDelivery.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelivery.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelivery.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -488,9 +490,10 @@
             this.btnDelivery.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnDelivery.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDelivery.ForeColor = System.Drawing.Color.White;
+            this.btnDelivery.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.btnDelivery.Image = global::QuanLyNhaHang.Properties.Resources.icons8_motorcycle_delivery_100;
             this.btnDelivery.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnDelivery.Location = new System.Drawing.Point(706, 0);
+            this.btnDelivery.Location = new System.Drawing.Point(705, 2);
             this.btnDelivery.Name = "btnDelivery";
             this.btnDelivery.Size = new System.Drawing.Size(114, 104);
             this.btnDelivery.TabIndex = 2;
@@ -540,7 +543,7 @@
             this.btnBillList.ImageSize = new System.Drawing.Size(40, 40);
             this.btnBillList.Location = new System.Drawing.Point(445, 5);
             this.btnBillList.Name = "btnBillList";
-            this.btnBillList.Size = new System.Drawing.Size(106, 97);
+            this.btnBillList.Size = new System.Drawing.Size(106, 106);
             this.btnBillList.TabIndex = 2;
             this.btnBillList.Text = "Bill List";
             this.btnBillList.UseTransparentBackground = true;
@@ -657,13 +660,13 @@
             this.txtSearchProduct.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearchProduct.IconLeft = global::QuanLyNhaHang.Properties.Resources.magnifying_glass;
             this.txtSearchProduct.IconLeftSize = new System.Drawing.Size(35, 35);
-            this.txtSearchProduct.Location = new System.Drawing.Point(12, 114);
+            this.txtSearchProduct.Location = new System.Drawing.Point(6, 117);
             this.txtSearchProduct.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtSearchProduct.Name = "txtSearchProduct";
             this.txtSearchProduct.PasswordChar = '\0';
             this.txtSearchProduct.PlaceholderText = "";
             this.txtSearchProduct.SelectedText = "";
-            this.txtSearchProduct.Size = new System.Drawing.Size(333, 38);
+            this.txtSearchProduct.Size = new System.Drawing.Size(424, 38);
             this.txtSearchProduct.TabIndex = 12;
             this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
             // 
@@ -671,7 +674,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1613, 956);
+            this.ClientSize = new System.Drawing.Size(1425, 956);
             this.Controls.Add(this.txtSearchProduct);
             this.Controls.Add(this.dgvPOS);
             this.Controls.Add(this.lblDriverName);
@@ -682,7 +685,6 @@
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPOS";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPOS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPOS_Load);

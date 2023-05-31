@@ -22,12 +22,12 @@ namespace QuanLyNhaHang.BS_layer
         }
         public DataSet LayPhucVu()
         {
-            return db.ExecuteQueryDataSet("SELECT * FROM NHANVIEN WHERE ChucVu = 'Phuc vu'", CommandType.Text);
+            return db.ExecuteQueryDataSet("SELECT * FROM NHANVIEN WHERE ChucVu = N'Phục Vụ'", CommandType.Text);
         }
 
         public DataSet LayGiaoHang()
         {
-            return db.ExecuteQueryDataSet("SELECT Manv , Ten FROM NHANVIEN WHERE ChucVu = 'Giao Hang'", CommandType.Text);
+            return db.ExecuteQueryDataSet("SELECT Manv , Ten FROM NHANVIEN WHERE ChucVu = N'Giao Hàng'", CommandType.Text);
         }
         public DataSet TimKiemNhanVien(string str)
         {

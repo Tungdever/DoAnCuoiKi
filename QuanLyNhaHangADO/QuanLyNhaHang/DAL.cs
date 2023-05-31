@@ -10,7 +10,7 @@ namespace QuanLyNhaHang
 {
     class DAL
     {
-        string ConnStr = "Data Source=DESKTOP-EHURID8\\SQLEXPRESS;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
+        string ConnStr = "Data Source=DESKTOP-EHURID8\\SQLEXPRESS;Initial Catalog=QuanLyNhaHang1;Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;

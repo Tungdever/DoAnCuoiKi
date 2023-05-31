@@ -22,7 +22,7 @@ namespace QuanLyNhaHang.BS_layer
         }
         public DataSet LoadMenu()
         {
-            return db.ExecuteQueryDataSet("select * from SanPham", CommandType.Text);
+            return db.ExecuteQueryDataSet("select * from SanPham " , CommandType.Text);
         }
         public DataSet TimKiemSanPham(string str)
         {

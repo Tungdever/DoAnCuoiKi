@@ -54,7 +54,7 @@ namespace QuanLyNhaHang
 
         private void frmProductAdd_Load(object sender, EventArgs e)
         {
-
+           //txtCateName.Text = dbDM.LayTenDanhMuc(cbbCateID.Text);
         }
         string filepath;
         private void btnBrowse_Click(object sender, EventArgs e)

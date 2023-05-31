@@ -37,7 +37,7 @@ namespace QuanLyNhaHang.BS_layer
         }
         public string LayTenDanhMuc(string MaDM)
         {
-            DataSet ds = db.ExecuteQueryDataSet("select TenDM from DanhMuc where MaDM='" + MaDM + "'", CommandType.Text);
+            DataSet ds = db.ExecuteQueryDataSet("select TenDM from DanhMuc where MaDM= '" + MaDM + "'", CommandType.Text);
             DataTable dtDM = ds.Tables[0];
             if (dtDM.Rows.Count > 0)
             {
