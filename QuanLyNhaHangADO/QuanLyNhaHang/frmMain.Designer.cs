@@ -129,6 +129,7 @@
             this.btnStaff.Size = new System.Drawing.Size(211, 45);
             this.btnStaff.TabIndex = 5;
             this.btnStaff.Text = "Staff";
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
             // btnTables
             // 
@@ -151,6 +152,7 @@
             this.btnTables.Size = new System.Drawing.Size(211, 45);
             this.btnTables.TabIndex = 4;
             this.btnTables.Text = "Tables";
+            this.btnTables.Click += new System.EventHandler(this.btnTables_Click);
             // 
             // btnCategory
             // 
@@ -219,7 +221,6 @@
             this.btnHome.Size = new System.Drawing.Size(211, 45);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Home";
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click_1);
             // 
             // pictureBox1
             // 

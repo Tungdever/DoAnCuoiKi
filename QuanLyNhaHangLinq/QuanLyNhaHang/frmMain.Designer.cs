@@ -129,6 +129,7 @@
             this.btnStaff.Size = new System.Drawing.Size(211, 45);
             this.btnStaff.TabIndex = 5;
             this.btnStaff.Text = "Staff";
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
             // btnTables
             // 
@@ -151,6 +152,7 @@
             this.btnTables.Size = new System.Drawing.Size(211, 45);
             this.btnTables.TabIndex = 4;
             this.btnTables.Text = "Tables";
+            this.btnTables.Click += new System.EventHandler(this.btnTables_Click);
             // 
             // btnCategory
             // 
@@ -219,7 +221,6 @@
             this.btnHome.Size = new System.Drawing.Size(211, 45);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Home";
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // pictureBox1
             // 
@@ -298,7 +299,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlControlBox.ResumeLayout(false);

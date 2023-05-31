@@ -283,7 +283,6 @@
             // 
             // txtImage
             // 
-            this.txtImage.Image = global::QuanLyNhaHang.Properties.Resources.brand_identity;
             this.txtImage.ImageRotate = 0F;
             this.txtImage.Location = new System.Drawing.Point(750, 350);
             this.txtImage.Name = "txtImage";
