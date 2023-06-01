@@ -137,3 +137,4 @@ C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\std
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmPrint.resources
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmReport.resources
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmSaleCatReport.resources
+C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.Select.frmTimeSelect.resources

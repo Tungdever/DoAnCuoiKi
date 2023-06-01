@@ -158,16 +158,22 @@
     <Compile Include="frmTableAdd.Designer.cs">
       <DependentUpon>frmTableAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTableSelect.cs">
+    <Compile Include="Select\frmTableSelect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTableSelect.Designer.cs">
+    <Compile Include="Select\frmTableSelect.Designer.cs">
       <DependentUpon>frmTableSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmWaiterSelect.cs">
+    <Compile Include="Select\frmTimeSelect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmWaiterSelect.Designer.cs">
+    <Compile Include="Select\frmTimeSelect.Designer.cs">
+      <DependentUpon>frmTimeSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Select\frmWaiterSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select\frmWaiterSelect.Designer.cs">
       <DependentUpon>frmWaiterSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="productForm.cs">
@@ -213,6 +219,12 @@
     </Compile>
     <Compile Include="tableForm.Designer.cs">
       <DependentUpon>tableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucClock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucClock.Designer.cs">
+      <DependentUpon>ucClock.cs</DependentUpon>
     </Compile>
     <Compile Include="ucProduct.cs">
       <SubType>UserControl</SubType>
@@ -265,10 +277,13 @@
     <EmbeddedResource Include="frmTableAdd.resx">
       <DependentUpon>frmTableAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTableSelect.resx">
+    <EmbeddedResource Include="Select\frmTableSelect.resx">
       <DependentUpon>frmTableSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmWaiterSelect.resx">
+    <EmbeddedResource Include="Select\frmTimeSelect.resx">
+      <DependentUpon>frmTimeSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Select\frmWaiterSelect.resx">
       <DependentUpon>frmWaiterSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="productForm.resx">
@@ -276,14 +291,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Reports\rptBill.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptBill.cs</LastGenOutput>
@@ -305,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="tableForm.resx">
       <DependentUpon>tableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucClock.resx">
+      <DependentUpon>ucClock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucProduct.resx">
       <DependentUpon>ucProduct.cs</DependentUpon>
@@ -457,6 +469,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-sales-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOCK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOCK1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOCK3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

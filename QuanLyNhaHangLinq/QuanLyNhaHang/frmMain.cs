@@ -57,5 +57,10 @@ namespace QuanLyNhaHang
         {
             AddControls(new staffForm());
         }
+
+        private void btnPOS_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -159,6 +159,12 @@
     <Compile Include="TAIKHOAN.cs">
       <DependentUpon>QLNhaHangModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="tblDetail.cs">
+      <DependentUpon>QLNhaHangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMain.cs">
+      <DependentUpon>QLNhaHangModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="categoryForm.resx">
       <DependentUpon>categoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +286,10 @@
     <None Include="Resources\add-button.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\identity-document-computer-icons-business-clip-art-id-card-removebg-preview %281%29.png" />
+    <None Include="Resources\677252.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="QLNhaHangModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLNhaHangModel.edmx</DependentUpon>
@@ -290,8 +300,6 @@
       <DependentUpon>QLNhaHangModel.edmx</DependentUpon>
       <LastGenOutput>QLNhaHangModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\identity-document-computer-icons-business-clip-art-id-card-removebg-preview %281%29.png" />
-    <None Include="Resources\677252.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

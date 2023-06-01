@@ -1,5 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyNhaHang" Class="QuanLyNhaHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=QuanLyNhaHang;Integrated Security=True" SettingsObjectName="QuanLyNhaHang.Properties.Settings" SettingsPropertyName="QuanLyNhaHangConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyNhaHang1" Class="QuanLyNhaHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-EHURID8;Initial Catalog=QuanLyNhaHang1;Integrated Security=True" SettingsObjectName="QuanLyNhaHang.Properties.Settings" SettingsPropertyName="QuanLyNhaHang1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BAN" Member="BANs">
+    <Type Name="BAN">
+      <Column Name="Tid" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tstate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.DANHMUC" Member="DANHMUCs">
     <Type Name="DANHMUC">
       <Column Name="MaDM" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -7,12 +14,21 @@
       <Association Name="DANHMUC_SANPHAM" Member="SANPHAMs" ThisKey="MaDM" OtherKey="MaLoaiSP" Type="SANPHAM" />
     </Type>
   </Table>
+  <Table Name="dbo.NHANVIEN" Member="NHANVIENs">
+    <Type Name="NHANVIEN">
+      <Column Name="Manv" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ChucVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Luong" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.SANPHAM" Member="SANPHAMs">
     <Type Name="SANPHAM">
       <Column Name="MaSP" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenSP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaLoaiSP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="TenLoaiSP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TenLoaiSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GiaSP" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="AnhSP" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="DANHMUC_SANPHAM" Member="DANHMUC" ThisKey="MaLoaiSP" OtherKey="MaDM" Type="DANHMUC" IsForeignKey="true" />
@@ -26,19 +42,32 @@
       <Column Name="CapDoQuyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.NHANVIEN" Member="NHANVIENs">
-    <Type Name="NHANVIEN">
-      <Column Name="Manv" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Ten" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SDT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ChucVu" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+  <Table Name="dbo.tblDetails" Member="tblDetails">
+    <Type Name="tblDetail">
+      <Column Name="MaBill" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="proID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="proName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="qty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.BAN" Member="BANs">
-    <Type Name="BAN">
-      <Column Name="Tid" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Tname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Tstate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+  <Table Name="dbo.tblMain" Member="tblMains">
+    <Type Name="tblMain">
+      <Column Name="aDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="aTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TableName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WaiterName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="orderType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="received" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="change" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="driverID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cusName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cusPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaBill" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

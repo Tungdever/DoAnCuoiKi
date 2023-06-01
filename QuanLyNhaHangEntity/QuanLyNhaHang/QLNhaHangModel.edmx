@@ -4,14 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QuanLyNhaHangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QuanLyNhaHangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BAN">
           <Key>
             <PropertyRef Name="Tid" />
           </Key>
           <Property Name="Tid" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Tname" Type="varchar" MaxLength="50" />
-          <Property Name="Tstate" Type="varchar" MaxLength="50" />
+          <Property Name="Tname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tstate" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="DANHMUC">
           <Key>
@@ -25,18 +25,19 @@
             <PropertyRef Name="Manv" />
           </Key>
           <Property Name="Manv" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Ten" Type="varchar" MaxLength="50" />
+          <Property Name="Ten" Type="nvarchar" MaxLength="50" />
           <Property Name="SDT" Type="varchar" MaxLength="50" />
-          <Property Name="ChucVu" Type="varchar" MaxLength="50" />
+          <Property Name="ChucVu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Luong" Type="float" />
         </EntityType>
         <EntityType Name="SANPHAM">
           <Key>
             <PropertyRef Name="MaSP" />
           </Key>
           <Property Name="MaSP" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TenSP" Type="varchar" MaxLength="50" />
+          <Property Name="TenSP" Type="nvarchar" MaxLength="50" />
           <Property Name="MaLoaiSP" Type="varchar" MaxLength="50" />
-          <Property Name="TenLoaiSP" Type="varchar" MaxLength="50" />
+          <Property Name="TenLoaiSP" Type="nvarchar" MaxLength="50" />
           <Property Name="GiaSP" Type="float" />
           <Property Name="AnhSP" Type="varbinary(max)" />
         </EntityType>
@@ -49,7 +50,37 @@
           <Property Name="MaNV" Type="varchar" MaxLength="10" />
           <Property Name="CapDoQuyen" Type="int" />
         </EntityType>
-        <Association Name="FK__SANPHAM__AnhSP__5441852A">
+        <EntityType Name="tblDetails">
+          <Key>
+            <PropertyRef Name="DetailID" />
+          </Key>
+          <Property Name="MaBill" Type="int" />
+          <Property Name="proID" Type="varchar" MaxLength="50" />
+          <Property Name="proName" Type="nvarchar" MaxLength="50" />
+          <Property Name="qty" Type="int" />
+          <Property Name="price" Type="float" />
+          <Property Name="amount" Type="float" />
+          <Property Name="DetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblMain">
+          <Key>
+            <PropertyRef Name="MaBill" />
+          </Key>
+          <Property Name="aDate" Type="date" />
+          <Property Name="aTime" Type="varchar" MaxLength="50" />
+          <Property Name="TableName" Type="nvarchar" MaxLength="50" />
+          <Property Name="WaiterName" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="varchar" MaxLength="15" />
+          <Property Name="orderType" Type="varchar" MaxLength="20" />
+          <Property Name="total" Type="float" />
+          <Property Name="received" Type="float" />
+          <Property Name="change" Type="float" />
+          <Property Name="driverID" Type="varchar" MaxLength="50" />
+          <Property Name="cusName" Type="nvarchar" MaxLength="50" />
+          <Property Name="cusPhone" Type="varchar" MaxLength="50" />
+          <Property Name="MaBill" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__SANPHAM__AnhSP__3B75D760">
           <End Role="DANHMUC" Type="Self.DANHMUC" Multiplicity="0..1" />
           <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
           <ReferentialConstraint>
@@ -67,34 +98,55 @@
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__SANPHAM__AnhSP__5441852A" Association="Self.FK__SANPHAM__AnhSP__5441852A">
+          <EntitySet Name="tblDetails" EntityType="Self.tblDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMain" EntityType="Self.tblMain" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__SANPHAM__AnhSP__3B75D760" Association="Self.FK__SANPHAM__AnhSP__3B75D760">
             <End Role="DANHMUC" EntitySet="DANHMUC" />
             <End Role="SANPHAM" EntitySet="SANPHAM" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyNhaHangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BAN">
+          <Key>
+            <PropertyRef Name="Tid" />
+          </Key>
+          <Property Name="Tid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tstate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="DANHMUC">
           <Key>
             <PropertyRef Name="MaDM" />
           </Key>
           <Property Name="MaDM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenDM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__AnhSP__5441852A" FromRole="DANHMUC" ToRole="SANPHAM" />
+          <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__AnhSP__3B75D760" FromRole="DANHMUC" ToRole="SANPHAM" />
+        </EntityType>
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="Manv" />
+          </Key>
+          <Property Name="Manv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Luong" Type="Double" />
         </EntityType>
         <EntityType Name="SANPHAM">
           <Key>
             <PropertyRef Name="MaSP" />
           </Key>
           <Property Name="MaSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MaLoaiSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TenLoaiSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TenLoaiSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GiaSP" Type="Double" />
           <Property Name="AnhSP" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="DANHMUC" Relationship="Self.FK__SANPHAM__AnhSP__5441852A" FromRole="SANPHAM" ToRole="DANHMUC" />
+          <NavigationProperty Name="DANHMUC" Relationship="Self.FK__SANPHAM__AnhSP__3B75D760" FromRole="SANPHAM" ToRole="DANHMUC" />
         </EntityType>
         <EntityType Name="TAIKHOAN">
           <Key>
@@ -105,7 +157,37 @@
           <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="CapDoQuyen" Type="Int32" />
         </EntityType>
-        <Association Name="FK__SANPHAM__AnhSP__5441852A">
+        <EntityType Name="tblDetail">
+          <Key>
+            <PropertyRef Name="DetailID" />
+          </Key>
+          <Property Name="MaBill" Type="Int32" />
+          <Property Name="proID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="proName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="qty" Type="Int32" />
+          <Property Name="price" Type="Double" />
+          <Property Name="amount" Type="Double" />
+          <Property Name="DetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="tblMain">
+          <Key>
+            <PropertyRef Name="MaBill" />
+          </Key>
+          <Property Name="aDate" Type="DateTime" Precision="0" />
+          <Property Name="aTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WaiterName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="orderType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="total" Type="Double" />
+          <Property Name="received" Type="Double" />
+          <Property Name="change" Type="Double" />
+          <Property Name="driverID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cusPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaBill" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="FK__SANPHAM__AnhSP__3B75D760">
           <End Role="DANHMUC" Type="Self.DANHMUC" Multiplicity="0..1" />
           <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
           <ReferentialConstraint>
@@ -118,44 +200,49 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="QuanLyNhaHangEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BANs" EntityType="Self.BAN" />
           <EntitySet Name="DANHMUCs" EntityType="Self.DANHMUC" />
+          <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
           <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
           <EntitySet Name="TAIKHOANs" EntityType="Self.TAIKHOAN" />
-          <AssociationSet Name="FK__SANPHAM__AnhSP__5441852A" Association="Self.FK__SANPHAM__AnhSP__5441852A">
+          <EntitySet Name="tblDetails" EntityType="Self.tblDetail" />
+          <EntitySet Name="tblMains" EntityType="Self.tblMain" />
+          <AssociationSet Name="FK__SANPHAM__AnhSP__3B75D760" Association="Self.FK__SANPHAM__AnhSP__3B75D760">
             <End Role="DANHMUC" EntitySet="DANHMUCs" />
             <End Role="SANPHAM" EntitySet="SANPHAMs" />
           </AssociationSet>
-          <EntitySet Name="NHANVIENs" EntityType="QuanLyNhaHangModel.NHANVIEN" />
-          <EntitySet Name="BANs" EntityType="QuanLyNhaHangModel.BAN" />
         </EntityContainer>
-        <EntityType Name="NHANVIEN">
-          <Key>
-            <PropertyRef Name="Manv" />
-          </Key>
-          <Property Name="Manv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="BAN">
-          <Key>
-            <PropertyRef Name="Tid" />
-          </Key>
-          <Property Name="Tid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Tname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Tstate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="QuanLyNhaHangModelStoreContainer" CdmEntityContainer="QuanLyNhaHangEntities">
+          <EntitySetMapping Name="BANs">
+            <EntityTypeMapping TypeName="QuanLyNhaHangModel.BAN">
+              <MappingFragment StoreEntitySet="BAN">
+                <ScalarProperty Name="Tid" ColumnName="Tid" />
+                <ScalarProperty Name="Tname" ColumnName="Tname" />
+                <ScalarProperty Name="Tstate" ColumnName="Tstate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="DANHMUCs">
             <EntityTypeMapping TypeName="QuanLyNhaHangModel.DANHMUC">
               <MappingFragment StoreEntitySet="DANHMUC">
                 <ScalarProperty Name="MaDM" ColumnName="MaDM" />
                 <ScalarProperty Name="TenDM" ColumnName="TenDM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHANVIENs">
+            <EntityTypeMapping TypeName="QuanLyNhaHangModel.NHANVIEN">
+              <MappingFragment StoreEntitySet="NHANVIEN">
+                <ScalarProperty Name="Manv" ColumnName="Manv" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="Luong" ColumnName="Luong" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -181,22 +268,35 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="NHANVIENs">
-            <EntityTypeMapping TypeName="QuanLyNhaHangModel.NHANVIEN">
-              <MappingFragment StoreEntitySet="NHANVIEN">
-                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
-                <ScalarProperty Name="SDT" ColumnName="SDT" />
-                <ScalarProperty Name="Ten" ColumnName="Ten" />
-                <ScalarProperty Name="Manv" ColumnName="Manv" />
+          <EntitySetMapping Name="tblDetails">
+            <EntityTypeMapping TypeName="QuanLyNhaHangModel.tblDetail">
+              <MappingFragment StoreEntitySet="tblDetails">
+                <ScalarProperty Name="MaBill" ColumnName="MaBill" />
+                <ScalarProperty Name="proID" ColumnName="proID" />
+                <ScalarProperty Name="proName" ColumnName="proName" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="DetailID" ColumnName="DetailID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="BANs">
-            <EntityTypeMapping TypeName="QuanLyNhaHangModel.BAN">
-              <MappingFragment StoreEntitySet="BAN">
-                <ScalarProperty Name="Tstate" ColumnName="Tstate" />
-                <ScalarProperty Name="Tname" ColumnName="Tname" />
-                <ScalarProperty Name="Tid" ColumnName="Tid" />
+          <EntitySetMapping Name="tblMains">
+            <EntityTypeMapping TypeName="QuanLyNhaHangModel.tblMain">
+              <MappingFragment StoreEntitySet="tblMain">
+                <ScalarProperty Name="aDate" ColumnName="aDate" />
+                <ScalarProperty Name="aTime" ColumnName="aTime" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="WaiterName" ColumnName="WaiterName" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="orderType" ColumnName="orderType" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="received" ColumnName="received" />
+                <ScalarProperty Name="change" ColumnName="change" />
+                <ScalarProperty Name="driverID" ColumnName="driverID" />
+                <ScalarProperty Name="cusName" ColumnName="cusName" />
+                <ScalarProperty Name="cusPhone" ColumnName="cusPhone" />
+                <ScalarProperty Name="MaBill" ColumnName="MaBill" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -21,7 +21,7 @@ namespace QuanLyNhaHang.BS_layer
             dt.Columns.Add("ChucVu");
             foreach (var p in nv)
             {
-                dt.Rows.Add(p.Manv,p.Ten,p.SDT,p.ChucVu);
+                dt.Rows.Add(p.Manv,p.Ten,p.SDT,p.ChucVu, p.Luo);
             }
             return dt;
         }

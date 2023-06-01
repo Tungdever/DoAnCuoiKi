@@ -73,7 +73,7 @@
             // 
             this.btnLogOut.AutoRoundedCorners = true;
             this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnLogOut.BorderRadius = 37;
+            this.btnLogOut.BorderRadius = 41;
             this.btnLogOut.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnLogOut.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnLogOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -86,10 +86,10 @@
             this.btnLogOut.Image = global::QuanLyNhaHang.Properties.Resources.icons8_logout_100;
             this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogOut.ImageSize = new System.Drawing.Size(70, 70);
-            this.btnLogOut.Location = new System.Drawing.Point(-16, 901);
+            this.btnLogOut.Location = new System.Drawing.Point(-15, 869);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(288, 77);
+            this.btnLogOut.Size = new System.Drawing.Size(288, 85);
             this.btnLogOut.TabIndex = 6;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
@@ -98,7 +98,7 @@
             // 
             this.btnReport.AutoRoundedCorners = true;
             this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnReport.BorderRadius = 27;
+            this.btnReport.BorderRadius = 33;
             this.btnReport.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnReport.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -111,10 +111,10 @@
             this.btnReport.Image = global::QuanLyNhaHang.Properties.Resources.icons8_report_64__1_;
             this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReport.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnReport.Location = new System.Drawing.Point(3, 797);
+            this.btnReport.Location = new System.Drawing.Point(-3, 792);
             this.btnReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(237, 56);
+            this.btnReport.Size = new System.Drawing.Size(237, 69);
             this.btnReport.TabIndex = 6;
             this.btnReport.Text = "Report";
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
@@ -123,7 +123,7 @@
             // 
             this.btnKitchen.AutoRoundedCorners = true;
             this.btnKitchen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnKitchen.BorderRadius = 27;
+            this.btnKitchen.BorderRadius = 33;
             this.btnKitchen.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnKitchen.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnKitchen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -136,10 +136,10 @@
             this.btnKitchen.Image = global::QuanLyNhaHang.Properties.Resources.chef__1_;
             this.btnKitchen.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnKitchen.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnKitchen.Location = new System.Drawing.Point(3, 707);
+            this.btnKitchen.Location = new System.Drawing.Point(-3, 690);
             this.btnKitchen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKitchen.Name = "btnKitchen";
-            this.btnKitchen.Size = new System.Drawing.Size(237, 56);
+            this.btnKitchen.Size = new System.Drawing.Size(237, 69);
             this.btnKitchen.TabIndex = 6;
             this.btnKitchen.Text = "Kitchen";
             this.btnKitchen.Click += new System.EventHandler(this.btnKitchen_Click);
@@ -148,7 +148,7 @@
             // 
             this.btnPOS.AutoRoundedCorners = true;
             this.btnPOS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnPOS.BorderRadius = 27;
+            this.btnPOS.BorderRadius = 33;
             this.btnPOS.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnPOS.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnPOS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -161,10 +161,10 @@
             this.btnPOS.Image = global::QuanLyNhaHang.Properties.Resources.point_of_sale__1_;
             this.btnPOS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPOS.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnPOS.Location = new System.Drawing.Point(0, 603);
+            this.btnPOS.Location = new System.Drawing.Point(-3, 582);
             this.btnPOS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPOS.Name = "btnPOS";
-            this.btnPOS.Size = new System.Drawing.Size(237, 56);
+            this.btnPOS.Size = new System.Drawing.Size(237, 69);
             this.btnPOS.TabIndex = 6;
             this.btnPOS.Text = "POS";
             this.btnPOS.Click += new System.EventHandler(this.btnPOS_Click);
@@ -173,7 +173,7 @@
             // 
             this.btnStaff.AutoRoundedCorners = true;
             this.btnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnStaff.BorderRadius = 27;
+            this.btnStaff.BorderRadius = 33;
             this.btnStaff.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnStaff.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnStaff.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -186,10 +186,10 @@
             this.btnStaff.Image = global::QuanLyNhaHang.Properties.Resources.staff;
             this.btnStaff.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStaff.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnStaff.Location = new System.Drawing.Point(0, 499);
+            this.btnStaff.Location = new System.Drawing.Point(-3, 489);
             this.btnStaff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Size = new System.Drawing.Size(237, 56);
+            this.btnStaff.Size = new System.Drawing.Size(237, 69);
             this.btnStaff.TabIndex = 5;
             this.btnStaff.Text = "Staff";
             this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
@@ -198,7 +198,7 @@
             // 
             this.btnTables.AutoRoundedCorners = true;
             this.btnTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnTables.BorderRadius = 27;
+            this.btnTables.BorderRadius = 33;
             this.btnTables.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnTables.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnTables.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -211,10 +211,10 @@
             this.btnTables.Image = global::QuanLyNhaHang.Properties.Resources.table;
             this.btnTables.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTables.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnTables.Location = new System.Drawing.Point(0, 418);
+            this.btnTables.Location = new System.Drawing.Point(-3, 397);
             this.btnTables.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTables.Name = "btnTables";
-            this.btnTables.Size = new System.Drawing.Size(237, 56);
+            this.btnTables.Size = new System.Drawing.Size(237, 69);
             this.btnTables.TabIndex = 4;
             this.btnTables.Text = "Tables";
             this.btnTables.Click += new System.EventHandler(this.btnTables_Click);
@@ -223,7 +223,7 @@
             // 
             this.btnCategory.AutoRoundedCorners = true;
             this.btnCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnCategory.BorderRadius = 27;
+            this.btnCategory.BorderRadius = 33;
             this.btnCategory.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnCategory.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -236,10 +236,10 @@
             this.btnCategory.Image = global::QuanLyNhaHang.Properties.Resources.category__1_;
             this.btnCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCategory.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnCategory.Location = new System.Drawing.Point(3, 228);
+            this.btnCategory.Location = new System.Drawing.Point(0, 213);
             this.btnCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCategory.Name = "btnCategory";
-            this.btnCategory.Size = new System.Drawing.Size(237, 56);
+            this.btnCategory.Size = new System.Drawing.Size(237, 69);
             this.btnCategory.TabIndex = 3;
             this.btnCategory.Text = "Categories";
             this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
@@ -248,7 +248,7 @@
             // 
             this.btnProduct.AutoRoundedCorners = true;
             this.btnProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnProduct.BorderRadius = 27;
+            this.btnProduct.BorderRadius = 33;
             this.btnProduct.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnProduct.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -261,10 +261,10 @@
             this.btnProduct.Image = global::QuanLyNhaHang.Properties.Resources.products__1_;
             this.btnProduct.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProduct.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnProduct.Location = new System.Drawing.Point(3, 329);
+            this.btnProduct.Location = new System.Drawing.Point(-3, 308);
             this.btnProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(237, 56);
+            this.btnProduct.Size = new System.Drawing.Size(237, 69);
             this.btnProduct.TabIndex = 2;
             this.btnProduct.Text = "Product";
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
@@ -273,7 +273,7 @@
             // 
             this.btnHome.AutoRoundedCorners = true;
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnHome.BorderRadius = 27;
+            this.btnHome.BorderRadius = 33;
             this.btnHome.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnHome.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -286,10 +286,10 @@
             this.btnHome.Image = global::QuanLyNhaHang.Properties.Resources.home;
             this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHome.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnHome.Location = new System.Drawing.Point(3, 139);
+            this.btnHome.Location = new System.Drawing.Point(0, 122);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(237, 56);
+            this.btnHome.Size = new System.Drawing.Size(237, 69);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Home";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click_1);
