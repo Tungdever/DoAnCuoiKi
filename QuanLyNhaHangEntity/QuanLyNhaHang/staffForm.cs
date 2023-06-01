@@ -36,9 +36,6 @@ namespace QuanLyNhaHang
         {
             frmStaffAdd frm = new frmStaffAdd();
             frm.txtStaffID.ReadOnly = false;
-            frm.txtStaffName.ReadOnly = false;
-            frm.txtStaffPhone.ReadOnly = false;
-            frm.txtStaffRole.ReadOnly = false;
             frm.ShowDialog();
             LoadData();
         }
@@ -66,10 +63,12 @@ namespace QuanLyNhaHang
                 if (dgvStaff.CurrentCell.OwningColumn.Name == "dgvEdit")
                 {
                     frmStaffAdd frm = new frmStaffAdd();
+                    frm.txtStaffID.ReadOnly = true;
                     frm.txtStaffID.Text = dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString();
                     frm.txtStaffName.Text = dgvStaff.CurrentRow.Cells["dgvTen"].Value.ToString();
                     frm.txtStaffPhone.Text = dgvStaff.CurrentRow.Cells["dgvSDT"].Value.ToString();
                     frm.txtStaffRole.Text = dgvStaff.CurrentRow.Cells["dgvChucVu"].Value.ToString();
+                    frm.txtSalary.Text = dgvStaff.CurrentRow.Cells["dgvLuong"].Value.ToString();
                     frm.ShowDialog();
                     LoadData();
                 }

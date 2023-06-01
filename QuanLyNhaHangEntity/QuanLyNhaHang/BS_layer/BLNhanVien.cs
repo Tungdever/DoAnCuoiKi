@@ -19,9 +19,14 @@ namespace QuanLyNhaHang.BS_layer
             dt.Columns.Add("Ten");
             dt.Columns.Add("SDT");
             dt.Columns.Add("ChucVu");
+            dt.Columns.Add("Luong");
             foreach (var p in nv)
             {
+<<<<<<< HEAD
                 dt.Rows.Add(p.Manv,p.Ten,p.SDT,p.ChucVu, p.Luo);
+=======
+                dt.Rows.Add(p.Manv,p.Ten,p.SDT,p.ChucVu, p.Luong);
+>>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5
             }
             return dt;
         }
@@ -33,7 +38,7 @@ namespace QuanLyNhaHang.BS_layer
                                select nv;
             return NhanVienList.ToList();
         }
-        public bool ThemNhanVien(string Manv, string Ten, string SDT, string ChucVu, ref string err)
+        public bool ThemNhanVien(string Manv, string Ten, string SDT, string ChucVu, float Luong, ref string err)
         {
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
             NHANVIEN nv = new NHANVIEN();
@@ -41,6 +46,7 @@ namespace QuanLyNhaHang.BS_layer
             nv.Ten = Ten;
             nv.SDT = SDT;
             nv.ChucVu = ChucVu;
+            nv.Luong = Luong;
             qlnhEntity.NHANVIENs.Add(nv);
             qlnhEntity.SaveChanges();
             return true;
@@ -55,7 +61,7 @@ namespace QuanLyNhaHang.BS_layer
             qlnhEntity.SaveChanges();
             return true;
         }
-        public bool CapnhatNhanVien(string Manv, string Ten, string SDT, string ChucVu, ref string err)
+        public bool CapnhatNhanVien(string Manv, string Ten, string SDT, string ChucVu, float Luong, ref string err)
         {
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
             var nvQuerry = (from nv in qlnhEntity.NHANVIENs
@@ -66,6 +72,7 @@ namespace QuanLyNhaHang.BS_layer
                 nvQuerry.Ten = Ten;
                 nvQuerry.SDT = SDT;
                 nvQuerry.ChucVu = ChucVu;
+                nvQuerry.Luong = Luong;
                 qlnhEntity.SaveChanges();
             }
             return true;

@@ -14,7 +14,6 @@ namespace QuanLyNhaHang
 {
     public partial class frmCategoryAdd : Form
     {
-        DataTable dtDM = null;
         string err;
         BLDanhMuc dbDM = new BLDanhMuc();
         public frmCategoryAdd()

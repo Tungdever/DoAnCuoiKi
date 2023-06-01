@@ -29,14 +29,14 @@ namespace QuanLyNhaHang
         {
             if(txtStaffID.ReadOnly == true)
             {
-                dbNV.CapNhatNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, ref err );
+                dbNV.CapNhatNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text), ref err );
                 MessageBox.Show("Đã sửa xong!");
             }
             else
             {
                 try
                 {
-                    dbNV.ThemNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, ref err);
+                    dbNV.ThemNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text), ref err);
                     MessageBox.Show("Đã thêm xong!");
                 }
                 catch 
@@ -47,9 +47,6 @@ namespace QuanLyNhaHang
             this.Close();
         }
 
-        private void txtStaffName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

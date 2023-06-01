@@ -103,6 +103,7 @@ C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangL
 C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
 C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
 C:\Users\DELL\Downloads\DoAnCuoiKi-main (Linq)(2)\DoAnCuoiKi-main\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
+<<<<<<< HEAD
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe.config
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.pdb
@@ -125,3 +126,27 @@ C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\Qu
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
+=======
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe.config
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.pdb
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\bin\Debug\Guna.UI2.dll
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.AssemblyReference.cache
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.SuggestedBindingRedirects.cache
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.categoryForm.resources
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmCategoryAdd.resources
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmLogin.resources
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmMain.resources
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmProductAdd.resources
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmStaffAdd.resources
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmTableAdd.resources
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.productForm.resources
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.Properties.Resources.resources
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.staffForm.resources
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.tableForm.resources
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.GenerateResource.cache
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CoreCompileInputs.cache
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
+D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
+>>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5

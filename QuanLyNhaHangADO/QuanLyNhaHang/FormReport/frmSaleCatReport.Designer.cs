@@ -80,7 +80,7 @@
             this.label2.Size = new System.Drawing.Size(103, 27);
             this.label2.TabIndex = 2;
             this.label2.Text = "End Date";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+
             // 
             // btnReport
             // 
@@ -114,7 +114,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmSaleCatReport";
             this.Text = "frmSaleCat";
-            this.Load += new System.EventHandler(this.frmSaleCat_Load);
+
             this.ResumeLayout(false);
             this.PerformLayout();
 

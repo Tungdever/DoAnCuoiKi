@@ -28,20 +28,19 @@ namespace QuanLyNhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtStaffID.ReadOnly == true)
+            if(txtStaffID.ReadOnly == true )
             {
-                dbNV.CapNhatNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, ref err);
-                // Load lại dữ liệu trên DataGridView
+                dbNV.CapnhatNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text),ref err);
                 MessageBox.Show("Đã sửa xong!");
             }
             else
             {
                 try
                 {
-                    dbNV.ThemNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, ref err);
+                    dbNV.ThemNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text), ref err);
                     MessageBox.Show("Đã thêm xong!");
                 }
-                catch (SqlException)
+                catch(SqlException)
                 {
                     MessageBox.Show("Không thêm được. Lỗi rồi!");
                 }

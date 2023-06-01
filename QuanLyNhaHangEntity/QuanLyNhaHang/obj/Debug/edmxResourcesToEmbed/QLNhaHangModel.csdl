@@ -1,24 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="QuanLyNhaHangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BAN">
+    <Key>
+      <PropertyRef Name="Tid" />
+    </Key>
+    <Property Name="Tid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tstate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="DANHMUC">
     <Key>
       <PropertyRef Name="MaDM" />
     </Key>
     <Property Name="MaDM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TenDM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__AnhSP__5441852A" FromRole="DANHMUC" ToRole="SANPHAM" />
+    <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__AnhSP__3B75D760" FromRole="DANHMUC" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="Manv" />
+    </Key>
+    <Property Name="Manv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Luong" Type="Double" />
   </EntityType>
   <EntityType Name="SANPHAM">
     <Key>
       <PropertyRef Name="MaSP" />
     </Key>
     <Property Name="MaSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MaLoaiSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="TenLoaiSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenLoaiSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GiaSP" Type="Double" />
     <Property Name="AnhSP" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <NavigationProperty Name="DANHMUC" Relationship="Self.FK__SANPHAM__AnhSP__5441852A" FromRole="SANPHAM" ToRole="DANHMUC" />
+    <NavigationProperty Name="DANHMUC" Relationship="Self.FK__SANPHAM__AnhSP__3B75D760" FromRole="SANPHAM" ToRole="DANHMUC" />
   </EntityType>
   <EntityType Name="TAIKHOAN">
     <Key>
@@ -29,7 +47,37 @@
     <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="CapDoQuyen" Type="Int32" />
   </EntityType>
-  <Association Name="FK__SANPHAM__AnhSP__5441852A">
+  <EntityType Name="tblDetail">
+    <Key>
+      <PropertyRef Name="DetailID" />
+    </Key>
+    <Property Name="MaBill" Type="Int32" />
+    <Property Name="proID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="proName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qty" Type="Int32" />
+    <Property Name="price" Type="Double" />
+    <Property Name="amount" Type="Double" />
+    <Property Name="DetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="tblMain">
+    <Key>
+      <PropertyRef Name="MaBill" />
+    </Key>
+    <Property Name="aDate" Type="DateTime" Precision="0" />
+    <Property Name="aTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WaiterName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="orderType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="total" Type="Double" />
+    <Property Name="received" Type="Double" />
+    <Property Name="change" Type="Double" />
+    <Property Name="driverID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cusPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaBill" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <Association Name="FK__SANPHAM__AnhSP__3B75D760">
     <End Role="DANHMUC" Type="Self.DANHMUC" Multiplicity="0..1" />
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -42,31 +90,16 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="QuanLyNhaHangEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BANs" EntityType="Self.BAN" />
     <EntitySet Name="DANHMUCs" EntityType="Self.DANHMUC" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
     <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
     <EntitySet Name="TAIKHOANs" EntityType="Self.TAIKHOAN" />
-    <AssociationSet Name="FK__SANPHAM__AnhSP__5441852A" Association="Self.FK__SANPHAM__AnhSP__5441852A">
+    <EntitySet Name="tblDetails" EntityType="Self.tblDetail" />
+    <EntitySet Name="tblMains" EntityType="Self.tblMain" />
+    <AssociationSet Name="FK__SANPHAM__AnhSP__3B75D760" Association="Self.FK__SANPHAM__AnhSP__3B75D760">
       <End Role="DANHMUC" EntitySet="DANHMUCs" />
       <End Role="SANPHAM" EntitySet="SANPHAMs" />
     </AssociationSet>
-    <EntitySet Name="NHANVIENs" EntityType="QuanLyNhaHangModel.NHANVIEN" />
-    <EntitySet Name="BANs" EntityType="QuanLyNhaHangModel.BAN" />
   </EntityContainer>
-  <EntityType Name="NHANVIEN">
-    <Key>
-      <PropertyRef Name="Manv" />
-    </Key>
-    <Property Name="Manv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="BAN">
-    <Key>
-      <PropertyRef Name="Tid" />
-    </Key>
-    <Property Name="Tid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Tname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Tstate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
 </Schema>

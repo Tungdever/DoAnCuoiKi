@@ -5,8 +5,8 @@
       <PropertyRef Name="Tid" />
     </Key>
     <Property Name="Tid" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Tname" Type="varchar" MaxLength="50" />
-    <Property Name="Tstate" Type="varchar" MaxLength="50" />
+    <Property Name="Tname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tstate" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="DANHMUC">
     <Key>
@@ -20,18 +20,19 @@
       <PropertyRef Name="Manv" />
     </Key>
     <Property Name="Manv" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Ten" Type="varchar" MaxLength="50" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
     <Property Name="SDT" Type="varchar" MaxLength="50" />
-    <Property Name="ChucVu" Type="varchar" MaxLength="50" />
+    <Property Name="ChucVu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Luong" Type="float" />
   </EntityType>
   <EntityType Name="SANPHAM">
     <Key>
       <PropertyRef Name="MaSP" />
     </Key>
     <Property Name="MaSP" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="TenSP" Type="varchar" MaxLength="50" />
+    <Property Name="TenSP" Type="nvarchar" MaxLength="50" />
     <Property Name="MaLoaiSP" Type="varchar" MaxLength="50" />
-    <Property Name="TenLoaiSP" Type="varchar" MaxLength="50" />
+    <Property Name="TenLoaiSP" Type="nvarchar" MaxLength="50" />
     <Property Name="GiaSP" Type="float" />
     <Property Name="AnhSP" Type="varbinary(max)" />
   </EntityType>
@@ -44,7 +45,37 @@
     <Property Name="MaNV" Type="varchar" MaxLength="10" />
     <Property Name="CapDoQuyen" Type="int" />
   </EntityType>
-  <Association Name="FK__SANPHAM__AnhSP__5441852A">
+  <EntityType Name="tblDetails">
+    <Key>
+      <PropertyRef Name="DetailID" />
+    </Key>
+    <Property Name="MaBill" Type="int" />
+    <Property Name="proID" Type="varchar" MaxLength="50" />
+    <Property Name="proName" Type="nvarchar" MaxLength="50" />
+    <Property Name="qty" Type="int" />
+    <Property Name="price" Type="float" />
+    <Property Name="amount" Type="float" />
+    <Property Name="DetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblMain">
+    <Key>
+      <PropertyRef Name="MaBill" />
+    </Key>
+    <Property Name="aDate" Type="date" />
+    <Property Name="aTime" Type="varchar" MaxLength="50" />
+    <Property Name="TableName" Type="nvarchar" MaxLength="50" />
+    <Property Name="WaiterName" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="15" />
+    <Property Name="orderType" Type="varchar" MaxLength="20" />
+    <Property Name="total" Type="float" />
+    <Property Name="received" Type="float" />
+    <Property Name="change" Type="float" />
+    <Property Name="driverID" Type="varchar" MaxLength="50" />
+    <Property Name="cusName" Type="nvarchar" MaxLength="50" />
+    <Property Name="cusPhone" Type="varchar" MaxLength="50" />
+    <Property Name="MaBill" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__SANPHAM__AnhSP__3B75D760">
     <End Role="DANHMUC" Type="Self.DANHMUC" Multiplicity="0..1" />
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -62,7 +93,9 @@
     <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__SANPHAM__AnhSP__5441852A" Association="Self.FK__SANPHAM__AnhSP__5441852A">
+    <EntitySet Name="tblDetails" EntityType="Self.tblDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMain" EntityType="Self.tblMain" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__SANPHAM__AnhSP__3B75D760" Association="Self.FK__SANPHAM__AnhSP__3B75D760">
       <End Role="DANHMUC" EntitySet="DANHMUC" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
     </AssociationSet>

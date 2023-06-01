@@ -32,11 +32,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ptbPass = new System.Windows.Forms.PictureBox();
             this.ptbLogin = new System.Windows.Forms.PictureBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPass)).BeginInit();
@@ -93,16 +93,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Đăng nhập";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLyNhaHang.Properties.Resources.user__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(98, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 112);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // txtPass
             // 
             this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -113,6 +103,26 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(306, 39);
             this.txtPass.TabIndex = 16;
+            // 
+            // txtUser
+            // 
+            this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUser.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.txtUser.Location = new System.Drawing.Point(82, 333);
+            this.txtUser.Multiline = true;
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(306, 39);
+            this.txtUser.TabIndex = 14;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyNhaHang.Properties.Resources.user__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(98, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(202, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // ptbPass
             // 
@@ -134,17 +144,7 @@
             this.ptbLogin.TabIndex = 13;
             this.ptbLogin.TabStop = false;
             // 
-            // txtUser
-            // 
-            this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUser.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.txtUser.Location = new System.Drawing.Point(82, 333);
-            this.txtUser.Multiline = true;
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(306, 39);
-            this.txtUser.TabIndex = 14;
-            // 
-            // Form1
+            // frmLogin
             // 
             this.ClientSize = new System.Drawing.Size(409, 646);
             this.Controls.Add(this.button2);
@@ -155,7 +155,7 @@
             this.Controls.Add(this.ptbLogin);
             this.Controls.Add(this.txtUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

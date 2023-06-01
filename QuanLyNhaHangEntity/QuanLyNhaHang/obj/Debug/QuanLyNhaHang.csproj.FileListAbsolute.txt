@@ -135,6 +135,7 @@ C:\Users\DELL\Downloads\DoAnCuoiKi-main (Entity)(2)\DoAnCuoiKi-main\QuanLyNhaHan
 C:\Users\DELL\Downloads\DoAnCuoiKi-main (Entity)(2)\DoAnCuoiKi-main\QuanLyNhaHangEntity\QuanLyNhaHang\bin\Debug\EntityFramework.xml
 C:\Users\DELL\Downloads\DoAnCuoiKi-main (Entity)(2)\DoAnCuoiKi-main\QuanLyNhaHangEntity\QuanLyNhaHang\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\DELL\Downloads\DoAnCuoiKi-main (Entity)(2)\DoAnCuoiKi-main\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.AssemblyReference.cache
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.SuggestedBindingRedirects.cache
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.categoryForm.resources
@@ -152,3 +153,31 @@ C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CoreCompileInputs.cache
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
 C:\Users\TuanKiet\source\repos\NEW6\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
+=======
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe.config
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.pdb
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\bin\Debug\EntityFramework.dll
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\bin\Debug\EntityFramework.SqlServer.dll
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\bin\Debug\Guna.UI2.dll
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\bin\Debug\EntityFramework.xml
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\bin\Debug\EntityFramework.SqlServer.xml
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.AssemblyReference.cache
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.SuggestedBindingRedirects.cache
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.categoryForm.resources
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmCategoryAdd.resources
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmLogin.resources
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmMain.resources
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmProductAdd.resources
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmStaffAdd.resources
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmTableAdd.resources
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.productForm.resources
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.Properties.Resources.resources
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.staffForm.resources
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.tableForm.resources
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.GenerateResource.cache
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CoreCompileInputs.cache
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
+>>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5

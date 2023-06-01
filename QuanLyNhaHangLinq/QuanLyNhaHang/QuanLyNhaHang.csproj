@@ -64,10 +64,10 @@
     <Compile Include="categoryForm.Designer.cs">
       <DependentUpon>categoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCategoryAdd.cs">
+    <Compile Include="FormAdd\frmCategoryAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCategoryAdd.Designer.cs">
+    <Compile Include="FormAdd\frmCategoryAdd.Designer.cs">
       <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -82,6 +82,7 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frmPOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,21 +90,24 @@
       <DependentUpon>frmPOS.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProductAdd.cs">
+=======
+    <Compile Include="FormAdd\frmProductAdd.cs">
+>>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProductAdd.Designer.cs">
+    <Compile Include="FormAdd\frmProductAdd.Designer.cs">
       <DependentUpon>frmProductAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStaffAdd.cs">
+    <Compile Include="FormAdd\frmStaffAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStaffAdd.Designer.cs">
+    <Compile Include="FormAdd\frmStaffAdd.Designer.cs">
       <DependentUpon>frmStaffAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTableAdd.cs">
+    <Compile Include="FormAdd\frmTableAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTableAdd.Designer.cs">
+    <Compile Include="FormAdd\frmTableAdd.Designer.cs">
       <DependentUpon>frmTableAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="productForm.cs">
@@ -134,7 +138,7 @@
     <EmbeddedResource Include="categoryForm.resx">
       <DependentUpon>categoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCategoryAdd.resx">
+    <EmbeddedResource Include="FormAdd\frmCategoryAdd.resx">
       <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
@@ -143,16 +147,20 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="frmPOS.resx">
       <DependentUpon>frmPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductAdd.resx">
+=======
+    <EmbeddedResource Include="FormAdd\frmProductAdd.resx">
+>>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5
       <DependentUpon>frmProductAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStaffAdd.resx">
+    <EmbeddedResource Include="FormAdd\frmStaffAdd.resx">
       <DependentUpon>frmStaffAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTableAdd.resx">
+    <EmbeddedResource Include="FormAdd\frmTableAdd.resx">
       <DependentUpon>frmTableAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="productForm.resx">
@@ -263,6 +271,7 @@
     <None Include="Resources\identity-document-computer-icons-business-clip-art-id-card-removebg-preview %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="Resources\icons8-restaurant.png" />
   </ItemGroup>
   <ItemGroup>
@@ -288,6 +297,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-shutdown-96.png" />
+=======
+    <None Include="Resources\logout %281%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-report-64 %281%29.png" />
+>>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
