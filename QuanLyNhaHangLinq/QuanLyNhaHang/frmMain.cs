@@ -57,5 +57,12 @@ namespace QuanLyNhaHang
         {
             AddControls(new staffForm());
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmLogin frm = new frmLogin();
+            frm.ShowDialog();
+        }
     }
 }

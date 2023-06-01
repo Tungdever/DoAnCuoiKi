@@ -163,9 +163,29 @@ namespace QuanLyNhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_report_64__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-report-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap identity_document_computer_icons_business_clip_art_id_card_removebg_preview__1_ {
             get {
                 object obj = ResourceManager.GetObject("identity-document-computer-icons-business-clip-art-id-card-removebg-preview (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout__1___1_ {
+            get {
+                object obj = ResourceManager.GetObject("logout (1) (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

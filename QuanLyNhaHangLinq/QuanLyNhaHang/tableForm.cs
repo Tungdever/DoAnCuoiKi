@@ -70,9 +70,11 @@ namespace QuanLyNhaHang
                 if (dgvTable.CurrentCell.OwningColumn.Name == "dgvEdit")
                 {
                     frmTableAdd frm = new frmTableAdd();
+                    frm.txtTableID.ReadOnly = true;
+                    frm.txtTableName.ReadOnly = true;
                     List<string> listTstate = new List<string>();
-                    listTstate.Add("Ban trong");
-                    listTstate.Add("Da dat");
+                    listTstate.Add("Bàn trống");
+                    listTstate.Add("Đã đặt");
                     frm.cbbTstate.DataSource = listTstate;
                     frm.txtTableID.Text = dgvTable.CurrentRow.Cells["dgvTid"].Value.ToString();
                     frm.txtTableName.Text = dgvTable.CurrentRow.Cells["dgvTname"].Value.ToString();

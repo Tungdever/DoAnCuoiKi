@@ -80,10 +80,10 @@
     <Compile Include="frmBillList.Designer.cs">
       <DependentUpon>frmBillList.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCategoryAdd.cs">
+    <Compile Include="FormAdd\frmCategoryAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCategoryAdd.Designer.cs">
+    <Compile Include="FormAdd\frmCategoryAdd.Designer.cs">
       <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCheckOut.cs">
@@ -92,10 +92,10 @@
     <Compile Include="frmCheckOut.Designer.cs">
       <DependentUpon>frmCheckOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomerAdd.cs">
+    <Compile Include="FormAdd\frmCustomerAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomerAdd.Designer.cs">
+    <Compile Include="FormAdd\frmCustomerAdd.Designer.cs">
       <DependentUpon>frmCustomerAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="frmKitchen.cs">
@@ -122,40 +122,40 @@
     <Compile Include="frmPOS.Designer.cs">
       <DependentUpon>frmPOS.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrint.cs">
+    <Compile Include="FormReport\frmPrint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrint.Designer.cs">
+    <Compile Include="FormReport\frmPrint.Designer.cs">
       <DependentUpon>frmPrint.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProductAdd.cs">
+    <Compile Include="FormAdd\frmProductAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProductAdd.Designer.cs">
+    <Compile Include="FormAdd\frmProductAdd.Designer.cs">
       <DependentUpon>frmProductAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReport.cs">
+    <Compile Include="FormReport\frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReport.Designer.cs">
+    <Compile Include="FormReport\frmReport.Designer.cs">
       <DependentUpon>frmReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSaleCatReport.cs">
+    <Compile Include="FormReport\frmSaleCatReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSaleCatReport.Designer.cs">
+    <Compile Include="FormReport\frmSaleCatReport.Designer.cs">
       <DependentUpon>frmSaleCatReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStaffAdd.cs">
+    <Compile Include="FormAdd\frmStaffAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStaffAdd.Designer.cs">
+    <Compile Include="FormAdd\frmStaffAdd.Designer.cs">
       <DependentUpon>frmStaffAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTableAdd.cs">
+    <Compile Include="FormAdd\frmTableAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTableAdd.Designer.cs">
+    <Compile Include="FormAdd\frmTableAdd.Designer.cs">
       <DependentUpon>frmTableAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTableSelect.cs">
@@ -226,13 +226,13 @@
     <EmbeddedResource Include="frmBillList.resx">
       <DependentUpon>frmBillList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCategoryAdd.resx">
+    <EmbeddedResource Include="FormAdd\frmCategoryAdd.resx">
       <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCheckOut.resx">
       <DependentUpon>frmCheckOut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomerAdd.resx">
+    <EmbeddedResource Include="FormAdd\frmCustomerAdd.resx">
       <DependentUpon>frmCustomerAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKitchen.resx">
@@ -247,22 +247,22 @@
     <EmbeddedResource Include="frmPOS.resx">
       <DependentUpon>frmPOS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrint.resx">
+    <EmbeddedResource Include="FormReport\frmPrint.resx">
       <DependentUpon>frmPrint.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProductAdd.resx">
+    <EmbeddedResource Include="FormAdd\frmProductAdd.resx">
       <DependentUpon>frmProductAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReport.resx">
+    <EmbeddedResource Include="FormReport\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSaleCatReport.resx">
+    <EmbeddedResource Include="FormReport\frmSaleCatReport.resx">
       <DependentUpon>frmSaleCatReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStaffAdd.resx">
+    <EmbeddedResource Include="FormAdd\frmStaffAdd.resx">
       <DependentUpon>frmStaffAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTableAdd.resx">
+    <EmbeddedResource Include="FormAdd\frmTableAdd.resx">
       <DependentUpon>frmTableAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTableSelect.resx">

@@ -21,23 +21,11 @@ namespace QuanLyNhaHang
         }
         BLReport dbReportCat = new BLReport();
         DataTable dtReportCat = null;
-
-        private void frmSaleCat_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnReport_Click(object sender, EventArgs e)
         {
             try
             {
                 dtReportCat = new DataTable();
-
                 dtReportCat = dbReportCat.GetSaleByCatBetweenDate(Convert.ToDateTime(guna2DateTimePicker1.Value).Date, Convert.ToDateTime(guna2DateTimePicker2.Value).Date).Tables[0];
             }
 

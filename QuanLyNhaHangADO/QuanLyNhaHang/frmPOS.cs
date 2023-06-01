@@ -142,7 +142,6 @@ namespace QuanLyNhaHang
             w.onSelect += (ss, ee) =>
             {
                 var wdg = (ucProduct)ss;
-                bool s = true;
                 int d = dgvPOS.Rows.Count;
                 foreach (DataGridViewRow item in dgvPOS.Rows)
                 {

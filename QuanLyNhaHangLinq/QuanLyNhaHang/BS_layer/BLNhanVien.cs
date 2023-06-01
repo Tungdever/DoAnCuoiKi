@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace QuanLyNhaHang.BS_layer
 {
@@ -17,11 +18,11 @@ namespace QuanLyNhaHang.BS_layer
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             var NhanVienList = from nv in qlNH.NHANVIENs
-                            where nv.Manv.Contains(str)
+                            where nv.Ten.Contains(str)
                             select nv;
             return NhanVienList.ToList();
         }
-        public bool ThemNhanVien(string Manv, string Ten, string SDT, string ChucVu ,ref string err)
+        public bool ThemNhanVien(string Manv, string Ten, string SDT, string ChucVu , float Luong, ref string err)
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             NHANVIEN nv = new NHANVIEN();
@@ -29,6 +30,7 @@ namespace QuanLyNhaHang.BS_layer
             nv.Ten = Ten;
             nv.SDT = SDT;
             nv.ChucVu = ChucVu;
+            nv.Luong = Luong;
             qlNH.NHANVIENs.InsertOnSubmit(nv);
             qlNH.NHANVIENs.Context.SubmitChanges();
             return true;
@@ -43,7 +45,7 @@ namespace QuanLyNhaHang.BS_layer
             qlNH.SubmitChanges();
             return true;
         }
-        public bool CapNhatNhanVien(string Manv, string Ten, string SDT, string ChucVu, ref string err)
+        public bool CapNhatNhanVien(string Manv, string Ten, string SDT, string ChucVu, float Luong, ref string err)
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             var nvQuerry = (from nv in qlNH.NHANVIENs
@@ -54,6 +56,7 @@ namespace QuanLyNhaHang.BS_layer
                 nvQuerry.Ten= Ten;
                 nvQuerry.SDT= SDT;
                 nvQuerry.ChucVu= ChucVu;
+                nvQuerry.Luong = Luong;
                 qlNH.SubmitChanges();
             }
             return true;

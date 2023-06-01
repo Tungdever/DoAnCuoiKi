@@ -26,7 +26,6 @@ namespace QuanLyNhaHang
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-
             try
             {
                 dtProduct = new DataTable();

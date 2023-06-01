@@ -33,30 +33,30 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblStaff = new System.Windows.Forms.Label();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnAdd = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.lblStaff = new System.Windows.Forms.Label();
             this.lblSearchStaff = new System.Windows.Forms.Label();
             this.txtSearchStaff = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.dgvStaff = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dgvManv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblStaff
+            // guna2Separator1
             // 
-            this.lblStaff.AutoSize = true;
-            this.lblStaff.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaff.Location = new System.Drawing.Point(116, 56);
-            this.lblStaff.Name = "lblStaff";
-            this.lblStaff.Size = new System.Drawing.Size(121, 38);
-            this.lblStaff.TabIndex = 7;
-            this.lblStaff.Text = "Staff List";
+            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Separator1.Location = new System.Drawing.Point(12, 211);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(1321, 10);
+            this.guna2Separator1.TabIndex = 8;
             // 
             // btnAdd
             // 
@@ -66,29 +66,39 @@
             this.btnAdd.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnAdd.ImageRotate = 0F;
             this.btnAdd.IndicateFocus = true;
-            this.btnAdd.Location = new System.Drawing.Point(123, 97);
+            this.btnAdd.Location = new System.Drawing.Point(61, 70);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAdd.Size = new System.Drawing.Size(104, 72);
-            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Size = new System.Drawing.Size(104, 102);
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // lblStaff
+            // 
+            this.lblStaff.AutoSize = true;
+            this.lblStaff.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaff.Location = new System.Drawing.Point(54, 29);
+            this.lblStaff.Name = "lblStaff";
+            this.lblStaff.Size = new System.Drawing.Size(121, 38);
+            this.lblStaff.TabIndex = 5;
+            this.lblStaff.Text = "Staff List";
             // 
             // lblSearchStaff
             // 
-            this.lblSearchStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblSearchStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSearchStaff.AutoSize = true;
             this.lblSearchStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchStaff.Location = new System.Drawing.Point(881, 66);
+            this.lblSearchStaff.Location = new System.Drawing.Point(1008, 70);
             this.lblSearchStaff.Name = "lblSearchStaff";
             this.lblSearchStaff.Size = new System.Drawing.Size(75, 25);
-            this.lblSearchStaff.TabIndex = 10;
+            this.lblSearchStaff.TabIndex = 6;
             this.lblSearchStaff.Text = "Search";
             // 
             // txtSearchStaff
             // 
-            this.txtSearchStaff.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtSearchStaff.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchStaff.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearchStaff.DefaultText = "";
@@ -100,24 +110,15 @@
             this.txtSearchStaff.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearchStaff.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearchStaff.IconLeft = global::QuanLyNhaHang.Properties.Resources.magnifying_glass;
-            this.txtSearchStaff.Location = new System.Drawing.Point(886, 97);
+            this.txtSearchStaff.Location = new System.Drawing.Point(1013, 124);
             this.txtSearchStaff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchStaff.Name = "txtSearchStaff";
             this.txtSearchStaff.PasswordChar = '\0';
             this.txtSearchStaff.PlaceholderText = "";
             this.txtSearchStaff.SelectedText = "";
             this.txtSearchStaff.Size = new System.Drawing.Size(241, 48);
-            this.txtSearchStaff.TabIndex = 11;
+            this.txtSearchStaff.TabIndex = 4;
             this.txtSearchStaff.TextChanged += new System.EventHandler(this.txtSearchStaff_TextChanged);
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator1.Location = new System.Drawing.Point(1, 175);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(1482, 10);
-            this.guna2Separator1.TabIndex = 12;
             // 
             // dgvStaff
             // 
@@ -127,8 +128,8 @@
             this.dgvStaff.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvStaff.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
@@ -145,6 +146,7 @@
             this.dgvTen,
             this.dgvSDT,
             this.dgvChucVu,
+            this.dgvLuong,
             this.dgvEdit,
             this.dgvDel});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -156,7 +158,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvStaff.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvStaff.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvStaff.Location = new System.Drawing.Point(7, 191);
+            this.dgvStaff.Location = new System.Drawing.Point(12, 227);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -172,8 +174,8 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
             this.dgvStaff.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvStaff.RowTemplate.Height = 35;
-            this.dgvStaff.Size = new System.Drawing.Size(1466, 399);
-            this.dgvStaff.TabIndex = 13;
+            this.dgvStaff.Size = new System.Drawing.Size(1321, 354);
+            this.dgvStaff.TabIndex = 9;
             this.dgvStaff.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvStaff.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgvStaff.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -229,6 +231,14 @@
             this.dgvChucVu.Name = "dgvChucVu";
             this.dgvChucVu.ReadOnly = true;
             // 
+            // dgvLuong
+            // 
+            this.dgvLuong.DataPropertyName = "Luong";
+            this.dgvLuong.HeaderText = "Salary";
+            this.dgvLuong.MinimumWidth = 6;
+            this.dgvLuong.Name = "dgvLuong";
+            this.dgvLuong.ReadOnly = true;
+            // 
             // dgvEdit
             // 
             this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -257,13 +267,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1485, 602);
+            this.ClientSize = new System.Drawing.Size(1345, 606);
             this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.guna2Separator1);
-            this.Controls.Add(this.txtSearchStaff);
-            this.Controls.Add(this.lblSearchStaff);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblStaff);
+            this.Controls.Add(this.lblSearchStaff);
+            this.Controls.Add(this.txtSearchStaff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "staffForm";
             this.Text = "staffForm";
@@ -276,16 +286,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblStaff;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2ImageButton btnAdd;
+        private System.Windows.Forms.Label lblStaff;
         private System.Windows.Forms.Label lblSearchStaff;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchStaff;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvStaff;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvManv;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvChucVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLuong;
         private System.Windows.Forms.DataGridViewImageColumn dgvEdit;
         private System.Windows.Forms.DataGridViewImageColumn dgvDel;
     }

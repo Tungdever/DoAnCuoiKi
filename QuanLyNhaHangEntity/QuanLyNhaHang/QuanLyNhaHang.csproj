@@ -79,10 +79,10 @@
     <Compile Include="DANHMUC.cs">
       <DependentUpon>QLNhaHangModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmCategoryAdd.cs">
+    <Compile Include="FormAdd\frmCategoryAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCategoryAdd.Designer.cs">
+    <Compile Include="FormAdd\frmCategoryAdd.Designer.cs">
       <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -97,22 +97,22 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProductAdd.cs">
+    <Compile Include="FormAdd\frmProductAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProductAdd.Designer.cs">
+    <Compile Include="FormAdd\frmProductAdd.Designer.cs">
       <DependentUpon>frmProductAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStaffAdd.cs">
+    <Compile Include="FormAdd\frmStaffAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStaffAdd.Designer.cs">
+    <Compile Include="FormAdd\frmStaffAdd.Designer.cs">
       <DependentUpon>frmStaffAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTableAdd.cs">
+    <Compile Include="FormAdd\frmTableAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTableAdd.Designer.cs">
+    <Compile Include="FormAdd\frmTableAdd.Designer.cs">
       <DependentUpon>frmTableAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="NHANVIEN.cs">
@@ -159,10 +159,16 @@
     <Compile Include="TAIKHOAN.cs">
       <DependentUpon>QLNhaHangModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="tblDetail.cs">
+      <DependentUpon>QLNhaHangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMain.cs">
+      <DependentUpon>QLNhaHangModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="categoryForm.resx">
       <DependentUpon>categoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCategoryAdd.resx">
+    <EmbeddedResource Include="FormAdd\frmCategoryAdd.resx">
       <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
@@ -171,13 +177,13 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProductAdd.resx">
+    <EmbeddedResource Include="FormAdd\frmProductAdd.resx">
       <DependentUpon>frmProductAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStaffAdd.resx">
+    <EmbeddedResource Include="FormAdd\frmStaffAdd.resx">
       <DependentUpon>frmStaffAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTableAdd.resx">
+    <EmbeddedResource Include="FormAdd\frmTableAdd.resx">
       <DependentUpon>frmTableAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="productForm.resx">
@@ -280,6 +286,10 @@
     <None Include="Resources\add-button.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\identity-document-computer-icons-business-clip-art-id-card-removebg-preview %281%29.png" />
+    <None Include="Resources\677252.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="QLNhaHangModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLNhaHangModel.edmx</DependentUpon>
@@ -290,8 +300,8 @@
       <DependentUpon>QLNhaHangModel.edmx</DependentUpon>
       <LastGenOutput>QLNhaHangModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\identity-document-computer-icons-business-clip-art-id-card-removebg-preview %281%29.png" />
-    <None Include="Resources\677252.png" />
+    <None Include="Resources\logout %281%29 %281%29.png" />
+    <None Include="Resources\icons8-report-64 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

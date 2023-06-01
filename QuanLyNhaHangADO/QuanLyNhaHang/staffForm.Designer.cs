@@ -43,6 +43,7 @@
             this.dgvTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
@@ -145,6 +146,7 @@
             this.dgvTen,
             this.dgvSDT,
             this.dgvChucVu,
+            this.dgvLuong,
             this.dgvEdit,
             this.dgvDel});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -229,6 +231,14 @@
             this.dgvChucVu.Name = "dgvChucVu";
             this.dgvChucVu.ReadOnly = true;
             // 
+            // dgvLuong
+            // 
+            this.dgvLuong.DataPropertyName = "Luong";
+            this.dgvLuong.HeaderText = "Salary";
+            this.dgvLuong.MinimumWidth = 6;
+            this.dgvLuong.Name = "dgvLuong";
+            this.dgvLuong.ReadOnly = true;
+            // 
             // dgvEdit
             // 
             this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -286,6 +296,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvChucVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLuong;
         private System.Windows.Forms.DataGridViewImageColumn dgvEdit;
         private System.Windows.Forms.DataGridViewImageColumn dgvDel;
     }

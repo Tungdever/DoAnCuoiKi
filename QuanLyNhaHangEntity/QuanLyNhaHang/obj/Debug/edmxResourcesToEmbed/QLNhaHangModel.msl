@@ -1,11 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="QuanLyNhaHangModelStoreContainer" CdmEntityContainer="QuanLyNhaHangEntities">
+    <EntitySetMapping Name="BANs">
+      <EntityTypeMapping TypeName="QuanLyNhaHangModel.BAN">
+        <MappingFragment StoreEntitySet="BAN">
+          <ScalarProperty Name="Tid" ColumnName="Tid" />
+          <ScalarProperty Name="Tname" ColumnName="Tname" />
+          <ScalarProperty Name="Tstate" ColumnName="Tstate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="DANHMUCs">
       <EntityTypeMapping TypeName="QuanLyNhaHangModel.DANHMUC">
         <MappingFragment StoreEntitySet="DANHMUC">
           <ScalarProperty Name="MaDM" ColumnName="MaDM" />
           <ScalarProperty Name="TenDM" ColumnName="TenDM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENs">
+      <EntityTypeMapping TypeName="QuanLyNhaHangModel.NHANVIEN">
+        <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="Manv" ColumnName="Manv" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+          <ScalarProperty Name="Luong" ColumnName="Luong" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -31,22 +51,35 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="NHANVIENs">
-      <EntityTypeMapping TypeName="QuanLyNhaHangModel.NHANVIEN">
-        <MappingFragment StoreEntitySet="NHANVIEN">
-          <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
-          <ScalarProperty Name="SDT" ColumnName="SDT" />
-          <ScalarProperty Name="Ten" ColumnName="Ten" />
-          <ScalarProperty Name="Manv" ColumnName="Manv" />
+    <EntitySetMapping Name="tblDetails">
+      <EntityTypeMapping TypeName="QuanLyNhaHangModel.tblDetail">
+        <MappingFragment StoreEntitySet="tblDetails">
+          <ScalarProperty Name="MaBill" ColumnName="MaBill" />
+          <ScalarProperty Name="proID" ColumnName="proID" />
+          <ScalarProperty Name="proName" ColumnName="proName" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="DetailID" ColumnName="DetailID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="BANs">
-      <EntityTypeMapping TypeName="QuanLyNhaHangModel.BAN">
-        <MappingFragment StoreEntitySet="BAN">
-          <ScalarProperty Name="Tstate" ColumnName="Tstate" />
-          <ScalarProperty Name="Tname" ColumnName="Tname" />
-          <ScalarProperty Name="Tid" ColumnName="Tid" />
+    <EntitySetMapping Name="tblMains">
+      <EntityTypeMapping TypeName="QuanLyNhaHangModel.tblMain">
+        <MappingFragment StoreEntitySet="tblMain">
+          <ScalarProperty Name="aDate" ColumnName="aDate" />
+          <ScalarProperty Name="aTime" ColumnName="aTime" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="WaiterName" ColumnName="WaiterName" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="orderType" ColumnName="orderType" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="received" ColumnName="received" />
+          <ScalarProperty Name="change" ColumnName="change" />
+          <ScalarProperty Name="driverID" ColumnName="driverID" />
+          <ScalarProperty Name="cusName" ColumnName="cusName" />
+          <ScalarProperty Name="cusPhone" ColumnName="cusPhone" />
+          <ScalarProperty Name="MaBill" ColumnName="MaBill" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

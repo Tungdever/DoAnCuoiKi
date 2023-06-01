@@ -31,12 +31,12 @@ namespace QuanLyNhaHang.BS_layer
         }
         public DataSet TimKiemNhanVien(string str)
         {
-            return db.ExecuteQueryDataSet("SELECT * FROM NHANVIEN WHERE Ten LIKE '%" + str + "%'", CommandType.Text);
+            return db.ExecuteQueryDataSet("SELECT * FROM NHANVIEN WHERE Ten LIKE '%" + str +  "%'", CommandType.Text);
         }
 
-        public bool ThemNhanVien(string Manv, string Ten, string SDT, string ChucVu, ref string err)
+        public bool ThemNhanVien(string Manv, string Ten, string SDT, string ChucVu, float Luong, ref string err)
         {
-            string sqlString = "INSERT INTO NHANVIEN VALUES('" + Manv + "', N'" + Ten + "', '" + SDT + "', N'" + ChucVu + "')";
+            string sqlString = "INSERT INTO NHANVIEN VALUES('" + Manv + "', N'" + Ten + "', '" + SDT + "', N'" + ChucVu + "', " + Luong + ")";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
@@ -46,9 +46,9 @@ namespace QuanLyNhaHang.BS_layer
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
-        public bool CapNhatNhanVien(string Manv, string Ten, string SDT, string ChucVu, ref string err)
+        public bool CapNhatNhanVien(string Manv, string Ten, string SDT, string ChucVu, float Luong, ref string err)
         {
-            string sqlString = "UPDATE NHANVIEN SET Ten = N'" + Ten + "', SDT = '" + SDT + "', ChucVu = N'" + ChucVu + "' WHERE Manv = '" + Manv + "'";
+            string sqlString = "UPDATE NHANVIEN SET Ten = N'" + Ten + "', SDT = '" + SDT + "', ChucVu = N'" + ChucVu + "', Luong = " + Luong + " WHERE Manv = '" + Manv + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }

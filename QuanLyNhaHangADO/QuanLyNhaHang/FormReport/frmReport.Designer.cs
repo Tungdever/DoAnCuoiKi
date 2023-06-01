@@ -37,18 +37,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font(".Vn3DH", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 51);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(37, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 64);
+            this.label1.Size = new System.Drawing.Size(102, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "Report";
             // 
             // btnSaleByCategory
             // 
-            this.btnSaleByCategory.AutoRoundedCorners = true;
             this.btnSaleByCategory.BackColor = System.Drawing.Color.Transparent;
-            this.btnSaleByCategory.BorderRadius = 109;
             this.btnSaleByCategory.BorderThickness = 3;
             this.btnSaleByCategory.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnSaleByCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -56,15 +55,15 @@
             this.btnSaleByCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSaleByCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSaleByCategory.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnSaleByCategory.Font = new System.Drawing.Font(".VnVogue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaleByCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaleByCategory.ForeColor = System.Drawing.Color.Black;
             this.btnSaleByCategory.Image = global::QuanLyNhaHang.Properties.Resources.icons8_sales_64;
             this.btnSaleByCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSaleByCategory.ImageSize = new System.Drawing.Size(70, 70);
-            this.btnSaleByCategory.Location = new System.Drawing.Point(613, 119);
+            this.btnSaleByCategory.Location = new System.Drawing.Point(553, 94);
             this.btnSaleByCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaleByCategory.Name = "btnSaleByCategory";
-            this.btnSaleByCategory.Size = new System.Drawing.Size(227, 221);
+            this.btnSaleByCategory.Size = new System.Drawing.Size(277, 180);
             this.btnSaleByCategory.TabIndex = 2;
             this.btnSaleByCategory.Text = "Sale by Category";
             this.btnSaleByCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -73,9 +72,7 @@
             // 
             // btnStaffList
             // 
-            this.btnStaffList.AutoRoundedCorners = true;
             this.btnStaffList.BackColor = System.Drawing.Color.Transparent;
-            this.btnStaffList.BorderRadius = 112;
             this.btnStaffList.BorderThickness = 3;
             this.btnStaffList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnStaffList.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -83,15 +80,15 @@
             this.btnStaffList.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnStaffList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnStaffList.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnStaffList.Font = new System.Drawing.Font(".VnVogue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaffList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaffList.ForeColor = System.Drawing.Color.Black;
             this.btnStaffList.Image = global::QuanLyNhaHang.Properties.Resources.icons8_staff_100;
             this.btnStaffList.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStaffList.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnStaffList.Location = new System.Drawing.Point(283, 119);
+            this.btnStaffList.Location = new System.Drawing.Point(299, 94);
             this.btnStaffList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnStaffList.Name = "btnStaffList";
-            this.btnStaffList.Size = new System.Drawing.Size(231, 226);
+            this.btnStaffList.Size = new System.Drawing.Size(236, 180);
             this.btnStaffList.TabIndex = 2;
             this.btnStaffList.Text = "Staff List";
             this.btnStaffList.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -100,9 +97,7 @@
             // 
             // btnMenu
             // 
-            this.btnMenu.AutoRoundedCorners = true;
             this.btnMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenu.BorderRadius = 97;
             this.btnMenu.BorderThickness = 3;
             this.btnMenu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -110,15 +105,15 @@
             this.btnMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnMenu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnMenu.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnMenu.Font = new System.Drawing.Font(".VnVogue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.Black;
             this.btnMenu.Image = global::QuanLyNhaHang.Properties.Resources.icons8_menu_64;
             this.btnMenu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMenu.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnMenu.Location = new System.Drawing.Point(12, 119);
+            this.btnMenu.Location = new System.Drawing.Point(43, 94);
             this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(208, 196);
+            this.btnMenu.Size = new System.Drawing.Size(236, 180);
             this.btnMenu.TabIndex = 2;
             this.btnMenu.Text = "Menu List";
             this.btnMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -128,13 +123,14 @@
             // frmReport
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(1226, 674);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSaleByCategory);
             this.Controls.Add(this.btnStaffList);
             this.Controls.Add(this.btnMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReport";
             this.Text = "frmReport";

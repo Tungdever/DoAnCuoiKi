@@ -107,7 +107,6 @@
             this.txtTableID.Name = "txtTableID";
             this.txtTableID.PasswordChar = '\0';
             this.txtTableID.PlaceholderText = "";
-            this.txtTableID.ReadOnly = true;
             this.txtTableID.SelectedText = "";
             this.txtTableID.SelectionStart = "".Length;
             this.txtTableID.Size = new System.Drawing.Size(278, 67);

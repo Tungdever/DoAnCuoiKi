@@ -55,6 +55,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(535, 152);
             this.guna2Panel1.TabIndex = 6;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // lblAdd
             // 
@@ -107,7 +108,6 @@
             this.txtTableID.Name = "txtTableID";
             this.txtTableID.PasswordChar = '\0';
             this.txtTableID.PlaceholderText = "";
-            this.txtTableID.ReadOnly = true;
             this.txtTableID.SelectedText = "";
             this.txtTableID.SelectionStart = "".Length;
             this.txtTableID.Size = new System.Drawing.Size(278, 67);

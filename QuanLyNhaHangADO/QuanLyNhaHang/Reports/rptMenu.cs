@@ -18,7 +18,9 @@ namespace QuanLyNhaHang.Reports {
     
     public class rptMenu : ReportClass {
         
-        public rptMenu() {
+        public rptMenu() 
+        {
+
         }
         
         public override string ResourceName {
