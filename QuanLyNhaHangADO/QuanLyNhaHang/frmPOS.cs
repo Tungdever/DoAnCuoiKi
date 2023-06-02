@@ -61,7 +61,7 @@ namespace QuanLyNhaHang
             pnlCategory.Controls.Clear();
             pnlProduct.Controls.Clear();
             GetCategory();
-            this.btnTimeSelect.Text = Time;
+         //   this.btnTimeSelect.Text = Time;
             LoadData();
         }
         private void GetCategory()

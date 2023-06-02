@@ -34,9 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.ptbPass = new System.Windows.Forms.PictureBox();
             this.ptbLogin = new System.Windows.Forms.PictureBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
+            this.btnHide = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPass)).BeginInit();
@@ -79,7 +80,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(409, 218);
+            this.panel1.Size = new System.Drawing.Size(473, 218);
             this.panel1.TabIndex = 12;
             // 
             // label1
@@ -89,7 +90,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(143, 155);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 37);
+            this.label1.Size = new System.Drawing.Size(175, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "Đăng nhập";
             // 
@@ -111,8 +112,18 @@
             this.txtPass.Multiline = true;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(306, 39);
+            this.txtPass.Size = new System.Drawing.Size(319, 58);
             this.txtPass.TabIndex = 16;
+            // 
+            // txtUser
+            // 
+            this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUser.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.txtUser.Location = new System.Drawing.Point(82, 333);
+            this.txtUser.Multiline = true;
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(319, 46);
+            this.txtUser.TabIndex = 14;
             // 
             // ptbPass
             // 
@@ -120,7 +131,7 @@
             this.ptbPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ptbPass.Location = new System.Drawing.Point(12, 406);
             this.ptbPass.Name = "ptbPass";
-            this.ptbPass.Size = new System.Drawing.Size(46, 39);
+            this.ptbPass.Size = new System.Drawing.Size(59, 46);
             this.ptbPass.TabIndex = 15;
             this.ptbPass.TabStop = false;
             // 
@@ -130,23 +141,36 @@
             this.ptbLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ptbLogin.Location = new System.Drawing.Point(12, 333);
             this.ptbLogin.Name = "ptbLogin";
-            this.ptbLogin.Size = new System.Drawing.Size(46, 39);
+            this.ptbLogin.Size = new System.Drawing.Size(59, 46);
             this.ptbLogin.TabIndex = 13;
             this.ptbLogin.TabStop = false;
             // 
-            // txtUser
+            // btnHide
             // 
-            this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUser.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.txtUser.Location = new System.Drawing.Point(82, 333);
-            this.txtUser.Multiline = true;
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(306, 39);
-            this.txtUser.TabIndex = 14;
+            this.btnHide.BackColor = System.Drawing.Color.Transparent;
+            this.btnHide.BorderColor = System.Drawing.Color.Transparent;
+            this.btnHide.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHide.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHide.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHide.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHide.FillColor = System.Drawing.Color.Silver;
+            this.btnHide.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHide.ForeColor = System.Drawing.Color.White;
+            this.btnHide.Image = global::QuanLyNhaHang.Properties.Resources.icons8_hide_100;
+            this.btnHide.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnHide.Location = new System.Drawing.Point(344, 407);
+            this.btnHide.Name = "btnHide";
+            this.btnHide.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnHide.Size = new System.Drawing.Size(55, 55);
+            this.btnHide.TabIndex = 20;
+            this.btnHide.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHide.UseTransparentBackground = true;
+            this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
             // 
-            // Form1
+            // frmLogin
             // 
-            this.ClientSize = new System.Drawing.Size(409, 646);
+            this.ClientSize = new System.Drawing.Size(473, 727);
+            this.Controls.Add(this.btnHide);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -155,8 +179,9 @@
             this.Controls.Add(this.ptbLogin);
             this.Controls.Add(this.txtUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -178,6 +203,7 @@
         private System.Windows.Forms.PictureBox ptbPass;
         private System.Windows.Forms.PictureBox ptbLogin;
         private System.Windows.Forms.TextBox txtUser;
+        private Guna.UI2.WinForms.Guna2CircleButton btnHide;
     }
 }
 
