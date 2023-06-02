@@ -30,14 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAccount = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnReport = new Guna.UI2.WinForms.Guna2Button();
+            this.btnStaff = new Guna.UI2.WinForms.Guna2Button();
             this.btnKitchen = new Guna.UI2.WinForms.Guna2Button();
             this.btnPOS = new Guna.UI2.WinForms.Guna2Button();
-            this.btnStaff = new Guna.UI2.WinForms.Guna2Button();
             this.btnTables = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCategory = new Guna.UI2.WinForms.Guna2Button();
             this.btnProduct = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCategory = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlControlBox = new System.Windows.Forms.Panel();
@@ -53,6 +54,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.panel1.Controls.Add(this.btnAccount);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.btnReport);
             this.panel1.Controls.Add(this.btnStaff);
@@ -66,8 +68,32 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(176, 804);
+            this.panel1.Size = new System.Drawing.Size(176, 819);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAccount
+            // 
+            this.btnAccount.AutoRoundedCorners = true;
+            this.btnAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnAccount.BorderRadius = 31;
+            this.btnAccount.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnAccount.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAccount.FillColor = System.Drawing.Color.Transparent;
+            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAccount.ForeColor = System.Drawing.Color.White;
+            this.btnAccount.Image = global::QuanLyNhaHang.Properties.Resources.user;
+            this.btnAccount.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAccount.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnAccount.Location = new System.Drawing.Point(0, 679);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(214, 65);
+            this.btnAccount.TabIndex = 8;
+            this.btnAccount.Text = "Account";
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnLogOut
             // 
@@ -80,17 +106,18 @@
             this.btnLogOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLogOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogOut.FillColor = System.Drawing.Color.Transparent;
             this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLogOut.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnLogOut.Location = new System.Drawing.Point(0, 679);
+            this.btnLogOut.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 754);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(214, 65);
+            this.btnLogOut.Size = new System.Drawing.Size(176, 65);
             this.btnLogOut.TabIndex = 6;
-            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.Text = "     Log Out";
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnReport
@@ -116,6 +143,30 @@
             this.btnReport.TabIndex = 6;
             this.btnReport.Text = "Report";
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
+            // btnStaff
+            // 
+            this.btnStaff.AutoRoundedCorners = true;
+            this.btnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnStaff.BorderRadius = 31;
+            this.btnStaff.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnStaff.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnStaff.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnStaff.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnStaff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnStaff.FillColor = System.Drawing.Color.Transparent;
+            this.btnStaff.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnStaff.ForeColor = System.Drawing.Color.White;
+            this.btnStaff.Image = global::QuanLyNhaHang.Properties.Resources.staff;
+            this.btnStaff.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnStaff.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnStaff.Location = new System.Drawing.Point(0, 395);
+            this.btnStaff.Name = "btnStaff";
+            this.btnStaff.Size = new System.Drawing.Size(214, 65);
+            this.btnStaff.TabIndex = 5;
+            this.btnStaff.Text = "Staff";
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
             // btnKitchen
             // 
@@ -165,30 +216,6 @@
             this.btnPOS.Text = "POS";
             this.btnPOS.Click += new System.EventHandler(this.btnPOS_Click);
             // 
-            // btnStaff
-            // 
-            this.btnStaff.AutoRoundedCorners = true;
-            this.btnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnStaff.BorderRadius = 31;
-            this.btnStaff.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnStaff.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnStaff.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnStaff.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnStaff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnStaff.FillColor = System.Drawing.Color.Transparent;
-            this.btnStaff.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnStaff.ForeColor = System.Drawing.Color.White;
-            this.btnStaff.Image = global::QuanLyNhaHang.Properties.Resources.staff;
-            this.btnStaff.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnStaff.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnStaff.Location = new System.Drawing.Point(0, 395);
-            this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Size = new System.Drawing.Size(214, 65);
-            this.btnStaff.TabIndex = 5;
-            this.btnStaff.Text = "Staff";
-            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
-            // 
             // btnTables
             // 
             this.btnTables.AutoRoundedCorners = true;
@@ -213,30 +240,6 @@
             this.btnTables.Text = "Tables";
             this.btnTables.Click += new System.EventHandler(this.btnTables_Click);
             // 
-            // btnCategory
-            // 
-            this.btnCategory.AutoRoundedCorners = true;
-            this.btnCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnCategory.BorderRadius = 31;
-            this.btnCategory.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnCategory.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCategory.FillColor = System.Drawing.Color.Transparent;
-            this.btnCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCategory.ForeColor = System.Drawing.Color.White;
-            this.btnCategory.Image = global::QuanLyNhaHang.Properties.Resources.category__1_;
-            this.btnCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCategory.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnCategory.Location = new System.Drawing.Point(3, 182);
-            this.btnCategory.Name = "btnCategory";
-            this.btnCategory.Size = new System.Drawing.Size(211, 65);
-            this.btnCategory.TabIndex = 3;
-            this.btnCategory.Text = "    Categories";
-            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
-            // 
             // btnProduct
             // 
             this.btnProduct.AutoRoundedCorners = true;
@@ -260,6 +263,30 @@
             this.btnProduct.TabIndex = 2;
             this.btnProduct.Text = "Product";
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
+            // 
+            // btnCategory
+            // 
+            this.btnCategory.AutoRoundedCorners = true;
+            this.btnCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnCategory.BorderRadius = 31;
+            this.btnCategory.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnCategory.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCategory.FillColor = System.Drawing.Color.Transparent;
+            this.btnCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCategory.ForeColor = System.Drawing.Color.White;
+            this.btnCategory.Image = global::QuanLyNhaHang.Properties.Resources.category__1_;
+            this.btnCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCategory.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnCategory.Location = new System.Drawing.Point(3, 182);
+            this.btnCategory.Name = "btnCategory";
+            this.btnCategory.Size = new System.Drawing.Size(211, 65);
+            this.btnCategory.TabIndex = 3;
+            this.btnCategory.Text = "    Categories";
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
             // btnHome
             // 
@@ -346,14 +373,14 @@
             this.CenterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CenterPanel.Location = new System.Drawing.Point(176, 62);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(1222, 742);
+            this.CenterPanel.Size = new System.Drawing.Size(1222, 757);
             this.CenterPanel.TabIndex = 2;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1398, 804);
+            this.ClientSize = new System.Drawing.Size(1398, 819);
             this.Controls.Add(this.CenterPanel);
             this.Controls.Add(this.pnlControlBox);
             this.Controls.Add(this.panel1);
@@ -387,5 +414,6 @@
         private System.Windows.Forms.Panel CenterPanel;
         private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Guna.UI2.WinForms.Guna2Button btnReport;
+        public Guna.UI2.WinForms.Guna2Button btnAccount;
     }
 }

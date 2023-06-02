@@ -41,8 +41,8 @@
       <PropertyRef Name="TenTaiKhoan" />
     </Key>
     <Property Name="TenTaiKhoan" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="MatKhau" Type="varchar" MaxLength="50" />
-    <Property Name="MaNV" Type="varchar" MaxLength="10" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaNV" Type="varchar" MaxLength="50" />
     <Property Name="CapDoQuyen" Type="int" />
   </EntityType>
   <EntityType Name="tblDetails">
@@ -87,6 +87,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__TAIKHOAN__MaNV__5EBF139D">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="Manv" />
+      </Principal>
+      <Dependent Role="TAIKHOAN">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="QuanLyNhaHangModelStoreContainer">
     <EntitySet Name="BAN" EntityType="Self.BAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DANHMUC" EntityType="Self.DANHMUC" Schema="dbo" store:Type="Tables" />
@@ -98,6 +110,10 @@
     <AssociationSet Name="FK__SANPHAM__AnhSP__3B75D760" Association="Self.FK__SANPHAM__AnhSP__3B75D760">
       <End Role="DANHMUC" EntitySet="DANHMUC" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TAIKHOAN__MaNV__5EBF139D" Association="Self.FK__TAIKHOAN__MaNV__5EBF139D">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

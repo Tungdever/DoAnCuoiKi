@@ -36,12 +36,37 @@ namespace QuanLyNhaHang
             {
                 this.Hide();
                 frmMain frm = new frmMain();
+                if (dbTK.KT(txtUser.Text))
+                {
+                    frm.btnAccount.Visible = true;
+                }
+                else
+                {
+                    frm.btnAccount.Visible = false;
+                }
                 frm.Show();
             }
             else
             {
                 MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác!!!");
             }
+        }
+        bool hide = true;
+        private void txtPass_IconRightClick(object sender, EventArgs e)
+        {
+            if (hide)
+            {
+                txtPass.PasswordChar = default;
+                hide = false;
+                txtPass.IconRight = global::QuanLyNhaHang.Properties.Resources.view;
+            }
+            else
+            {
+                txtPass.PasswordChar = '*';
+                hide = true;
+                txtPass.IconRight = global::QuanLyNhaHang.Properties.Resources.hidden;
+            }
+            
         }
     }
 }

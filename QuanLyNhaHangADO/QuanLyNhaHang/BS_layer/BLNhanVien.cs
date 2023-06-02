@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,40 @@ namespace QuanLyNhaHang.BS_layer
         {
             return db.ExecuteQueryDataSet("SELECT * FROM NHANVIEN", CommandType.Text);
         }
+        public string MaNV_TenNV(string MaNV)
+        {
+            DataSet TK = db.ExecuteQueryDataSet("select Manv, Ten from NHANVIEN where Manv = '" + MaNV + "'", CommandType.Text);
+            string Ma = "";
+            string Ten =  "";
+            foreach (DataRow row in TK.Tables[0].Rows)
+            {
+                Ma = row["Manv"].ToString();
+                Ten = row["Ten"].ToString();
+                             
+            }
+            return Ma + " - " + Ten;
+        }
+        public DataTable LayDSNV()
+        {
+            DataSet TK = db.ExecuteQueryDataSet("select Manv, Ten from NHANVIEN", CommandType.Text);
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Id");
+            dt.Columns.Add("Display");
+            string Ma = "";
+            string Ten = "";
+            foreach (DataRow row in TK.Tables[0].Rows)
+            {
+                Ma = row["Manv"].ToString();
+                Ten = row["Ten"].ToString();
+                dt.Rows.Add(Ma, Ma + "-" + Ten);
+            }
+            return dt;       
+        }
         public DataSet LayPhucVu()
         {
             return db.ExecuteQueryDataSet("SELECT * FROM NHANVIEN WHERE ChucVu = N'Phục Vụ'", CommandType.Text);
         }
+
 
         public DataSet LayGiaoHang()
         {

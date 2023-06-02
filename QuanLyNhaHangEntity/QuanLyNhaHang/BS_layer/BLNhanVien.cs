@@ -73,5 +73,40 @@ namespace QuanLyNhaHang.BS_layer
             }
             return true;
         }
+        public List<string> LayDSTenNhanVien()
+        {
+            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+            var NV = from nv in qlnhEntity.NHANVIENs
+                     select nv.Manv + "-" + nv.Ten;
+            return NV.ToList();
+        }
+        public DataTable LayDSNV()
+        {
+            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+            var employees = from nv in qlnhEntity.NHANVIENs
+                            select new
+                            {
+                                ID = nv.Manv,
+                                Display = nv.Manv + "-" + nv.Ten
+                            };
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Id");
+            dataTable.Columns.Add("Display");
+
+            foreach (var employee in employees)
+            {
+                dataTable.Rows.Add(employee.ID, employee.Display);
+            }
+            return dataTable;
+        }
+        public string MaNV_TenNV(string MaNV)
+        {
+            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+            var employee = (from nv in qlnhEntity.NHANVIENs
+                            where nv.Manv == MaNV
+                            select nv.Manv + " - " + nv.Ten).FirstOrDefault();
+
+            return employee; 
+        }
     }
 }

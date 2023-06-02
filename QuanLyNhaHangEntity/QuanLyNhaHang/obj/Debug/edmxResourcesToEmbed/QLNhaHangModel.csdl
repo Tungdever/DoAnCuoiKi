@@ -25,6 +25,7 @@
     <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Luong" Type="Double" />
+    <NavigationProperty Name="TAIKHOANs" Relationship="Self.FK__TAIKHOAN__MaNV__5EBF139D" FromRole="NHANVIEN" ToRole="TAIKHOAN" />
   </EntityType>
   <EntityType Name="SANPHAM">
     <Key>
@@ -43,9 +44,10 @@
       <PropertyRef Name="TenTaiKhoan" />
     </Key>
     <Property Name="TenTaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaNV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="CapDoQuyen" Type="Int32" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK__TAIKHOAN__MaNV__5EBF139D" FromRole="TAIKHOAN" ToRole="NHANVIEN" />
   </EntityType>
   <EntityType Name="tblDetail">
     <Key>
@@ -89,6 +91,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__TAIKHOAN__MaNV__5EBF139D">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="Manv" />
+      </Principal>
+      <Dependent Role="TAIKHOAN">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="QuanLyNhaHangEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BANs" EntityType="Self.BAN" />
     <EntitySet Name="DANHMUCs" EntityType="Self.DANHMUC" />
@@ -100,6 +114,10 @@
     <AssociationSet Name="FK__SANPHAM__AnhSP__3B75D760" Association="Self.FK__SANPHAM__AnhSP__3B75D760">
       <End Role="DANHMUC" EntitySet="DANHMUCs" />
       <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TAIKHOAN__MaNV__5EBF139D" Association="Self.FK__TAIKHOAN__MaNV__5EBF139D">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

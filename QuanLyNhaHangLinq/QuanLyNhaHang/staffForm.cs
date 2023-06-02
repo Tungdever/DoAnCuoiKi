@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace QuanLyNhaHang
@@ -73,13 +74,18 @@ namespace QuanLyNhaHang
                     frm.txtStaffName.Text = dgvStaff.CurrentRow.Cells["dgvTen"].Value.ToString();
                     frm.txtStaffPhone.Text = dgvStaff.CurrentRow.Cells["dgvSDT"].Value.ToString();
                     frm.txtStaffRole.Text = dgvStaff.CurrentRow.Cells["dgvChucVu"].Value.ToString();
-                    frm.txtStaffRole.Text = dgvStaff.CurrentRow.Cells["dgvLuong"].Value.ToString();
+                    frm.txtSalary.Text = dgvStaff.CurrentRow.Cells["dgvLuong"].Value.ToString();
                     frm.lblAdd.Text = "Staff Edit";
                     frm.ShowDialog();
                     LoadData();
                 }
                 else if (dgvStaff.CurrentCell.OwningColumn.Name == "dgvDel")
                 {
+                    if (dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString() == "NV0")
+                    {
+                        MessageBox.Show("Không thể xoá chủ nhà hàng");
+                        return;
+                    }
                     DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {

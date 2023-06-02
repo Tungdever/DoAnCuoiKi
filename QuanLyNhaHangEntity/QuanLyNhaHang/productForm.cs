@@ -17,8 +17,6 @@ namespace QuanLyNhaHang
 {
     public partial class productForm : Form
     {
-        DataTable dtSP = null;
-        DataTable dtDM = null;
         string err;
         BLSanPham dbSP = new BLSanPham();
         BLDanhMuc dbDM = new BLDanhMuc();

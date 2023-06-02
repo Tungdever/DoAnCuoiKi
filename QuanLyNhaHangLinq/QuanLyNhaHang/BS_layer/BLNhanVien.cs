@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using System.Data.Linq;
+using System.Data;
 
 namespace QuanLyNhaHang.BS_layer
 {
@@ -18,10 +20,30 @@ namespace QuanLyNhaHang.BS_layer
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             var NhanVienList = from nv in qlNH.NHANVIENs
-                            where nv.Ten.Contains(str)
-                            select nv;
+                               where nv.Ten.Contains(str)
+                               select nv;
             return NhanVienList.ToList();
         }
+        public DataTable LayDSNV()
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+            var employees = from nv in qlNH.NHANVIENs
+                            select new
+                            {
+                                ID = nv.Manv,
+                                Display = nv.Manv + "-" + nv.Ten
+                            };
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Id");
+            dataTable.Columns.Add("Display");
+
+            foreach (var employee in employees)
+            {
+                dataTable.Rows.Add(employee.ID, employee.Display);
+            }
+            return dataTable;
+        }
+
         public bool ThemNhanVien(string Manv, string Ten, string SDT, string ChucVu , float Luong, ref string err)
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
@@ -60,6 +82,15 @@ namespace QuanLyNhaHang.BS_layer
                 qlNH.SubmitChanges();
             }
             return true;
+        }
+        public string MaNV_TenNV(string MaNV)
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+            var employee = (from nv in qlNH.NHANVIENs
+                            where nv.Manv == MaNV
+                            select nv.Manv + " - " + nv.Ten).FirstOrDefault();
+
+            return employee;
         }
     }
 }

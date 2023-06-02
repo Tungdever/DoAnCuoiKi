@@ -14,10 +14,19 @@ namespace QuanLyNhaHang
     
     public partial class NHANVIEN
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public NHANVIEN()
+        {
+            this.TAIKHOANs = new HashSet<TAIKHOAN>();
+        }
+    
         public string Manv { get; set; }
         public string Ten { get; set; }
         public string SDT { get; set; }
         public string ChucVu { get; set; }
         public Nullable<double> Luong { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TAIKHOAN> TAIKHOANs { get; set; }
     }
 }

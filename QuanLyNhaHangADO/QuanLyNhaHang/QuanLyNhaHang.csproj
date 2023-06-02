@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="accountForm.Designer.cs">
+      <DependentUpon>accountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BS_layer\BLDanhMuc.cs" />
     <Compile Include="BS_layer\BLNhanVien.cs" />
     <Compile Include="BS_layer\BLPOS.cs" />
@@ -74,6 +80,12 @@
       <DependentUpon>categoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL.cs" />
+    <Compile Include="FormAdd\frmAccountAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdd\frmAccountAdd.Designer.cs">
+      <DependentUpon>frmAccountAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBillList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -457,6 +469,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-sales-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hidden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

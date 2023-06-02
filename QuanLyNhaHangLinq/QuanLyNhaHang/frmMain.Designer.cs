@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAccount = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnReport = new Guna.UI2.WinForms.Guna2Button();
             this.btnStaff = new Guna.UI2.WinForms.Guna2Button();
@@ -52,6 +53,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.panel1.Controls.Add(this.btnAccount);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.btnReport);
             this.panel1.Controls.Add(this.btnStaff);
@@ -65,8 +67,32 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(176, 804);
+            this.panel1.Size = new System.Drawing.Size(176, 819);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAccount
+            // 
+            this.btnAccount.AutoRoundedCorners = true;
+            this.btnAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnAccount.BorderRadius = 31;
+            this.btnAccount.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnAccount.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAccount.FillColor = System.Drawing.Color.Transparent;
+            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAccount.ForeColor = System.Drawing.Color.White;
+            this.btnAccount.Image = global::QuanLyNhaHang.Properties.Resources.user;
+            this.btnAccount.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAccount.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnAccount.Location = new System.Drawing.Point(0, 679);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(214, 65);
+            this.btnAccount.TabIndex = 8;
+            this.btnAccount.Text = "Account";
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnLogOut
             // 
@@ -79,17 +105,18 @@
             this.btnLogOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLogOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogOut.FillColor = System.Drawing.Color.Transparent;
             this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
             this.btnLogOut.Image = global::QuanLyNhaHang.Properties.Resources.logout__1___1_;
             this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLogOut.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnLogOut.Location = new System.Drawing.Point(0, 679);
+            this.btnLogOut.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 754);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(214, 65);
+            this.btnLogOut.Size = new System.Drawing.Size(176, 65);
             this.btnLogOut.TabIndex = 6;
-            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.Text = "     Log Out";
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnReport
@@ -341,14 +368,14 @@
             this.CenterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CenterPanel.Location = new System.Drawing.Point(176, 62);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(1222, 742);
+            this.CenterPanel.Size = new System.Drawing.Size(1222, 757);
             this.CenterPanel.TabIndex = 2;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1398, 804);
+            this.ClientSize = new System.Drawing.Size(1398, 819);
             this.Controls.Add(this.CenterPanel);
             this.Controls.Add(this.pnlControlBox);
             this.Controls.Add(this.panel1);
@@ -382,5 +409,6 @@
         private System.Windows.Forms.Panel CenterPanel;
         private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Guna.UI2.WinForms.Guna2Button btnReport;
+        public Guna.UI2.WinForms.Guna2Button btnAccount;
     }
 }

@@ -84,5 +84,10 @@ namespace QuanLyNhaHang
             AddControls(new frmReport());   
 
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            AddControls(new accountForm());
+        }
     }
 }

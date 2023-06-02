@@ -32,8 +32,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ptbPass = new System.Windows.Forms.PictureBox();
             this.ptbLogin = new System.Windows.Forms.PictureBox();
@@ -93,17 +93,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Đăng nhập";
             // 
-            // txtPass
-            // 
-            this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPass.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.txtPass.Location = new System.Drawing.Point(82, 406);
-            this.txtPass.Multiline = true;
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(306, 39);
-            this.txtPass.TabIndex = 16;
-            // 
             // txtUser
             // 
             this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -113,6 +102,28 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(306, 39);
             this.txtUser.TabIndex = 14;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPass.DefaultText = "";
+            this.txtPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPass.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPass.IconRight = global::QuanLyNhaHang.Properties.Resources.hidden;
+            this.txtPass.Location = new System.Drawing.Point(82, 406);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.PlaceholderText = "";
+            this.txtPass.SelectedText = "";
+            this.txtPass.Size = new System.Drawing.Size(306, 39);
+            this.txtPass.TabIndex = 19;
+            this.txtPass.IconRightClick += new System.EventHandler(this.txtPass_IconRightClick);
             // 
             // pictureBox1
             // 
@@ -147,10 +158,10 @@
             // frmLogin
             // 
             this.ClientSize = new System.Drawing.Size(409, 646);
+            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.ptbPass);
             this.Controls.Add(this.ptbLogin);
             this.Controls.Add(this.txtUser);
@@ -174,10 +185,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.PictureBox ptbPass;
         private System.Windows.Forms.PictureBox ptbLogin;
         private System.Windows.Forms.TextBox txtUser;
+        private Guna.UI2.WinForms.Guna2TextBox txtPass;
     }
 }
 

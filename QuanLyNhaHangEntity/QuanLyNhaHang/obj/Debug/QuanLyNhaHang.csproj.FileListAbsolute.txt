@@ -161,3 +161,5 @@ D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.C
 D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
 D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
 D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.accountForm.resources
+D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmAccountAdd.resources

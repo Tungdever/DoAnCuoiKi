@@ -64,5 +64,10 @@ namespace QuanLyNhaHang
             frmLogin frm = new frmLogin();
             frm.ShowDialog();
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            AddControls(new accountForm());
+        }
     }
 }

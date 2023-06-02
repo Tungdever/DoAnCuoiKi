@@ -18,5 +18,7 @@ namespace QuanLyNhaHang
         public string MatKhau { get; set; }
         public string MaNV { get; set; }
         public Nullable<int> CapDoQuyen { get; set; }
+    
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }
