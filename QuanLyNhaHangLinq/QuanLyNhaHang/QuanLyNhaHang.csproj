@@ -94,17 +94,7 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="frmPOS.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPOS.Designer.cs">
-      <DependentUpon>frmPOS.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmProductAdd.cs">
-=======
     <Compile Include="FormAdd\frmProductAdd.cs">
->>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAdd\frmProductAdd.Designer.cs">
@@ -159,14 +149,7 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="frmPOS.resx">
-      <DependentUpon>frmPOS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProductAdd.resx">
-=======
     <EmbeddedResource Include="FormAdd\frmProductAdd.resx">
->>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5
       <DependentUpon>frmProductAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdd\frmStaffAdd.resx">
@@ -283,38 +266,10 @@
     <None Include="Resources\identity-document-computer-icons-business-clip-art-id-card-removebg-preview %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <None Include="Resources\icons8-restaurant.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-new-ticket-80.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-hand-100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\point-of-sale %281%291.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-KOT-64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-motorcycle-delivery-100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-take-away-food-100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-restaurant-din-in.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-shutdown-96.png" />
-=======
     <None Include="Resources\logout %281%29 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-report-64 %281%29.png" />
->>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hidden.png" />

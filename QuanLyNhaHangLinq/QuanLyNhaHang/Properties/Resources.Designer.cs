@@ -173,85 +173,9 @@ namespace QuanLyNhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
-        internal static System.Drawing.Bitmap icons8_hand_100 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-hand-100", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_KOT_64 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-KOT-64", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_motorcycle_delivery_100 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-motorcycle-delivery-100", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_new_ticket_80 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-new-ticket-80", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_restaurant {
-            get {
-                object obj = ResourceManager.GetObject("icons8-restaurant", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_restaurant_din_in {
-            get {
-                object obj = ResourceManager.GetObject("icons8-restaurant-din-in", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_shutdown_96 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-shutdown-96", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_take_away_food_100 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-take-away-food-100", resourceCulture);
-=======
         internal static System.Drawing.Bitmap icons8_report_64__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-report-64 (1)", resourceCulture);
->>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -302,16 +226,6 @@ namespace QuanLyNhaHang.Properties {
         internal static System.Drawing.Bitmap point_of_sale__1_ {
             get {
                 object obj = ResourceManager.GetObject("point-of-sale (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap point_of_sale__1_1 {
-            get {
-                object obj = ResourceManager.GetObject("point-of-sale (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

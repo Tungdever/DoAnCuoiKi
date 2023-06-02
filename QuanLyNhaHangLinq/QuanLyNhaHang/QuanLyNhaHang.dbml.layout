@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.125" name="QuanLyNhaHang">
   <DataContextMoniker Name="/QuanLyNhaHangDataContext" />
   <nestedChildShapes>
@@ -7,87 +6,6 @@
       <DataClassMoniker Name="/QuanLyNhaHangDataContext/BAN" />
       <nestedChildShapes>
         <elementListCompartment Id="801ee6f0-9a63-4752-b64e-13eb362ab7f4" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-=======
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.25" name="QuanLyNhaHang">
-  <DataContextMoniker Name="/QuanLyNhaHangDataContext" />
-  <nestedChildShapes>
-<<<<<<< HEAD
-    <classShape Id="aecd4c12-9bc2-4008-8988-6980c596d671" absoluteBounds="1.25, 1.625, 2, 1.3862939453125">
-=======
-    <classShape Id="24bfba96-cd0d-45fd-be19-6023fe4c78c2" absoluteBounds="5, 0.75, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/QuanLyNhaHangDataContext/DANHMUC" />
-      <nestedChildShapes>
-        <elementListCompartment Id="67860b27-67b8-445e-a4ca-1c1f4ba3eed7" absoluteBounds="5.015, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5d6671e2-1e2f-4763-a773-783141386c12" absoluteBounds="1.75, 2.25, 2, 1.9631982421875">
-      <DataClassMoniker Name="/QuanLyNhaHangDataContext/SANPHAM" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c8308fb5-1f85-412e-9d8d-45f2dc58e219" absoluteBounds="1.7650000000000001, 2.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(5 : 1.15625); (3.15625 : 1.15625); (3.15625 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/QuanLyNhaHangDataContext/DANHMUC/DANHMUC_SANPHAM" />
-      <nodes>
-        <classShapeMoniker Id="24bfba96-cd0d-45fd-be19-6023fe4c78c2" />
-        <classShapeMoniker Id="5d6671e2-1e2f-4763-a773-783141386c12" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="939cc635-4c1c-4ba6-9b68-4fb7fc22a097" absoluteBounds="5, 2.5, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/QuanLyNhaHangDataContext/TAIKHOAN" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5e57c648-da0f-45df-a463-f7f96d89a2d7" absoluteBounds="5.015, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="41b33fa0-2a5c-4b19-bfdc-de066bc2292d" absoluteBounds="3.375, 5.125, 2, 1.3862939453125">
->>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5
-      <DataClassMoniker Name="/QuanLyNhaHangDataContext/BAN" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6cbc2408-26bb-47b2-aa7e-1b7ec6e70fb5" absoluteBounds="1.2650000000000001, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="0de3cd96-8417-4650-af22-69d0f8e4450a" absoluteBounds="4.375, 1.125, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/QuanLyNhaHangDataContext/DANHMUC" />
-      <nestedChildShapes>
-        <elementListCompartment Id="dea72f6c-6627-4c8d-b294-b03834a5e651" absoluteBounds="4.39, 1.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="08472417-d0b9-4af7-9bab-3dc67df37d3a" absoluteBounds="1.75, 3.875, 2, 1.7708968098958331">
-      <DataClassMoniker Name="/QuanLyNhaHangDataContext/NHANVIEN" />
-      <nestedChildShapes>
-        <elementListCompartment Id="59772328-7acb-4085-822f-5016487cb34b" absoluteBounds="1.7650000000000001, 4.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="ccb00b67-146d-4def-b47d-d65b29a53e29" absoluteBounds="4, 3.5, 2, 1.9631982421875">
-      <DataClassMoniker Name="/QuanLyNhaHangDataContext/SANPHAM" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7039a274-4524-4335-9115-201c4a59b71e" absoluteBounds="4.015, 3.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(5.1875 : 2.31899251302083); (5.1875 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/QuanLyNhaHangDataContext/DANHMUC/DANHMUC_SANPHAM" />
-      <nodes>
-        <classShapeMoniker Id="0de3cd96-8417-4650-af22-69d0f8e4450a" />
-        <classShapeMoniker Id="ccb00b67-146d-4def-b47d-d65b29a53e29" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="898a6e2b-667f-427d-91c6-d3b1a41b7c1f" absoluteBounds="6.875, 3, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/QuanLyNhaHangDataContext/TAIKHOAN" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d5bede17-8fc4-4cb8-b46c-c6b8af79a4e0" absoluteBounds="6.89, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="21ec760a-4553-4e2d-b853-fef83f906f3a" absoluteBounds="6.5, 5.875, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/QuanLyNhaHangDataContext/tblDetail" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5835acb8-c73d-44b8-872b-1e22a71fd88a" absoluteBounds="6.515, 6.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="c05a4057-9930-4e19-8089-8fc6674fc283" absoluteBounds="3.875, 5.75, 2, 3.3093082682291666">
-      <DataClassMoniker Name="/QuanLyNhaHangDataContext/tblMain" />
-      <nestedChildShapes>
-        <elementListCompartment Id="596425df-3dc9-445f-a3e2-22d302baaf75" absoluteBounds="3.8899999999999997, 6.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
->>>>>>> f1ccf680141420b964bdd4f3347cd540489c67cf
       </nestedChildShapes>
     </classShape>
     <classShape Id="eed85737-80cd-49b7-8c25-d339af25da2c" absoluteBounds="0.75, 4.25, 2, 1.1939925130208326">
