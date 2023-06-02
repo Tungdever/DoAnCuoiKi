@@ -63,5 +63,10 @@ namespace QuanLyNhaHang.BS_layer
         {
             return db.ExecuteQueryDataSet("select AnhSP from SanPham WHERE MaSP = '" + MaSP + "'", CommandType.Text);
         }
+
+        public DataSet GetProducts()
+        {
+            return db.ExecuteQueryDataSet("Select * from SANPHAM inner join DanhMuc on MaLoaiSP  = MaDM", CommandType.Text);
+        }
     }
 }

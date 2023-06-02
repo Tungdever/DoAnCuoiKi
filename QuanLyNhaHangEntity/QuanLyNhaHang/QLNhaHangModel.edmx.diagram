@@ -4,6 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+<<<<<<< HEAD
       <Diagram DiagramId="d7ff3804d84b4929a97d8b7f4d9b9276" Name="Diagram1">
         <EntityTypeShape EntityType="QuanLyNhaHangModel.BAN" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyNhaHangModel.DANHMUC" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
@@ -12,6 +13,24 @@
         <EntityTypeShape EntityType="QuanLyNhaHangModel.TAIKHOAN" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyNhaHangModel.tblDetail" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyNhaHangModel.tblMain" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+=======
+<<<<<<< HEAD
+      <Diagram DiagramId="1bf1537a607349b99af5f1a6dfaa75a0" Name="Diagram1">
+=======
+      <Diagram DiagramId="3155c8376be54e4c8255e0ff350ff17b" Name="Diagram1">
+>>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.BAN" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.DANHMUC" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.NHANVIEN" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.SANPHAM" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.TAIKHOAN" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.tblDetail" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+<<<<<<< HEAD
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.tblMain" Width="1.5" PointX="6.75" PointY="3.875" IsExpanded="true" />
+=======
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.tblMain" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+>>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5
+>>>>>>> f1ccf680141420b964bdd4f3347cd540489c67cf
         <AssociationConnector Association="QuanLyNhaHangModel.FK__SANPHAM__AnhSP__3B75D760" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyNhaHangModel.FK__TAIKHOAN__MaNV__5EBF139D" ManuallyRouted="false" />
       </Diagram>
