@@ -147,8 +147,6 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.AutoRoundedCorners = true;
-            this.txtProductName.BorderRadius = 32;
             this.txtProductName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtProductName.DefaultText = "";
             this.txtProductName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -158,14 +156,14 @@
             this.txtProductName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtProductName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtProductName.Location = new System.Drawing.Point(220, 274);
+            this.txtProductName.Location = new System.Drawing.Point(220, 280);
             this.txtProductName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.PasswordChar = '\0';
             this.txtProductName.PlaceholderText = "";
             this.txtProductName.SelectedText = "";
             this.txtProductName.SelectionStart = "".Length;
-            this.txtProductName.Size = new System.Drawing.Size(278, 67);
+            this.txtProductName.Size = new System.Drawing.Size(278, 61);
             this.txtProductName.TabIndex = 10;
             // 
             // lblName
@@ -180,8 +178,6 @@
             // 
             // txtProductID
             // 
-            this.txtProductID.AutoRoundedCorners = true;
-            this.txtProductID.BorderRadius = 32;
             this.txtProductID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtProductID.DefaultText = "";
             this.txtProductID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -191,7 +187,7 @@
             this.txtProductID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtProductID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtProductID.Location = new System.Drawing.Point(220, 177);
+            this.txtProductID.Location = new System.Drawing.Point(220, 183);
             this.txtProductID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.PasswordChar = '\0';
@@ -199,7 +195,7 @@
             this.txtProductID.ReadOnly = true;
             this.txtProductID.SelectedText = "";
             this.txtProductID.SelectionStart = "".Length;
-            this.txtProductID.Size = new System.Drawing.Size(278, 67);
+            this.txtProductID.Size = new System.Drawing.Size(278, 61);
             this.txtProductID.TabIndex = 11;
             // 
             // label1
@@ -214,8 +210,6 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.AutoRoundedCorners = true;
-            this.txtPrice.BorderRadius = 32;
             this.txtPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPrice.DefaultText = "";
             this.txtPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -225,14 +219,14 @@
             this.txtPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.Location = new System.Drawing.Point(775, 177);
+            this.txtPrice.Location = new System.Drawing.Point(775, 183);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "";
             this.txtPrice.SelectedText = "";
             this.txtPrice.SelectionStart = "".Length;
-            this.txtPrice.Size = new System.Drawing.Size(278, 67);
+            this.txtPrice.Size = new System.Drawing.Size(278, 61);
             this.txtPrice.TabIndex = 17;
             // 
             // label3

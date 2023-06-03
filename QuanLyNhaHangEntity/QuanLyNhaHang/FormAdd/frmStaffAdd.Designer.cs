@@ -135,8 +135,6 @@
             // 
             // txtStaffID
             // 
-            this.txtStaffID.AutoRoundedCorners = true;
-            this.txtStaffID.BorderRadius = 32;
             this.txtStaffID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtStaffID.DefaultText = "";
             this.txtStaffID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -146,14 +144,14 @@
             this.txtStaffID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStaffID.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtStaffID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStaffID.Location = new System.Drawing.Point(162, 196);
+            this.txtStaffID.Location = new System.Drawing.Point(164, 197);
             this.txtStaffID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.PasswordChar = '\0';
             this.txtStaffID.PlaceholderText = "";
             this.txtStaffID.SelectedText = "";
             this.txtStaffID.SelectionStart = "".Length;
-            this.txtStaffID.Size = new System.Drawing.Size(278, 67);
+            this.txtStaffID.Size = new System.Drawing.Size(278, 55);
             this.txtStaffID.TabIndex = 12;
             // 
             // lblID
@@ -168,8 +166,6 @@
             // 
             // txtStaffName
             // 
-            this.txtStaffName.AutoRoundedCorners = true;
-            this.txtStaffName.BorderRadius = 32;
             this.txtStaffName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtStaffName.DefaultText = "";
             this.txtStaffName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -179,16 +175,16 @@
             this.txtStaffName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStaffName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStaffName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStaffName.Location = new System.Drawing.Point(162, 291);
+            this.txtStaffName.Location = new System.Drawing.Point(164, 292);
             this.txtStaffName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtStaffName.Name = "txtStaffName";
             this.txtStaffName.PasswordChar = '\0';
             this.txtStaffName.PlaceholderText = "";
             this.txtStaffName.SelectedText = "";
             this.txtStaffName.SelectionStart = "".Length;
-            this.txtStaffName.Size = new System.Drawing.Size(278, 67);
+            this.txtStaffName.Size = new System.Drawing.Size(278, 55);
             this.txtStaffName.TabIndex = 16;
-
+            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
@@ -211,8 +207,6 @@
             // 
             // txtStaffPhone
             // 
-            this.txtStaffPhone.AutoRoundedCorners = true;
-            this.txtStaffPhone.BorderRadius = 32;
             this.txtStaffPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtStaffPhone.DefaultText = "";
             this.txtStaffPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -222,14 +216,14 @@
             this.txtStaffPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStaffPhone.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtStaffPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStaffPhone.Location = new System.Drawing.Point(750, 196);
+            this.txtStaffPhone.Location = new System.Drawing.Point(752, 197);
             this.txtStaffPhone.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtStaffPhone.Name = "txtStaffPhone";
             this.txtStaffPhone.PasswordChar = '\0';
             this.txtStaffPhone.PlaceholderText = "";
             this.txtStaffPhone.SelectedText = "";
             this.txtStaffPhone.SelectionStart = "".Length;
-            this.txtStaffPhone.Size = new System.Drawing.Size(278, 67);
+            this.txtStaffPhone.Size = new System.Drawing.Size(278, 55);
             this.txtStaffPhone.TabIndex = 17;
             // 
             // lblRole
@@ -244,8 +238,6 @@
             // 
             // txtStaffRole
             // 
-            this.txtStaffRole.AutoRoundedCorners = true;
-            this.txtStaffRole.BorderRadius = 32;
             this.txtStaffRole.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtStaffRole.DefaultText = "";
             this.txtStaffRole.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -255,20 +247,18 @@
             this.txtStaffRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStaffRole.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtStaffRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStaffRole.Location = new System.Drawing.Point(750, 291);
+            this.txtStaffRole.Location = new System.Drawing.Point(752, 292);
             this.txtStaffRole.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtStaffRole.Name = "txtStaffRole";
             this.txtStaffRole.PasswordChar = '\0';
             this.txtStaffRole.PlaceholderText = "";
             this.txtStaffRole.SelectedText = "";
             this.txtStaffRole.SelectionStart = "".Length;
-            this.txtStaffRole.Size = new System.Drawing.Size(278, 67);
+            this.txtStaffRole.Size = new System.Drawing.Size(278, 55);
             this.txtStaffRole.TabIndex = 20;
             // 
             // txtSalary
             // 
-            this.txtSalary.AutoRoundedCorners = true;
-            this.txtSalary.BorderRadius = 32;
             this.txtSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSalary.DefaultText = "";
             this.txtSalary.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -278,14 +268,14 @@
             this.txtSalary.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSalary.Location = new System.Drawing.Point(162, 403);
+            this.txtSalary.Location = new System.Drawing.Point(164, 404);
             this.txtSalary.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.PasswordChar = '\0';
             this.txtSalary.PlaceholderText = "";
             this.txtSalary.SelectedText = "";
             this.txtSalary.SelectionStart = "".Length;
-            this.txtSalary.Size = new System.Drawing.Size(278, 67);
+            this.txtSalary.Size = new System.Drawing.Size(278, 55);
             this.txtSalary.TabIndex = 22;
             // 
             // label1
@@ -317,6 +307,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmStaffAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmStaffAdd";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();

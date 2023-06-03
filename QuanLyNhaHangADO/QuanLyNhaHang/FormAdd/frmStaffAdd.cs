@@ -27,7 +27,12 @@ namespace QuanLyNhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(txtStaffID.ReadOnly == true)
+            if (txtStaffID.Text.Trim() == "" || txtStaffName.Text.Trim() == "" || txtStaffPhone.Text.Trim() == "" ||  txtStaffRole.Text.Trim() == "" || txtSalary.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!!!");
+                return;
+            }
+            if (txtStaffID.ReadOnly == true)
             {
                 dbNV.CapNhatNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text), ref err );
                 MessageBox.Show("Đã sửa xong!");

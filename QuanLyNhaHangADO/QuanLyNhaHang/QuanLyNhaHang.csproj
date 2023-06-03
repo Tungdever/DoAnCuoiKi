@@ -235,6 +235,9 @@
     <EmbeddedResource Include="categoryForm.resx">
       <DependentUpon>categoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAdd\frmAccountAdd.resx">
+      <DependentUpon>frmAccountAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBillList.resx">
       <DependentUpon>frmBillList.cs</DependentUpon>
     </EmbeddedResource>

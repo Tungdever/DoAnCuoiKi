@@ -187,3 +187,4 @@ D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.Copy
 D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
 D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
 D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.pdb
+D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmAccountAdd.resources

@@ -23,6 +23,11 @@ namespace QuanLyNhaHang
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtTenTK.Text.Trim() == "" || txtMK.Text.Trim() == "" || txtCapDo.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!!!");
+                return;
+            }
             if (txtTenTK.ReadOnly == true)
             {
                 dbTK.CapNhatTaiKhoan(txtTenTK.Text, txtMK.Text, cbbTenNV.SelectedValue.ToString(), int.Parse(txtCapDo.Text), ref err);

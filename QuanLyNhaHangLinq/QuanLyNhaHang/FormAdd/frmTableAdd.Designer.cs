@@ -55,6 +55,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(535, 152);
             this.guna2Panel1.TabIndex = 6;
+
             // 
             // lblAdd
             // 
@@ -91,8 +92,6 @@
             // 
             // txtTableID
             // 
-            this.txtTableID.AutoRoundedCorners = true;
-            this.txtTableID.BorderRadius = 32;
             this.txtTableID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTableID.DefaultText = "";
             this.txtTableID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -102,14 +101,14 @@
             this.txtTableID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTableID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTableID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTableID.Location = new System.Drawing.Point(190, 178);
+            this.txtTableID.Location = new System.Drawing.Point(176, 187);
             this.txtTableID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTableID.Name = "txtTableID";
             this.txtTableID.PasswordChar = '\0';
             this.txtTableID.PlaceholderText = "";
             this.txtTableID.SelectedText = "";
             this.txtTableID.SelectionStart = "".Length;
-            this.txtTableID.Size = new System.Drawing.Size(278, 67);
+            this.txtTableID.Size = new System.Drawing.Size(278, 50);
             this.txtTableID.TabIndex = 12;
             // 
             // guna2Panel2
@@ -166,7 +165,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(18, 337);
+            this.lblName.Location = new System.Drawing.Point(18, 324);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(134, 31);
             this.lblName.TabIndex = 16;
@@ -174,8 +173,6 @@
             // 
             // txtTableName
             // 
-            this.txtTableName.AutoRoundedCorners = true;
-            this.txtTableName.BorderRadius = 32;
             this.txtTableName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTableName.DefaultText = "";
             this.txtTableName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -185,21 +182,21 @@
             this.txtTableName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTableName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTableName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTableName.Location = new System.Drawing.Point(190, 319);
+            this.txtTableName.Location = new System.Drawing.Point(176, 315);
             this.txtTableName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTableName.Name = "txtTableName";
             this.txtTableName.PasswordChar = '\0';
             this.txtTableName.PlaceholderText = "";
             this.txtTableName.SelectedText = "";
             this.txtTableName.SelectionStart = "".Length;
-            this.txtTableName.Size = new System.Drawing.Size(278, 67);
+            this.txtTableName.Size = new System.Drawing.Size(278, 50);
             this.txtTableName.TabIndex = 17;
             // 
             // lblState
             // 
             this.lblState.AutoSize = true;
             this.lblState.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblState.Location = new System.Drawing.Point(18, 459);
+            this.lblState.Location = new System.Drawing.Point(18, 445);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(65, 31);
             this.lblState.TabIndex = 18;
@@ -215,9 +212,9 @@
             this.cbbTstate.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbbTstate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbTstate.ItemHeight = 30;
-            this.cbbTstate.Location = new System.Drawing.Point(190, 454);
+            this.cbbTstate.Location = new System.Drawing.Point(176, 440);
             this.cbbTstate.Name = "cbbTstate";
-            this.cbbTstate.Size = new System.Drawing.Size(292, 36);
+            this.cbbTstate.Size = new System.Drawing.Size(278, 36);
             this.cbbTstate.TabIndex = 20;
             // 
             // frmTableAdd

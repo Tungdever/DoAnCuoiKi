@@ -33,7 +33,6 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblAdd = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblTenTK = new System.Windows.Forms.Label();
             this.txtMK = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblMK = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.lblCapDo = new System.Windows.Forms.Label();
             this.lblTenNV = new System.Windows.Forms.Label();
             this.cbbTenNV = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -119,18 +119,6 @@
             this.lblAdd.TabIndex = 1;
             this.lblAdd.Text = "Account Add";
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::QuanLyNhaHang.Properties.Resources.user;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(43, 12);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(196, 111);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // lblTenTK
             // 
             this.lblTenTK.AutoSize = true;
@@ -143,8 +131,6 @@
             // 
             // txtMK
             // 
-            this.txtMK.AutoRoundedCorners = true;
-            this.txtMK.BorderRadius = 32;
             this.txtMK.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMK.DefaultText = "";
             this.txtMK.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -154,14 +140,14 @@
             this.txtMK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMK.Location = new System.Drawing.Point(219, 288);
+            this.txtMK.Location = new System.Drawing.Point(216, 285);
             this.txtMK.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtMK.Name = "txtMK";
             this.txtMK.PasswordChar = '\0';
             this.txtMK.PlaceholderText = "";
             this.txtMK.SelectedText = "";
             this.txtMK.SelectionStart = "".Length;
-            this.txtMK.Size = new System.Drawing.Size(278, 67);
+            this.txtMK.Size = new System.Drawing.Size(278, 55);
             this.txtMK.TabIndex = 10;
             // 
             // lblMK
@@ -176,8 +162,6 @@
             // 
             // txtTenTK
             // 
-            this.txtTenTK.AutoRoundedCorners = true;
-            this.txtTenTK.BorderRadius = 32;
             this.txtTenTK.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTenTK.DefaultText = "";
             this.txtTenTK.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -187,20 +171,18 @@
             this.txtTenTK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenTK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenTK.Location = new System.Drawing.Point(219, 177);
+            this.txtTenTK.Location = new System.Drawing.Point(216, 174);
             this.txtTenTK.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTenTK.Name = "txtTenTK";
             this.txtTenTK.PasswordChar = '\0';
             this.txtTenTK.PlaceholderText = "";
             this.txtTenTK.SelectedText = "";
             this.txtTenTK.SelectionStart = "".Length;
-            this.txtTenTK.Size = new System.Drawing.Size(278, 67);
+            this.txtTenTK.Size = new System.Drawing.Size(278, 55);
             this.txtTenTK.TabIndex = 11;
             // 
             // txtCapDo
             // 
-            this.txtCapDo.AutoRoundedCorners = true;
-            this.txtCapDo.BorderRadius = 32;
             this.txtCapDo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCapDo.DefaultText = "";
             this.txtCapDo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -210,14 +192,14 @@
             this.txtCapDo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCapDo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCapDo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCapDo.Location = new System.Drawing.Point(806, 288);
+            this.txtCapDo.Location = new System.Drawing.Point(803, 285);
             this.txtCapDo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtCapDo.Name = "txtCapDo";
             this.txtCapDo.PasswordChar = '\0';
             this.txtCapDo.PlaceholderText = "";
             this.txtCapDo.SelectedText = "";
             this.txtCapDo.SelectionStart = "".Length;
-            this.txtCapDo.Size = new System.Drawing.Size(341, 67);
+            this.txtCapDo.Size = new System.Drawing.Size(341, 55);
             this.txtCapDo.TabIndex = 14;
             // 
             // lblCapDo
@@ -250,10 +232,22 @@
             this.cbbTenNV.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbbTenNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbTenNV.ItemHeight = 36;
-            this.cbbTenNV.Location = new System.Drawing.Point(806, 193);
+            this.cbbTenNV.Location = new System.Drawing.Point(791, 187);
             this.cbbTenNV.Name = "cbbTenNV";
             this.cbbTenNV.Size = new System.Drawing.Size(341, 42);
             this.cbbTenNV.TabIndex = 23;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::QuanLyNhaHang.Properties.Resources.user;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(43, 12);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(196, 111);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // frmAccountAdd
             // 

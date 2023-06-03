@@ -29,17 +29,6 @@ namespace QuanLyNhaHang
         public string driverID;
 
 
-
-        private void lblName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void frmCustomerAdd_Load(object sender, EventArgs e)
         {
             if(orderType == "Take Away")
@@ -78,7 +67,7 @@ namespace QuanLyNhaHang
             }
             catch (SqlException e)
             {
-                MessageBox.Show("Không lấy được nội dung trong table THANHPHO. Lỗi rồi!!!" + e);
+                MessageBox.Show("Không lấy được nội dung." + e);
             }
         }
 
@@ -96,5 +85,7 @@ namespace QuanLyNhaHang
         {
             cusPhone = txtCustomerPhone.Text;
         }
+
+
     }
 }

@@ -28,7 +28,12 @@ namespace QuanLyNhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-             if(txtTableID.ReadOnly == true)
+            if (txtTableID.Text.Trim() == "" || txtTableName.Text.Trim() == "" )
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!!!");
+                return;
+            }
+            if (txtTableID.ReadOnly == true)
              {
                 dbT.CapnhatTable(txtTableID.Text, txtTableName.Text, cbbTstate.Text,ref err);
                 MessageBox.Show("Đã sửa xong!");

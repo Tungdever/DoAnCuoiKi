@@ -50,6 +50,10 @@ namespace QuanLyNhaHang
             frmTableAdd frm = new frmTableAdd();
             frm.txtTableID.ReadOnly = false;
             frm.txtTableName.ReadOnly = false;
+            List<string> listTstate = new List<string>();
+            listTstate.Add("Bàn trống");
+            listTstate.Add("Đã đặt");
+            frm.cbbTstate.DataSource = listTstate;
             frm.ShowDialog();
             LoadData();
         }

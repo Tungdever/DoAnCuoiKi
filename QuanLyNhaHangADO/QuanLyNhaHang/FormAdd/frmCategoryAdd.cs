@@ -21,38 +21,14 @@ namespace QuanLyNhaHang
             InitializeComponent();
         }
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblID_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtID.Text.Trim() == "" || txtName.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!!!");
+                return;
+            }
             if (txtID.ReadOnly == true)
             {
 
