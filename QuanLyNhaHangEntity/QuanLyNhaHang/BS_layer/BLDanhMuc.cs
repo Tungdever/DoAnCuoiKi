@@ -67,19 +67,24 @@ namespace QuanLyNhaHang.BS_layer
             }
             return true;
         }
-        public List<string> LayDanhSachMaDanhMuc()
+        public DataTable LayDanhSachDanhMuc()
         {
+
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
-            var danhMucList = qlnhEntity.DANHMUCs.Select(dm => dm.MaDM).ToList();
-            return danhMucList;
-        }
-        public string LayTenDanhMuc(string MaDM)
-        {
-            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
-            var danhMuc = (from dm in qlnhEntity.DANHMUCs
-                           where dm.MaDM == MaDM
-                           select dm.TenDM).FirstOrDefault();
-            return danhMuc;
+            var employees = from dm in qlnhEntity.DANHMUCs
+                            select new
+                            {
+                                ID = new { MaDM = dm.MaDM, TenDM = dm.TenDM },
+                                Display = dm.MaDM + "-" + dm.TenDM
+                            };
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Id");
+            dataTable.Columns.Add("Display");
+            foreach (var employee in employees)
+            {
+                dataTable.Rows.Add(employee.ID, employee.Display);
+            }
+            return dataTable;
         }
     }
 }

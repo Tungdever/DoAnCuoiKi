@@ -30,10 +30,10 @@ namespace QuanLyNhaHang
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmProductAdd frm = new frmProductAdd();
-            
-            frm.cbbCateID.DataSource = dbDM.LayDanhSachMaDanhMuc();
-            frm.cbbCateID.DisplayMember = "MaDM";
-            frm.txtProductID.ReadOnly = false;            
+            frm.cbbCateID.DataSource = dbDM.LayDanhSachDanhMuc();
+            frm.cbbCateID.ValueMember = "ID";
+            frm.cbbCateID.DisplayMember = "Display";
+            frm.txtProductID.ReadOnly = false;
             frm.ShowDialog();
             LoadData();
         }
@@ -64,34 +64,46 @@ namespace QuanLyNhaHang
                 if (dgvProduct.CurrentCell.OwningColumn.Name == "dgvEdit")
                 {
 
-                    frmProductAdd frm = new frmProductAdd();                    
-                    DataSet dsIMG = dbSP.LayHinh(dgvProduct.CurrentRow.Cells["dgvMaSP"].Value.ToString(), ref err);
-                    DataTable dtIMG = dsIMG.Tables[0];
-                    if (dtIMG.Rows.Count > 0)
+                    frmProductAdd frm = new frmProductAdd();
+                    List<byte[]> dsIMG = dbSP.LayHinh(dgvProduct.CurrentRow.Cells["dgvMaSP"].Value.ToString());
+                    if (dsIMG.Count > 0)
                     {
-                        if (!DBNull.Value.Equals(dtIMG.Rows[0]["AnhSP"]))
+                        if (!DBNull.Value.Equals(dsIMG[0]))
                         {
-                            byte[] imageBytes = (byte[])dtIMG.Rows[0]["AnhSP"];
+                            byte[] imageBytes = dsIMG[0];
                             using (MemoryStream ms = new MemoryStream(imageBytes))
                             {
                                 frm.txtImage.Image = System.Drawing.Image.FromStream(ms);
                             }
                         }
+                        else
+                        {
+                            frm.txtImage.Image = null;
+                        }
                     }
-                    frm.cbbCateID.DataSource = dbDM.LayDanhSachMaDanhMuc();
-                    frm.cbbCateID.DisplayMember = "MaDM";
+                    else
+                    {
+                        frm.txtImage.Image = null;
+                    }
+                    frm.cbbCateID.DataSource = dbDM.LayDanhSachDanhMuc();
+                    frm.cbbCateID.ValueMember = "ID";
+                    frm.cbbCateID.DisplayMember = "Display";
                     frm.txtProductID.ReadOnly = true;
-
-                    frm.txtProductID.SelectedText = dgvProduct.CurrentRow.Cells["dgvMaSP"].Value.ToString();
-                    frm.txtProductName.SelectedText = dgvProduct.CurrentRow.Cells["dgvTenSP"].Value.ToString();
-                    frm.cbbCateID.Text = dgvProduct.CurrentRow.Cells["dgvpCatID"].Value.ToString();
-                    frm.txtCateName.Text = dgvProduct.CurrentRow.Cells["dgvpCatName"].Value.ToString();
+                    frm.txtProductID.Text = dgvProduct.CurrentRow.Cells["dgvMaSP"].Value.ToString();
+                    frm.txtProductName.Text = dgvProduct.CurrentRow.Cells["dgvTenSP"].Value.ToString();
+                    string selectedDisplay = dgvProduct.CurrentRow.Cells["dgvpCatID"].Value.ToString() + "-" + dgvProduct.CurrentRow.Cells["dgvpCatName"].Value.ToString();
+                    frm.cbbCateID.Text = selectedDisplay;
                     frm.txtPrice.Text = dgvProduct.CurrentRow.Cells["dgvPrice"].Value.ToString();
-                    frm.cbbCateID.SelectedText = dgvProduct.CurrentRow.Cells["dgvpCatID"].Value.ToString();
-                   
-
                     frm.ShowDialog();
-                    LoadData();
+
+                    if (txtSearchProduct.Text != "")
+                    {
+                        dgvProduct.DataSource = dbSP.TimKiemSanPham(txtSearchProduct.Text);
+                    }
+                    else
+                    {
+                        LoadData();
+                    }
                 }
                 else if (dgvProduct.CurrentCell.OwningColumn.Name == "dgvDel")
                 {
@@ -99,6 +111,7 @@ namespace QuanLyNhaHang
                     if (result == DialogResult.Yes)
                     {
                         dbSP.XoaSanPham(dgvProduct.CurrentRow.Cells["dgvMaSP"].Value.ToString(), ref err);
+                        txtSearchProduct.Text = "";
                         LoadData();
                         MessageBox.Show("Xoá thành công!");
                     }
@@ -135,11 +148,6 @@ namespace QuanLyNhaHang
         private void productForm_Load(object sender, EventArgs e)
         {
             LoadData();
-        }
-
-        private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

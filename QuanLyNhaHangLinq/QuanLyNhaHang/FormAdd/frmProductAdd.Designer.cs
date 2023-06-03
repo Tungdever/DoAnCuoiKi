@@ -39,8 +39,6 @@
             this.lblName = new System.Windows.Forms.Label();
             this.txtProductID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCateName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtImage = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -210,43 +208,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(37, 431);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 31);
+            this.label1.Size = new System.Drawing.Size(106, 31);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Category ID";
-            // 
-            // txtCateName
-            // 
-            this.txtCateName.AutoRoundedCorners = true;
-            this.txtCateName.BorderRadius = 32;
-            this.txtCateName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCateName.DefaultText = "";
-            this.txtCateName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCateName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCateName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCateName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCateName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCateName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCateName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCateName.Location = new System.Drawing.Point(746, 177);
-            this.txtCateName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtCateName.Name = "txtCateName";
-            this.txtCateName.PasswordChar = '\0';
-            this.txtCateName.PlaceholderText = "";
-            this.txtCateName.ReadOnly = true;
-            this.txtCateName.SelectedText = "";
-            this.txtCateName.SelectionStart = "".Length;
-            this.txtCateName.Size = new System.Drawing.Size(278, 67);
-            this.txtCateName.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(549, 193);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 31);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Category Name";
+            this.label1.Text = "Category";
             // 
             // txtPrice
             // 
@@ -261,7 +225,7 @@
             this.txtPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.Location = new System.Drawing.Point(746, 274);
+            this.txtPrice.Location = new System.Drawing.Point(775, 177);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
@@ -275,7 +239,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(549, 300);
+            this.label3.Location = new System.Drawing.Point(578, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 31);
             this.label3.TabIndex = 16;
@@ -284,7 +248,7 @@
             // txtImage
             // 
             this.txtImage.ImageRotate = 0F;
-            this.txtImage.Location = new System.Drawing.Point(750, 350);
+            this.txtImage.Location = new System.Drawing.Point(883, 300);
             this.txtImage.Name = "txtImage";
             this.txtImage.Size = new System.Drawing.Size(274, 221);
             this.txtImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -301,7 +265,7 @@
             this.btnBrowse.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBrowse.ForeColor = System.Drawing.Color.White;
-            this.btnBrowse.Location = new System.Drawing.Point(1045, 436);
+            this.btnBrowse.Location = new System.Drawing.Point(1178, 386);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(144, 43);
             this.btnBrowse.TabIndex = 20;
@@ -312,7 +276,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(549, 431);
+            this.label4.Location = new System.Drawing.Point(682, 386);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(164, 31);
             this.label4.TabIndex = 21;
@@ -320,21 +284,18 @@
             // 
             // cbbCateID
             // 
-            this.cbbCateID.AutoRoundedCorners = true;
             this.cbbCateID.BackColor = System.Drawing.Color.Transparent;
-            this.cbbCateID.BorderRadius = 17;
             this.cbbCateID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbCateID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCateID.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbCateID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbCateID.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbbCateID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbCateID.ItemHeight = 30;
-            this.cbbCateID.Location = new System.Drawing.Point(233, 426);
+            this.cbbCateID.ItemHeight = 32;
+            this.cbbCateID.Location = new System.Drawing.Point(220, 424);
             this.cbbCateID.Name = "cbbCateID";
-            this.cbbCateID.Size = new System.Drawing.Size(278, 36);
+            this.cbbCateID.Size = new System.Drawing.Size(359, 38);
             this.cbbCateID.TabIndex = 22;
-            this.cbbCateID.SelectedIndexChanged += new System.EventHandler(this.cbbCateID_SelectedIndexChanged);
             // 
             // frmProductAdd
             // 
@@ -347,8 +308,6 @@
             this.Controls.Add(this.txtImage);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtCateName);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtProductID);
             this.Controls.Add(this.txtProductName);
@@ -384,8 +343,6 @@
         public Guna.UI2.WinForms.Guna2TextBox txtProductID;
         public System.Windows.Forms.Label lblAdd;
         private System.Windows.Forms.Label label1;
-        public Guna.UI2.WinForms.Guna2TextBox txtCateName;
-        private System.Windows.Forms.Label label2;
         public Guna.UI2.WinForms.Guna2TextBox txtPrice;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button btnBrowse;

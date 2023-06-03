@@ -35,18 +35,7 @@ namespace QuanLyNhaHang.BS_layer
             return danhSachMaDM;
 
         }
-        public string LayTenDanhMuc(string MaDM)
-        {
-            DataSet ds = db.ExecuteQueryDataSet("select TenDM from DanhMuc where MaDM= '" + MaDM + "'", CommandType.Text);
-            DataTable dtDM = ds.Tables[0];
-            if (dtDM.Rows.Count > 0)
-            {
-                DataRow row = dtDM.Rows[0];
-                string tenDanhMuc = row["TenDM"].ToString();
-                return tenDanhMuc;
-            }
-            return string.Empty;
-        }
+       
         public DataSet TimKiemDanhMuc(string str)
         {
             return db.ExecuteQueryDataSet("select * from DanhMuc where TenDM like '%" + str + "%' ", CommandType.Text);
@@ -70,6 +59,22 @@ namespace QuanLyNhaHang.BS_layer
             string sqlString = "Update DanhMuc Set TenDM=N'" +
             TenDM + "' Where MaDM='" + MaDM + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+        public DataTable LayDanhSachDanhMuc()
+        {           
+            DataSet TK = db.ExecuteQueryDataSet("select * from DanhMuc", CommandType.Text);
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Display");
+            foreach (DataRow row in TK.Tables[0].Rows)
+            {
+
+                object[] ID = { row["MaDM"].ToString(), row["TenDM"].ToString() };
+                string Display = row["MaDM"].ToString() + "-" + row["TenDM"].ToString();
+                dt.Rows.Add(ID, Display);
+            }
+            return dt;
+
         }
     }
 }

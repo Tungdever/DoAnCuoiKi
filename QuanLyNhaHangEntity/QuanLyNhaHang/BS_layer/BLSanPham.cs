@@ -50,18 +50,18 @@ namespace QuanLyNhaHang.BS_layer
         }
         public bool ThemSanPham(string MaSP, string TenSP, string MaLoaiSP, string TenLoaiSP, float GiaSP, System.Drawing.Image AnhSP, ref string err)
         {
+            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+            SANPHAM sp = new SANPHAM();
             MemoryStream ms = new MemoryStream();
             System.Drawing.Image tmp = AnhSP;
             tmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             byte[] imageByteArray = ms.ToArray();
-            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
-            SANPHAM sp = new SANPHAM();
-            sp.MaSP = MaSP;
-            sp.TenSP= TenSP;
-            sp.MaLoaiSP= MaLoaiSP;
-            sp.TenLoaiSP= TenLoaiSP;
-            sp.GiaSP= GiaSP;
             sp.AnhSP = imageByteArray;
+            sp.MaSP = MaSP;
+            sp.TenSP = TenSP;
+            sp.MaLoaiSP = MaLoaiSP;
+            sp.TenLoaiSP = TenLoaiSP;
+            sp.GiaSP = GiaSP;
             qlnhEntity.SANPHAMs.Add(sp);
             qlnhEntity.SaveChanges();
             return true;
@@ -89,11 +89,11 @@ namespace QuanLyNhaHang.BS_layer
                            select sp).SingleOrDefault();
             if (spQuery != null)
             {
+                spQuery.AnhSP = imageByteArray;
                 spQuery.TenSP = TenSP;
                 spQuery.MaLoaiSP = MaLoaiSP;
                 spQuery.TenLoaiSP = TenLoaiSP;
                 spQuery.GiaSP = GiaSP;
-                spQuery.AnhSP = imageByteArray;
                 qlnhEntity.SaveChanges();
             }
             return true;
@@ -104,7 +104,16 @@ namespace QuanLyNhaHang.BS_layer
             var sanphamList = from sp in qlnhEntity.SANPHAMs
                               where sp.MaSP == MaSP
                               select sp.AnhSP;
-            return sanphamList.ToList();
+            List<byte[]> imageList = new List<byte[]>();
+            foreach (var sanpham in sanphamList)
+            {
+                if (sanpham != null)
+                {
+                    byte[] imageData = sanpham.ToArray();
+                    imageList.Add(imageData);
+                }
+            }
+            return imageList;
         }
        
     }

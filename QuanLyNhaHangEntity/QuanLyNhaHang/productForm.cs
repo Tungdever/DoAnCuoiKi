@@ -28,9 +28,9 @@ namespace QuanLyNhaHang
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmProductAdd frm = new frmProductAdd();
-            
-            frm.cbbCateID.DataSource = dbDM.LayDanhSachMaDanhMuc();
-            frm.cbbCateID.DisplayMember = "MaDM";
+            frm.cbbCateID.DataSource = dbDM.LayDanhSachDanhMuc();
+            frm.cbbCateID.ValueMember = "ID";
+            frm.cbbCateID.DisplayMember = "Display";
             frm.txtProductID.ReadOnly = false;
             frm.ShowDialog();
             LoadData();
@@ -70,18 +70,35 @@ namespace QuanLyNhaHang
                                 frm.txtImage.Image = System.Drawing.Image.FromStream(ms);
                             }
                         }
+                        else
+                        {
+                            frm.txtImage.Image = null;
+                        }
+                    }
+                    else
+                    {
+                        frm.txtImage.Image = null;
                     }
                     // đưa danh sách MaDanhMuc cho cbbCateID
-                    frm.cbbCateID.DataSource = dbDM.LayDanhSachMaDanhMuc();
-                    frm.cbbCateID.DisplayMember = "MaDM";
+                    frm.cbbCateID.DataSource = dbDM.LayDanhSachDanhMuc();
+                    frm.cbbCateID.ValueMember = "ID";
+                    frm.cbbCateID.DisplayMember = "Display";
                     frm.txtProductID.ReadOnly = true;
                     frm.txtProductID.Text = dgvProduct.CurrentRow.Cells["dgvMaSP"].Value.ToString();
                     frm.txtProductName.Text = dgvProduct.CurrentRow.Cells["dgvTenSP"].Value.ToString();
-                    frm.txtCateName.Text = dgvProduct.CurrentRow.Cells["dgvpCatName"].Value.ToString();
+                    string selectedDisplay = dgvProduct.CurrentRow.Cells["dgvpCatID"].Value.ToString() + "-" + dgvProduct.CurrentRow.Cells["dgvpCatName"].Value.ToString();
+                    frm.cbbCateID.Text = selectedDisplay;
                     frm.txtPrice.Text = dgvProduct.CurrentRow.Cells["dgvPrice"].Value.ToString();
-                    frm.cbbCateID.SelectedItem = dgvProduct.CurrentRow.Cells["dgvpCatID"].Value.ToString();
                     frm.ShowDialog();
-                    LoadData();
+
+                    if (txtSearchProduct.Text != "")
+                    {
+                        dgvProduct.DataSource = dbSP.TimKiemSanPham(txtSearchProduct.Text);
+                    }
+                    else
+                    {
+                        LoadData();
+                    }
                 }
                 else if (dgvProduct.CurrentCell.OwningColumn.Name == "dgvDel")
                 {
@@ -89,6 +106,7 @@ namespace QuanLyNhaHang
                     if (result == DialogResult.Yes)
                     {
                         dbSP.XoaSanPham(dgvProduct.CurrentRow.Cells["dgvMaSP"].Value.ToString(), ref err);
+                        txtSearchProduct.Text = "";
                         LoadData();
                         MessageBox.Show("Xoá thành công!");
                     }

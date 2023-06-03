@@ -77,7 +77,15 @@ namespace QuanLyNhaHang
                     frm.txtSalary.Text = dgvStaff.CurrentRow.Cells["dgvLuong"].Value.ToString();
                     frm.lblAdd.Text = "Staff Edit";
                     frm.ShowDialog();
-                    LoadData();
+
+                    if (txtSearchStaff.Text != "")
+                    {
+                        dgvStaff.DataSource = dbNV.TimKiemNhanVien(txtSearchStaff.Text);
+                    }
+                    else
+                    {
+                        LoadData();
+                    }
                 }
                 else if (dgvStaff.CurrentCell.OwningColumn.Name == "dgvDel")
                 {
@@ -90,6 +98,7 @@ namespace QuanLyNhaHang
                     if (result == DialogResult.Yes)
                     {
                         dbNV.XoaNHanVien(dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString(), ref err);
+                        txtSearchStaff.Text = "";
                         LoadData();
                         MessageBox.Show("Xoá thành công!");
                     }

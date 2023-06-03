@@ -28,17 +28,18 @@ namespace QuanLyNhaHang.BS_layer
         {
             return db.ExecuteQueryDataSet("select MaSP, TenSP, MaLoaiSP, TenLoaiSP, GiaSP from SanPham where TenSP like '%" + str + "%' ", CommandType.Text);
         }
-        public bool ThemSanPham(string MaSP, string TenSP,string MaLoaiSP, string TenLoaiSP, float GiaSP, Image AnhSP, ref string err)
+        public bool ThemSanPham(string MaSP, string TenSP, string MaLoaiSP, string TenLoaiSP, float GiaSP, Image AnhSP, ref string err)
         {
+ 
             MemoryStream ms = new MemoryStream();
-            Image tmp = AnhSP;
+            System.Drawing.Image tmp = AnhSP;
             tmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             byte[] imageByteArray = ms.ToArray();
             string imageHex = BitConverter.ToString(imageByteArray).Replace("-", string.Empty);
 
             string sqlString = "Insert Into SanPham (MaSP, TenSP, MaLoaiSP, TenLoaiSP, GiaSP, AnhSP) Values ('" +
     MaSP + "', N'" + TenSP + "', N'" + MaLoaiSP + "', N'" + TenLoaiSP + "', " + GiaSP + ", 0x" + imageHex + ")";
-          
+
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
@@ -50,23 +51,32 @@ namespace QuanLyNhaHang.BS_layer
 
         public bool CapNhatSanPham(string MaSP, string TenSP, string MaLoaiSP, string TenLoaiSP, float GiaSP, Image AnhSP, ref string err)
         {
+
             MemoryStream ms = new MemoryStream();
-            Image tmp = AnhSP;
+            System.Drawing.Image tmp = AnhSP;
             tmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             byte[] imageByteArray = ms.ToArray();
             string imageHex = BitConverter.ToString(imageByteArray).Replace("-", string.Empty);
+
             string sqlString = "UPDATE SanPham SET TenSP = N'" + TenSP + "', MaLoaiSP = N'" + MaLoaiSP + "', TenLoaiSP = N'"
         + TenLoaiSP + "', GiaSP = " + GiaSP + ", AnhSP = 0x" + imageHex + " WHERE MaSP = '" + MaSP + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public DataSet LayHinh(string MaSP, ref string err)
+        public List<byte[]> LayHinh(string MaSP)
         {
-            return db.ExecuteQueryDataSet("select AnhSP from SanPham WHERE MaSP = '" + MaSP + "'", CommandType.Text);
+            DataSet ds = db.ExecuteQueryDataSet("select AnhSP from SanPham WHERE MaSP = '" + MaSP + "'", CommandType.Text);
+            List<byte[]> imageList = new List<byte[]>();
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                if (row != null && row["AnhSP"] != DBNull.Value)
+                {
+                    byte[] imageData = (byte[])row["AnhSP"];
+                    imageList.Add(imageData);
+                }
+            }
+            return imageList;
         }
 
-        public DataSet GetProducts()
-        {
-            return db.ExecuteQueryDataSet("Select * from SANPHAM inner join DanhMuc on MaLoaiSP  = MaDM", CommandType.Text);
-        }
     }
+
 }

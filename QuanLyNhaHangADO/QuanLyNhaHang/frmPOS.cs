@@ -1,6 +1,5 @@
 ﻿using Guna.UI2.WinForms;
 using QuanLyNhaHang.BS_layer;
-using QuanLyNhaHang.Select;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,7 +28,7 @@ namespace QuanLyNhaHang
         DataTable dtTblJoin = null;
         string err;
         BLDanhMuc dbDM = new BLDanhMuc();
-     //   BLPOS dbPOS = new BLPOS();
+        BLPOS dbPOS = new BLPOS();
         BLSanPham dbSP = new BLSanPham();
         BLTblMain dbTblMain = new BLTblMain();
         BLTblDetail dbTblDetail = new BLTblDetail();
@@ -45,7 +44,7 @@ namespace QuanLyNhaHang
         public string OrderType = "";
         public string TableName = "";
         public string TableID = "";
-        public string Time = DateTime.Now.ToShortTimeString();
+
         string DriverID ;
 
         public string CustomerName = "";
@@ -61,7 +60,7 @@ namespace QuanLyNhaHang
             pnlCategory.Controls.Clear();
             pnlProduct.Controls.Clear();
             GetCategory();
-         //   this.btnTimeSelect.Text = Time;
+
             LoadData();
         }
         private void GetCategory()
@@ -188,7 +187,7 @@ namespace QuanLyNhaHang
                 dtPOS = new DataTable();
                 dtPOS.Clear();
 
-                DataSet ds = dbSP.GetProducts();
+                DataSet ds = dbPOS.GetProducts();
                 dtPOS = ds.Tables[0]; // 
                 foreach (DataRow item in dtPOS.Rows)
                 {
@@ -761,23 +760,6 @@ received = @received, change = @change where MainID = @ID";
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlCategory_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            frmTimeSelect frm = new frmTimeSelect();
-            frm.ShowDialog();
-
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

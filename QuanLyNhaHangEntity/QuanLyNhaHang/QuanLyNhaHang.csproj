@@ -320,16 +320,8 @@
       <DependentUpon>QLNhaHangModel.edmx</DependentUpon>
       <LastGenOutput>QLNhaHangModel.cs</LastGenOutput>
     </Content>
-<<<<<<< HEAD
     <None Include="Resources\view.png" />
     <None Include="Resources\hidden.png" />
-=======
-<<<<<<< HEAD
-=======
-    <None Include="Resources\logout %281%29 %281%29.png" />
-    <None Include="Resources\icons8-report-64 %281%29.png" />
->>>>>>> 96c861ca2bb83c0df1e7222f4e382566d27aaff5
->>>>>>> f1ccf680141420b964bdd4f3347cd540489c67cf
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

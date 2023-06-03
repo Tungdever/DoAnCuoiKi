@@ -16,10 +16,10 @@ namespace QuanLyNhaHang
 {
     public partial class frmProductAdd : Form
     {
-        DataTable dtDM = null;
+
         string err;
         BLDanhMuc dbDM = new BLDanhMuc();
-        BLSanPham dbSP = new BLSanPham();      
+        BLSanPham dbSP = new BLSanPham();
         public frmProductAdd()
         {
             InitializeComponent();
@@ -32,17 +32,34 @@ namespace QuanLyNhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtProductID.Text.Trim() == "" || txtProductName.Text.Trim() == "" || txtPrice.Text.Trim() == "" || txtImage.Image == null)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!!!");
+                return;
+            }
             if (txtProductID.ReadOnly == true)
             {
-                dbSP.CapNhatSanPham(txtProductID.Text, txtProductName.Text, cbbCateID.Text,txtCateName.Text, float.Parse(txtPrice.Text), txtImage.Image, ref err);
+                if (cbbCateID.SelectedItem != null)
+                {
+                    string displayValue = cbbCateID.Text;
+                    string[] splitValues = displayValue.Split('-');
+                    string madm = splitValues[0];
+                    string tendm = splitValues[1];
+                    dbSP.CapNhatSanPham(txtProductID.Text, txtProductName.Text, madm, tendm, float.Parse(txtPrice.Text), txtImage.Image, ref err);
+                }
+
                 MessageBox.Show("Đã sửa xong!");
             }
             else
             {
                 try
                 {
-                    dbSP.ThemSanPham(txtProductID.Text, txtProductName.Text, cbbCateID.Text, txtCateName.Text, float.Parse(txtPrice.Text), txtImage.Image, ref err);
-                    MessageBox.Show("Đã thêm xong!");   
+                    string displayValue = cbbCateID.Text;
+                    string[] splitValues = displayValue.Split('-');
+                    string madm = splitValues[0];
+                    string tendm = splitValues[1];
+                    dbSP.ThemSanPham(txtProductID.Text, txtProductName.Text, madm, tendm, float.Parse(txtPrice.Text), txtImage.Image, ref err);
+                    MessageBox.Show("Đã thêm xong!");
                 }
                 catch (SqlException)
                 {
@@ -54,7 +71,7 @@ namespace QuanLyNhaHang
 
         private void frmProductAdd_Load(object sender, EventArgs e)
         {
-           //txtCateName.Text = dbDM.LayTenDanhMuc(cbbCateID.Text);
+
         }
         string filepath;
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -66,21 +83,6 @@ namespace QuanLyNhaHang
                 filepath = ofd.FileName;
                 txtImage.Image = new Bitmap(filepath);
             }
-        }
-
-        private void cbbCateID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtCateName.Text = dbDM.LayTenDanhMuc(cbbCateID.SelectedItem.ToString());           
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtProductID_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

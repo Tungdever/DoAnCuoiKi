@@ -50,16 +50,20 @@ namespace QuanLyNhaHang.BS_layer
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             SANPHAM sp = new SANPHAM();
+
+
             MemoryStream ms = new MemoryStream();
             System.Drawing.Image tmp = AnhSP;
             tmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             byte[] imageByteArray = ms.ToArray();
+            sp.AnhSP = imageByteArray;
+
             sp.MaSP = MaSP;
             sp.TenSP = TenSP;
             sp.MaLoaiSP = MaLoaiSP;
             sp.TenLoaiSP = TenLoaiSP;
             sp.GiaSP = GiaSP;
-            sp.AnhSP = imageByteArray;
+
             qlNH.SANPHAMs.InsertOnSubmit(sp);
             qlNH.SANPHAMs.Context.SubmitChanges();
             return true;
@@ -101,15 +105,16 @@ namespace QuanLyNhaHang.BS_layer
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             var sanphamList = (from sp in qlNH.SANPHAMs
                                where sp.MaSP == MaSP
-                               select sp.AnhSP).ToList();
-
+                               select sp.AnhSP).ToList();           
             List<byte[]> imageList = new List<byte[]>();
             foreach (var sanpham in sanphamList)
             {
-                byte[] imageData = sanpham.ToArray();
-                imageList.Add(imageData);
+                if (sanpham != null)
+                {
+                    byte[] imageData = sanpham.ToArray();
+                    imageList.Add(imageData);
+                }
             }
-
             return imageList;
         }
     }

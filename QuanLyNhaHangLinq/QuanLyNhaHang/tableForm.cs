@@ -81,7 +81,14 @@ namespace QuanLyNhaHang
                     frm.cbbTstate.Text = dgvTable.CurrentRow.Cells["dgvTstate"].Value.ToString();
                     frm.lblAdd.Text = "Table Edit";
                     frm.ShowDialog();
-                    LoadData();
+                    if (txtSearchTable.Text != "")
+                    {
+                        dgvTable.DataSource = dbT.TimKiemTable(txtSearchTable.Text);
+                    }
+                    else
+                    {
+                        LoadData();
+                    }
                 }
                 else if (dgvTable.CurrentCell.OwningColumn.Name == "dgvDel")
                 {
@@ -89,6 +96,7 @@ namespace QuanLyNhaHang
                     if (result == DialogResult.Yes)
                     {
                         dbT.XoaTable(dgvTable.CurrentRow.Cells["dgvTid"].Value.ToString(), ref err);
+                        txtSearchTable.Text = "";
                         LoadData();
                         MessageBox.Show("Xoá thành công!");
                     }

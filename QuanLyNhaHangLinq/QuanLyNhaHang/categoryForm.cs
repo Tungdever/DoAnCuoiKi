@@ -56,7 +56,14 @@ namespace QuanLyNhaHang
                     frm.txtName.Text = dgvCategory.CurrentRow.Cells["dgvName"].Value.ToString();
                     frm.lblAdd.Text = "Category Edit";
                     frm.ShowDialog();
-                    LoadData();
+                    if (txtSearchCategories.Text != "")
+                    {
+                        dgvCategory.DataSource = dbDM.TimKiemDanhMuc(txtSearchCategories.Text);
+                    }
+                    else
+                    {
+                        LoadData();
+                    }
                 }
                 else if (dgvCategory.CurrentCell.OwningColumn.Name == "dgvDel")
                 {
@@ -64,6 +71,7 @@ namespace QuanLyNhaHang
                     if (result == DialogResult.Yes)
                     {
                         dbDM.XoaDanhMuc(dgvCategory.CurrentRow.Cells["dgvID"].Value.ToString(), ref err);
+                        txtSearchCategories.Text = "";
                         LoadData();
                         MessageBox.Show("Xoá thành công!");
                     }
