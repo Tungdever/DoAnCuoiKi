@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPOS = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -67,6 +67,8 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtSearchProduct = new Guna.UI2.WinForms.Guna2TextBox();
+            this.DTPTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.DPTDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPOS)).BeginInit();
             this.pnlCategory.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -83,7 +85,7 @@
             this.lblTotal.ForeColor = System.Drawing.Color.White;
             this.lblTotal.Location = new System.Drawing.Point(1205, 15);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(58, 32);
+            this.lblTotal.Size = new System.Drawing.Size(68, 38);
             this.lblTotal.TabIndex = 1;
             this.lblTotal.Text = "0.00";
             // 
@@ -96,7 +98,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(985, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 32);
+            this.label2.Size = new System.Drawing.Size(95, 38);
             this.label2.TabIndex = 1;
             this.label2.Text = "TOTAL";
             // 
@@ -106,19 +108,19 @@
             this.dgvPOS.AllowUserToDeleteRows = false;
             this.dgvPOS.AllowUserToResizeColumns = false;
             this.dgvPOS.AllowUserToResizeRows = false;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.White;
-            this.dgvPOS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dgvPOS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPOS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPOS.ColumnHeadersHeight = 40;
             this.dgvPOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvPOS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -130,31 +132,31 @@
             this.dgvAmount,
             this.dgvDecrease,
             this.dgvDel});
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPOS.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPOS.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPOS.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPOS.Location = new System.Drawing.Point(804, 175);
             this.dgvPOS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvPOS.Name = "dgvPOS";
             this.dgvPOS.ReadOnly = true;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPOS.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPOS.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPOS.RowHeadersVisible = false;
             this.dgvPOS.RowHeadersWidth = 51;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.IndianRed;
-            this.dgvPOS.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.dgvPOS.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvPOS.RowTemplate.Height = 35;
             this.dgvPOS.Size = new System.Drawing.Size(609, 650);
             this.dgvPOS.TabIndex = 17;
@@ -342,9 +344,9 @@
             this.lblWaiter.BackColor = System.Drawing.Color.Transparent;
             this.lblWaiter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWaiter.ForeColor = System.Drawing.Color.White;
-            this.lblWaiter.Location = new System.Drawing.Point(1129, 73);
+            this.lblWaiter.Location = new System.Drawing.Point(1163, 78);
             this.lblWaiter.Name = "lblWaiter";
-            this.lblWaiter.Size = new System.Drawing.Size(69, 28);
+            this.lblWaiter.Size = new System.Drawing.Size(82, 32);
             this.lblWaiter.TabIndex = 4;
             this.lblWaiter.Text = "Waiter";
             // 
@@ -358,7 +360,7 @@
             this.lblDriverName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblDriverName.Location = new System.Drawing.Point(455, 129);
             this.lblDriverName.Name = "lblDriverName";
-            this.lblDriverName.Size = new System.Drawing.Size(57, 28);
+            this.lblDriverName.Size = new System.Drawing.Size(69, 32);
             this.lblDriverName.TabIndex = 3;
             this.lblDriverName.Text = "Table";
             this.lblDriverName.Visible = false;
@@ -369,14 +371,16 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(111, 9);
+            this.label1.Location = new System.Drawing.Point(12, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 32);
+            this.label1.Size = new System.Drawing.Size(69, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "POS";
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.DTPTime);
+            this.guna2Panel1.Controls.Add(this.DPTDate);
             this.guna2Panel1.Controls.Add(this.lblTable);
             this.guna2Panel1.Controls.Add(this.lblWaiter);
             this.guna2Panel1.Controls.Add(this.btnDinIn);
@@ -401,9 +405,9 @@
             this.lblTable.BackColor = System.Drawing.Color.Transparent;
             this.lblTable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTable.ForeColor = System.Drawing.Color.White;
-            this.lblTable.Location = new System.Drawing.Point(1129, 13);
+            this.lblTable.Location = new System.Drawing.Point(1163, 13);
             this.lblTable.Name = "lblTable";
-            this.lblTable.Size = new System.Drawing.Size(57, 28);
+            this.lblTable.Size = new System.Drawing.Size(69, 32);
             this.lblTable.TabIndex = 4;
             this.lblTable.Text = "Table";
             // 
@@ -424,7 +428,7 @@
             this.btnDinIn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.btnDinIn.Image = global::QuanLyNhaHang.Properties.Resources.icons8_restaurant_din_in;
             this.btnDinIn.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnDinIn.Location = new System.Drawing.Point(968, 5);
+            this.btnDinIn.Location = new System.Drawing.Point(807, 13);
             this.btnDinIn.Name = "btnDinIn";
             this.btnDinIn.Size = new System.Drawing.Size(116, 98);
             this.btnDinIn.TabIndex = 2;
@@ -449,7 +453,7 @@
             this.btnTakeAway.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.btnTakeAway.Image = global::QuanLyNhaHang.Properties.Resources.icons8_take_away_food_100;
             this.btnTakeAway.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnTakeAway.Location = new System.Drawing.Point(834, 5);
+            this.btnTakeAway.Location = new System.Drawing.Point(685, 12);
             this.btnTakeAway.Name = "btnTakeAway";
             this.btnTakeAway.Size = new System.Drawing.Size(116, 98);
             this.btnTakeAway.TabIndex = 2;
@@ -475,7 +479,7 @@
             this.btnDelivery.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.btnDelivery.Image = global::QuanLyNhaHang.Properties.Resources.icons8_motorcycle_delivery_100;
             this.btnDelivery.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnDelivery.Location = new System.Drawing.Point(705, 4);
+            this.btnDelivery.Location = new System.Drawing.Point(565, 12);
             this.btnDelivery.Name = "btnDelivery";
             this.btnDelivery.Size = new System.Drawing.Size(114, 99);
             this.btnDelivery.TabIndex = 2;
@@ -499,7 +503,7 @@
             this.btnKOT.ForeColor = System.Drawing.Color.White;
             this.btnKOT.Image = global::QuanLyNhaHang.Properties.Resources.icons8_KOT_64;
             this.btnKOT.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnKOT.Location = new System.Drawing.Point(569, 5);
+            this.btnKOT.Location = new System.Drawing.Point(448, 12);
             this.btnKOT.Name = "btnKOT";
             this.btnKOT.Size = new System.Drawing.Size(111, 98);
             this.btnKOT.TabIndex = 2;
@@ -523,7 +527,7 @@
             this.btnBillList.ForeColor = System.Drawing.Color.White;
             this.btnBillList.Image = global::QuanLyNhaHang.Properties.Resources.point_of_sale__1_;
             this.btnBillList.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnBillList.Location = new System.Drawing.Point(445, 5);
+            this.btnBillList.Location = new System.Drawing.Point(336, 13);
             this.btnBillList.Name = "btnBillList";
             this.btnBillList.Size = new System.Drawing.Size(106, 98);
             this.btnBillList.TabIndex = 2;
@@ -547,7 +551,7 @@
             this.btnHold.ForeColor = System.Drawing.Color.White;
             this.btnHold.Image = global::QuanLyNhaHang.Properties.Resources.icons8_hand_100;
             this.btnHold.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnHold.Location = new System.Drawing.Point(315, 4);
+            this.btnHold.Location = new System.Drawing.Point(224, 12);
             this.btnHold.Name = "btnHold";
             this.btnHold.Size = new System.Drawing.Size(106, 99);
             this.btnHold.TabIndex = 2;
@@ -571,7 +575,7 @@
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Image = global::QuanLyNhaHang.Properties.Resources.icons8_new_ticket_80;
             this.btnNew.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnNew.Location = new System.Drawing.Point(186, 5);
+            this.btnNew.Location = new System.Drawing.Point(111, 13);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(107, 98);
             this.btnNew.TabIndex = 2;
@@ -652,6 +656,51 @@
             this.txtSearchProduct.TabIndex = 12;
             this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
             // 
+            // DTPTime
+            // 
+            this.DTPTime.Animated = true;
+            this.DTPTime.AutoRoundedCorners = true;
+            this.DTPTime.BackColor = System.Drawing.Color.Transparent;
+            this.DTPTime.BorderColor = System.Drawing.Color.Transparent;
+            this.DTPTime.BorderRadius = 22;
+            this.DTPTime.Checked = true;
+            this.DTPTime.FillColor = System.Drawing.Color.Crimson;
+            this.DTPTime.Font = new System.Drawing.Font(".VnVogueH", 10F, System.Drawing.FontStyle.Bold);
+            this.DTPTime.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.DTPTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.DTPTime.HoverState.FillColor = System.Drawing.Color.Red;
+            this.DTPTime.Location = new System.Drawing.Point(939, 65);
+            this.DTPTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DTPTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DTPTime.Name = "DTPTime";
+            this.DTPTime.ShowUpDown = true;
+            this.DTPTime.Size = new System.Drawing.Size(173, 46);
+            this.DTPTime.TabIndex = 6;
+            this.DTPTime.UseTransparentBackground = true;
+            this.DTPTime.Value = new System.DateTime(2023, 6, 2, 9, 24, 5, 454);
+            this.DTPTime.ValueChanged += new System.EventHandler(this.DTPTime_ValueChanged);
+            // 
+            // DPTDate
+            // 
+            this.DPTDate.BackColor = System.Drawing.Color.Transparent;
+            this.DPTDate.BorderColor = System.Drawing.Color.Transparent;
+            this.DPTDate.BorderRadius = 25;
+            this.DPTDate.Checked = true;
+            this.DPTDate.FillColor = System.Drawing.Color.Crimson;
+            this.DPTDate.Font = new System.Drawing.Font(".VnVogueH", 10F, System.Drawing.FontStyle.Bold);
+            this.DPTDate.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.DPTDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DPTDate.HoverState.FillColor = System.Drawing.Color.Red;
+            this.DPTDate.Location = new System.Drawing.Point(939, 13);
+            this.DPTDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DPTDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DPTDate.Name = "DPTDate";
+            this.DPTDate.Size = new System.Drawing.Size(173, 46);
+            this.DPTDate.TabIndex = 7;
+            this.DPTDate.UseTransparentBackground = true;
+            this.DPTDate.Value = new System.DateTime(2023, 6, 2, 9, 24, 5, 454);
+            this.DPTDate.ValueChanged += new System.EventHandler(this.DPTDate_ValueChanged);
+            // 
             // frmPOS
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -718,5 +767,7 @@
         private System.Windows.Forms.DataGridViewImageColumn dgvDecrease;
         private System.Windows.Forms.DataGridViewImageColumn dgvDel;
         private System.Windows.Forms.Label lblTable;
+        private Guna.UI2.WinForms.Guna2DateTimePicker DTPTime;
+        private Guna.UI2.WinForms.Guna2DateTimePicker DPTDate;
     }
 }

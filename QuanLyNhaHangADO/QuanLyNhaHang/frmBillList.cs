@@ -87,12 +87,13 @@ namespace QuanLyNhaHang
                     frm.crystalReportViewer1.ReportSource = cr;
                     frm.crystalReportViewer1.Refresh();
                     frm.Show();
+                    Console.WriteLine("########");
                 }    
             }
 
             catch (SqlException error)
             {
-                MessageBox.Show("Không xóa được. Lỗi rồi!"+error);
+                MessageBox.Show("Không xóa được. Lỗi rồi!"+error.Message);
             }
         }
 

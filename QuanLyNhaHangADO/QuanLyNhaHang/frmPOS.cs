@@ -44,7 +44,8 @@ namespace QuanLyNhaHang
         public string OrderType = "";
         public string TableName = "";
         public string TableID = "";
-
+        public DateTime Date;
+        public DateTime Time;   
         string DriverID ;
 
         public string CustomerName = "";
@@ -62,6 +63,10 @@ namespace QuanLyNhaHang
             GetCategory();
 
             LoadData();
+            Date = DateTime.Now;
+            Time = DateTime.Now;
+            DTPTime.Value = Time;
+            DPTDate.Value = Date;
         }
         private void GetCategory()
         {
@@ -494,7 +499,7 @@ received = @received, change = @change where MainID = @ID";
                 //Cột MaBill tu dong sinh gia tri
                 
                     //Cap nhat gia tri dong hien tai nho SELECT_SCOPE_INDENTITY
-                   BillID= dbTblMain.AddTblMain( Convert.ToDateTime(DateTime.Now.Date), DateTime.Now.ToShortTimeString(),
+                   BillID= dbTblMain.AddTblMain( Convert.ToDateTime(Date), Time.ToShortTimeString(),
                         lblTable.Text, lblWaiter.Text, "Pending", OrderType, Convert.ToDouble(lblTotal.Text), Convert.ToDouble(0), Convert.ToDouble(0), DriverID, CustomerName, CustomerPhone, ref err);
                 // Thay vì như mặc định Hàm AddTblMain trả về true , false, ở đây nó trả về giá trị Bill Id của đơn hiện tại vừa thêm vào
                     if (BillID > 0)
@@ -505,7 +510,7 @@ received = @received, change = @change where MainID = @ID";
             }
             else
             {
-                dbTblMain.UpdateTblMain(BillID, Convert.ToDateTime(DateTime.Now.Date), DateTime.Now.ToShortTimeString(),
+                dbTblMain.UpdateTblMain(BillID, Convert.ToDateTime(Date), Time.ToShortTimeString(),
                         lblTable.Text, lblWaiter.Text, "Pending", OrderType, Convert.ToDouble(lblTotal.Text), Convert.ToDouble(0), Convert.ToDouble(0), ref err);
                 MessageBox.Show("Đã sửa xong!");
             }
@@ -762,6 +767,16 @@ received = @received, change = @change where MainID = @ID";
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DPTDate_ValueChanged(object sender, EventArgs e)
+        {
+            Date    = DPTDate.Value;
+        }
+
+        private void DTPTime_ValueChanged(object sender, EventArgs e)
+        {
+            Time = DTPTime.Value;
         }
     }
 }
