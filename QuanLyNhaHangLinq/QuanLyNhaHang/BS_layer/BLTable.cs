@@ -13,6 +13,11 @@ namespace QuanLyNhaHang.BS_layer
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             return qlNH.BANs;
         }
+        public List<BAN> LayTable1()
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+            return qlNH.BANs.ToList();
+        }
         public List<BAN> TimKiemTable(string str) 
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
@@ -28,9 +33,18 @@ namespace QuanLyNhaHang.BS_layer
             t.Tid = Tid;
             t.Tname = Tname;
             t.Tstate = Tstate;
-            qlNH.BANs.InsertOnSubmit(t);
-            qlNH.BANs.Context.SubmitChanges();
-            return true;
+            try
+            {
+                qlNH.BANs.InsertOnSubmit(t);
+                qlNH.BANs.Context.SubmitChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
+            
         }
         public bool XoaTable(string Tid, ref string err)
         {
@@ -38,23 +52,42 @@ namespace QuanLyNhaHang.BS_layer
             var tQuerry = from t in qlNH.BANs
                           where t.Tid == Tid
                           select t;
-            qlNH.BANs.DeleteAllOnSubmit(tQuerry);
-            qlNH.SubmitChanges();
-            return true;
+            try
+            {
+                qlNH.BANs.DeleteAllOnSubmit(tQuerry);
+                qlNH.SubmitChanges();
+                return true;
+            }
+            
+             catch(Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         public bool CapNhatTable(string Tid, string Tname, string Tstate, ref string err)
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
-            var tQuerry = (from t in qlNH.BANs
-                           where t.Tid == Tid
-                           select t).SingleOrDefault();
-            if(tQuerry != null) 
+            try
             {
-                tQuerry.Tname = Tname;
-                tQuerry.Tstate = Tstate;
-                qlNH.SubmitChanges();
+                var tQuerry = (from t in qlNH.BANs
+                               where t.Tid == Tid
+                               select t).SingleOrDefault();
+                if (tQuerry != null)
+                {
+                    tQuerry.Tname = Tname;
+                    tQuerry.Tstate = Tstate;
+
+                    qlNH.SubmitChanges();
+                }
+                return true;
             }
-            return true;
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
+
         }
     }
 }

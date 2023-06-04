@@ -75,11 +75,17 @@ namespace QuanLyNhaHang.BS_layer
             sp.MaLoaiSP = MaLoaiSP;
             sp.TenLoaiSP = TenLoaiSP;
             sp.GiaSP = GiaSP;
-
-            qlNH.SANPHAMs.InsertOnSubmit(sp);
-            qlNH.SANPHAMs.Context.SubmitChanges();
-            return true;
-
+            try
+            {
+                qlNH.SANPHAMs.InsertOnSubmit(sp);
+                qlNH.SANPHAMs.Context.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         public bool XoaSanPham(string Masp, ref string err)
         {
@@ -87,30 +93,47 @@ namespace QuanLyNhaHang.BS_layer
             var spQuery = from sp in qlNH.SANPHAMs
                           where sp.MaSP == Masp
                           select sp;
-            qlNH.SANPHAMs.DeleteAllOnSubmit(spQuery);
-            qlNH.SubmitChanges();
-            return true;
+            try
+            {
+                qlNH.SANPHAMs.DeleteAllOnSubmit(spQuery);
+                qlNH.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
+
         }
         public bool CapNhatSanPham(string MaSP, string TenSP, string MaLoaiSP, string TenLoaiSP, float GiaSP, System.Drawing.Image AnhSP, ref string err)
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
-            var spQuery = (from sp in qlNH.SANPHAMs
-                           where sp.MaSP == MaSP
-                           select sp).SingleOrDefault();
-            MemoryStream ms = new MemoryStream();
-            System.Drawing.Image tmp = AnhSP;
-            tmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            byte[] imageByteArray = ms.ToArray();
-            if (spQuery != null)
-            {
-                spQuery.TenSP = TenSP;
-                spQuery.MaLoaiSP = MaLoaiSP;
-                spQuery.TenLoaiSP = TenLoaiSP;
-                spQuery.GiaSP = GiaSP;
-                spQuery.AnhSP = imageByteArray;
-                qlNH.SubmitChanges();
+            try {
+                var spQuery = (from sp in qlNH.SANPHAMs
+                               where sp.MaSP == MaSP
+                               select sp).SingleOrDefault();
+                MemoryStream ms = new MemoryStream();
+                System.Drawing.Image tmp = AnhSP;
+                tmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                byte[] imageByteArray = ms.ToArray();
+                if (spQuery != null)
+                {
+                    spQuery.TenSP = TenSP;
+                    spQuery.MaLoaiSP = MaLoaiSP;
+                    spQuery.TenLoaiSP = TenLoaiSP;
+                    spQuery.GiaSP = GiaSP;
+                    spQuery.AnhSP = imageByteArray;
+                    qlNH.SubmitChanges();
+                }
+                return true;
             }
-            return true;
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
+
         }
         public List<byte[]> LayHinh(string MaSP)
         {

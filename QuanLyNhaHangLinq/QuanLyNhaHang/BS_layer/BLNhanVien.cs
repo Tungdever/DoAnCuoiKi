@@ -44,6 +44,25 @@ namespace QuanLyNhaHang.BS_layer
             return dataTable;
         }
 
+        public List<NHANVIEN> LayGiaoHang()
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+            var nhanViens = from nv in qlNH.NHANVIENs
+                            where nv.ChucVu == "Giao Hàng"
+                            select nv;
+
+            return nhanViens.ToList();
+        }
+        public List<NHANVIEN> LayPhucVu()
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+            var nhanViens = from nv in qlNH.NHANVIENs
+                            where nv.ChucVu == "Phục Vụ"
+                            select nv;
+
+            return nhanViens.ToList();
+        }
+
         public bool ThemNhanVien(string Manv, string Ten, string SDT, string ChucVu , float Luong, ref string err)
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();

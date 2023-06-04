@@ -90,6 +90,24 @@
     <Compile Include="frmBillList.Designer.cs">
       <DependentUpon>frmBillList.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckOut.Designer.cs">
+      <DependentUpon>frmCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerAdd.Designer.cs">
+      <DependentUpon>frmCustomerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKitchen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKitchen.Designer.cs">
+      <DependentUpon>frmKitchen.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +157,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyNhaHang.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Select\frmTableSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select\frmTableSelect.Designer.cs">
+      <DependentUpon>frmTableSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Select\frmWaiterSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select\frmWaiterSelect.Designer.cs">
+      <DependentUpon>frmWaiterSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="staffForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +195,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBillList.resx">
       <DependentUpon>frmBillList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckOut.resx">
+      <DependentUpon>frmCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerAdd.resx">
+      <DependentUpon>frmCustomerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKitchen.resx">
+      <DependentUpon>frmKitchen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -197,6 +236,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Select\frmTableSelect.resx">
+      <DependentUpon>frmTableSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Select\frmWaiterSelect.resx">
+      <DependentUpon>frmWaiterSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="staffForm.resx">
       <DependentUpon>staffForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +374,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-bill-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-waiter-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bounced-check-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-minus-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bill-1001.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

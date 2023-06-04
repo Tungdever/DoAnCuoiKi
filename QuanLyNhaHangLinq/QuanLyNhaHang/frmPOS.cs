@@ -1,4 +1,6 @@
-﻿using QuanLyNhaHang.BS_layer;
+﻿using Guna.UI2.WinForms;
+using QuanLyNhaHang.BS_layer;
+using QuanLyNhaHang.Select;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 //using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace QuanLyNhaHang
 {
@@ -248,7 +251,7 @@ namespace QuanLyNhaHang
             int detailID = 0;
             if (OrderType == "")
             {
-                guna2MessageDialog1.Show("Please select order");
+                Guna2MessageDialog1.Show("Please select order");
                 return;
             }
             if (Them)
@@ -294,7 +297,7 @@ namespace QuanLyNhaHang
                     MessageBox.Show("Đã sửa xong!");
                 }
             }
-            guna2MessageDialog1.Show("Saved Successfully");
+            Guna2MessageDialog1.Show("Saved Successfully");
             //    MainID = 0;
             detailID = 0;
             dgvPOS.Rows.Clear();
@@ -388,6 +391,232 @@ namespace QuanLyNhaHang
             }
 
 
+        }
+
+        private void btnKOT_Click(object sender, EventArgs e)
+        {
+            int detailID = 0;
+            if (Them)
+            {
+                //Cột MaBill tu dong sinh gia tri
+
+                //Cap nhat gia tri dong hien tai nho SELECT_SCOPE_INDENTITY
+                BillID = dbTblMain.AddTblMain(Convert.ToDateTime(Date), Time.ToShortTimeString(),
+                     lblTable.Text, lblWaiter.Text, "Pending", OrderType, Convert.ToDouble(lblTotal.Text), Convert.ToDouble(0), Convert.ToDouble(0), DriverID, CustomerName, CustomerPhone, ref err);
+                // Thay vì như mặc định Hàm AddTblMain trả về true , false, ở đây nó trả về giá trị Bill Id của đơn hiện tại vừa thêm vào
+                if (BillID > 0)
+                    MessageBox.Show("Đã thêm xong!");
+                else
+                    MessageBox.Show("Không thêm được.Lỗi rồi!" + err);
+
+            }
+            else
+            {
+                dbTblMain.UpdateTblMain(BillID, Convert.ToDateTime(Date), Time.ToShortTimeString(),
+                        lblTable.Text, lblWaiter.Text, "Pending", OrderType, Convert.ToDouble(lblTotal.Text), Convert.ToDouble(0), Convert.ToDouble(0), ref err);
+                MessageBox.Show("Đã sửa xong!");
+            }
+            foreach (DataGridViewRow row in dgvPOS.Rows)
+            {
+                detailID = Convert.ToInt32(row.Cells["dgvDetailID"].Value);
+
+                    if (detailID == 0) //detailID duoc them vao ban dau deu co gia tri 0
+                {
+                    try
+                    {
+                        dbTblDetail.AddTblDetail(BillID, row.Cells["dgvMaSP"].Value.ToString(), row.Cells["dgvTenSP"].Value.ToString(), int.Parse(row.Cells["dgvQty"].Value.ToString()), float.Parse(row.Cells["dgvPrice"].Value.ToString()), float.Parse(row.Cells["dgvAmount"].Value.ToString()), ref err);
+
+                    }
+                    catch (SqlException error)
+                    {
+                        MessageBox.Show("Không thêm được. Lỗi rồi!" + error.Message);
+                    }
+                }
+                else // Gía trị trong cột dgvDetailID của dgvPOS đã ko còn là 0 mà là giá trị từ tblDetail đổ xuống ( vì khi này là chỉnh sửa , tức giá trị detailID đó đã có trong database
+                {
+                    //Lấy dữ liệu trong dgvPOS update lên dbTblDetail
+                    dbTblDetail.UpdateTblDetail(Convert.ToInt32(row.Cells["dgvDetailID"].Value), BillID, row.Cells["dgvMaSP"].Value.ToString(), row.Cells["dgvTenSP"].Value.ToString(), int.Parse(row.Cells["dgvQty"].Value.ToString()), float.Parse(row.Cells["dgvPrice"].Value.ToString()), float.Parse(row.Cells["dgvAmount"].Value.ToString()), ref err);
+                    MessageBox.Show("Đã sửa xong!");
+                }
+            }
+          
+            Guna2MessageDialog1.Show("Saved Successfully");
+            //    MainID = 0;
+            detailID = 0;
+            dgvPOS.Rows.Clear();
+            lblTable.Text = "";
+
+            lblWaiter.Text = "";
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            lblTotal.Text = "00";
+            lblDriverName.Text = "";
+
+            //    this.Close();
+            Them = true;
+        }
+
+        private void btnDelivery_Click(object sender, EventArgs e)
+        {
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            OrderType = "Delivery";
+
+            frmCustomerAdd frm = new frmCustomerAdd();
+            frm.billID = BillID;
+            frm.orderType = OrderType;
+            frm.ShowDialog();
+
+            //  if (frm.driverID != "") //Lấy driverID được chọn bên frmCustomerAdd truyền cho form Pos
+            if (frm.txtCustomerName.Text != "")
+            {
+                DriverID = frm.driverID;
+                CustomerName = frm.cusName;
+                CustomerPhone = frm.cusPhone;
+                lblDriverName.Text = "Customer Name : " + frm.txtCustomerName.Text + "  Phone: " + frm.txtCustomerPhone.Text + "  Driver: " + frm.cbbDriver.Text;
+                lblDriverName.Visible = true;
+            }
+        }
+
+        private void btnTakeAway_Click(object sender, EventArgs e)
+        {
+
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            OrderType = "Take Away";
+        }
+
+        private void btnDinIn_Click(object sender, EventArgs e)
+        {
+            OrderType = "Din in";
+            lblDriverName.Visible = false;
+            //create form for Table select n waiter selec
+            frmTableSelect frm = new frmTableSelect();
+            frm.ShowDialog();
+            if (frm.TableName != "")
+            {
+                lblTable.Text = frm.TableName;
+                TableName = frm.TableName;
+                TableID = frm.TableID;
+
+                lblTable.Visible = true;
+            }
+            else
+            {
+                lblTable.Text = "";
+                lblTable.Visible = false;
+                return;// Khi ấn vào chọn bàn mà ấn close ko chọn -> tên bàn trống -> return luôn 
+            }
+
+            frmWaiterSelect frmWaiter = new frmWaiterSelect();
+            frmWaiter.ShowDialog();
+            if (frmWaiter.WaiterName != "")
+            {
+                lblWaiter.Text = frmWaiter.WaiterName;
+                lblWaiter.Visible = true;
+            }
+            else
+            {
+                lblWaiter.Text = "";
+                lblWaiter.Visible = false;
+            }
+        }
+
+        private void dgvPOS_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dgvPOS.CurrentCell.OwningColumn.Name == "dgvDecrease")
+                {
+                    if (dgvPOS.CurrentRow != null && dgvPOS.CurrentRow.Cells["dgvQty"].Value != null)
+                    {
+                        if (uint.TryParse(dgvPOS.CurrentRow.Cells["dgvQty"].Value.ToString(), out uint currentQty))
+                        {
+                            if (currentQty > 0)
+                            {
+                                dgvPOS.CurrentRow.Cells["dgvQty"].Value = currentQty - 1;
+                            }
+                            else
+                            {
+                                // Xử lý khi giá trị đã là 0
+                                MessageBox.Show("Giá trị đã là 0.");
+                            }
+                        }
+                        else
+                        {
+                            // Xử lý khi giá trị không phải số
+                            MessageBox.Show("Giá trị không hợp lệ.");
+                        }
+                    }
+                    else
+                    {
+                        // Xử lý khi hàng hiện tại hoặc giá trị cột là null
+                        MessageBox.Show("Không có hàng hoặc giá trị cột.");
+                    }
+
+                }
+                else if (dgvPOS.CurrentCell.OwningColumn.Name == "dgvDel")
+                {
+                    DialogResult result = MessageBox.Show("Bạn có muốn xoá ?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        if(dbSP.XoaSanPham(dgvPOS.CurrentRow.Cells["dgvMaSP"].Value.ToString(), ref err))
+                        {
+                            LoadData();
+                            MessageBox.Show("Xoá thành công!");
+                        }    
+                        else
+                            MessageBox.Show("Không xóa được.Lỗi rồi!" + err);
+
+                    }
+                }
+                GetTotal();
+            }
+            catch (SqlException err)
+            {
+                MessageBox.Show("Không xóa được. Lỗi rồi!" + err.Message);
+            }
+        }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            frmCheckOut frm = new frmCheckOut();
+            frm.billID = BillID; // Lấy giá trị Bill hiện tại truyền cho frm để có thể update cho dat
+            frm.amt = Convert.ToDouble(lblTotal.Text); //truyền vào giá trị để khi ấn checkout hiện lên , giá trị Total hiện lên txtBillAmount
+            frm.ShowDialog();
+            Console.WriteLine(TableName + "*****");
+            //  guna2MessageDialog1.Show("Saved Success");
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblWaiter.Visible = false;
+            lblTable.Visible = false;
+            lblTotal.Text = "0";
+            dgvPOS.Rows.Clear();
+            UpdateSTATETABLE(TableID, TableName);
+        }
+        private void UpdateSTATETABLE(string TID, string TName) // Sau khi thanh toán , chuyển bàn từ đã đặt thành trống
+        {
+            if (dbTable.CapNhatTable(TID, TName, "Bàn Trống", ref err))
+            {
+                MessageBox.Show("Đã dọn bàn");
+            }
+            else
+                MessageBox.Show(err);
+        }
+
+        private void DPTDate_ValueChanged(object sender, EventArgs e)
+        {
+            Date = DPTDate.Value;
+        }
+
+        private void DTPTime_ValueChanged(object sender, EventArgs e)
+        {
+            Time = DTPTime.Value;
         }
     }
 }

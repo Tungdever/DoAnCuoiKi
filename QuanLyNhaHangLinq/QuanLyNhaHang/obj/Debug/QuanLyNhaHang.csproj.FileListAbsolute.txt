@@ -150,3 +150,8 @@ C:\Users\TuanKiet\source\repos\NEW00\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\Q
 C:\Users\TuanKiet\source\repos\NEW00\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmPOS.resources
 C:\Users\TuanKiet\source\repos\NEW00\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.ucProduct.resources
 C:\Users\TuanKiet\source\repos\NEW00\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmBillList.resources
+C:\Users\TuanKiet\source\repos\NEW00\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmCheckOut.resources
+C:\Users\TuanKiet\source\repos\NEW00\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmCustomerAdd.resources
+C:\Users\TuanKiet\source\repos\NEW00\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmKitchen.resources
+C:\Users\TuanKiet\source\repos\NEW00\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.Select.frmTableSelect.resources
+C:\Users\TuanKiet\source\repos\NEW00\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.Select.frmWaiterSelect.resources

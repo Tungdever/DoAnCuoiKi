@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.DTPTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DPTDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.lblTable = new System.Windows.Forms.Label();
@@ -48,15 +47,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dgvPOS = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dgvDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvMaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDecrease = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlCategory = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlProduct = new System.Windows.Forms.FlowLayoutPanel();
+            this.Guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.guna2MessageDialog2 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtSearchProduct = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnDinIn = new Guna.UI2.WinForms.Guna2TileButton();
@@ -67,23 +61,21 @@
             this.btnHold = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnNew = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDecrease = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPOS)).BeginInit();
             this.pnlCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2MessageDialog1
-            // 
-            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.guna2MessageDialog1.Caption = "RMS";
-            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            this.guna2MessageDialog1.Parent = null;
-            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.guna2MessageDialog1.Text = null;
             // 
             // DTPTime
             // 
@@ -107,6 +99,7 @@
             this.DTPTime.TabIndex = 6;
             this.DTPTime.UseTransparentBackground = true;
             this.DTPTime.Value = new System.DateTime(2023, 6, 2, 9, 24, 5, 454);
+            this.DTPTime.ValueChanged += new System.EventHandler(this.DTPTime_ValueChanged);
             // 
             // DPTDate
             // 
@@ -127,6 +120,7 @@
             this.DPTDate.TabIndex = 7;
             this.DPTDate.UseTransparentBackground = true;
             this.DPTDate.Value = new System.DateTime(2023, 6, 2, 9, 24, 5, 454);
+            this.DPTDate.ValueChanged += new System.EventHandler(this.DPTDate_ValueChanged);
             // 
             // lblTable
             // 
@@ -222,13 +216,14 @@
             this.btnCheckOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Location = new System.Drawing.Point(781, 4);
+            this.btnCheckOut.Location = new System.Drawing.Point(685, 4);
             this.btnCheckOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(169, 54);
             this.btnCheckOut.TabIndex = 2;
             this.btnCheckOut.Text = "Check Out";
             this.btnCheckOut.UseTransparentBackground = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // guna2Panel2
             // 
@@ -263,7 +258,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(963, 15);
+            this.label2.Location = new System.Drawing.Point(949, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 38);
             this.label2.TabIndex = 1;
@@ -364,66 +359,7 @@
             this.dgvPOS.ThemeStyle.RowsStyle.Height = 35;
             this.dgvPOS.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPOS.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // dgvDetailID
-            // 
-            this.dgvDetailID.HeaderText = "DetailID";
-            this.dgvDetailID.MinimumWidth = 8;
-            this.dgvDetailID.Name = "dgvDetailID";
-            this.dgvDetailID.ReadOnly = true;
-            this.dgvDetailID.Visible = false;
-            // 
-            // dgvMaSP
-            // 
-            this.dgvMaSP.DataPropertyName = "proID";
-            this.dgvMaSP.HeaderText = "Product ID";
-            this.dgvMaSP.MinimumWidth = 6;
-            this.dgvMaSP.Name = "dgvMaSP";
-            this.dgvMaSP.ReadOnly = true;
-            this.dgvMaSP.Visible = false;
-            // 
-            // dgvTenSP
-            // 
-            this.dgvTenSP.DataPropertyName = "proName";
-            this.dgvTenSP.HeaderText = "Product Name";
-            this.dgvTenSP.MinimumWidth = 6;
-            this.dgvTenSP.Name = "dgvTenSP";
-            this.dgvTenSP.ReadOnly = true;
-            // 
-            // dgvQty
-            // 
-            this.dgvQty.DataPropertyName = "qty";
-            this.dgvQty.HeaderText = "Qty";
-            this.dgvQty.MinimumWidth = 8;
-            this.dgvQty.Name = "dgvQty";
-            this.dgvQty.ReadOnly = true;
-            // 
-            // dgvPrice
-            // 
-            this.dgvPrice.DataPropertyName = "price";
-            this.dgvPrice.HeaderText = "Price";
-            this.dgvPrice.MinimumWidth = 6;
-            this.dgvPrice.Name = "dgvPrice";
-            this.dgvPrice.ReadOnly = true;
-            // 
-            // dgvAmount
-            // 
-            this.dgvAmount.DataPropertyName = "amount";
-            this.dgvAmount.HeaderText = "Amount";
-            this.dgvAmount.MinimumWidth = 8;
-            this.dgvAmount.Name = "dgvAmount";
-            this.dgvAmount.ReadOnly = true;
-            // 
-            // dgvDecrease
-            // 
-            this.dgvDecrease.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvDecrease.FillWeight = 50F;
-            this.dgvDecrease.HeaderText = "";
-            this.dgvDecrease.MinimumWidth = 50;
-            this.dgvDecrease.Name = "dgvDecrease";
-            this.dgvDecrease.ReadOnly = true;
-            this.dgvDecrease.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDecrease.Width = 50;
+            this.dgvPOS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPOS_CellClick);
             // 
             // pnlCategory
             // 
@@ -445,6 +381,24 @@
             this.pnlProduct.Name = "pnlProduct";
             this.pnlProduct.Size = new System.Drawing.Size(663, 650);
             this.pnlProduct.TabIndex = 22;
+            // 
+            // Guna2MessageDialog1
+            // 
+            this.Guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.Guna2MessageDialog1.Caption = null;
+            this.Guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.Guna2MessageDialog1.Parent = null;
+            this.Guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.Guna2MessageDialog1.Text = null;
+            // 
+            // guna2MessageDialog2
+            // 
+            this.guna2MessageDialog2.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.guna2MessageDialog2.Caption = null;
+            this.guna2MessageDialog2.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.guna2MessageDialog2.Parent = null;
+            this.guna2MessageDialog2.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.guna2MessageDialog2.Text = null;
             // 
             // dataGridViewImageColumn1
             // 
@@ -506,6 +460,7 @@
             this.btnDinIn.TabIndex = 2;
             this.btnDinIn.Text = "Din in";
             this.btnDinIn.UseTransparentBackground = true;
+            this.btnDinIn.Click += new System.EventHandler(this.btnDinIn_Click);
             // 
             // btnTakeAway
             // 
@@ -530,6 +485,7 @@
             this.btnTakeAway.TabIndex = 2;
             this.btnTakeAway.Text = "Take away";
             this.btnTakeAway.UseTransparentBackground = true;
+            this.btnTakeAway.Click += new System.EventHandler(this.btnTakeAway_Click);
             // 
             // btnDelivery
             // 
@@ -555,6 +511,7 @@
             this.btnDelivery.TabIndex = 2;
             this.btnDelivery.Text = "Delivery";
             this.btnDelivery.UseTransparentBackground = true;
+            this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
             // 
             // btnKOT
             // 
@@ -578,6 +535,7 @@
             this.btnKOT.TabIndex = 2;
             this.btnKOT.Text = "KOT";
             this.btnKOT.UseTransparentBackground = true;
+            this.btnKOT.Click += new System.EventHandler(this.btnKOT_Click);
             // 
             // btnBillList
             // 
@@ -666,18 +624,6 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
-            // dgvDel
-            // 
-            this.dgvDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvDel.FillWeight = 50F;
-            this.dgvDel.HeaderText = "";
-            this.dgvDel.Image = global::QuanLyNhaHang.Properties.Resources.delete__1_;
-            this.dgvDel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvDel.MinimumWidth = 50;
-            this.dgvDel.Name = "dgvDel";
-            this.dgvDel.ReadOnly = true;
-            this.dgvDel.Width = 50;
-            // 
             // dataGridViewImageColumn2
             // 
             this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -689,6 +635,79 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 50;
+            // 
+            // dgvDetailID
+            // 
+            this.dgvDetailID.HeaderText = "DetailID";
+            this.dgvDetailID.MinimumWidth = 8;
+            this.dgvDetailID.Name = "dgvDetailID";
+            this.dgvDetailID.ReadOnly = true;
+            this.dgvDetailID.Visible = false;
+            // 
+            // dgvMaSP
+            // 
+            this.dgvMaSP.DataPropertyName = "proID";
+            this.dgvMaSP.HeaderText = "Product ID";
+            this.dgvMaSP.MinimumWidth = 6;
+            this.dgvMaSP.Name = "dgvMaSP";
+            this.dgvMaSP.ReadOnly = true;
+            this.dgvMaSP.Visible = false;
+            // 
+            // dgvTenSP
+            // 
+            this.dgvTenSP.DataPropertyName = "proName";
+            this.dgvTenSP.HeaderText = "Product Name";
+            this.dgvTenSP.MinimumWidth = 6;
+            this.dgvTenSP.Name = "dgvTenSP";
+            this.dgvTenSP.ReadOnly = true;
+            // 
+            // dgvQty
+            // 
+            this.dgvQty.DataPropertyName = "qty";
+            this.dgvQty.HeaderText = "Qty";
+            this.dgvQty.MinimumWidth = 8;
+            this.dgvQty.Name = "dgvQty";
+            this.dgvQty.ReadOnly = true;
+            // 
+            // dgvPrice
+            // 
+            this.dgvPrice.DataPropertyName = "price";
+            this.dgvPrice.HeaderText = "Price";
+            this.dgvPrice.MinimumWidth = 6;
+            this.dgvPrice.Name = "dgvPrice";
+            this.dgvPrice.ReadOnly = true;
+            // 
+            // dgvAmount
+            // 
+            this.dgvAmount.DataPropertyName = "amount";
+            this.dgvAmount.HeaderText = "Amount";
+            this.dgvAmount.MinimumWidth = 8;
+            this.dgvAmount.Name = "dgvAmount";
+            this.dgvAmount.ReadOnly = true;
+            // 
+            // dgvDecrease
+            // 
+            this.dgvDecrease.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvDecrease.FillWeight = 50F;
+            this.dgvDecrease.HeaderText = "";
+            this.dgvDecrease.Image = global::QuanLyNhaHang.Properties.Resources.icons8_minus_80;
+            this.dgvDecrease.MinimumWidth = 50;
+            this.dgvDecrease.Name = "dgvDecrease";
+            this.dgvDecrease.ReadOnly = true;
+            this.dgvDecrease.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDecrease.Width = 50;
+            // 
+            // dgvDel
+            // 
+            this.dgvDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvDel.FillWeight = 50F;
+            this.dgvDel.HeaderText = "";
+            this.dgvDel.Image = global::QuanLyNhaHang.Properties.Resources.delete__1_;
+            this.dgvDel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dgvDel.MinimumWidth = 50;
+            this.dgvDel.Name = "dgvDel";
+            this.dgvDel.ReadOnly = true;
+            this.dgvDel.Width = 50;
             // 
             // frmPOS
             // 
@@ -724,7 +743,6 @@
 
         private Guna.UI2.WinForms.Guna2TextBox txtSearchProduct;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
         private Guna.UI2.WinForms.Guna2DateTimePicker DTPTime;
         private Guna.UI2.WinForms.Guna2DateTimePicker DPTDate;
         private System.Windows.Forms.Label lblTable;
@@ -748,6 +766,10 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvPOS;
+        private System.Windows.Forms.FlowLayoutPanel pnlCategory;
+        private System.Windows.Forms.FlowLayoutPanel pnlProduct;
+        private Guna.UI2.WinForms.Guna2MessageDialog Guna2MessageDialog1;
+        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDetailID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvMaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTenSP;
@@ -756,7 +778,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAmount;
         private System.Windows.Forms.DataGridViewImageColumn dgvDecrease;
         private System.Windows.Forms.DataGridViewImageColumn dgvDel;
-        private System.Windows.Forms.FlowLayoutPanel pnlCategory;
-        private System.Windows.Forms.FlowLayoutPanel pnlProduct;
     }
 }
