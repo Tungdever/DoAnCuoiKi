@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using QuanLyNhaHang.BS_layer;
+using QuanLyNhaHang.Reports;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -125,24 +126,44 @@ namespace QuanLyNhaHang
 
 
                     //Add button to change the status
-                    Guna.UI2.WinForms.Guna2Button b = new Guna.UI2.WinForms.Guna2Button();
-                    b.AutoRoundedCorners = true;
-                    b.Size = new Size(100, 35);
-                    b.FillColor = Color.FromArgb(241, 85, 126);
-                    b.Margin = new Padding(40, 5, 3, 10);
-                    b.Text = "Complete";
-                    b.Tag = dtTblMain.Rows[i]["MaBill"].ToString(); //store the id
-                    b.Click += new EventHandler(b_click);
-                    p1.Controls.Add(b);
+                    Guna.UI2.WinForms.Guna2Button bComplete = new Guna.UI2.WinForms.Guna2Button();
+                    bComplete.AutoRoundedCorners = true;
+                    bComplete.Size = new Size(100, 35);
+                    bComplete.FillColor = Color.FromArgb(241, 85, 126);
+                    bComplete.Margin = new Padding(40, 5, 3, 10);
+                    bComplete.Text = "Complete";
+                    bComplete.Tag = dtTblMain.Rows[i]["MaBill"].ToString(); //store the id
+                    bComplete.Click += new EventHandler(b_click);
+                    p1.Controls.Add(bComplete);
+
+                    Guna.UI2.WinForms.Guna2Button bPrint = new Guna.UI2.WinForms.Guna2Button();
+                    bPrint.AutoRoundedCorners = true;
+                    bPrint.Size = new Size(100, 35);
+                    bPrint.FillColor = Color.FromArgb(83, 164, 226);
+                    bPrint.Margin = new Padding(40, 5, 3, 10);
+                    bPrint.Text = "Print";
+                    bPrint.Tag = dtTblMain.Rows[i]["MaBill"].ToString(); //store the id
+                    bPrint.Click += new EventHandler(bPrint_Click);
+                    p1.Controls.Add(bPrint);
 
                     flowLayoutPanel1.Controls.Add(p1);
 
-                    
+
                         Console.WriteLine(p1.Width);
                        Console.WriteLine(p2.Width);
                 }
             }
 
+        }
+
+        private void bPrint_Click(object sender, EventArgs e)
+        {
+            frmPrint frm = new frmPrint();
+            rptBill cr = new rptBill();
+            cr.SetDataSource(dtTblJoin);
+            frm.crystalReportViewer1.ReportSource = cr;
+            frm.crystalReportViewer1.Refresh();
+            frm.Show();
         }
 
         private void b_click(object sender, EventArgs e)

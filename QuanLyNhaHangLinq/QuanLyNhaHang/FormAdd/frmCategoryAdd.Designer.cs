@@ -107,6 +107,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(526, 190);
             this.guna2Panel1.TabIndex = 12;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // lblAdd
             // 
@@ -115,7 +116,7 @@
             this.lblAdd.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdd.Location = new System.Drawing.Point(255, 64);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(172, 31);
+            this.lblAdd.Size = new System.Drawing.Size(208, 38);
             this.lblAdd.TabIndex = 1;
             this.lblAdd.Text = "Category Detail";
             // 
@@ -181,7 +182,7 @@
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(42, 375);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(75, 31);
+            this.lblName.Size = new System.Drawing.Size(91, 38);
             this.lblName.TabIndex = 15;
             this.lblName.Text = "Name";
             // 
@@ -191,7 +192,7 @@
             this.lblID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.Location = new System.Drawing.Point(42, 241);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(36, 31);
+            this.lblID.Size = new System.Drawing.Size(44, 38);
             this.lblID.TabIndex = 14;
             this.lblID.Text = "ID";
             // 

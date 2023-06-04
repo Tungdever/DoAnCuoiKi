@@ -40,6 +40,7 @@ namespace QuanLyNhaHang
                 {
                     Guna.UI2.WinForms.Guna2Button b = new Guna.UI2.WinForms.Guna2Button();
                     b.Text = row["Ten"].ToString();
+                    b.Tag = row["Manv"].ToString();
                     b.Width = 150;
                     b.Height = 50;
                     b.FillColor = Color.FromArgb(241, 85, 126);
@@ -50,9 +51,9 @@ namespace QuanLyNhaHang
                 }
             }
             
-            catch (SqlException)
+            catch (SqlException ex)
 {
-                MessageBox.Show("Không lấy được Waiter trong Staff. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được Waiter trong Staff. Lỗi rồi!!!"+ex.Message);
             }
         }
 
@@ -70,6 +71,21 @@ namespace QuanLyNhaHang
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

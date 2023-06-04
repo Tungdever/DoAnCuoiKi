@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,16 @@ namespace QuanLyNhaHang.BS_layer
         public System.Data.Linq.Table<DANHMUC> LayDanhMuc()
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
-            return qlNH.DANHMUCs;
+             return qlNH.DANHMUCs;
+        
+            //return qlNH.GetTable<DANHMUC>();
+        }
+        public List<string> LayTenDanhMuc()
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+            //chọn trường "TenDM" bằng cách sử dụng biểu thức lambda dm => dm.TenDM
+            var tenDanhMucList = qlNH.DANHMUCs.Select(dm => dm.TenDM).ToList();
+            return tenDanhMucList;
         }
         public List<DANHMUC> TimKiemDanhMuc(string str)
         {

@@ -260,7 +260,7 @@ namespace QuanLyNhaHang
                 //Cột MaBill tu dong sinh gia tri
 
                 //Cap nhat gia tri dong hien tai nho SELECT_SCOPE_INDENTITY
-                BillID = dbTblMain.AddTblMain(Convert.ToDateTime(DateTime.Now.Date), DateTime.Now.ToShortTimeString(),
+                BillID = dbTblMain.AddTblMain(Convert.ToDateTime(Date), Time.ToShortTimeString(),
                      lblTable.Text, lblWaiter.Text, "Hold", OrderType, Convert.ToDouble(lblTotal.Text), Convert.ToDouble(0), Convert.ToDouble(0), DriverID ,CustomerName , CustomerPhone, ref err);
                 // Thay vì như mặc định Hàm AddTblMain trả về true , false, ở đây nó trả về giá trị Bill Id của đơn hiện tại vừa thêm vào
                 if (BillID > 0)
@@ -271,7 +271,7 @@ namespace QuanLyNhaHang
             }
             else 
             {
-                dbTblMain.UpdateTblMain(BillID, Convert.ToDateTime(DateTime.Now.Date), DateTime.Now.ToShortTimeString(),
+                dbTblMain.UpdateTblMain(BillID, Convert.ToDateTime(Date), Time.ToShortTimeString(),
                         lblTable.Text, lblWaiter.Text, "Hold", OrderType, Convert.ToDouble(lblTotal.Text), Convert.ToDouble(0), Convert.ToDouble(0), ref err);
                 MessageBox.Show("Đã sửa xong!");
             }
@@ -542,7 +542,7 @@ received = @received, change = @change where MainID = @ID";
                     if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
                 }*/
                 //Cot DetailID tu dong xac dinh gia tri
-                if (detailID == 0)
+                if (detailID == 0) //detailID duoc them vao ban dau deu co gia tri 0
                 {
                     try
                     {
@@ -651,6 +651,7 @@ received = @received, change = @change where MainID = @ID";
             {
                 lblTable.Text = "";
                 lblTable.Visible = false;
+                return;// Khi ấn vào chọn bàn mà ấn close ko chọn -> tên bàn trống -> return luôn 
             }
 
             frmWaiterSelect frmWaiter = new frmWaiterSelect();

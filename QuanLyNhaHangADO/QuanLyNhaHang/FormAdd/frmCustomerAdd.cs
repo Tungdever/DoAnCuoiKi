@@ -86,6 +86,15 @@ namespace QuanLyNhaHang
             cusPhone = txtCustomerPhone.Text;
         }
 
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Saved");
+            this.Close();
+        }
     }
 }

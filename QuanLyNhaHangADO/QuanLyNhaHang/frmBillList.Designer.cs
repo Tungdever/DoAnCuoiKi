@@ -80,6 +80,7 @@
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(58, 42);
             this.guna2ControlBox1.TabIndex = 2;
+            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
             // lblAdd
             // 
@@ -353,6 +354,7 @@
             this.Controls.Add(this.dgvBillList);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBillList";
             this.Text = "frmBillList";
             this.Load += new System.EventHandler(this.frmBillList_Load);

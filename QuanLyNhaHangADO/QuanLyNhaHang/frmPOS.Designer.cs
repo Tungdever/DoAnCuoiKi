@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPOS = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -54,6 +54,8 @@
             this.lblDriverName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.DTPTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.DPTDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.lblTable = new System.Windows.Forms.Label();
             this.btnDinIn = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnTakeAway = new Guna.UI2.WinForms.Guna2TileButton();
@@ -67,8 +69,6 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtSearchProduct = new Guna.UI2.WinForms.Guna2TextBox();
-            this.DTPTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.DPTDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPOS)).BeginInit();
             this.pnlCategory.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -108,19 +108,19 @@
             this.dgvPOS.AllowUserToDeleteRows = false;
             this.dgvPOS.AllowUserToResizeColumns = false;
             this.dgvPOS.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dgvPOS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvPOS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPOS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPOS.ColumnHeadersHeight = 40;
             this.dgvPOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvPOS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -132,31 +132,31 @@
             this.dgvAmount,
             this.dgvDecrease,
             this.dgvDel});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPOS.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPOS.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPOS.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPOS.Location = new System.Drawing.Point(804, 175);
             this.dgvPOS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvPOS.Name = "dgvPOS";
             this.dgvPOS.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPOS.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPOS.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPOS.RowHeadersVisible = false;
             this.dgvPOS.RowHeadersWidth = 51;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.IndianRed;
-            this.dgvPOS.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.dgvPOS.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPOS.RowTemplate.Height = 35;
             this.dgvPOS.Size = new System.Drawing.Size(609, 650);
             this.dgvPOS.TabIndex = 17;
@@ -358,7 +358,7 @@
             this.lblDriverName.BackColor = System.Drawing.Color.Transparent;
             this.lblDriverName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDriverName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDriverName.Location = new System.Drawing.Point(455, 129);
+            this.lblDriverName.Location = new System.Drawing.Point(475, 125);
             this.lblDriverName.Name = "lblDriverName";
             this.lblDriverName.Size = new System.Drawing.Size(69, 32);
             this.lblDriverName.TabIndex = 3;
@@ -398,6 +398,51 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1425, 118);
             this.guna2Panel1.TabIndex = 13;
+            // 
+            // DTPTime
+            // 
+            this.DTPTime.Animated = true;
+            this.DTPTime.AutoRoundedCorners = true;
+            this.DTPTime.BackColor = System.Drawing.Color.Transparent;
+            this.DTPTime.BorderColor = System.Drawing.Color.Transparent;
+            this.DTPTime.BorderRadius = 22;
+            this.DTPTime.Checked = true;
+            this.DTPTime.FillColor = System.Drawing.Color.Crimson;
+            this.DTPTime.Font = new System.Drawing.Font(".VnVogueH", 10F, System.Drawing.FontStyle.Bold);
+            this.DTPTime.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.DTPTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.DTPTime.HoverState.FillColor = System.Drawing.Color.Red;
+            this.DTPTime.Location = new System.Drawing.Point(939, 65);
+            this.DTPTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DTPTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DTPTime.Name = "DTPTime";
+            this.DTPTime.ShowUpDown = true;
+            this.DTPTime.Size = new System.Drawing.Size(173, 46);
+            this.DTPTime.TabIndex = 6;
+            this.DTPTime.UseTransparentBackground = true;
+            this.DTPTime.Value = new System.DateTime(2023, 6, 2, 9, 24, 5, 454);
+            this.DTPTime.ValueChanged += new System.EventHandler(this.DTPTime_ValueChanged);
+            // 
+            // DPTDate
+            // 
+            this.DPTDate.BackColor = System.Drawing.Color.Transparent;
+            this.DPTDate.BorderColor = System.Drawing.Color.Transparent;
+            this.DPTDate.BorderRadius = 25;
+            this.DPTDate.Checked = true;
+            this.DPTDate.FillColor = System.Drawing.Color.Crimson;
+            this.DPTDate.Font = new System.Drawing.Font(".VnVogueH", 10F, System.Drawing.FontStyle.Bold);
+            this.DPTDate.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.DPTDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DPTDate.HoverState.FillColor = System.Drawing.Color.Red;
+            this.DPTDate.Location = new System.Drawing.Point(939, 13);
+            this.DPTDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DPTDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DPTDate.Name = "DPTDate";
+            this.DPTDate.Size = new System.Drawing.Size(173, 46);
+            this.DPTDate.TabIndex = 7;
+            this.DPTDate.UseTransparentBackground = true;
+            this.DPTDate.Value = new System.DateTime(2023, 6, 2, 9, 24, 5, 454);
+            this.DPTDate.ValueChanged += new System.EventHandler(this.DPTDate_ValueChanged);
             // 
             // lblTable
             // 
@@ -655,51 +700,6 @@
             this.txtSearchProduct.Size = new System.Drawing.Size(424, 38);
             this.txtSearchProduct.TabIndex = 12;
             this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
-            // 
-            // DTPTime
-            // 
-            this.DTPTime.Animated = true;
-            this.DTPTime.AutoRoundedCorners = true;
-            this.DTPTime.BackColor = System.Drawing.Color.Transparent;
-            this.DTPTime.BorderColor = System.Drawing.Color.Transparent;
-            this.DTPTime.BorderRadius = 22;
-            this.DTPTime.Checked = true;
-            this.DTPTime.FillColor = System.Drawing.Color.Crimson;
-            this.DTPTime.Font = new System.Drawing.Font(".VnVogueH", 10F, System.Drawing.FontStyle.Bold);
-            this.DTPTime.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.DTPTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DTPTime.HoverState.FillColor = System.Drawing.Color.Red;
-            this.DTPTime.Location = new System.Drawing.Point(939, 65);
-            this.DTPTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DTPTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.DTPTime.Name = "DTPTime";
-            this.DTPTime.ShowUpDown = true;
-            this.DTPTime.Size = new System.Drawing.Size(173, 46);
-            this.DTPTime.TabIndex = 6;
-            this.DTPTime.UseTransparentBackground = true;
-            this.DTPTime.Value = new System.DateTime(2023, 6, 2, 9, 24, 5, 454);
-            this.DTPTime.ValueChanged += new System.EventHandler(this.DTPTime_ValueChanged);
-            // 
-            // DPTDate
-            // 
-            this.DPTDate.BackColor = System.Drawing.Color.Transparent;
-            this.DPTDate.BorderColor = System.Drawing.Color.Transparent;
-            this.DPTDate.BorderRadius = 25;
-            this.DPTDate.Checked = true;
-            this.DPTDate.FillColor = System.Drawing.Color.Crimson;
-            this.DPTDate.Font = new System.Drawing.Font(".VnVogueH", 10F, System.Drawing.FontStyle.Bold);
-            this.DPTDate.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.DPTDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DPTDate.HoverState.FillColor = System.Drawing.Color.Red;
-            this.DPTDate.Location = new System.Drawing.Point(939, 13);
-            this.DPTDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DPTDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.DPTDate.Name = "DPTDate";
-            this.DPTDate.Size = new System.Drawing.Size(173, 46);
-            this.DPTDate.TabIndex = 7;
-            this.DPTDate.UseTransparentBackground = true;
-            this.DPTDate.Value = new System.DateTime(2023, 6, 2, 9, 24, 5, 454);
-            this.DPTDate.ValueChanged += new System.EventHandler(this.DPTDate_ValueChanged);
             // 
             // frmPOS
             // 

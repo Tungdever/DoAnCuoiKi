@@ -59,6 +59,7 @@
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(63, 46);
             this.btnClose.TabIndex = 3;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnMaxSize
             // 

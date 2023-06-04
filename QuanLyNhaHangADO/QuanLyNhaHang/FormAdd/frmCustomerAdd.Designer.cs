@@ -39,6 +39,8 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.cbbDriver = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblPhone = new System.Windows.Forms.Label();
+            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -57,7 +59,7 @@
             this.txtCustomerName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCustomerName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerName.Location = new System.Drawing.Point(4, 114);
+            this.txtCustomerName.Location = new System.Drawing.Point(4, 128);
             this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.PasswordChar = '\0';
@@ -72,9 +74,9 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(3, 75);
+            this.lblName.Location = new System.Drawing.Point(3, 82);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(179, 31);
+            this.lblName.Size = new System.Drawing.Size(218, 38);
             this.lblName.TabIndex = 19;
             this.lblName.Text = "Customer Name";
             // 
@@ -84,7 +86,7 @@
             this.lblDriver.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDriver.Location = new System.Drawing.Point(3, 0);
             this.lblDriver.Name = "lblDriver";
-            this.lblDriver.Size = new System.Drawing.Size(75, 31);
+            this.lblDriver.Size = new System.Drawing.Size(92, 38);
             this.lblDriver.TabIndex = 18;
             this.lblDriver.Text = "Driver";
             // 
@@ -101,7 +103,7 @@
             this.txtCustomerPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCustomerPhone.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtCustomerPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerPhone.Location = new System.Drawing.Point(4, 240);
+            this.txtCustomerPhone.Location = new System.Drawing.Point(4, 261);
             this.txtCustomerPhone.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.txtCustomerPhone.Name = "txtCustomerPhone";
             this.txtCustomerPhone.PasswordChar = '\0';
@@ -133,7 +135,7 @@
             this.lblAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblAdd.Location = new System.Drawing.Point(217, 67);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(220, 32);
+            this.lblAdd.Size = new System.Drawing.Size(259, 38);
             this.lblAdd.TabIndex = 1;
             this.lblAdd.Text = "Add Customer Info";
             // 
@@ -159,7 +161,7 @@
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(99, 62);
             this.guna2ControlBox1.TabIndex = 0;
-
+            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -187,7 +189,7 @@
             this.cbbDriver.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbbDriver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbDriver.ItemHeight = 30;
-            this.cbbDriver.Location = new System.Drawing.Point(3, 35);
+            this.cbbDriver.Location = new System.Drawing.Point(3, 42);
             this.cbbDriver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbDriver.Name = "cbbDriver";
             this.cbbDriver.Size = new System.Drawing.Size(312, 36);
@@ -198,17 +200,47 @@
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(3, 201);
+            this.lblPhone.Location = new System.Drawing.Point(3, 215);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(78, 31);
+            this.lblPhone.Size = new System.Drawing.Size(96, 38);
             this.lblPhone.TabIndex = 1;
             this.lblPhone.Text = "Phone";
+            // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.guna2MessageDialog1.Caption = null;
+            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.guna2MessageDialog1.Parent = null;
+            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.guna2MessageDialog1.Text = null;
+            // 
+            // btnSave
+            // 
+            this.btnSave.AutoRoundedCorners = true;
+            this.btnSave.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSave.BorderRadius = 27;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(22, 663);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(162, 56);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmCustomerAdd
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(577, 673);
+            this.ClientSize = new System.Drawing.Size(577, 732);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -238,5 +270,7 @@
         public Guna.UI2.WinForms.Guna2ComboBox cbbDriver;
         private System.Windows.Forms.Label lblPhone;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
     }
 }
