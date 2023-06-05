@@ -102,7 +102,7 @@ Total + ", " + received + ", " + change + ", '"+ driverID + "', '" + cusName + "
                 startDate = month + "-01-" + year;
                 endDate = month + "-28-" + year;
             }
-            string query = "SELECT SUM(total) AS TongDoanhThu FROM tblMain WHERE orderType = '" + ordertype + "' AND aDate BETWEEN '" + startDate + "' AND '" + endDate + "'";
+            string query = "SELECT SUM(amount) AS TongDoanhThu FROM tblDetails inner join tblMain on tblDetails.MaBill = tblMain.MaBill WHERE orderType = '" + ordertype + "' AND aDate BETWEEN '" + startDate + "' AND '" + endDate + "'";
 
             DataSet ds = db.ExecuteQueryDataSet(query, CommandType.Text);
             string dt = "";

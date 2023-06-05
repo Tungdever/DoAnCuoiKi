@@ -46,5 +46,6 @@ namespace QuanLyNhaHang.BS_layer
             return db.ExecuteQueryDataSet("Select * from tblMain m  inner join tblDetails d on m.MaBill = d.MaBill inner join SANPHAM p  on p.MaSP = d.proID WHERE m.MaBill = " + MaBill, CommandType.Text);
 
         }
+
     }
 }
