@@ -26,7 +26,7 @@ namespace QuanLyNhaHang.Select
         public string err;
         private void frmTableSelect_Load(object sender, EventArgs e)
         {
-
+            LoadData();
         }
         private void LoadData()
         {

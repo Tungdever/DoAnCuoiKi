@@ -265,27 +265,53 @@ namespace QuanLyNhaHang.BS_layer
                                     d.DetailID, d.proName, d.proID, d.qty, d.price, d.amount,
                                     t.Tid, t.Tstate
                                 };
+            /*
+                        DataTable dataTable = new DataTable();
 
-            DataTable dataTable = new DataTable();
+                        // Tạo các cột trong DataTable dựa trên các thuộc tính của các bảng
+                        foreach (var item in joinTableData.FirstOrDefault().GetType().GetProperties())
+                        {
+                            dataTable.Columns.Add(item.Name, item.PropertyType);
+                        }
 
-            // Tạo các cột trong DataTable dựa trên các thuộc tính của các bảng
-            foreach (var item in joinTableData.FirstOrDefault().GetType().GetProperties())
+                        // Thêm dữ liệu vào DataTable
+                        foreach (var item in joinTableData)
+                        {
+                            DataRow row = dataTable.NewRow();
+                            foreach (var prop in item.GetType().GetProperties())
+                            {
+                                row[prop.Name] = prop.GetValue(item);
+                            }
+                            dataTable.Rows.Add(row);
+                        }
+
+                        return dataTable;*/
+            DataTable dt = new DataTable();
+            /*foreach (var prop in result.FirstOrDefault().GetType().GetProperties())
             {
-                dataTable.Columns.Add(item.Name, item.PropertyType);
+                dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+                Console.WriteLine(prop.Name);
+            }*/
+            var properties = joinTableData.FirstOrDefault()?.GetType().GetProperties();
+            if (properties != null)
+            {
+                foreach (var prop in properties)
+                {
+                    dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+                    Console.WriteLine(prop.Name);
+                }
             }
-
-            // Thêm dữ liệu vào DataTable
             foreach (var item in joinTableData)
             {
-                DataRow row = dataTable.NewRow();
+                DataRow row = dt.NewRow();
                 foreach (var prop in item.GetType().GetProperties())
                 {
                     row[prop.Name] = prop.GetValue(item);
                 }
-                dataTable.Rows.Add(row);
+                dt.Rows.Add(row);
             }
 
-            return dataTable;
+            return dt;
         }
     }
     

@@ -344,7 +344,7 @@ namespace QuanLyNhaHang
                 {
                //     ds = dbTblMain.GetJoinTABLE(BillID);
                     dtTblJoin = dbTblMain.GetJoinTABLE(BillID);
-                    TableName = dtTblJoin.Rows[0]["Tname"].ToString();
+                    TableName = dtTblJoin.Rows[0]["TableName"].ToString();
                     TableID = dtTblJoin.Rows[0]["Tid"].ToString();
                     btnDinIn.Checked = true;
                     lblWaiter.Visible = true;
