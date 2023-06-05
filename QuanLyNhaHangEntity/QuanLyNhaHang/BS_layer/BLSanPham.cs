@@ -28,6 +28,15 @@ namespace QuanLyNhaHang.BS_layer
             }
             return dt;
         }
+        public List<SANPHAM> GetProducts()
+        {
+            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+            var query = from sp in qlnhEntity.SANPHAMs
+                        join dm in qlnhEntity.DANHMUCs on sp.MaLoaiSP equals dm.MaDM
+                        select sp;
+
+            return query.ToList();
+        }
         public DataTable TimKiemSanPham(string str)
         {
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();

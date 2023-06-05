@@ -76,6 +76,8 @@
     <Compile Include="BS_layer\BLSanPham.cs" />
     <Compile Include="BS_layer\BLTable.cs" />
     <Compile Include="BS_layer\BLTaiKhoan.cs" />
+    <Compile Include="BS_layer\BLTblDetail.cs" />
+    <Compile Include="BS_layer\BLTblMain.cs" />
     <Compile Include="categoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +185,12 @@
     <Compile Include="tblMain.cs">
       <DependentUpon>QLNhaHangModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ucProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucProduct.Designer.cs">
+      <DependentUpon>ucProduct.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="accountForm.resx">
       <DependentUpon>accountForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="tableForm.resx">
       <DependentUpon>tableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucProduct.resx">
+      <DependentUpon>ucProduct.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config" />
     <None Include="packages.config" />
@@ -329,6 +340,13 @@
       <DependentUpon>QLNhaHangModel.edmx</DependentUpon>
       <LastGenOutput>QLNhaHangModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-restaurant-din-in.png" />
+    <None Include="Resources\icons8-take-away-food-100.png" />
+    <None Include="Resources\icons8-motorcycle-delivery-100.png" />
+    <None Include="Resources\icons8-KOT-64.png" />
+    <None Include="Resources\icons8-hand-100.png" />
+    <None Include="Resources\icons8-new-ticket-80.png" />
+    <None Include="Resources\icons8-restaurant.png" />
     <None Include="Resources\view.png" />
     <None Include="Resources\hidden.png" />
   </ItemGroup>

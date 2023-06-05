@@ -142,7 +142,7 @@
             this.lblDriverName.BackColor = System.Drawing.Color.Transparent;
             this.lblDriverName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDriverName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDriverName.Location = new System.Drawing.Point(470, 125);
+            this.lblDriverName.Location = new System.Drawing.Point(510, 131);
             this.lblDriverName.Name = "lblDriverName";
             this.lblDriverName.Size = new System.Drawing.Size(69, 32);
             this.lblDriverName.TabIndex = 18;

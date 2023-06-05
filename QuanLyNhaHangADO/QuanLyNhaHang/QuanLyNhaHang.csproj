@@ -81,7 +81,6 @@
     </Compile>
     <Compile Include="BS_layer\BLDanhMuc.cs" />
     <Compile Include="BS_layer\BLNhanVien.cs" />
-    <Compile Include="BS_layer\BLPOS.cs" />
     <Compile Include="BS_layer\BLReport.cs" />
     <Compile Include="BS_layer\BLSanPham.cs" />
     <Compile Include="BS_layer\BLTable.cs" />

@@ -20,6 +20,10 @@ namespace QuanLyNhaHang.BS_layer
         {
             return db.ExecuteQueryDataSet("select MaSP, TenSP, MaLoaiSP, TenLoaiSP, GiaSP from SanPham", CommandType.Text);
         }
+        public DataSet GetProducts()
+        {
+            return db.ExecuteQueryDataSet("Select * from SANPHAM inner join DanhMuc on MaLoaiSP  = MaDM", CommandType.Text);
+        }
         public DataSet LoadMenu()
         {
             return db.ExecuteQueryDataSet("select * from SanPham " , CommandType.Text);

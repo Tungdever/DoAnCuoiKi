@@ -69,5 +69,10 @@ namespace QuanLyNhaHang
         {
             AddControls(new accountForm());
         }
+
+        private void btnPOS_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmPOS());
+        }
     }
 }

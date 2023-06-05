@@ -28,7 +28,7 @@ namespace QuanLyNhaHang
         DataTable dtTblJoin = null;
         string err;
         BLDanhMuc dbDM = new BLDanhMuc();
-        BLPOS dbPOS = new BLPOS();
+        
         BLSanPham dbSP = new BLSanPham();
         BLTblMain dbTblMain = new BLTblMain();
         BLTblDetail dbTblDetail = new BLTblDetail();
@@ -191,7 +191,7 @@ namespace QuanLyNhaHang
                 dtPOS = new DataTable();
                 dtPOS.Clear();
 
-                DataSet ds = dbPOS.GetProducts();
+                DataSet ds = dbSP.GetProducts();
                 dtPOS = ds.Tables[0]; // 
                 foreach (DataRow item in dtPOS.Rows)
                 {

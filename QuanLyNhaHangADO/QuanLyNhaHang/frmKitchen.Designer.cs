@@ -54,6 +54,7 @@
             // frmKitchen
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1611, 797);
             this.Controls.Add(this.flowLayoutPanel1);
