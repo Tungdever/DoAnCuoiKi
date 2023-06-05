@@ -32,6 +32,7 @@
             this.btnSaleByCategory = new Guna.UI2.WinForms.Guna2Button();
             this.btnStaffList = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenu = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRevenue = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // label1
@@ -120,11 +121,37 @@
             this.btnMenu.UseTransparentBackground = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // btnRevenue
+            // 
+            this.btnRevenue.BackColor = System.Drawing.Color.Transparent;
+            this.btnRevenue.BorderThickness = 3;
+            this.btnRevenue.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnRevenue.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRevenue.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRevenue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRevenue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRevenue.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevenue.ForeColor = System.Drawing.Color.Black;
+            this.btnRevenue.Image = global::QuanLyNhaHang.Properties.Resources.revenue__1_;
+            this.btnRevenue.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnRevenue.ImageSize = new System.Drawing.Size(70, 70);
+            this.btnRevenue.Location = new System.Drawing.Point(854, 94);
+            this.btnRevenue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRevenue.Name = "btnRevenue";
+            this.btnRevenue.Size = new System.Drawing.Size(277, 180);
+            this.btnRevenue.TabIndex = 4;
+            this.btnRevenue.Text = "Revenue";
+            this.btnRevenue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnRevenue.UseTransparentBackground = true;
+            this.btnRevenue.Click += new System.EventHandler(this.btnRevenue_Click);
+            // 
             // frmReport
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(1226, 674);
+            this.Controls.Add(this.btnRevenue);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSaleByCategory);
             this.Controls.Add(this.btnStaffList);
@@ -145,5 +172,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnStaffList;
         private Guna.UI2.WinForms.Guna2Button btnSaleByCategory;
+        private Guna.UI2.WinForms.Guna2Button btnRevenue;
     }
 }

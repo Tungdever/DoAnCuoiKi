@@ -188,3 +188,13 @@ D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
 D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
 D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.pdb
 D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmAccountAdd.resources
+D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.thongkeForm.resources
+D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\LiveCharts.dll
+D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\LiveCharts.WinForms.dll
+D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\LiveCharts.Wpf.dll
+D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\LiveCharts.pdb
+D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\LiveCharts.xml
+D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\LiveCharts.WinForms.pdb
+D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\LiveCharts.WinForms.xml
+D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\LiveCharts.Wpf.pdb
+D:\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\bin\Debug\LiveCharts.Wpf.xml

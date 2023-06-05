@@ -153,6 +153,16 @@ namespace QuanLyNhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap growth {
+            get {
+                object obj = ResourceManager.GetObject("growth", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hidden {
             get {
                 object obj = ResourceManager.GetObject("hidden", resourceCulture);
@@ -456,6 +466,16 @@ namespace QuanLyNhaHang.Properties {
         internal static System.Drawing.Bitmap restaurant__1_ {
             get {
                 object obj = ResourceManager.GetObject("restaurant (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap revenue__1_ {
+            get {
+                object obj = ResourceManager.GetObject("revenue (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

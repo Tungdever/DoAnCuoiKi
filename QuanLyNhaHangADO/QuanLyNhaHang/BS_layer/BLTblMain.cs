@@ -88,5 +88,34 @@ Total + ", " + received + ", " + change + ", '"+ driverID + "', '" + cusName + "
         {
             return db.ExecuteQueryDataSet("Select * from tblMain m inner join tblDetails d on m.MaBill = d.MaBill  inner join BAN t on m.TableName = t.Tname  WHERE m.MaBill = " + MaBill + "", CommandType.Text);
         }
+        public string doanhthu(string ordertype, string month, string year)
+        {            
+            string startDate;
+            string endDate;
+            if (month != "2")
+            {
+                startDate = month + "-01-" + year;
+                endDate = month + "-30-" + year;
+            }
+            else
+            {
+                startDate = month + "-01-" + year;
+                endDate = month + "-28-" + year;
+            }
+            string query = "SELECT SUM(total) AS TongDoanhThu FROM tblMain WHERE orderType = '" + ordertype + "' AND aDate BETWEEN '" + startDate + "' AND '" + endDate + "'";
+
+            DataSet ds = db.ExecuteQueryDataSet(query, CommandType.Text);
+            string dt = "";
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                dt = row["TongDoanhThu"].ToString();
+            }
+            if (dt == "")
+            {
+                dt = "0";
+            }
+            return dt;
+        }
+
     }
 }

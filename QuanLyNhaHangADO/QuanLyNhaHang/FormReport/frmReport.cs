@@ -72,5 +72,11 @@ namespace QuanLyNhaHang
             frmSaleCatReport frm = new frmSaleCatReport();
             frm.Show();
         }
+
+        private void btnRevenue_Click(object sender, EventArgs e)
+        {
+            thongkeForm frm = new thongkeForm();
+            frm.ShowDialog();
+        }
     }
 }
