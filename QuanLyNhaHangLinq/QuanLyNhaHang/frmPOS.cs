@@ -217,9 +217,9 @@ namespace QuanLyNhaHang
                     AddItems(Pro.MaSP, Pro.TenSP, Pro.TenLoaiSP, (float)Pro.GiaSP.GetValueOrDefault(), Image.FromStream(new MemoryStream(imagearray)));
                 }
             }
-            catch (SqlException)
+            catch (SqlException error)
             {
-                MessageBox.Show("Không lấy được các SẢN PHẨM trong Table SANPHAM. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được các SẢN PHẨM trong Table SANPHAM. Lỗi rồi!!!"+ error.Message);
             }
 
         }
@@ -388,9 +388,9 @@ namespace QuanLyNhaHang
                 GetTotal();
 
             }
-            catch (SqlException)
+            catch (SqlException error)
             {
-                MessageBox.Show("Không lấy được các SẢN PHẨM trong Table SANPHAM. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được các Bill . Lỗi rồi!!!"+error.Message);
             }
 
 
@@ -597,7 +597,7 @@ namespace QuanLyNhaHang
             frm.billID = BillID; // Lấy giá trị Bill hiện tại truyền cho frm để có thể update cho dat
             frm.amt = Convert.ToDouble(lblTotal.Text); //truyền vào giá trị để khi ấn checkout hiện lên , giá trị Total hiện lên txtBillAmount
             frm.ShowDialog();
-            Console.WriteLine(TableName + "*****");
+        
             if (TableName != "")
             {
                 UpdateSTATETABLE(TableID, TableName);

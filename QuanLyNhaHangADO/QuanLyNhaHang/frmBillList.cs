@@ -46,9 +46,9 @@ namespace QuanLyNhaHang
                 dgvBillList.DataSource = dtBillList;
                 dgvBillList.AutoResizeColumns();
             }
-            catch (SqlException)
+            catch (SqlException error)
             {
-                MessageBox.Show("Không lấy được nội dung trong table THANHPHO. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được nội dung trong table THANHPHO. Lỗi rồi!!!"+error.Message);
             }
 
         }
@@ -87,7 +87,7 @@ namespace QuanLyNhaHang
                     frm.crystalReportViewer1.ReportSource = cr;
                     frm.crystalReportViewer1.Refresh();
                     frm.Show();
-                    Console.WriteLine("########");
+                    
                 }    
             }
 
@@ -99,7 +99,8 @@ namespace QuanLyNhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Saved");
+            this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

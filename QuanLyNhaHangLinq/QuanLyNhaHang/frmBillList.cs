@@ -53,7 +53,8 @@ namespace QuanLyNhaHang
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Saved");
+            this.Close();
         }
 
         private void frmBillList_Load(object sender, EventArgs e)
@@ -110,10 +111,9 @@ namespace QuanLyNhaHang
         {
 
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
+        private void dgvBillList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.Close();
+
         }
     }
 }

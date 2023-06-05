@@ -99,6 +99,30 @@ namespace QuanLyNhaHang.BS_layer
             }
             return dataTable;
         }
+        public List<NHANVIEN> LayGiaoHang()
+        {
+            using (QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities())
+            {
+                var nhanViens = from nv in qlnhEntity.NHANVIENs
+                                where nv.ChucVu == "Giao Hàng"
+                                select nv;
+
+                return nhanViens.ToList();
+            }
+        }
+
+        public List<NHANVIEN> LayPhucVu()
+        {
+            using (QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities())
+            {
+                var nhanViens = from nv in qlnhEntity.NHANVIENs
+                                where nv.ChucVu == "Phục Vụ"
+                                select nv;
+
+                return nhanViens.ToList();
+            }
+        }
+
         public string MaNV_TenNV(string MaNV)
         {
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();

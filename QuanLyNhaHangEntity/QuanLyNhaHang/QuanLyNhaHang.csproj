@@ -99,6 +99,48 @@
     <Compile Include="FormAdd\frmAccountAdd.Designer.cs">
       <DependentUpon>frmAccountAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdd\frmCustomerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdd\frmCustomerAdd.Designer.cs">
+      <DependentUpon>frmCustomerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReport\frmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReport\frmPrint.Designer.cs">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReport\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReport\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReport\frmSaleCatReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReport\frmSaleCatReport.Designer.cs">
+      <DependentUpon>frmSaleCatReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBillList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillList.Designer.cs">
+      <DependentUpon>frmBillList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckOut.Designer.cs">
+      <DependentUpon>frmCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKitchen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKitchen.Designer.cs">
+      <DependentUpon>frmKitchen.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +206,18 @@
     <Compile Include="SANPHAM.cs">
       <DependentUpon>QLNhaHangModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Select\frmTableSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select\frmTableSelect.Designer.cs">
+      <DependentUpon>frmTableSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Select\frmWaiterSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select\frmWaiterSelect.Designer.cs">
+      <DependentUpon>frmWaiterSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="staffForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +257,18 @@
     <EmbeddedResource Include="FormAdd\frmCategoryAdd.resx">
       <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAdd\frmCustomerAdd.resx">
+      <DependentUpon>frmCustomerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBillList.resx">
+      <DependentUpon>frmBillList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckOut.resx">
+      <DependentUpon>frmCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKitchen.resx">
+      <DependentUpon>frmKitchen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +300,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Select\frmTableSelect.resx">
+      <DependentUpon>frmTableSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Select\frmWaiterSelect.resx">
+      <DependentUpon>frmWaiterSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="staffForm.resx">
       <DependentUpon>staffForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +412,10 @@
       <DependentUpon>QLNhaHangModel.edmx</DependentUpon>
       <LastGenOutput>QLNhaHangModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-minus-80.png" />
+    <None Include="Resources\icons8-bounced-check-100.png" />
+    <None Include="Resources\icons8-waiter-64.png" />
+    <None Include="Resources\icons8-bill-100.png" />
     <None Include="Resources\icons8-restaurant-din-in.png" />
     <None Include="Resources\icons8-take-away-food-100.png" />
     <None Include="Resources\icons8-motorcycle-delivery-100.png" />
