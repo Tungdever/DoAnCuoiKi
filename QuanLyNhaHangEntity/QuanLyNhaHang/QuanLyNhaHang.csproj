@@ -127,6 +127,12 @@
     <Compile Include="FormAdd\frmTableAdd.Designer.cs">
       <DependentUpon>frmTableAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOS.Designer.cs">
+      <DependentUpon>frmPOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="NHANVIEN.cs">
       <DependentUpon>QLNhaHangModel.tt</DependentUpon>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdd\frmTableAdd.resx">
       <DependentUpon>frmTableAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPOS.resx">
+      <DependentUpon>frmPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="productForm.resx">
       <DependentUpon>productForm.cs</DependentUpon>
