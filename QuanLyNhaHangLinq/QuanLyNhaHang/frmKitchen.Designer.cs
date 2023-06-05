@@ -60,6 +60,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmKitchen";
             this.Text = "frmKitchen";
+            this.Load += new System.EventHandler(this.frmKitchen_Load);
             this.ResumeLayout(false);
 
         }

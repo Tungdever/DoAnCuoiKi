@@ -194,6 +194,7 @@
             this.btnKitchen.Size = new System.Drawing.Size(241, 81);
             this.btnKitchen.TabIndex = 6;
             this.btnKitchen.Text = "Kitchen";
+            this.btnKitchen.Click += new System.EventHandler(this.btnKitchen_Click);
             // 
             // btnPOS
             // 

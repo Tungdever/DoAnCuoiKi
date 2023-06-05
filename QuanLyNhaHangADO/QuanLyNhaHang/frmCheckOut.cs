@@ -60,5 +60,33 @@ namespace QuanLyNhaHang
         {
             this.Close();
         }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtBillAmount_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+      
+
     }
 }

@@ -151,15 +151,15 @@ namespace QuanLyNhaHang
                 {
                     //Check if product already there then add one to quantity ad update price
                     object obj = item.Cells["dgvMaSP"].Value.ToString();
-                    //     Console.WriteLine("*"+obj);
-                    //    Console.WriteLine(obj.Equals(wdg.PId));
-                    //  Console.WriteLine(obj + "><" + wdg.PId);
+               
                     if (obj.Equals(wdg.PId))
                     {
 
                         item.Cells["dgvQty"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString()) + 1;
                         item.Cells["dgvAmount"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString()) * double.Parse(item.Cells["dgvPrice"].Value.ToString());
+                        
                         GetTotal();
+                       // dgvPOS.CurrentCell = item.Cells[0];
                         //  total += double.Parse(item.Cells["dgvPrice"].Value.ToString());
 
                         return;// Thoát khỏi onSelct
@@ -174,11 +174,13 @@ namespace QuanLyNhaHang
                 //Tác dụng của PCategory trong form này chỉ có duy nhất để visible các sản phẩm theo tên danh mục ứng với button ấn vào
                 //       s = false;
                 dgvPOS.Rows.Add(new object[] { 0, wdg.PId, wdg.PName, 1, wdg.PPrice, wdg.PPrice });
+             
                 //Số 0 đầu tiên là DetailID , ta mặc định khi ấn chọn sản phẩm , DetailID đưa lên dgvPOS là 0 nhưng 0 qtrong lắm , vì khi chỉnh sửa là lúc database trong tblDetails đổ xuốngdgvPOS 
                 //Gía trị trong cột dgvDetailID của dgvPOS sẽ trở nên khác ( vì trong tblDetails , cột DetailID là Indetity nên tự động sinh giá trị mỗi khi thêm record
 
                 GetTotal();
                 //   MessageBox.Show(lblTable.Text);
+                
             };
 
         }
@@ -310,6 +312,7 @@ namespace QuanLyNhaHang
 
             //    this.Close();
             Them = true;
+            BillID = 0;
         }
 
         private void btnBillList_Click(object sender, EventArgs e)
@@ -454,6 +457,8 @@ namespace QuanLyNhaHang
 
             //    this.Close();
             Them = true;
+            BillID = 0;
+
         }
 
         private void btnDelivery_Click(object sender, EventArgs e)
@@ -537,14 +542,16 @@ namespace QuanLyNhaHang
                     {
                         if (uint.TryParse(dgvPOS.CurrentRow.Cells["dgvQty"].Value.ToString(), out uint currentQty))
                         {
-                            if (currentQty > 0)
+                            if (currentQty > 1)
                             {
                                 dgvPOS.CurrentRow.Cells["dgvQty"].Value = currentQty - 1;
+                                dgvPOS.CurrentRow.Cells["dgvAmount"].Value = Convert.ToDouble(dgvPOS.CurrentRow.Cells["dgvQty"].Value) * Convert.ToDouble(dgvPOS.CurrentRow.Cells["dgvPrice"].Value);
+                                GetTotal();
                             }
-                            else
+                            else if(currentQty == 1)
                             {
-                                // Xử lý khi giá trị đã là 0
-                                MessageBox.Show("Giá trị đã là 0.");
+                                dgvPOS.Rows.RemoveAt(dgvPOS.CurrentCell.RowIndex);
+                                MessageBox.Show("Xoá thành công!");
                             }
                         }
                         else
@@ -565,13 +572,14 @@ namespace QuanLyNhaHang
                     DialogResult result = MessageBox.Show("Bạn có muốn xoá ?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
-                        if(dbSP.XoaSanPham(dgvPOS.CurrentRow.Cells["dgvMaSP"].Value.ToString(), ref err))
+                        /*if(dbSP.XoaSanPham(dgvPOS.CurrentRow.Cells["dgvMaSP"].Value.ToString(), ref err))
                         {
                             LoadData();
                             MessageBox.Show("Xoá thành công!");
-                        }    
-                        else
-                            MessageBox.Show("Không xóa được.Lỗi rồi!" + err);
+                        }   */
+                        dgvPOS.Rows.RemoveAt(dgvPOS.CurrentCell.RowIndex);
+                        MessageBox.Show("Xoá thành công!");
+                       
 
                     }
                 }
@@ -590,6 +598,10 @@ namespace QuanLyNhaHang
             frm.amt = Convert.ToDouble(lblTotal.Text); //truyền vào giá trị để khi ấn checkout hiện lên , giá trị Total hiện lên txtBillAmount
             frm.ShowDialog();
             Console.WriteLine(TableName + "*****");
+            if (TableName != "")
+            {
+                UpdateSTATETABLE(TableID, TableName);
+            }
             //  guna2MessageDialog1.Show("Saved Success");
             lblTable.Text = "";
             lblWaiter.Text = "";
@@ -597,7 +609,8 @@ namespace QuanLyNhaHang
             lblTable.Visible = false;
             lblTotal.Text = "0";
             dgvPOS.Rows.Clear();
-            UpdateSTATETABLE(TableID, TableName);
+            BillID = 0;
+            DetailID = 0;
         }
         private void UpdateSTATETABLE(string TID, string TName) // Sau khi thanh toán , chuyển bàn từ đã đặt thành trống
         {

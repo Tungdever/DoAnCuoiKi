@@ -1403,7 +1403,7 @@ namespace QuanLyNhaHang
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_driverID", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_driverID", DbType="NVarChar(50)")]
 		public string driverID
 		{
 			get

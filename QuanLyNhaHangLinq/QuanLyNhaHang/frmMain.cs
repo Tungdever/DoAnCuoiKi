@@ -74,5 +74,10 @@ namespace QuanLyNhaHang
         {
             AddControls(new frmPOS());  
         }
+
+        private void btnKitchen_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmKitchen());
+        }
     }
 }

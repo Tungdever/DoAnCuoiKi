@@ -355,7 +355,6 @@
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBillList";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBillList";
             this.Load += new System.EventHandler(this.frmBillList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillList)).EndInit();

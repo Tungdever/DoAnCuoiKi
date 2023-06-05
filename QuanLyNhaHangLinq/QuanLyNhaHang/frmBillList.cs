@@ -1,4 +1,5 @@
 ﻿using QuanLyNhaHang.BS_layer;
+using QuanLyNhaHang.FormReport;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,9 +45,9 @@ namespace QuanLyNhaHang
                 dgvBillList.DataSource = dtBillList;
                 dgvBillList.AutoResizeColumns();
             }
-            catch (SqlException)
+            catch (SqlException error)
             {
-                MessageBox.Show("Không lấy được nội dung trong table THANHPHO. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được nội dung trong table THANHPHO. Lỗi rồi!!!"+error.Message);
             }
 
         }
@@ -62,7 +63,47 @@ namespace QuanLyNhaHang
 
         private void dgvBillList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                //Khi ấn vào Edit có thể là sửa lại đơn hàng hoặc thanh toán
+                if (dgvBillList.CurrentCell.OwningColumn.Name == "dgvEdit")
+                {
+                    //Cap nhat gia tri cho bool Them ben formPos
+                    bonus = false;
+                    MainID = Convert.ToInt32(dgvBillList.CurrentRow.Cells["dgvMaBill"].Value);
+                    OrderType = dgvBillList.CurrentRow.Cells["dgvOrderType"].Value.ToString();
+                    this.Close();
+                    // Cập nhật MainID và thót khỏi form BillList, trở lại formPos và hiển thị đơn lên lại dgvPOS để edit
+                }
+                if (dgvBillList.CurrentCell.OwningColumn.Name == "dgvPrint")
+                {
+                    MainID = Convert.ToInt32(dgvBillList.CurrentRow.Cells["dgvMaBill"].Value);
+                    try
+                    {
+                        dtBillPrint = new DataTable();
+                        dtBillPrint.Clear();
+                        //  dtBillPrint = dbTblMain.GetJoin(MainID).Tables[0];
+                        dtBillPrint = dbTblMain.GetJoin(MainID);
+                    }
+                    catch (SqlException err)
+                    {
+                        MessageBox.Show("Không in được bill này. Lỗi rồi!!!" + err);
+                    }
 
+                    frmPrint frm = new frmPrint();
+                   /* rptBill cr = new rptBill();
+                    cr.SetDataSource(dtBillPrint);
+                    frm.crystalReportViewer1.ReportSource = cr;
+                    frm.crystalReportViewer1.Refresh();
+                    frm.Show();*/
+                    Console.WriteLine("########");
+                }
+            }
+
+            catch (SqlException error)
+            {
+                MessageBox.Show("Không xóa được. Lỗi rồi!" + error.Message);
+            }
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)

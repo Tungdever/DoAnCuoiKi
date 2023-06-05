@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\QuanLyNhaHangLinq",
+    "\\QuanLyNhaHangLinq\\QuanLyNhaHang"
   ],
-  "SelectedNode": "\\QuanLyNhaHang.sln (QuanLyNhaHangLinq\\QuanLyNhaHang.sln)",
+  "SelectedNode": "\\QuanLyNhaHangLinq\\QuanLyNhaHang\\frmPOS.cs",
   "PreviewInSolutionExplorer": false
 }

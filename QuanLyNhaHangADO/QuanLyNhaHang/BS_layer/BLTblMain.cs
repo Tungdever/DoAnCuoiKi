@@ -45,7 +45,7 @@ namespace QuanLyNhaHang.BS_layer
 
             string sqlString = "Insert Into tblMain ( aDate, aTime, TableName, WaiterName, Status, orderType, total, received, change ,driverID, cusName, cusPhone) Values  (" + "'" +
 date.ToString("yyyy-MM-dd") + "', '" + time + "', N'" + TableName + "',N'" + WaiterName + "', '" + Status + "', '" + orderType + "', " +
-Total + ", " + received + ", " + change + ", '"+ driverID + "', '" + cusName + "', '" + cusPhone + "' ); " + " SELECT SCOPE_IDENTITY()";
+Total + ", " + received + ", " + change + ", N'"+ driverID + "', '" + cusName + "', '" + cusPhone + "' ); " + " SELECT SCOPE_IDENTITY()";
             /*string sqlString = @"Insert into tblMain Values (@aDate,@aTime,@TableName,@WaiterName, @status, @lorderType,@total,@received,@change);
  Select SCOPE_IDENTITY()";*/
             // return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);

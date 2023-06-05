@@ -66,7 +66,7 @@
       <Column Name="total" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="received" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="change" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="driverID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="driverID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="cusName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="cusPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="MaBill" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

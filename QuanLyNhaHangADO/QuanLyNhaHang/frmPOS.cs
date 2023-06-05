@@ -335,6 +335,7 @@ namespace QuanLyNhaHang
 
             //    this.Close();
             Them = true;
+            BillID = 0;
         }
         public int BillID = 0;
         public int DetailID;
@@ -566,7 +567,7 @@ received = @received, change = @change where MainID = @ID";
             detailID = 0;
             dgvPOS.Rows.Clear();
             lblTable.Text = "";
-            
+            BillID = 0;
             lblWaiter.Text = "";
             lblTable.Visible = false;
             lblWaiter.Visible = false;
@@ -678,14 +679,16 @@ received = @received, change = @change where MainID = @ID";
                     {
                         if (uint.TryParse(dgvPOS.CurrentRow.Cells["dgvQty"].Value.ToString(), out uint currentQty))
                         {
-                            if (currentQty > 0)
+                            if (currentQty > 1)
                             {
                                 dgvPOS.CurrentRow.Cells["dgvQty"].Value = currentQty - 1;
+                                dgvPOS.CurrentRow.Cells["dgvAmount"].Value = Convert.ToDouble(dgvPOS.CurrentRow.Cells["dgvQty"].Value) * Convert.ToDouble(dgvPOS.CurrentRow.Cells["dgvPrice"].Value);
+                                GetTotal();
                             }
-                            else
+                            else if( currentQty == 1)
                             {
-                                // Xử lý khi giá trị đã là 0
-                                MessageBox.Show("Giá trị đã là 0.");
+                                dgvPOS.Rows.RemoveAt(dgvPOS.CurrentCell.RowIndex);
+                                MessageBox.Show("Xoá thành công!");
                             }
                         }
                         else
@@ -706,9 +709,11 @@ received = @received, change = @change where MainID = @ID";
                     DialogResult result = MessageBox.Show("Bạn có muốn xoá ?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
-                        dbSP.XoaSanPham(dgvPOS.CurrentRow.Cells["dgvMaSP"].Value.ToString(), ref err);
-                        LoadData();
+                        /*dbSP.XoaSanPham(dgvPOS.CurrentRow.Cells["dgvMaSP"].Value.ToString(), ref err);
+                        LoadData();*/
+                        dgvPOS.Rows.RemoveAt(dgvPOS.CurrentCell.RowIndex);
                         MessageBox.Show("Xoá thành công!");
+                        
                     }
                 }
                 GetTotal();
@@ -727,13 +732,19 @@ received = @received, change = @change where MainID = @ID";
             frm.ShowDialog();
             Console.WriteLine(TableName + "*****");
             //  guna2MessageDialog1.Show("Saved Success");
+            if(TableName != "")
+            {
+                UpdateSTATETABLE(TableID, TableName);
+            }    
             lblTable.Text = "";
             lblWaiter.Text = "";
             lblWaiter.Visible = false;
             lblTable.Visible = false;
             lblTotal.Text = "0";
             dgvPOS.Rows.Clear();
-            UpdateSTATETABLE(TableID, TableName);
+            
+            BillID = 0;
+            DetailID = 0;
 
         }
         private void UpdateSTATETABLE(string TID, string TName) // Sau khi thanh toán , chuyển bàn từ đã đặt thành trống

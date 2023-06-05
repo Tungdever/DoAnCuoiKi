@@ -38,12 +38,6 @@
         <elementListCompartment Id="df975c97-dd07-454a-a8b7-2959b6c74f62" absoluteBounds="0.765, 6.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c20f7616-6912-42a7-94e0-85e118450859" absoluteBounds="6.375, 3.75, 2, 3.3093082682291666">
-      <DataClassMoniker Name="/QuanLyNhaHangDataContext/tblMain" />
-      <nestedChildShapes>
-        <elementListCompartment Id="562ebfb9-7461-462d-940e-30947ce0af29" absoluteBounds="6.39, 4.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <associationConnector edgePoints="[(2.75 : 4.84699625651042); (3.5 : 4.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyNhaHangDataContext/DANHMUC/DANHMUC_SANPHAM" />
       <nodes>
@@ -51,12 +45,18 @@
         <classShapeMoniker Id="fc3a85d7-4824-42cb-8d8a-9093983300fb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.78929768880208); (3.5 : 1.78929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 1.78929768880208); (3.5 : 1.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QuanLyNhaHangDataContext/NHANVIEN/NHANVIEN_TAIKHOAN" />
       <nodes>
         <classShapeMoniker Id="965ef98c-0dfc-4921-9642-9d93475c710e" />
         <classShapeMoniker Id="f5c4de97-37b8-4721-b7e5-8baf38d3f255" />
       </nodes>
     </associationConnector>
+    <classShape Id="cd7f7c55-8bbb-4879-baef-effad0df710e" absoluteBounds="6.25, 3.25, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/QuanLyNhaHangDataContext/tblMain" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3c79110-9187-487e-a5ec-7082640eb206" absoluteBounds="6.265, 3.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

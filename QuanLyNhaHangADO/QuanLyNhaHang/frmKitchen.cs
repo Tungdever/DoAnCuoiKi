@@ -148,9 +148,6 @@ namespace QuanLyNhaHang
 
                     flowLayoutPanel1.Controls.Add(p1);
 
-
-                        Console.WriteLine(p1.Width);
-                       Console.WriteLine(p2.Width);
                 }
             }
 

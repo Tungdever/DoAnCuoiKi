@@ -84,5 +84,10 @@ namespace QuanLyNhaHang
                 txtImage.Image = new Bitmap(filepath);
             }
         }
+
+        private void cbbCateID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

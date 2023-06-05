@@ -203,26 +203,28 @@ namespace QuanLyNhaHang.BS_layer
             var result = from m in qlNH.tblMains
                          join d in qlNH.tblDetails on m.MaBill equals d.MaBill
                          where m.MaBill == MaBill
-                         select new { m, d };
+                          select new { m.MaBill, m.aDate, m.aTime, m.TableName, m.WaiterName, m.status, m.orderType, 
+                              m.total,m.received,m.change,m.driverID,m.cusName,m.cusPhone,
+                             d.DetailID, d.proID, d.proName, d.qty, d.price, d.amount
+                                };
+                        // select new { m, d };
 
             DataTable dt = new DataTable();
-            foreach (var item in result.FirstOrDefault().GetType().GetProperties())
+            /*foreach (var prop in result.FirstOrDefault().GetType().GetProperties())
             {
-                dt.Columns.Add(item.Name, item.PropertyType);
+                dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+                Console.WriteLine(prop.Name);
+            }*/
+            var properties = result.FirstOrDefault()?.GetType().GetProperties();
+            if (properties != null)
+            {
+                foreach (var prop in properties)
+                {
+                    dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+                    Console.WriteLine(prop.Name);
+                }
             }
-
-            // Thêm các cột khác tương ứng với các trường trong bảng tblMain và tblDetails
-
-            /*   foreach (var item in result)
-               {
-                   DataRow row = dt.NewRow();
-                   row["MaBill"] = item.m.MaBill;
-                   // Gán giá trị các trường khác tương ứng với các trường trong bảng tblMain và tblDetails
-
-                   dt.Rows.Add(row);
-               }*/
-            // Thêm dữ liệu vào DataTable
-            foreach (var item in result.GetType().GetProperties())
+            foreach (var item in result)
             {
                 DataRow row = dt.NewRow();
                 foreach (var prop in item.GetType().GetProperties())
@@ -232,13 +234,23 @@ namespace QuanLyNhaHang.BS_layer
                 dt.Rows.Add(row);
             }
 
-
-            /* DataSet ds = new DataSet();
-             ds.Tables.Add(dt);
-
-             return ds;*/
             return dt;
+
         }
+
+        /*public List<> GetJoin1(int MaBill)
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+
+            var result = from m in qlNH.tblMains
+                         join d in qlNH.tblDetails on m.MaBill equals d.MaBill
+                         where m.MaBill == MaBill
+                         select new { m, d };
+
+
+
+            return result.ToList();
+        }*/
         public DataTable GetJoinTABLE(int maBill)
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
@@ -248,9 +260,10 @@ namespace QuanLyNhaHang.BS_layer
                                 where m.MaBill == maBill
                                 select new
                                 {
-                                    MainTable = m,
-                                    DetailsTable = d,
-                                    BANTable = t
+                                    m.TableName
+                                    , m.MaBill, m.WaiterName, m.orderType,
+                                    d.DetailID, d.proName, d.proID, d.qty, d.price, d.amount,
+                                    t.Tid, t.Tstate
                                 };
 
             DataTable dataTable = new DataTable();
