@@ -163,3 +163,9 @@ D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
 D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
 D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.accountForm.resources
 D:\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmAccountAdd.resources
+C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.accountForm.resources
+C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmAccountAdd.resources
+C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmStaffAdd.resources
+C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmTableAdd.resources
+C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.staffForm.resources
+C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangEntity\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.tableForm.resources

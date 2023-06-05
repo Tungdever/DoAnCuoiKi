@@ -97,6 +97,12 @@
     <Compile Include="FormAdd\frmAccountAdd.Designer.cs">
       <DependentUpon>frmAccountAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +326,9 @@
       <DependentUpon>QLNhaHangModel.edmx</DependentUpon>
       <LastGenOutput>QLNhaHangModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\POS.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\imgHOme.png" />
     <None Include="Resources\view.png" />
     <None Include="Resources\hidden.png" />
   </ItemGroup>

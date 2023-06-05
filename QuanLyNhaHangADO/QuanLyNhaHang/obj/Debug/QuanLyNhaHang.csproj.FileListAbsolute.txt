@@ -241,3 +241,4 @@ C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLy
 C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.tableForm.resources
 C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.thongkeForm.resources
 C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.ucProduct.resources
+C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangADO\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmHome.resources

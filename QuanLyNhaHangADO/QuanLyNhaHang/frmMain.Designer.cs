@@ -43,9 +43,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlControlBox = new System.Windows.Forms.Panel();
             this.btnMinSize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnMaxSize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.CenterPanel = new System.Windows.Forms.Panel();
+            this.btnMaxSize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlControlBox.SuspendLayout();
@@ -294,6 +294,7 @@
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.btnHome.BorderRadius = 31;
             this.btnHome.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnHome.Checked = true;
             this.btnHome.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
             this.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -310,7 +311,7 @@
             this.btnHome.Size = new System.Drawing.Size(211, 65);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Home";
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click_1);
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // pictureBox1
             // 
@@ -345,17 +346,6 @@
             this.btnMinSize.Size = new System.Drawing.Size(56, 37);
             this.btnMinSize.TabIndex = 2;
             // 
-            // btnMaxSize
-            // 
-            this.btnMaxSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaxSize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.btnMaxSize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
-            this.btnMaxSize.IconColor = System.Drawing.Color.White;
-            this.btnMaxSize.Location = new System.Drawing.Point(1130, 12);
-            this.btnMaxSize.Name = "btnMaxSize";
-            this.btnMaxSize.Size = new System.Drawing.Size(56, 37);
-            this.btnMaxSize.TabIndex = 1;
-            // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -376,6 +366,17 @@
             this.CenterPanel.Size = new System.Drawing.Size(1268, 880);
             this.CenterPanel.TabIndex = 2;
             // 
+            // btnMaxSize
+            // 
+            this.btnMaxSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaxSize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.btnMaxSize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
+            this.btnMaxSize.IconColor = System.Drawing.Color.White;
+            this.btnMaxSize.Location = new System.Drawing.Point(1130, 12);
+            this.btnMaxSize.Name = "btnMaxSize";
+            this.btnMaxSize.Size = new System.Drawing.Size(56, 37);
+            this.btnMaxSize.TabIndex = 1;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -389,11 +390,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlControlBox.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -409,11 +410,11 @@
         private Guna.UI2.WinForms.Guna2Button btnProduct;
         private System.Windows.Forms.Panel pnlControlBox;
         private Guna.UI2.WinForms.Guna2ControlBox btnMinSize;
-        private Guna.UI2.WinForms.Guna2ControlBox btnMaxSize;
         private Guna.UI2.WinForms.Guna2ControlBox btnClose;
         private System.Windows.Forms.Panel CenterPanel;
         private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Guna.UI2.WinForms.Guna2Button btnReport;
         public Guna.UI2.WinForms.Guna2Button btnAccount;
+        private Guna.UI2.WinForms.Guna2ControlBox btnMaxSize;
     }
 }

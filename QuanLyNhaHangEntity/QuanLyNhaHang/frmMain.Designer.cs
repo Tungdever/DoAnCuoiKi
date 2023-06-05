@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlControlBox = new System.Windows.Forms.Panel();
+            this.btnMinSize = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btnMaxSize = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.CenterPanel = new System.Windows.Forms.Panel();
             this.btnAccount = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnReport = new Guna.UI2.WinForms.Guna2Button();
@@ -40,14 +45,9 @@
             this.btnCategory = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnlControlBox = new System.Windows.Forms.Panel();
-            this.btnMinSize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnMaxSize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.CenterPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlControlBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,6 +69,59 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 819);
             this.panel1.TabIndex = 0;
+            // 
+            // pnlControlBox
+            // 
+            this.pnlControlBox.Controls.Add(this.btnMinSize);
+            this.pnlControlBox.Controls.Add(this.btnMaxSize);
+            this.pnlControlBox.Controls.Add(this.btnClose);
+            this.pnlControlBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlControlBox.Location = new System.Drawing.Point(176, 0);
+            this.pnlControlBox.Name = "pnlControlBox";
+            this.pnlControlBox.Size = new System.Drawing.Size(1222, 62);
+            this.pnlControlBox.TabIndex = 1;
+            // 
+            // btnMinSize
+            // 
+            this.btnMinSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinSize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.btnMinSize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
+            this.btnMinSize.IconColor = System.Drawing.Color.White;
+            this.btnMinSize.Location = new System.Drawing.Point(1021, 12);
+            this.btnMinSize.Name = "btnMinSize";
+            this.btnMinSize.Size = new System.Drawing.Size(56, 37);
+            this.btnMinSize.TabIndex = 2;
+            // 
+            // btnMaxSize
+            // 
+            this.btnMaxSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaxSize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.btnMaxSize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
+            this.btnMaxSize.IconColor = System.Drawing.Color.White;
+            this.btnMaxSize.Location = new System.Drawing.Point(1084, 12);
+            this.btnMaxSize.Name = "btnMaxSize";
+            this.btnMaxSize.Size = new System.Drawing.Size(56, 37);
+            this.btnMaxSize.TabIndex = 1;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.CustomClick = true;
+            this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
+            this.btnClose.IconColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(1146, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(56, 37);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // CenterPanel
+            // 
+            this.CenterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CenterPanel.Location = new System.Drawing.Point(176, 62);
+            this.CenterPanel.Name = "CenterPanel";
+            this.CenterPanel.Size = new System.Drawing.Size(1222, 757);
+            this.CenterPanel.TabIndex = 2;
             // 
             // btnAccount
             // 
@@ -318,59 +371,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pnlControlBox
-            // 
-            this.pnlControlBox.Controls.Add(this.btnMinSize);
-            this.pnlControlBox.Controls.Add(this.btnMaxSize);
-            this.pnlControlBox.Controls.Add(this.btnClose);
-            this.pnlControlBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlControlBox.Location = new System.Drawing.Point(176, 0);
-            this.pnlControlBox.Name = "pnlControlBox";
-            this.pnlControlBox.Size = new System.Drawing.Size(1222, 62);
-            this.pnlControlBox.TabIndex = 1;
-            // 
-            // btnMinSize
-            // 
-            this.btnMinSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinSize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.btnMinSize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
-            this.btnMinSize.IconColor = System.Drawing.Color.White;
-            this.btnMinSize.Location = new System.Drawing.Point(1021, 12);
-            this.btnMinSize.Name = "btnMinSize";
-            this.btnMinSize.Size = new System.Drawing.Size(56, 37);
-            this.btnMinSize.TabIndex = 2;
-            // 
-            // btnMaxSize
-            // 
-            this.btnMaxSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaxSize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.btnMaxSize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
-            this.btnMaxSize.IconColor = System.Drawing.Color.White;
-            this.btnMaxSize.Location = new System.Drawing.Point(1084, 12);
-            this.btnMaxSize.Name = "btnMaxSize";
-            this.btnMaxSize.Size = new System.Drawing.Size(56, 37);
-            this.btnMaxSize.TabIndex = 1;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.CustomClick = true;
-            this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
-            this.btnClose.IconColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1146, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(56, 37);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // CenterPanel
-            // 
-            this.CenterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CenterPanel.Location = new System.Drawing.Point(176, 62);
-            this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(1222, 757);
-            this.CenterPanel.TabIndex = 2;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -384,9 +384,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlControlBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -125,3 +125,7 @@ D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.Cor
 D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
 D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
 D:\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
+C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmStaffAdd.resources
+C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.frmTableAdd.resources
+C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.staffForm.resources
+C:\Users\DELL\Desktop\DoAnCuoiKi\QuanLyNhaHangLinq\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.tableForm.resources

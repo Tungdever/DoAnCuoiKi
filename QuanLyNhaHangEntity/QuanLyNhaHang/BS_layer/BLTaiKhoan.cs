@@ -116,5 +116,41 @@ namespace QuanLyNhaHang.BS_layer
                 return false;
             }
         }
+        public string LayQuyen(string str)
+        {
+            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+            var taikhoanList = from tk in qlnhEntity.TAIKHOANs
+                               where tk.TenTaiKhoan.Contains(str)
+                               select new
+                               {
+                                   CapDoQuyen = tk.CapDoQuyen
+                               };
+            string CapDoQuyen = "";
+            foreach (var item in taikhoanList)
+            {
+                CapDoQuyen = item.CapDoQuyen.ToString();
+            }
+            if (CapDoQuyen == "1") CapDoQuyen = "ADMIN";
+            else CapDoQuyen = "Nhân viên quản lý";
+            return CapDoQuyen;
+        }
+        public string TimKiemTen(string str)
+        {
+            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+            var taikhoanList = from tk in qlnhEntity.TAIKHOANs
+                               where tk.TenTaiKhoan.Contains(str)
+                               select new
+                               {
+                                   MaNV = tk.MaNV,
+                                   CapDoQuyen = tk.CapDoQuyen
+                               };
+            string tenNV = "";
+            foreach (var item in taikhoanList)
+            {
+                string maNV = item.MaNV.ToString();
+                tenNV = dbNV.MaNV_TenNV(maNV).Split('-')[1].Trim();
+            }
+            return tenNV;
+        }
     }
 }

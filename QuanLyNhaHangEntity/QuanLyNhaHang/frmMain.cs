@@ -10,14 +10,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
+using QuanLyNhaHang.BS_layer;
+
 namespace QuanLyNhaHang
 {
     public partial class frmMain : Form
     {
+        BLTaiKhoan dbTK = new BLTaiKhoan();
         public frmMain()
         {
             InitializeComponent();
         }
+        public string user = "";
         public void AddControls(Form frm)
         {
             CenterPanel.Controls.Clear();
@@ -29,7 +33,10 @@ namespace QuanLyNhaHang
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-
+            frmHome frm = new frmHome();
+            frm.lblHello.Text += dbTK.TimKiemTen(user);
+            frm.lblQuyen.Text += dbTK.LayQuyen(user);
+            AddControls(frm);
         }
 
 
@@ -68,6 +75,14 @@ namespace QuanLyNhaHang
         private void btnAccount_Click(object sender, EventArgs e)
         {
             AddControls(new accountForm());
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            frmHome frm = new frmHome();
+            frm.lblHello.Text += dbTK.TimKiemTen(user);
+            frm.lblQuyen.Text += dbTK.LayQuyen(user);
+            AddControls(frm);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyNhaHang.BS_layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,12 @@ namespace QuanLyNhaHang
 {
     public partial class frmMain : Form
     {
+        BLTaiKhoan dbTK = new BLTaiKhoan();
         public frmMain()
         {
             InitializeComponent();
         }
+        public string user= "";
         public void AddControls(Form frm)
         {
             CenterPanel.Controls.Clear();
@@ -25,10 +28,12 @@ namespace QuanLyNhaHang
             CenterPanel.Controls.Add(frm);
             frm.Show();
         }
-
         private void btnHome_Click(object sender, EventArgs e)
         {
-
+            frmHome frm = new frmHome();
+            frm.lblHello.Text += dbTK.TimKiemTen(user);
+            frm.lblQuyen.Text += dbTK.LayQuyen(user);
+            AddControls(frm);
         }
 
 
@@ -74,11 +79,6 @@ namespace QuanLyNhaHang
             frm.ShowDialog();
         }
 
-        private void btnHome_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnReport_Click(object sender, EventArgs e)
         {
             AddControls(new frmReport());   
@@ -95,6 +95,14 @@ namespace QuanLyNhaHang
             AddControls(new thongkeForm());
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            frmHome frm = new frmHome();
+            frm.lblHello.Text += dbTK.TimKiemTen(user);
+            frm.lblQuyen.Text += dbTK.LayQuyen(user);
+            AddControls(frm);         
+        }
 
+       
     }
 }

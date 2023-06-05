@@ -77,8 +77,31 @@ namespace QuanLyNhaHang.BS_layer
                 string tenNV = dbNV.MaNV_TenNV(maNV); // Gọi phương thức chuyển đổi từ MaNV sang Tên NV
                 dt.Rows.Add(tenTaiKhoan, matKhau, tenNV, capDoQuyen);
             }
-            return dt;
-            
+            return dt;            
+        }
+        public string LayQuyen(string str)
+        {
+            DataSet TK = db.ExecuteQueryDataSet("SELECT * FROM TAIKHOAN WHERE TenTaiKhoan LIKE '%" + str + "%'", CommandType.Text);
+            string CapDoQuyen = "";
+            foreach (DataRow row in TK.Tables[0].Rows)
+            {
+                CapDoQuyen = row["CapDoQuyen"].ToString();
+
+            }
+            if (CapDoQuyen == "1") CapDoQuyen = "ADMIN";
+            else CapDoQuyen = "Nhân viên quản lý";
+            return CapDoQuyen;
+        }
+        public string TimKiemTen(string str)
+        {
+            DataSet TK = db.ExecuteQueryDataSet("SELECT * FROM TAIKHOAN WHERE TenTaiKhoan LIKE '%" + str + "%'", CommandType.Text);
+            string tenNV = "";
+            foreach (DataRow row in TK.Tables[0].Rows)
+            {
+                string maNV = row["MaNV"].ToString();
+                tenNV = dbNV.MaNV_TenNV(maNV).Split('-')[1].Trim(); 
+            }
+            return tenNV;
         }
         public bool CapNhatTaiKhoan(string TenTaiKhoan, string MatKhau, string MaNV, int CapDoQuyen, ref string err)
         {
