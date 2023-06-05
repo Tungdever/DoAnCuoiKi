@@ -68,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(176, 819);
+            this.panel1.Size = new System.Drawing.Size(176, 942);
             this.panel1.TabIndex = 0;
             // 
             // btnAccount
@@ -113,7 +113,7 @@
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogOut.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLogOut.Location = new System.Drawing.Point(0, 754);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 877);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(176, 65);
             this.btnLogOut.TabIndex = 6;
@@ -331,7 +331,7 @@
             this.pnlControlBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlControlBox.Location = new System.Drawing.Point(176, 0);
             this.pnlControlBox.Name = "pnlControlBox";
-            this.pnlControlBox.Size = new System.Drawing.Size(1222, 62);
+            this.pnlControlBox.Size = new System.Drawing.Size(1268, 62);
             this.pnlControlBox.TabIndex = 1;
             // 
             // btnMinSize
@@ -340,7 +340,7 @@
             this.btnMinSize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btnMinSize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
             this.btnMinSize.IconColor = System.Drawing.Color.White;
-            this.btnMinSize.Location = new System.Drawing.Point(1021, 12);
+            this.btnMinSize.Location = new System.Drawing.Point(1067, 12);
             this.btnMinSize.Name = "btnMinSize";
             this.btnMinSize.Size = new System.Drawing.Size(56, 37);
             this.btnMinSize.TabIndex = 2;
@@ -351,7 +351,7 @@
             this.btnMaxSize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             this.btnMaxSize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
             this.btnMaxSize.IconColor = System.Drawing.Color.White;
-            this.btnMaxSize.Location = new System.Drawing.Point(1084, 12);
+            this.btnMaxSize.Location = new System.Drawing.Point(1130, 12);
             this.btnMaxSize.Name = "btnMaxSize";
             this.btnMaxSize.Size = new System.Drawing.Size(56, 37);
             this.btnMaxSize.TabIndex = 1;
@@ -362,7 +362,7 @@
             this.btnClose.CustomClick = true;
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
             this.btnClose.IconColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1146, 12);
+            this.btnClose.Location = new System.Drawing.Point(1192, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(56, 37);
             this.btnClose.TabIndex = 0;
@@ -373,14 +373,14 @@
             this.CenterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CenterPanel.Location = new System.Drawing.Point(176, 62);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(1222, 757);
+            this.CenterPanel.Size = new System.Drawing.Size(1268, 880);
             this.CenterPanel.TabIndex = 2;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1398, 819);
+            this.ClientSize = new System.Drawing.Size(1444, 942);
             this.Controls.Add(this.CenterPanel);
             this.Controls.Add(this.pnlControlBox);
             this.Controls.Add(this.panel1);

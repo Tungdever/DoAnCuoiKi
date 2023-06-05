@@ -89,5 +89,12 @@ namespace QuanLyNhaHang
         {
             AddControls(new accountForm());
         }
+
+        private void btnRevenue_Click(object sender, EventArgs e)
+        {
+            AddControls(new thongkeForm());
+        }
+
+
     }
 }

@@ -45,7 +45,6 @@ namespace QuanLyNhaHang
                     b.Height = 50;
                     b.FillColor = Color.FromArgb(241, 85, 126);
                     b.HoverState.FillColor = Color.FromArgb(50, 55, 89);
-
                     b.Click += new EventHandler(b_Click);
                     flowLayoutPanel1.Controls.Add(b);
                 }

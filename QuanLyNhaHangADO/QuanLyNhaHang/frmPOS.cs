@@ -130,7 +130,6 @@ namespace QuanLyNhaHang
                 }
             }   
         }
-
         private void AddItems(string id, string name, string cat, float price, Image pimage)
         {
             var w = new ucProduct()
@@ -277,32 +276,7 @@ namespace QuanLyNhaHang
             }
             foreach (DataGridViewRow row in dgvPOS.Rows)
             {
-                detailID = Convert.ToInt32(row.Cells["dgvDetailID"].Value); //
-                /*detailID = Convert.ToInt32(row.Cells["dgvid"].Value); //Lấy giá trị của record ( thứ thựu ) truyền cho detailID
-                if (detailID == 0) //insert
-                {
-                //Cột IDENTITY trong SQL Server được sử dụng để tạo ra các giá trị duy nhất tự động
-                //Khi thực hiện một truy vấn INSERT và không cung cấp giá trị cho cột IDENTITY, SQL Server sẽ tự động tạo ra giá trị mới cho cột đó.
-
-            //Dù không truyền giá trị cho cột DetailID trong câu lệnh INSERT, nhưng cột DetailID vẫn có giá trị được sinh tự động bởi cơ sở dữ liệu.
-                    qry2 = @"Insert into tblDetails Values (@MainID,@proID, @qty @price,@amount)";
-                }
-                else //Update
-                {
-                    qry2 = @"Update tblDetails Set proID = @proID, qty = @qty,price = @price, amount =@amount where DetailID = @ID ";
-                }
-                    SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
-                    cmd2.Parameters.AddWithValue("@ID", detailID);
-                    cmd2.Parameters.AddWithValue("@MainID", MainID);
-                    cmd2.Parameters.AddWithValue("@proID", row.Cells["dgvproID"].Value);
-                    cmd2.Parameters.AddWithValue("@qty", row.Cells["dgvQty"].Value);
-                    cmd2.Parameters.AddWithValue("@price", row.Cells["dgvPrice"].Value);
-                    cmd2.Parameters.AddWithValue("@amount", row.Cells["dgvAmount"].Value);
-                    if (MainClass.con.State == ConnectionState.Closed) { MainClass.com.Open(); }
-                    cmd2.ExecuteNonQuery();
-                    if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
-                }*/
-                //Cot DetailID tu dong xac dinh gia tri
+                detailID = Convert.ToInt32(row.Cells["dgvDetailID"].Value);               
                 if (detailID == 0)
                 {
                     try
@@ -426,74 +400,6 @@ namespace QuanLyNhaHang
         private void btnKOT_Click(object sender, EventArgs e) 
         {
             int detailID = 0;
-            /*
-            //Save the Data in Database
-            string qry1 = ""; //Main table
-            string qry2 = "";
-            int detailID = 0;
-
-           
-            //nghĩa là không có giá trị ID chính trong bảng "tblMain" (tức là không có bản ghi đã tồn tại và đang được chỉnh sửa),
-            //thì câu lệnh INSERT sẽ được thực hiện để chèn dữ liệu mới vào bảng "tblMain". Sau đó, câu lệnh SELECT SCOPE_IDENTITY() sẽ trả về giá trị ID của bản ghi vừa được chèn vào bảng.
-            if (MainID == 0) //Insert
-            {
-                qry1 = @"Insert into tblMain Values (@aDate,@aTime,@TableName,@WaiterName, @status, @lorderType,@total,@received,@change);
-Select SCOPE_IDENTITY()"; // Chèn các đối số này vào bản ghi
-                //this line will get recent add id value
-            }
-            else
-            {
-
-                qry1 = @"Update tblMain Set status = @status, total =@total,
-received = @received, change = @change where MainID = @ID";
-
-
-            }
-            Hashtable ht = new Hashtable();
-               SqlCommand cmd = new SqlCommand(qry1, MainClass.con); 
-            //được sử dụng để thêm một tham số vào câu truy vấn SQL. Tham số @ID sẽ được sử dụng để liên kết với giá trị của biến MainID trong câu truy vấn SQL, nhưng nó không gán giá trị trực tiếp vào cột MainID trong bảng.
-        //Giá trị của biến MainID sẽ được sử dụng để cung cấp đối số cho tham số @ID trong câu truy vấn SQL. Khi câu truy vấn được thực thi,
-            //giá trị của biến MainID sẽ được thay thế vào tham số @MainID. Điều này cho phép bạn truyền giá trị của MainID từ mã vào câu truy vấn SQL để thực hiện các thao tác như chèn dữ liệu mới hoặc cập nhật dữ liệu trong cột MainID của bảng "tblMain".
-                cmd.Parameters.AddwithValue("@ID", MainID);
-                 cmd.Parameters.AddWithValue("@aDate", Conver.ToDateTime(DateTime.Now.Date));
-                 cmd.Parameters.AddWithValue("@aTime", DateTime.Now.ToShortTimeString());
-                 cmd.Parameters.AddWithValue("@TableName", lblTalbe.Text);
-                 cmd.Parameters.AddWithValue("@WaiterName", lblWaiter.Text);
-                 cmd.Parameters.AddWithValue("@status", "Pending");
-                 cmd.Parameters.AddWithValue("@orderType", OrderType);
-                 cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lblTotal.Text)); // as we only saving data for kitchen value will update when payment received 
-                cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
-                 cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
-                 if(MainClass.con.State == ConnectionState.Closed) { MainClass.com.Open(); }
-                   
-            //Phương thức ExecuteScalar() sẽ thực hiện câu lệnh SQL và trả về giá trị đơn duy nhất từ câu lệnh. Trong trường hợp này, giá trị trả về sẽ là giá trị ID mới được tạo ra. Đoạn mã Convert.ToInt32() được sử dụng để chuyển đổi giá trị trả về sang kiểu dữ liệu integer và gán cho biến MainID, đồng thời cập nhật giá trị của cột "MainID" trong record đầu tiên của bảng "tblMain" thành giá trị ID mới nhất.
-                 if (MainID == 0) { MainID =Convert.ToInt32( cmd.ExecuteScalar()); } // Vừa thực hiện lấy giá hàng sau hàng vừa chèn lưu vào MainID , sau đó lại truyền MainID vào để thực hiện insert
-            else { cmd.ExecuteNonQuery(); }
-                 if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
-             
-            foreach (DataGridViewRow row in dgvPOS.Rows)
-            {
-                detailID = Convert.ToInt32(row.Cells["dgvid"].Value);
-                if (detailID == 0) //insert
-                {
-                    qry2 = @"Insert into tblDetails Values (@MainID,@proID, @qty @price,@amount)";
-                }
-                else //Update
-                    {
-                        qry2 = @"Update tblDetails Set proID = @proID, qty = @qty,price = @price, amount =@amount where DetailID = @ID ";
-                        SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con); 
-                    cmd2.Parameters.AddWithValue("@ID", detailID); 
-                        cmd2.Parameters.AddWithValue("@MainID", MainID);
-                        cmd2.Parameters.AddWithValue("@proID", row.Cells["dgvproID"].Value);
-                        cmd2.Parameters.AddWithValue("@qty", row.Cells["dgvQty"].Value);
-                        cmd2.Parameters.AddWithValue("@price", row.Cells["dgvPrice"].Value);
-                        cmd2.Parameters.AddWithValue("@amount", row.Cells["dgvAmount"].Value);
-                          if (MainClass.con.State == ConnectionState.Closed) { MainClass.com.Open(); }
-                       cmd2.ExecuteNonQuery();
-                       if (MainClass.con.State == ConnectionState.Open)  { MainClass.con.Close(); }
-                    }
-                }
-            } */
             
             if (Them)
             {
@@ -518,32 +424,8 @@ received = @received, change = @change where MainID = @ID";
             foreach (DataGridViewRow row in dgvPOS.Rows)
             {
                 detailID = Convert.ToInt32(row.Cells["dgvDetailID"].Value); //
-                /*detailID = Convert.ToInt32(row.Cells["dgvid"].Value); //Lấy giá trị của record ( thứ thựu ) truyền cho detailID
-                if (detailID == 0) //insert
-                {
-                //Cột IDENTITY trong SQL Server được sử dụng để tạo ra các giá trị duy nhất tự động
-                //Khi thực hiện một truy vấn INSERT và không cung cấp giá trị cho cột IDENTITY, SQL Server sẽ tự động tạo ra giá trị mới cho cột đó.
-
-            //Dù không truyền giá trị cho cột DetailID trong câu lệnh INSERT, nhưng cột DetailID vẫn có giá trị được sinh tự động bởi cơ sở dữ liệu.
-                    qry2 = @"Insert into tblDetails Values (@MainID,@proID, @qty @price,@amount)";
-                }
-                else //Update
-                {
-                    qry2 = @"Update tblDetails Set proID = @proID, qty = @qty,price = @price, amount =@amount where DetailID = @ID ";
-                }
-                    SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
-                    cmd2.Parameters.AddWithValue("@ID", detailID);
-                    cmd2.Parameters.AddWithValue("@MainID", MainID);
-                    cmd2.Parameters.AddWithValue("@proID", row.Cells["dgvproID"].Value);
-                    cmd2.Parameters.AddWithValue("@qty", row.Cells["dgvQty"].Value);
-                    cmd2.Parameters.AddWithValue("@price", row.Cells["dgvPrice"].Value);
-                    cmd2.Parameters.AddWithValue("@amount", row.Cells["dgvAmount"].Value);
-                    if (MainClass.con.State == ConnectionState.Closed) { MainClass.com.Open(); }
-                    cmd2.ExecuteNonQuery();
-                    if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
-                }*/
-                //Cot DetailID tu dong xac dinh gia tri
-                if (detailID == 0) //detailID duoc them vao ban dau deu co gia tri 0
+                
+                if (detailID == 0)
                 {
                     try
                     {
@@ -615,22 +497,6 @@ received = @received, change = @change where MainID = @ID";
             lblTable.Visible = false;
             lblWaiter.Visible = false;
             OrderType = "Take Away";
-
-            /*frmCustomerAdd frm = new frmCustomerAdd();
-            frm.billID = BillID;
-            frm.orderType = OrderType;
-            frm.ShowDialog();
-
-          //  if(frm.driverID  != "") //Lấy driverID được chọn bên frmCustomerAdd truyền cho form Pos
-                if(frm.txtCustomerName.Text != "") // Vì Take away không có driver
-            {
-                DriverID = frm.driverID;
-                lblDriverName.Text = "Customer Name : " + frm.txtCustomerName.Text + "  Phone: " +frm.txtCustomerPhone.Text ;
-                lblDriverName.Visible = true;
-                CustomerName = frm.txtCustomerName.Text;
-                CustomerPhone = frm.txtCustomerPhone.Text;
-            }    
-            */
         }
 
         private void btnDinIn_Click(object sender, EventArgs e)
