@@ -145,6 +145,7 @@
             this.btnReport.Size = new System.Drawing.Size(241, 81);
             this.btnReport.TabIndex = 6;
             this.btnReport.Text = "Report";
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnStaff
             // 

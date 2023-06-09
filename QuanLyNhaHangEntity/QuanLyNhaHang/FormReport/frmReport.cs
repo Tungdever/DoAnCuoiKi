@@ -1,7 +1,10 @@
-﻿using System;
+﻿using QuanLyNhaHang.BS_layer;
+using QuanLyNhaHang.Reports;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +18,36 @@ namespace QuanLyNhaHang.FormReport
         public frmReport()
         {
             InitializeComponent();
+        }
+        DataTable dtProduct = null;
+        DataTable dtStaff = null;
+        BLNhanVien dbNV = new BLNhanVien();
+        BLSanPham dbSP = new BLSanPham();
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dtProduct = new DataTable();
+                dtProduct.Clear();
+                //    dtProduct = dbSP.LoadMenu();
+                dtProduct = dbSP.LoadMenu().Copy();// Điều này sẽ tạo một bản sao độc lập của DataTable để đảm bảo rằng dữ liệu không bị thay đổi sau khi gán nó cho Crystal Report.
+                                                   //  sp = dbSP.LoadMenu();
+
+
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show("Không Lấy được thực đơn. Lỗi rồi!" + error);
+            }
+            frmPrint frm = new frmPrint();
+            rptMenu cr = new rptMenu();
+            //  cr.SetDatabaseLogon
+            // cr.SetDataSource(sp);
+            cr.SetDataSource(dtProduct);
+
+            frm.crystalReportViewer1.ReportSource = cr;
+            frm.crystalReportViewer1.Refresh();
+            frm.Show();
         }
     }
 }

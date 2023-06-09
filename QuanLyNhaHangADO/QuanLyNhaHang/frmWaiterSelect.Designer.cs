@@ -83,7 +83,7 @@
             this.lblAdd.Size = new System.Drawing.Size(179, 38);
             this.lblAdd.TabIndex = 1;
             this.lblAdd.Text = "Select Waiter";
-            this.lblAdd.Click += new System.EventHandler(this.lblAdd_Click);
+          
             // 
             // guna2PictureBox1
             // 
@@ -99,7 +99,7 @@
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+          
             // 
             // flowLayoutPanel1
             // 
@@ -108,7 +108,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1444, 611);
             this.flowLayoutPanel1.TabIndex = 7;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+   
             // 
             // frmWaiterSelect
             // 

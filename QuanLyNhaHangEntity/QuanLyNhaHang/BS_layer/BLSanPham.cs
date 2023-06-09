@@ -28,6 +28,26 @@ namespace QuanLyNhaHang.BS_layer
             }
             return dt;
         }
+        public DataTable LoadMenu()
+        {
+            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+            var sps =
+            from p in qlnhEntity.SANPHAMs
+            select p;
+            DataTable dt = new DataTable();
+            dt.Columns.Add("MaSP");
+            dt.Columns.Add("TenSP");
+            dt.Columns.Add("MaLoaiSP");
+            dt.Columns.Add("TenLoaiSP");
+            dt.Columns.Add("GiaSP");
+            dt.Columns.Add("AnhSP", typeof(byte[]));
+            foreach (var p in sps)
+            {
+                byte[] imgdata = p.AnhSP.ToArray();
+                dt.Rows.Add(p.MaSP, p.TenSP, p.MaLoaiSP, p.TenLoaiSP, p.GiaSP, imgdata);
+            }
+            return dt;
+        }
         public List<SANPHAM> GetProducts()
         {
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();

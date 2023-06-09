@@ -31,10 +31,14 @@ namespace QuanLyNhaHang
                 dtProduct = new DataTable();
                 dtProduct.Clear();
                 dtProduct = dbSP.LoadMenu().Tables[0];
+                /*foreach (DataRow dr in dtProduct.Rows)
+                {
+                    Console.WriteLine(dr["AnhSP"]);
+                }*/
             }
             catch (SqlException error)
             {
-                MessageBox.Show("Không Lấy được thực đơn. Lỗi rồi!" + error);
+                MessageBox.Show("Không Lấy được thực đơn. Lỗi rồi!" + error.Message);
             }
             frmPrint frm = new frmPrint();
             rptMenu cr = new rptMenu();    

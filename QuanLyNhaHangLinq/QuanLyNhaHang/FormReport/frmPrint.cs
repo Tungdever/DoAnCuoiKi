@@ -16,5 +16,15 @@ namespace QuanLyNhaHang.FormReport
         {
             InitializeComponent();
         }
+
+        private void frmPrint_Load(object sender, EventArgs e)
+        {
+            btnMaxSize.PerformClick();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

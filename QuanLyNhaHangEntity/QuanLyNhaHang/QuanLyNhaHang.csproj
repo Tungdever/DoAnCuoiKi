@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -51,6 +55,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -203,6 +208,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLNhaHangModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Reports\rptMenu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptMenu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptStaffList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStaffList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SANPHAM.cs">
       <DependentUpon>QLNhaHangModel.tt</DependentUpon>
     </Compile>
@@ -260,6 +277,12 @@
     <EmbeddedResource Include="FormAdd\frmCustomerAdd.resx">
       <DependentUpon>frmCustomerAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReport\frmPrint.resx">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReport\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBillList.resx">
       <DependentUpon>frmBillList.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +323,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\rptMenu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMenu.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptStaffList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStaffList.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Select\frmTableSelect.resx">
       <DependentUpon>frmTableSelect.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,6 +419,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\products1.png" />
@@ -412,6 +444,10 @@
       <DependentUpon>QLNhaHangModel.edmx</DependentUpon>
       <LastGenOutput>QLNhaHangModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\revenue %281%29.png" />
+    <None Include="Resources\icons8-sales-64.png" />
+    <None Include="Resources\icons8-staff-100.png" />
+    <None Include="Resources\icons8-menu-64.png" />
     <None Include="Resources\icons8-minus-80.png" />
     <None Include="Resources\icons8-bounced-check-100.png" />
     <None Include="Resources\icons8-waiter-64.png" />

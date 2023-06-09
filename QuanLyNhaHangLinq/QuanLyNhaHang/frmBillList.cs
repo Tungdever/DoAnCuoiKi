@@ -1,5 +1,6 @@
 ﻿using QuanLyNhaHang.BS_layer;
 using QuanLyNhaHang.FormReport;
+using QuanLyNhaHang.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,16 +42,17 @@ namespace QuanLyNhaHang
                 dtBillList.Clear();
                 //   DataSet ds = dbTblMain.GetBills(); dtBillList = ds.Tables[0];
                 dtBillList = dbTblMain.GetBills();
-                
+
                 dgvBillList.DataSource = dtBillList;
                 dgvBillList.AutoResizeColumns();
             }
             catch (SqlException error)
             {
-                MessageBox.Show("Không lấy được nội dung trong table THANHPHO. Lỗi rồi!!!"+error.Message);
+                MessageBox.Show("Không lấy được nội dung trong table THANHPHO. Lỗi rồi!!!" + error.Message);
             }
 
         }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Saved");
@@ -92,11 +94,11 @@ namespace QuanLyNhaHang
                     }
 
                     frmPrint frm = new frmPrint();
-                   /* rptBill cr = new rptBill();
+                    rptBill cr = new rptBill();
                     cr.SetDataSource(dtBillPrint);
                     frm.crystalReportViewer1.ReportSource = cr;
                     frm.crystalReportViewer1.Refresh();
-                    frm.Show();*/
+                    frm.Show();
                     Console.WriteLine("########");
                 }
             }
@@ -105,15 +107,6 @@ namespace QuanLyNhaHang
             {
                 MessageBox.Show("Không xóa được. Lỗi rồi!" + error.Message);
             }
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void dgvBillList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

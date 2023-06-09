@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Linq;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -29,7 +30,56 @@ namespace QuanLyNhaHang.BS_layer
             return dt;
         }
 
+        public DataTable LoadMenu()
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+            var sps =
+                        from p in qlNH.SANPHAMs
+                        select p;
+            DataTable dt = new DataTable();
+            dt.Columns.Add("MaSP");
+            dt.Columns.Add("TenSP");
+            dt.Columns.Add("MaLoaiSP");
+            dt.Columns.Add("TenLoaiSP");
+            dt.Columns.Add("GiaSP");
+            dt.Columns.Add("AnhSP", typeof(byte[]));
+            foreach (var p in sps)
+            {
+                 byte[] imgdata = p.AnhSP.ToArray();
+           //     string imgdata = Convert.ToBase64String(p.AnhSP.ToArray());
+                dt.Rows.Add(p.MaSP, p.TenSP, p.MaLoaiSP, p.TenLoaiSP, p.GiaSP, imgdata);
+              //   Console.WriteLine(imgdata);
+            }
+            return dt;
+        }
 
+        /*public DataTable LoadMenu()
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+            var sps = from p in qlNH.SANPHAMs
+                      select p;
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("MaSP");
+            dt.Columns.Add("TenSP");
+            dt.Columns.Add("MaLoaiSP");
+            dt.Columns.Add("TenLoaiSP");
+            dt.Columns.Add("GiaSP");
+            dt.Columns.Add("AnhSP", typeof(System.Drawing.Image)); // Chuyển đổi kiểu dữ liệu thành System.Drawing.Image
+
+            foreach (var p in sps)
+            {
+                byte[] imgData = p.AnhSP.ToArray();
+                using (MemoryStream ms = new MemoryStream(imgData))
+                {
+                    System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                    dt.Rows.Add(p.MaSP, p.TenSP, p.MaLoaiSP, p.TenLoaiSP, p.GiaSP, img);
+                }
+            }
+
+            return dt;
+        }
+*/
         public List<SANPHAM> GetProducts()
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
@@ -39,7 +89,16 @@ namespace QuanLyNhaHang.BS_layer
 
             return query.ToList();
         }
-
+      /*  public Table<SANPHAM> LoadMenu()
+        {
+            *//*using (var qlNH = new QuanLyNhaHangDataContext())
+            {
+                
+                return qlNH.SANPHAMs;
+            }*//*
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+            return qlNH.SANPHAMs;
+        }*/
         public DataTable TimKiemSanPham(string str)
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();

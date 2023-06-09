@@ -42,7 +42,7 @@
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(37, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 31);
+            this.label1.Size = new System.Drawing.Size(118, 37);
             this.label1.TabIndex = 3;
             this.label1.Text = "Report";
             // 
@@ -64,7 +64,7 @@
             this.btnSaleByCategory.Location = new System.Drawing.Point(553, 94);
             this.btnSaleByCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaleByCategory.Name = "btnSaleByCategory";
-            this.btnSaleByCategory.Size = new System.Drawing.Size(277, 180);
+            this.btnSaleByCategory.Size = new System.Drawing.Size(295, 180);
             this.btnSaleByCategory.TabIndex = 2;
             this.btnSaleByCategory.Text = "Sale by Category";
             this.btnSaleByCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

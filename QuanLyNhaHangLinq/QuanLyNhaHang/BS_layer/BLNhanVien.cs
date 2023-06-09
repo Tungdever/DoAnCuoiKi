@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Globalization;
 using System.Data.Linq;
 using System.Data;
+using System.Net.NetworkInformation;
 
 namespace QuanLyNhaHang.BS_layer
 {
@@ -15,6 +16,25 @@ namespace QuanLyNhaHang.BS_layer
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             return qlNH.NHANVIENs;
+        }
+
+        public DataTable Staff()
+        {
+
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+            var NVL = from nv in qlNH.NHANVIENs
+                      select nv;
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Manv");
+            dt.Columns.Add("Ten");
+            dt.Columns.Add("SDT");
+            dt.Columns.Add("ChucVu");
+            dt.Columns.Add("Luong");
+            foreach (var nv in NVL )
+            {
+                dt.Rows.Add(nv.Manv, nv.Ten, nv.SDT, nv.ChucVu, nv.Luong);
+            }   
+            return dt;
         }
         public List<NHANVIEN> TimKiemNhanVien(string str)
         {

@@ -179,7 +179,7 @@ namespace QuanLyNhaHang
 
         private void frmKitchen_Load(object sender, EventArgs e)
         {
-            GetOrders();a
+            GetOrders();
         }
     }
 }

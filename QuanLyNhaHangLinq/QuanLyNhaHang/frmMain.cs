@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
+using QuanLyNhaHang.FormReport;
+
 namespace QuanLyNhaHang
 {
     public partial class frmMain : Form
@@ -78,6 +80,11 @@ namespace QuanLyNhaHang
         private void btnKitchen_Click(object sender, EventArgs e)
         {
             AddControls(new frmKitchen());
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmReport());
         }
     }
 }
