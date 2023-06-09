@@ -84,7 +84,8 @@ namespace QuanLyNhaHang.FormReport
 
         private void btnRevenue_Click(object sender, EventArgs e)
         {
-
+            thongkeForm frm = new thongkeForm();
+            frm.ShowDialog();
         }
 
         private void label1_Click(object sender, EventArgs e)

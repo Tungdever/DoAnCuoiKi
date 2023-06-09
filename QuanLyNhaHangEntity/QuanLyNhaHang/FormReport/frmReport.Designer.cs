@@ -42,7 +42,7 @@
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(24, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 37);
+            this.label1.Size = new System.Drawing.Size(102, 31);
             this.label1.TabIndex = 13;
             this.label1.Text = "Report";
             // 
@@ -69,6 +69,7 @@
             this.btnRevenue.Text = "Revenue";
             this.btnRevenue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnRevenue.UseTransparentBackground = true;
+            this.btnRevenue.Click += new System.EventHandler(this.btnRevenue_Click);
             // 
             // btnSaleByCategory
             // 
@@ -155,7 +156,7 @@
             this.Controls.Add(this.btnMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmReport";
             this.Text = "frmReport";
             this.ResumeLayout(false);

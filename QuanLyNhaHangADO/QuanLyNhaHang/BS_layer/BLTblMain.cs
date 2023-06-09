@@ -106,7 +106,7 @@ Total + ", " + received + ", " + change + ", N'"+ driverID + "', '" + cusName + 
 
             DataSet ds = db.ExecuteQueryDataSet(query, CommandType.Text);
             string dt = "";
-            foreach (DataRow row in ds.Tables[0].Rows)
+            foreach (DataRow row in ds.Tables[0].Rows)  
             {
                 dt = row["TongDoanhThu"].ToString();
             }

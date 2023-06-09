@@ -313,6 +313,28 @@ namespace QuanLyNhaHang.BS_layer
 
             return dt;
         }
+        public string doanhthu(string ordertype, string month, string year)
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+            DateTime startDate;
+            DateTime endDate;
+            if (month != "2")
+            {
+                startDate = DateTime.Parse(month + "-01-" + year);
+                endDate = DateTime.Parse(month + "-30-" + year);
+            }
+            else
+            {
+                startDate = DateTime.Parse(month + "-01-" + year);
+                endDate = DateTime.Parse(month + "-28-" + year);
+            }
+            double totalSum = (from m in qlNH.tblMains
+                               where m.orderType == ordertype && m.aDate >= startDate && m.aDate <= endDate
+                               select m.total).Sum() ?? 0;
+            string dtquery = totalSum.ToString();
+            return dtquery;
+        }
     }
-    
+   
+
 }
