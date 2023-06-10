@@ -96,6 +96,29 @@ namespace QuanLyNhaHang.BS_layer
             if (dtTaiKhoan.Rows.Count > 0) return true;
             else return false;
         }
+        public string LayQuyen(string str)
+        {
+            DataSet TK = db.ExecuteQueryDataSet("SELECT * FROM TAIKHOAN WHERE TenTaiKhoan LIKE '%" + str + "%'", CommandType.Text);
+            string CapDoQuyen = "";
+            foreach (DataRow row in TK.Tables[0].Rows)
+            {
+                CapDoQuyen = row["CapDoQuyen"].ToString();
 
+            }
+            if (CapDoQuyen == "1") CapDoQuyen = "ADMIN";
+            else CapDoQuyen = "Nhân viên quản lý";
+            return CapDoQuyen;
+        }
+        public string TimKiemTen(string str)
+        {
+            DataSet TK = db.ExecuteQueryDataSet("SELECT * FROM TAIKHOAN WHERE TenTaiKhoan LIKE '%" + str + "%'", CommandType.Text);
+            string tenNV = "";
+            foreach (DataRow row in TK.Tables[0].Rows)
+            {
+                string maNV = row["MaNV"].ToString();
+                tenNV = dbNV.MaNV_TenNV(maNV).Split('-')[1].Trim();
+            }
+            return tenNV;
+        }
     }
 }

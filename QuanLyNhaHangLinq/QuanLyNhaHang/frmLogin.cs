@@ -38,6 +38,7 @@ namespace QuanLyNhaHang
                 {
                     frm.btnAccount.Visible = false;
                 }
+                frm.user = txtUser.Text;
                 frm.Show();
             }                      
             else
