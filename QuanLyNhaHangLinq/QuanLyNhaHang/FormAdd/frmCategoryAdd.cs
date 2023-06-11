@@ -29,31 +29,34 @@ namespace QuanLyNhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtID.ReadOnly == true )
-            {               
-                
-                dbDM.CapNhatDanhMuc(txtID.Text,txtName.Text, ref err);
-                // Load lại dữ liệu trên DataGridView
-                MessageBox.Show("Đã sửa xong!");
+            if (txtID.ReadOnly == true)
+            {
+
+                if (dbDM.CapNhatDanhMuc(txtID.Text, txtName.Text, ref err))
+                {
+                    // Load lại dữ liệu trên DataGridView
+                    MessageBox.Show("Đã sửa xong!");
+                }
+                else
+                {
+                    MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
+                }
             }
             else
             {
-                try
+
+                if (dbDM.ThemDanhMuc(txtID.Text, txtName.Text, ref err))
                 {
-                    dbDM.ThemDanhMuc(txtID.Text, txtName.Text, ref err);
                     MessageBox.Show("Đã thêm xong!");
                 }
-                catch (SqlException)
+                else
                 {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
+                    MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
                 }
+
+
             }
             this.Close();
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

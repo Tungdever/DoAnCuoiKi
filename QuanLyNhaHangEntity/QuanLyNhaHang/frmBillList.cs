@@ -52,9 +52,9 @@ namespace QuanLyNhaHang
                 dgvBillList.DataSource = dtBillList;
                 dgvBillList.AutoResizeColumns();
             }
-            catch (SqlException error)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Không lấy được nội dung trong table THANHPHO. Lỗi rồi!!!" + error.Message);
+                MessageBox.Show("Không thể lấy nội dung trong table tblMain. Lỗi: " + ex);
             }
 
         }

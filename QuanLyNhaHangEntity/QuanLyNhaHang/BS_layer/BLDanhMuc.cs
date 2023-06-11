@@ -39,20 +39,35 @@ namespace QuanLyNhaHang.BS_layer
             DANHMUC dm = new DANHMUC();
             dm.MaDM= MaDM;
             dm.TenDM= TenDM;
-            qlnhEntity.DANHMUCs.Add(dm);
-            qlnhEntity.SaveChanges();
-            return true;
-
+            try
+            {
+                qlnhEntity.DANHMUCs.Add(dm);
+                qlnhEntity.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         public bool XoaDanhMuc(string MaDM, ref string err)
         {
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
             DANHMUC dm = new DANHMUC();
             dm.MaDM = MaDM;
-            qlnhEntity.DANHMUCs.Attach(dm);
-            qlnhEntity.DANHMUCs.Remove(dm);
-            qlnhEntity.SaveChanges();
-            return true;
+            try
+            {
+                qlnhEntity.DANHMUCs.Attach(dm);
+                qlnhEntity.DANHMUCs.Remove(dm);
+                qlnhEntity.SaveChanges();
+                return true;
+            }         
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }      
         }
         public bool CapNhatDanhMuc(string MaDM, string TenDM, ref string err)
         {
@@ -60,12 +75,20 @@ namespace QuanLyNhaHang.BS_layer
             var dmQuery = (from dm in qlnhEntity.DANHMUCs
                            where dm.MaDM == MaDM
                            select dm).SingleOrDefault();
-            if (dmQuery != null)
+            try
             {
-                dmQuery.TenDM = TenDM;
-                qlnhEntity.SaveChanges();
+                if (dmQuery != null)
+                {
+                    dmQuery.TenDM = TenDM;
+                    qlnhEntity.SaveChanges();
+                }
+                return true;
             }
-            return true;
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         public DataTable LayDanhSachDanhMuc()
         {

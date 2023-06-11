@@ -34,22 +34,18 @@ namespace QuanLyNhaHang
                 return;
             }
             if (txtTableID.ReadOnly == true)
-             {
-                dbT.CapnhatTable(txtTableID.Text, txtTableName.Text, cbbTstate.Text,ref err);
-                MessageBox.Show("Đã sửa xong!");
-             }
-             else 
-             {
-                try
-                {
-                    dbT.ThemTable(txtTableID.Text, txtTableName.Text,cbbTstate.Text ,ref err);
-                    MessageBox.Show("Đã thêm xong!");
-                }
-                catch(SqlException)
-                {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
-                }
-             }
+            {
+                if (dbT.CapnhatTable(txtTableID.Text, txtTableName.Text, cbbTstate.Text, ref err))
+                    MessageBox.Show("Đã sửa xong!");
+                else MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
+            }
+            else
+            {
+
+                if (dbT.ThemTable(txtTableID.Text, txtTableName.Text, cbbTstate.Text, ref err))
+                MessageBox.Show("Đã thêm xong!");
+                else MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
+            }
              this.Close();
         }
     }

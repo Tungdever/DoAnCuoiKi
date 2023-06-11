@@ -49,7 +49,7 @@ namespace QuanLyNhaHang
             }
             catch (SqlException error)
             {
-                MessageBox.Show("Không lấy được nội dung trong table THANHPHO. Lỗi rồi!!!" + error.Message);
+                MessageBox.Show("Không lấy được nội dung trong table tblMain. Lỗi rồi!!!" + error.Message);
             }
 
         }
@@ -93,7 +93,7 @@ namespace QuanLyNhaHang
                     }
                     catch (SqlException err)
                     {
-                        MessageBox.Show("Không in được bill này. Lỗi rồi!!!" + err);
+                        MessageBox.Show("Không in được bill này. Lỗi: " + err);
                     }
 
                     frmPrint frm = new frmPrint();
@@ -108,7 +108,7 @@ namespace QuanLyNhaHang
 
             catch (SqlException error)
             {
-                MessageBox.Show("Không xóa được. Lỗi rồi!" + error.Message);
+                MessageBox.Show("Không xóa được. Lỗi: " + error.Message);
             }
         }
     }

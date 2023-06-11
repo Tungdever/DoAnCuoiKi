@@ -34,20 +34,27 @@ namespace QuanLyNhaHang
             }
             if (txtStaffID.ReadOnly == true)
             {
-                dbNV.CapNhatNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text), ref err );
-                MessageBox.Show("Đã sửa xong!");
+                if (dbNV.CapNhatNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text), ref err))
+                {
+                    MessageBox.Show("Đã sửa xong!");
+                }
+                else
+                {
+                    MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
+                }
             }
             else
             {
-                try
+
+                if (dbNV.ThemNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text), ref err))
                 {
-                    dbNV.ThemNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text), ref err);
                     MessageBox.Show("Đã thêm xong!");
                 }
-                catch 
+                else
                 {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
+                    MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
                 }
+
             }
             this.Close();
         }

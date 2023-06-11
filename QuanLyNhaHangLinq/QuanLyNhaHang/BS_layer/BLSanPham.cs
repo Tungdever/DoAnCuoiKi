@@ -119,10 +119,9 @@ namespace QuanLyNhaHang.BS_layer
         }
         public bool ThemSanPham(string MaSP, string TenSP, string MaLoaiSP, string TenLoaiSP, float GiaSP, System.Drawing.Image AnhSP, ref string err)
         {
+            bool f = false;
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             SANPHAM sp = new SANPHAM();
-
-
             MemoryStream ms = new MemoryStream();
             System.Drawing.Image tmp = AnhSP;
             tmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
@@ -138,13 +137,13 @@ namespace QuanLyNhaHang.BS_layer
             {
                 qlNH.SANPHAMs.InsertOnSubmit(sp);
                 qlNH.SANPHAMs.Context.SubmitChanges();
-                return true;
+                f =  true;
             }
             catch (Exception ex)
             {
                 err = ex.Message;
-                return false;
             }
+            return f;
         }
         public bool XoaSanPham(string Masp, ref string err)
         {

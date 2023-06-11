@@ -39,32 +39,37 @@ namespace QuanLyNhaHang
             }
             if (txtProductID.ReadOnly == true)
             {
-                if (cbbCateID.SelectedItem != null)
-                {
-                    string displayValue = cbbCateID.Text;
-                    string[] splitValues = displayValue.Split('-');
-                    string madm = splitValues[0];
-                    string tendm = splitValues[1];
-                    dbSP.CapNhatSanPham(txtProductID.Text, txtProductName.Text, madm, tendm, float.Parse(txtPrice.Text), txtImage.Image, ref err);
-                }
 
-                MessageBox.Show("Đã sửa xong!");
+                string displayValue = cbbCateID.Text;
+                string[] splitValues = displayValue.Split('-');
+                string madm = splitValues[0];
+                string tendm = splitValues[1];
+                if (dbSP.CapNhatSanPham(txtProductID.Text, txtProductName.Text, madm, tendm, float.Parse(txtPrice.Text), txtImage.Image, ref err))
+                {
+                    MessageBox.Show("Đã sửa xong!");
+                }
+                else
+                {
+                    MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
+                }
             }
             else
             {
-                try
+
+                string displayValue = cbbCateID.Text;
+                string[] splitValues = displayValue.Split('-');
+                string madm = splitValues[0];
+                string tendm = splitValues[1];
+                if (dbSP.ThemSanPham(txtProductID.Text, txtProductName.Text, madm, tendm, float.Parse(txtPrice.Text), txtImage.Image, ref err))
                 {
-                    string displayValue = cbbCateID.Text;
-                    string[] splitValues = displayValue.Split('-');
-                    string madm = splitValues[0];
-                    string tendm = splitValues[1];
-                    dbSP.ThemSanPham(txtProductID.Text, txtProductName.Text, madm, tendm, float.Parse(txtPrice.Text), txtImage.Image, ref err);
                     MessageBox.Show("Đã thêm xong!");
                 }
-                catch (SqlException)
+                else
                 {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
+                    MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
                 }
+
+
             }
             this.Close();
         }

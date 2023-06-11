@@ -39,16 +39,25 @@ namespace QuanLyNhaHang
             }
             if (txtProductID.ReadOnly == true)
             {
-                if (cbbCateID.SelectedItem != null)
+                try
                 {
                     string displayValue = cbbCateID.Text;
                     string[] splitValues = displayValue.Split('-');
                     string madm = splitValues[0];
                     string tendm = splitValues[1];
-                    dbSP.CapNhatSanPham(txtProductID.Text, txtProductName.Text, madm, tendm, float.Parse(txtPrice.Text), txtImage.Image, ref err);
+                    if (dbSP.CapNhatSanPham(txtProductID.Text, txtProductName.Text, madm, tendm, float.Parse(txtPrice.Text), txtImage.Image, ref err))
+                    {
+                        MessageBox.Show("Đã sửa xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
+                    }
                 }
-
-                MessageBox.Show("Đã sửa xong!");
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Sửa không thành công. Lỗi: '" + ex + "'");
+                }
             }
             else
             {
@@ -58,20 +67,21 @@ namespace QuanLyNhaHang
                     string[] splitValues = displayValue.Split('-');
                     string madm = splitValues[0];
                     string tendm = splitValues[1];
-                    dbSP.ThemSanPham(txtProductID.Text, txtProductName.Text, madm, tendm, float.Parse(txtPrice.Text), txtImage.Image, ref err);
-                    MessageBox.Show("Đã thêm xong!");
+                    if (dbSP.ThemSanPham(txtProductID.Text, txtProductName.Text, madm, tendm, float.Parse(txtPrice.Text), txtImage.Image, ref err))
+                    {
+                        MessageBox.Show("Đã thêm xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
+                    }
                 }
-                catch (SqlException)
+                catch (SqlException ex)
                 {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
+                    MessageBox.Show("Thêm không thành công. Lỗi: '" + ex + "'");
                 }
             }
             this.Close();
-        }
-
-        private void frmProductAdd_Load(object sender, EventArgs e)
-        {
-
         }
         string filepath;
         private void btnBrowse_Click(object sender, EventArgs e)

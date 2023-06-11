@@ -42,49 +42,49 @@ namespace QuanLyNhaHang
                 // Thay đổi độ rộng cột
                 dgvCategory.AutoResizeColumns();
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được nội dung trong table DANHMUC. Lỗi: " + ex.Message);
             }
         }
 
         private void dgvCategory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            try
-            {
-                if (dgvCategory.CurrentCell.OwningColumn.Name == "dgvEdit")
-                {
-                    frmCategoryAdd frm = new frmCategoryAdd();
-                    frm.txtID.Text = dgvCategory.CurrentRow.Cells["dgvID"].Value.ToString();
-                    frm.txtName.Text = dgvCategory.CurrentRow.Cells["dgvName"].Value.ToString();
-                    frm.ShowDialog();
 
-                    if (txtSearchCategories.Text != "")
-                    {
-                        dgvCategory.DataSource = dbDM.TimKiemDanhMuc(txtSearchCategories.Text);
-                    }
-                    else
-                    {
-                        LoadData();
-                    }
-                }
-                else if (dgvCategory.CurrentCell.OwningColumn.Name == "dgvDel")
+            if (dgvCategory.CurrentCell.OwningColumn.Name == "dgvEdit")
+            {
+                frmCategoryAdd frm = new frmCategoryAdd();
+                frm.txtID.Text = dgvCategory.CurrentRow.Cells["dgvID"].Value.ToString();
+                frm.txtName.Text = dgvCategory.CurrentRow.Cells["dgvName"].Value.ToString();
+                frm.ShowDialog();
+
+                if (txtSearchCategories.Text != "")
                 {
-                    DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    dgvCategory.DataSource = dbDM.TimKiemDanhMuc(txtSearchCategories.Text);
+                }
+                else
+                {
+                    LoadData();
+                }
+            }
+            else if (dgvCategory.CurrentCell.OwningColumn.Name == "dgvDel")
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    if (dbDM.XoaDanhMuc(dgvCategory.CurrentRow.Cells["dgvID"].Value.ToString(), ref err))
                     {
-                        dbDM.XoaDanhMuc(dgvCategory.CurrentRow.Cells["dgvID"].Value.ToString(), ref err);
                         txtSearchCategories.Text = "";
                         LoadData();
                         MessageBox.Show("Xoá thành công!");
                     }
+                    else
+                    {
+                        MessageBox.Show("Xoá không thành công. Lỗi: '" + err + "'");
+                    }
                 }
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Không xóa được. Lỗi rồi!");
-            }
+            }            
 
         }
 
@@ -107,15 +107,10 @@ namespace QuanLyNhaHang
                 dgvCategory.AutoResizeColumns();
                
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Không lấy được nội dung trong table DanhMuc. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được nội dung trong table DanhMuc. Lỗi: " + ex.Message);
             }
-        }
-
-        private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

@@ -103,9 +103,9 @@ namespace QuanLyNhaHang
                     }
                 }
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
-                MessageBox.Show("Không lấy được các danh mục trong TABLE DANHMUC. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được các danh mục trong TABLE DANHMUC. Lỗi: " + e);
             }
         }
 
@@ -219,7 +219,7 @@ namespace QuanLyNhaHang
             }
             catch (SqlException error)
             {
-                MessageBox.Show("Không lấy được các SẢN PHẨM trong Table SANPHAM. Lỗi rồi!!!"+ error.Message);
+                MessageBox.Show("Không lấy được các SẢN PHẨM trong Table SANPHAM. Lỗi: " + error.Message);
             }
 
         }
@@ -272,31 +272,39 @@ namespace QuanLyNhaHang
             }
             else
             {
-                dbTblMain.UpdateTblMain(BillID, Convert.ToDateTime(Date), Time.ToShortTimeString(),
-                        lblTable.Text, lblWaiter.Text, "Hold", OrderType, Convert.ToDouble(lblTotal.Text), Convert.ToDouble(0), Convert.ToDouble(0), ref err);
-                MessageBox.Show("Đã sửa xong!");
+                if (dbTblMain.UpdateTblMain(BillID, Convert.ToDateTime(Date), Time.ToShortTimeString(),
+                        lblTable.Text, lblWaiter.Text, "Hold", OrderType, Convert.ToDouble(lblTotal.Text), Convert.ToDouble(0), Convert.ToDouble(0), ref err))
+                {
+                    MessageBox.Show("Đã sửa xong!");
+                }
+                else
+                {
+                    MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
+                }
             }
             foreach (DataGridViewRow row in dgvPOS.Rows)
             {
                 detailID = Convert.ToInt32(row.Cells["dgvDetailID"].Value); //
-               
+
                 if (detailID == 0)
                 {
-                    try
-                    {
-                        dbTblDetail.AddTblDetail(BillID, row.Cells["dgvMaSP"].Value.ToString(), row.Cells["dgvTenSP"].Value.ToString(), int.Parse(row.Cells["dgvQty"].Value.ToString()), float.Parse(row.Cells["dgvPrice"].Value.ToString()), float.Parse(row.Cells["dgvAmount"].Value.ToString()), ref err);
 
-                    }
-                    catch (SqlException)
-                    {
-                        MessageBox.Show("Không thêm được. Lỗi rồi!");
-                    }
-                }
+                    if (!dbTblDetail.AddTblDetail(BillID, row.Cells["dgvMaSP"].Value.ToString(), row.Cells["dgvTenSP"].Value.ToString(), int.Parse(row.Cells["dgvQty"].Value.ToString()), float.Parse(row.Cells["dgvPrice"].Value.ToString()), float.Parse(row.Cells["dgvAmount"].Value.ToString()), ref err))                                    
+                     MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
+                   
+                } 
                 else // Gía trị trong cột dgvDetailID của dgvPOS đã ko còn là 0 mà là giá trị từ tblDetail đổ xuống ( vì khi này là chỉnh sửa , tức giá trị detailID đó đã có trong database
                 {
                     //Lấy dữ liệu trong dgvPOS update lên dbTblDetail
-                    dbTblDetail.UpdateTblDetail(Convert.ToInt32(row.Cells["dgvDetailID"].Value), BillID, row.Cells["dgvMaSP"].Value.ToString(), row.Cells["dgvTenSP"].Value.ToString(), int.Parse(row.Cells["dgvQty"].Value.ToString()), float.Parse(row.Cells["dgvPrice"].Value.ToString()), float.Parse(row.Cells["dgvAmount"].Value.ToString()), ref err);
-                    MessageBox.Show("Đã sửa xong!");
+                    if (dbTblDetail.UpdateTblDetail(Convert.ToInt32(row.Cells["dgvDetailID"].Value), BillID, row.Cells["dgvMaSP"].Value.ToString(), row.Cells["dgvTenSP"].Value.ToString(), int.Parse(row.Cells["dgvQty"].Value.ToString()), float.Parse(row.Cells["dgvPrice"].Value.ToString()), float.Parse(row.Cells["dgvAmount"].Value.ToString()), ref err))
+                    {
+                        MessageBox.Show("Đã sửa xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
+                    }
+                    
                 }
             }
             Guna2MessageDialog1.Show("Saved Successfully");
@@ -415,31 +423,41 @@ namespace QuanLyNhaHang
             }
             else
             {
-                dbTblMain.UpdateTblMain(BillID, Convert.ToDateTime(Date), Time.ToShortTimeString(),
-                        lblTable.Text, lblWaiter.Text, "Pending", OrderType, Convert.ToDouble(lblTotal.Text), Convert.ToDouble(0), Convert.ToDouble(0), ref err);
-                MessageBox.Show("Đã sửa xong!");
+                if (dbTblMain.UpdateTblMain(BillID, Convert.ToDateTime(Date), Time.ToShortTimeString(),
+                        lblTable.Text, lblWaiter.Text, "Pending", OrderType, Convert.ToDouble(lblTotal.Text), Convert.ToDouble(0), Convert.ToDouble(0), ref err))
+                {
+                    MessageBox.Show("Đã sửa xong!");
+                }
+                else
+                {
+                    MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
+                }
+
             }
             foreach (DataGridViewRow row in dgvPOS.Rows)
             {
                 detailID = Convert.ToInt32(row.Cells["dgvDetailID"].Value);
 
-                    if (detailID == 0) //detailID duoc them vao ban dau deu co gia tri 0
+                if (detailID == 0) //detailID duoc them vao ban dau deu co gia tri 0
                 {
-                    try
-                    {
-                        dbTblDetail.AddTblDetail(BillID, row.Cells["dgvMaSP"].Value.ToString(), row.Cells["dgvTenSP"].Value.ToString(), int.Parse(row.Cells["dgvQty"].Value.ToString()), float.Parse(row.Cells["dgvPrice"].Value.ToString()), float.Parse(row.Cells["dgvAmount"].Value.ToString()), ref err);
 
-                    }
-                    catch (SqlException error)
-                    {
-                        MessageBox.Show("Không thêm được. Lỗi rồi!" + error.Message);
-                    }
+                    if (!dbTblDetail.AddTblDetail(BillID, row.Cells["dgvMaSP"].Value.ToString(), row.Cells["dgvTenSP"].Value.ToString(), int.Parse(row.Cells["dgvQty"].Value.ToString()), float.Parse(row.Cells["dgvPrice"].Value.ToString()), float.Parse(row.Cells["dgvAmount"].Value.ToString()), ref err))
+
+                        MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
+
+
                 }
                 else // Gía trị trong cột dgvDetailID của dgvPOS đã ko còn là 0 mà là giá trị từ tblDetail đổ xuống ( vì khi này là chỉnh sửa , tức giá trị detailID đó đã có trong database
                 {
                     //Lấy dữ liệu trong dgvPOS update lên dbTblDetail
-                    dbTblDetail.UpdateTblDetail(Convert.ToInt32(row.Cells["dgvDetailID"].Value), BillID, row.Cells["dgvMaSP"].Value.ToString(), row.Cells["dgvTenSP"].Value.ToString(), int.Parse(row.Cells["dgvQty"].Value.ToString()), float.Parse(row.Cells["dgvPrice"].Value.ToString()), float.Parse(row.Cells["dgvAmount"].Value.ToString()), ref err);
-                    MessageBox.Show("Đã sửa xong!");
+                    if (dbTblDetail.UpdateTblDetail(Convert.ToInt32(row.Cells["dgvDetailID"].Value), BillID, row.Cells["dgvMaSP"].Value.ToString(), row.Cells["dgvTenSP"].Value.ToString(), int.Parse(row.Cells["dgvQty"].Value.ToString()), float.Parse(row.Cells["dgvPrice"].Value.ToString()), float.Parse(row.Cells["dgvAmount"].Value.ToString()), ref err))
+                    {
+                        MessageBox.Show("Đã sửa xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
+                    }
                 }
             }
           

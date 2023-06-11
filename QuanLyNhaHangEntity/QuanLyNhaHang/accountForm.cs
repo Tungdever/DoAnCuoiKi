@@ -41,54 +41,52 @@ namespace QuanLyNhaHang
                 dgvAcc.AutoResizeColumns();
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Lỗi rồi!!!");
+                MessageBox.Show("Không thể lấy nội dung trong table TAIKHOAN. Lỗi: " + ex);
             }
         }
 
         private void dgvAcc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            try
+
+            if (dgvAcc.CurrentCell.OwningColumn.Name == "dgvEdit")
             {
-                if (dgvAcc.CurrentCell.OwningColumn.Name == "dgvEdit")
+                frmAccountAdd frm = new frmAccountAdd();
+                frm.txtTenTK.ReadOnly = true;
+                frm.cbbTenNV.DataSource = dbNV.LayDSNV();
+                frm.cbbTenNV.ValueMember = "ID";
+                frm.cbbTenNV.DisplayMember = "Display";
+                frm.txtTenTK.Text = dgvAcc.CurrentRow.Cells["dgvTenTK"].Value.ToString();
+                frm.txtMK.Text = dgvAcc.CurrentRow.Cells["dgvMatKhau"].Value.ToString();
+                frm.cbbTenNV.SelectedValue = dgvAcc.CurrentRow.Cells["dgvMaNV"].Value.ToString().Split('-')[0].Trim();
+                frm.txtCapDo.Text = dgvAcc.CurrentRow.Cells["dgvCapDo"].Value.ToString();
+                frm.ShowDialog();
+                if (txtSearchAcc.Text != "")
                 {
-                    frmAccountAdd frm = new frmAccountAdd();
-                    frm.txtTenTK.ReadOnly = true;
-                    frm.cbbTenNV.DataSource = dbNV.LayDSNV();
-                    frm.cbbTenNV.ValueMember = "ID";
-                    frm.cbbTenNV.DisplayMember = "Display";
-                    frm.txtTenTK.Text = dgvAcc.CurrentRow.Cells["dgvTenTK"].Value.ToString();
-                    frm.txtMK.Text = dgvAcc.CurrentRow.Cells["dgvMatKhau"].Value.ToString();
-                    frm.cbbTenNV.SelectedValue = dgvAcc.CurrentRow.Cells["dgvMaNV"].Value.ToString().Split('-')[0].Trim();
-                    frm.txtCapDo.Text = dgvAcc.CurrentRow.Cells["dgvCapDo"].Value.ToString();
-                    frm.ShowDialog();
-                    if (txtSearchAcc.Text != "")
-                    {
-                        dgvAcc.DataSource = dbTK.TimKiemTaiKhoan(txtSearchAcc.Text);
-                    }
-                    else
-                    {
-                        LoadData();
-                    }
+                    dgvAcc.DataSource = dbTK.TimKiemTaiKhoan(txtSearchAcc.Text);
                 }
-                else if (dgvAcc.CurrentCell.OwningColumn.Name == "dgvDel")
+                else
                 {
-                    DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    LoadData();
+                }
+            }
+            else if (dgvAcc.CurrentCell.OwningColumn.Name == "dgvDel")
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    if (dbTK.XoaTaiKhoan(dgvAcc.CurrentRow.Cells["dgvTenTK"].Value.ToString(), ref err))
                     {
-                        dbTK.XoaTaiKhoan(dgvAcc.CurrentRow.Cells["dgvTenTK"].Value.ToString(), ref err);
                         txtSearchAcc.Text = "";
                         LoadData();
                         MessageBox.Show("Xoá thành công!");
                     }
+                    else MessageBox.Show("Xoá không thành công. Lỗi: '" + err + "'");
                 }
             }
-            catch (SqlException)
-            {
-                MessageBox.Show("Không xóa được. Lỗi rồi!");
-            }
+
 
         }
 
@@ -106,9 +104,9 @@ namespace QuanLyNhaHang
                 dgvAcc.AutoResizeColumns();
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Không lấy được nội dung trong table DanhMuc. Lỗi rồi!!!");
+                MessageBox.Show("Không thể lấy nội dung trong table DANHMUC. Lỗi: " + ex);
             }
         }
     }

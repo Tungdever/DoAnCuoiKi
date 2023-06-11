@@ -30,23 +30,20 @@ namespace QuanLyNhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtID.ReadOnly == true )
-            {               
-                
-                dbDM.CapNhatDanhMuc(txtID.Text,txtName.Text, ref err);
-                MessageBox.Show("Đã sửa xong!");
+            if (txtID.ReadOnly == true)
+            {
+
+                if (dbDM.CapNhatDanhMuc(txtID.Text, txtName.Text, ref err))
+                    MessageBox.Show("Đã sửa xong!");
+                else MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
             }
             else
             {
-                try
-                {
-                    dbDM.ThemDanhMuc(txtID.Text, txtName.Text, ref err);
-                    MessageBox.Show("Đã thêm xong!");
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
-                }
+
+                if (dbDM.ThemDanhMuc(txtID.Text, txtName.Text, ref err))
+                MessageBox.Show("Đã thêm xong!");
+                else MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
+
             }
             this.Close();
         }

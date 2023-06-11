@@ -43,35 +43,60 @@ namespace QuanLyNhaHang.BS_layer
             nv.SDT = SDT;
             nv.ChucVu = ChucVu;
             nv.Luong = Luong;
-            qlnhEntity.NHANVIENs.Add(nv);
-            qlnhEntity.SaveChanges();
-            return true;
+            try
+            {
+                qlnhEntity.NHANVIENs.Add(nv);
+                qlnhEntity.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         public bool XoaNhanVien(string Manv, ref string err)
         {
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
             NHANVIEN nv = new NHANVIEN();
             nv.Manv = Manv;
-            qlnhEntity.NHANVIENs.Attach(nv);
-            qlnhEntity.NHANVIENs.Remove(nv);
-            qlnhEntity.SaveChanges();
-            return true;
+            try
+            {
+                qlnhEntity.NHANVIENs.Attach(nv);
+                qlnhEntity.NHANVIENs.Remove(nv);
+                qlnhEntity.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         public bool CapnhatNhanVien(string Manv, string Ten, string SDT, string ChucVu, float Luong, ref string err)
         {
+            
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
             var nvQuerry = (from nv in qlnhEntity.NHANVIENs
                             where nv.Manv == Manv
                             select nv).SingleOrDefault();
-            if (nvQuerry != null)
+            try
             {
-                nvQuerry.Ten = Ten;
-                nvQuerry.SDT = SDT;
-                nvQuerry.ChucVu = ChucVu;
-                nvQuerry.Luong = Luong;
-                qlnhEntity.SaveChanges();
+                if (nvQuerry != null)
+                {
+                    nvQuerry.Ten = Ten;
+                    nvQuerry.SDT = SDT;
+                    nvQuerry.ChucVu = ChucVu;
+                    nvQuerry.Luong = Luong;
+                    qlnhEntity.SaveChanges();
+                }
+                return true;
             }
-            return true;
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         public List<string> LayDSTenNhanVien()
         {

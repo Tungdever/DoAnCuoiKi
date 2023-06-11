@@ -14,7 +14,7 @@ using System.Data.Linq.Mapping;
 namespace QuanLyNhaHang
 {
     public partial class categoryForm : Form
-    {       
+    {
         string err;
         BLDanhMuc dbDM = new BLDanhMuc();
         public categoryForm()
@@ -33,56 +33,54 @@ namespace QuanLyNhaHang
         void LoadData()
         {
             try
-            {              
+            {
                 dgvCategory.DataSource = dbDM.LayDanhMuc();
                 dgvCategory.AutoResizeColumns();
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Lỗi rồi!!!");
+                MessageBox.Show("Không thể lấy nội dung trong table DANHMUC. Lỗi: " + ex);
             }
         }
 
         private void dgvCategory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            try
+            if (dgvCategory.CurrentCell.OwningColumn.Name == "dgvEdit")
             {
-                if (dgvCategory.CurrentCell.OwningColumn.Name == "dgvEdit")
+                frmCategoryAdd frm = new frmCategoryAdd();
+                frm.txtID.Text = dgvCategory.CurrentRow.Cells["dgvID"].Value.ToString();
+                frm.txtName.Text = dgvCategory.CurrentRow.Cells["dgvName"].Value.ToString();
+                frm.lblAdd.Text = "Category Edit";
+                frm.ShowDialog();
+                if (txtSearchCategories.Text != "")
                 {
-                    frmCategoryAdd frm = new frmCategoryAdd();
-                    frm.txtID.Text = dgvCategory.CurrentRow.Cells["dgvID"].Value.ToString();
-                    frm.txtName.Text = dgvCategory.CurrentRow.Cells["dgvName"].Value.ToString();
-                    frm.lblAdd.Text = "Category Edit";
-                    frm.ShowDialog();
-                    if (txtSearchCategories.Text != "")
-                    {
-                        dgvCategory.DataSource = dbDM.TimKiemDanhMuc(txtSearchCategories.Text);
-                    }
-                    else
-                    {
-                        LoadData();
-                    }
+                    dgvCategory.DataSource = dbDM.TimKiemDanhMuc(txtSearchCategories.Text);
                 }
-                else if (dgvCategory.CurrentCell.OwningColumn.Name == "dgvDel")
+                else
                 {
-                    DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    LoadData();
+                }
+            }
+            else if (dgvCategory.CurrentCell.OwningColumn.Name == "dgvDel")
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    if (dbDM.XoaDanhMuc(dgvCategory.CurrentRow.Cells["dgvID"].Value.ToString(), ref err))
                     {
-                        dbDM.XoaDanhMuc(dgvCategory.CurrentRow.Cells["dgvID"].Value.ToString(), ref err);
                         txtSearchCategories.Text = "";
                         LoadData();
                         MessageBox.Show("Xoá thành công!");
                     }
+                    else
+                    {
+                        MessageBox.Show("Xoá không thành công. Lỗi: '" + err + "'");
+                    }
                 }
             }
-            catch (SqlException)
-            {
-                MessageBox.Show("Không xóa được. Lỗi rồi!");
-            }
 
-        }
+        } 
 
         private void categoryForm_Load(object sender, EventArgs e)
         {
@@ -98,9 +96,9 @@ namespace QuanLyNhaHang
                 dgvCategory.AutoResizeColumns();
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Không lấy được nội dung trong table DanhMuc. Lỗi rồi!!!");
+                MessageBox.Show("Không thể lấy nội dung trong table DANHMUC. Lỗi: " + ex);
             }
         }
     }

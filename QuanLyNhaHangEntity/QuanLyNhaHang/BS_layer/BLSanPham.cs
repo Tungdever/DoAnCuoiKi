@@ -79,21 +79,29 @@ namespace QuanLyNhaHang.BS_layer
         }
         public bool ThemSanPham(string MaSP, string TenSP, string MaLoaiSP, string TenLoaiSP, float GiaSP, System.Drawing.Image AnhSP, ref string err)
         {
-            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
-            SANPHAM sp = new SANPHAM();
-            MemoryStream ms = new MemoryStream();
-            System.Drawing.Image tmp = AnhSP;
-            tmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            byte[] imageByteArray = ms.ToArray();
-            sp.AnhSP = imageByteArray;
-            sp.MaSP = MaSP;
-            sp.TenSP = TenSP;
-            sp.MaLoaiSP = MaLoaiSP;
-            sp.TenLoaiSP = TenLoaiSP;
-            sp.GiaSP = GiaSP;
-            qlnhEntity.SANPHAMs.Add(sp);
-            qlnhEntity.SaveChanges();
-            return true;
+            try
+            { 
+                QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+                SANPHAM sp = new SANPHAM();
+                MemoryStream ms = new MemoryStream();
+                System.Drawing.Image tmp = AnhSP;
+                tmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                byte[] imageByteArray = ms.ToArray();
+                sp.AnhSP = imageByteArray;
+                sp.MaSP = MaSP;
+                sp.TenSP = TenSP;
+                sp.MaLoaiSP = MaLoaiSP;
+                sp.TenLoaiSP = TenLoaiSP;
+                sp.GiaSP = GiaSP;
+                qlnhEntity.SANPHAMs.Add(sp);
+                qlnhEntity.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
 
         }
         public bool XoaSanPham(string MaSP, ref string err)
@@ -101,31 +109,47 @@ namespace QuanLyNhaHang.BS_layer
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
             SANPHAM sp = new SANPHAM();
             sp.MaSP = MaSP;
-            qlnhEntity.SANPHAMs.Attach(sp);
-            qlnhEntity.SANPHAMs.Remove(sp);
-            qlnhEntity.SaveChanges();
-            return true;
+            try
+            {
+                qlnhEntity.SANPHAMs.Attach(sp);
+                qlnhEntity.SANPHAMs.Remove(sp);
+                qlnhEntity.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         public bool CapNhatSanPham(string MaSP, string TenSP, string MaLoaiSP, string TenLoaiSP, float GiaSP, System.Drawing.Image AnhSP, ref string err)
         {
-            MemoryStream ms = new MemoryStream();
-            System.Drawing.Image tmp = AnhSP;
-            tmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            byte[] imageByteArray = ms.ToArray();
-            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
-            var spQuery = (from sp in qlnhEntity.SANPHAMs
-                           where sp.MaSP == MaSP
-                           select sp).SingleOrDefault();
-            if (spQuery != null)
+            try
             {
-                spQuery.AnhSP = imageByteArray;
-                spQuery.TenSP = TenSP;
-                spQuery.MaLoaiSP = MaLoaiSP;
-                spQuery.TenLoaiSP = TenLoaiSP;
-                spQuery.GiaSP = GiaSP;
-                qlnhEntity.SaveChanges();
+                MemoryStream ms = new MemoryStream();
+                System.Drawing.Image tmp = AnhSP;
+                tmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                byte[] imageByteArray = ms.ToArray();
+                QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+                var spQuery = (from sp in qlnhEntity.SANPHAMs
+                               where sp.MaSP == MaSP
+                               select sp).SingleOrDefault();
+                if (spQuery != null)
+                {
+                    spQuery.AnhSP = imageByteArray;
+                    spQuery.TenSP = TenSP;
+                    spQuery.MaLoaiSP = MaLoaiSP;
+                    spQuery.TenLoaiSP = TenLoaiSP;
+                    spQuery.GiaSP = GiaSP;
+                    qlnhEntity.SaveChanges();
+                }
+                return true;
             }
-            return true;
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         public List<byte[]> LayHinh(string MaSP)
         {

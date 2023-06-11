@@ -28,9 +28,9 @@ namespace QuanLyNhaHang
                 dgvStaff.DataSource = dbNV.LayNhanVien();
                 dgvStaff.AutoResizeColumns();
             }
-            catch(SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Lỗi rồi!!!");
+                MessageBox.Show("Không thể lấy nội dung trong table NHANVIEN. Lỗi: " + ex);
             }
         }
 
@@ -56,58 +56,59 @@ namespace QuanLyNhaHang
                 // Thay đổi độ rộng cột
                 dgvStaff.AutoResizeColumns();
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Không lấy được nội dung trong table NHANVIEN. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được nội dung trong table NHANVIEN. Lỗi: " + ex);
             }
         }
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                if (dgvStaff.CurrentCell.OwningColumn.Name == "dgvEdit")
-                {
-                    frmStaffAdd frm = new frmStaffAdd();
-                    frm.txtStaffID.ReadOnly = true;
-                    frm.txtStaffID.Text = dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString();
-                    frm.txtStaffName.Text = dgvStaff.CurrentRow.Cells["dgvTen"].Value.ToString();
-                    frm.txtStaffPhone.Text = dgvStaff.CurrentRow.Cells["dgvSDT"].Value.ToString();
-                    frm.txtStaffRole.Text = dgvStaff.CurrentRow.Cells["dgvChucVu"].Value.ToString();
-                    frm.txtSalary.Text = dgvStaff.CurrentRow.Cells["dgvLuong"].Value.ToString();
-                    frm.lblAdd.Text = "Staff Edit";
-                    frm.ShowDialog();
 
-                    if (txtSearchStaff.Text != "")
-                    {
-                        dgvStaff.DataSource = dbNV.TimKiemNhanVien(txtSearchStaff.Text);
-                    }
-                    else
-                    {
-                        LoadData();
-                    }
-                }
-                else if (dgvStaff.CurrentCell.OwningColumn.Name == "dgvDel")
+            if (dgvStaff.CurrentCell.OwningColumn.Name == "dgvEdit")
+            {
+                frmStaffAdd frm = new frmStaffAdd();
+                frm.txtStaffID.ReadOnly = true;
+                frm.txtStaffID.Text = dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString();
+                frm.txtStaffName.Text = dgvStaff.CurrentRow.Cells["dgvTen"].Value.ToString();
+                frm.txtStaffPhone.Text = dgvStaff.CurrentRow.Cells["dgvSDT"].Value.ToString();
+                frm.txtStaffRole.Text = dgvStaff.CurrentRow.Cells["dgvChucVu"].Value.ToString();
+                frm.txtSalary.Text = dgvStaff.CurrentRow.Cells["dgvLuong"].Value.ToString();
+                frm.lblAdd.Text = "Staff Edit";
+                frm.ShowDialog();
+
+                if (txtSearchStaff.Text != "")
                 {
-                    if (dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString() == "NV0")
+                    dgvStaff.DataSource = dbNV.TimKiemNhanVien(txtSearchStaff.Text);
+                }
+                else
+                {
+                    LoadData();
+                }
+            }
+            else if (dgvStaff.CurrentCell.OwningColumn.Name == "dgvDel")
+            {
+                if (dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString() == "NV0")
+                {
+                    MessageBox.Show("Không thể xoá chủ nhà hàng");
+                    return;
+                }
+                DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    if (dbNV.XoaNHanVien(dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString(), ref err))
                     {
-                        MessageBox.Show("Không thể xoá chủ nhà hàng");
-                        return;
-                    }
-                    DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
-                    {
-                        dbNV.XoaNHanVien(dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString(), ref err);
                         txtSearchStaff.Text = "";
                         LoadData();
                         MessageBox.Show("Xoá thành công!");
                     }
+                    else
+                    {
+                        MessageBox.Show("Xoá không thành công. Lỗi: '" + err + "'");
+                    }
                 }
             }
-            catch (SqlException)
-            {
-                MessageBox.Show("Không xóa được. Lỗi rồi!");
-            }
+
         }
     }
 }

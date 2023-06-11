@@ -28,10 +28,6 @@ namespace QuanLyNhaHang
             this.Close();
         }
 
-        private void txtBillAmount_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtReceived_TextChanged(object sender, EventArgs e)
         {

@@ -35,37 +35,64 @@ namespace QuanLyNhaHang.BS_layer
         }
         public bool ThemDanhMuc(string MaDM, string TenDM, ref string err)
         {
-            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
-            DANHMUC dm = new DANHMUC();
-            dm.MaDM = MaDM;
-            dm.TenDM = TenDM;
-            qlNH.DANHMUCs.InsertOnSubmit(dm);
-            qlNH.DANHMUCs.Context.SubmitChanges();
-            return true;
+            bool f = false;
+            try
+            {
+                QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+                DANHMUC dm = new DANHMUC();
+                dm.MaDM = MaDM;
+                dm.TenDM = TenDM;
+                qlNH.DANHMUCs.InsertOnSubmit(dm);
+                qlNH.DANHMUCs.Context.SubmitChanges();
+                f = true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+            return f;
 
         }
         public bool XoaDanhMuc(string MaDM, ref string err)
         {
-            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
-            var dmQuery = from dm in qlNH.DANHMUCs
-                          where dm.MaDM == MaDM
-                          select dm;
-            qlNH.DANHMUCs.DeleteAllOnSubmit(dmQuery);
-            qlNH.SubmitChanges();
-            return true;
+            bool f = false;
+            try
+            {
+                QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+                var dmQuery = from dm in qlNH.DANHMUCs
+                              where dm.MaDM == MaDM
+                              select dm;
+                qlNH.DANHMUCs.DeleteAllOnSubmit(dmQuery);
+                qlNH.SubmitChanges();
+                f = true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+            return f;
         }
         public bool CapNhatDanhMuc(string MaDM, string TenDM, ref string err)
         {
-            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
-            var dmQuery = (from dm in qlNH.DANHMUCs
-                           where dm.MaDM == MaDM
-                           select dm).SingleOrDefault();
-            if (dmQuery != null)
+            bool f = false;
+            try
             {
-                dmQuery.TenDM = TenDM;
-                qlNH.SubmitChanges();
+                QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+                var dmQuery = (from dm in qlNH.DANHMUCs
+                               where dm.MaDM == MaDM
+                               select dm).SingleOrDefault();
+                if (dmQuery != null)
+                {
+                    dmQuery.TenDM = TenDM;
+                    qlNH.SubmitChanges();
+                }
+                f = true;
             }
-            return true;
+            catch (Exception ex) 
+            { 
+                err = ex.Message; 
+            }
+            return f;
         }
         public DataTable LayDanhSachDanhMuc()
         {

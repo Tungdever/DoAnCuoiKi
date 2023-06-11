@@ -61,7 +61,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1260, 122);
             this.guna2Panel1.TabIndex = 7;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+           
             // 
             // guna2ControlBox1
             // 
@@ -101,7 +101,7 @@
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            
             // 
             // guna2Panel2
             // 
@@ -113,7 +113,7 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1260, 94);
             this.guna2Panel2.TabIndex = 8;
-            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
+            
             // 
             // btnSave
             // 
@@ -241,7 +241,7 @@
             this.txtBillAmount.SelectionStart = "".Length;
             this.txtBillAmount.Size = new System.Drawing.Size(396, 84);
             this.txtBillAmount.TabIndex = 17;
-            this.txtBillAmount.TextChanged += new System.EventHandler(this.txtBillAmount_TextChanged_1);
+            
             // 
             // label2
             // 

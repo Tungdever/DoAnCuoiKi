@@ -85,42 +85,69 @@ namespace QuanLyNhaHang.BS_layer
 
         public bool ThemNhanVien(string Manv, string Ten, string SDT, string ChucVu , float Luong, ref string err)
         {
-            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
-            NHANVIEN nv = new NHANVIEN();
-            nv.Manv = Manv;
-            nv.Ten = Ten;
-            nv.SDT = SDT;
-            nv.ChucVu = ChucVu;
-            nv.Luong = Luong;
-            qlNH.NHANVIENs.InsertOnSubmit(nv);
-            qlNH.NHANVIENs.Context.SubmitChanges();
-            return true;
+            bool f = false;
+            try
+            {
+                QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+                NHANVIEN nv = new NHANVIEN();
+                nv.Manv = Manv;
+                nv.Ten = Ten;
+                nv.SDT = SDT;
+                nv.ChucVu = ChucVu;
+                nv.Luong = Luong;
+                qlNH.NHANVIENs.InsertOnSubmit(nv);
+                qlNH.NHANVIENs.Context.SubmitChanges();
+                f = true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+            return f;
         }
         public bool XoaNHanVien(string Manv, ref string err)
         {
-            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
-            var nvQuerry = from nv in qlNH.NHANVIENs
-                          where nv.Manv == Manv
-                          select nv;
-            qlNH.NHANVIENs.DeleteAllOnSubmit(nvQuerry);
-            qlNH.SubmitChanges();
-            return true;
+            bool f = false;
+            try
+            {
+                QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+                var nvQuerry = from nv in qlNH.NHANVIENs
+                               where nv.Manv == Manv
+                               select nv;
+                qlNH.NHANVIENs.DeleteAllOnSubmit(nvQuerry);
+                qlNH.SubmitChanges();
+                f = true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+            return f;
         }
         public bool CapNhatNhanVien(string Manv, string Ten, string SDT, string ChucVu, float Luong, ref string err)
         {
-            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
-            var nvQuerry = (from nv in qlNH.NHANVIENs
-                           where nv.Manv == Manv
-                           select nv).SingleOrDefault();
-            if (nvQuerry != null)
+            bool f = false;
+            try
             {
-                nvQuerry.Ten= Ten;
-                nvQuerry.SDT= SDT;
-                nvQuerry.ChucVu= ChucVu;
-                nvQuerry.Luong = Luong;
-                qlNH.SubmitChanges();
+                QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+                var nvQuerry = (from nv in qlNH.NHANVIENs
+                                where nv.Manv == Manv
+                                select nv).SingleOrDefault();
+                if (nvQuerry != null)
+                {
+                    nvQuerry.Ten = Ten;
+                    nvQuerry.SDT = SDT;
+                    nvQuerry.ChucVu = ChucVu;
+                    nvQuerry.Luong = Luong;
+                    qlNH.SubmitChanges();
+                }
+                f = true;
             }
-            return true;
+            catch ( Exception ex ) 
+            { 
+                err = ex.Message;
+            }
+            return f;
         }
         public string MaNV_TenNV(string MaNV)
         {

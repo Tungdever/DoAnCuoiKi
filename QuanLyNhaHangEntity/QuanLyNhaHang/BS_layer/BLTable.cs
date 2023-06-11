@@ -39,19 +39,35 @@ namespace QuanLyNhaHang.BS_layer
             t.Tid = Tid;
             t.Tname = Tname;
             t.Tstate = Tstate;
-            qlnhEntity.BANs.Add(t);
-            qlnhEntity.SaveChanges();
-            return true;
+            try
+            {
+                qlnhEntity.BANs.Add(t);
+                qlnhEntity.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         public bool XoaTable(string Tid, ref string err) 
         {
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
             BAN t = new BAN();
             t.Tid = Tid;
-            qlnhEntity.BANs.Attach(t);
-            qlnhEntity.BANs.Remove(t);
-            qlnhEntity.SaveChanges();
-            return true;
+            try
+            {
+                qlnhEntity.BANs.Attach(t);
+                qlnhEntity.BANs.Remove(t);
+                qlnhEntity.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         public bool CapnhatTable(string Tid,string Tname, string Tstate, ref string err)
         {
@@ -59,13 +75,21 @@ namespace QuanLyNhaHang.BS_layer
             var tQuerry = (from t in qlnhEntity.BANs
                            where t.Tid == Tid
                            select t).SingleOrDefault();
-            if(tQuerry != null) 
+            try
             {
-                tQuerry.Tname = Tname;
-                tQuerry.Tstate = Tstate;
-                qlnhEntity.SaveChanges();
+                if (tQuerry != null)
+                {
+                    tQuerry.Tname = Tname;
+                    tQuerry.Tstate = Tstate;
+                    qlnhEntity.SaveChanges();
+                }
+                return true;
             }
-            return true;
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
     }
 }

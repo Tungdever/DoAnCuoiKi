@@ -37,7 +37,7 @@ namespace QuanLyNhaHang.FormReport
             }
             catch (SqlException error)
             {
-                MessageBox.Show("Không Lấy được thực đơn. Lỗi rồi!" + error);
+                MessageBox.Show("Không Lấy được thực đơn. Lỗi: " + error);
             }
             frmPrint frm = new frmPrint();
             rptMenu cr = new rptMenu();

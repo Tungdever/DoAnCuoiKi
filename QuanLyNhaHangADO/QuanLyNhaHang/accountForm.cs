@@ -40,71 +40,70 @@ namespace QuanLyNhaHang
                 dgvAcc.AutoResizeColumns();
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được nội dung trong table TAIKHOAN. Lỗi rồi!!!" + ex.Message);
             }
         }
 
         private void dgvAcc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            try
+
+            if (dgvAcc.CurrentCell.OwningColumn.Name == "dgvEdit")
             {
-                if (dgvAcc.CurrentCell.OwningColumn.Name == "dgvEdit")
+                frmAccountAdd frm = new frmAccountAdd();
+                frm.txtTenTK.ReadOnly = true;
+                frm.cbbTenNV.DataSource = dbNV.LayDSNV();
+                frm.cbbTenNV.ValueMember = "ID";
+                frm.cbbTenNV.DisplayMember = "Display";
+                frm.txtTenTK.Text = dgvAcc.CurrentRow.Cells["dgvTenTK"].Value.ToString();
+                if (frm.txtTenTK.Text == "admin")
                 {
-                    frmAccountAdd frm = new frmAccountAdd();
-                    frm.txtTenTK.ReadOnly = true;
-                    frm.cbbTenNV.DataSource = dbNV.LayDSNV();
-                    frm.cbbTenNV.ValueMember = "ID";
-                    frm.cbbTenNV.DisplayMember = "Display";
-                    frm.txtTenTK.Text = dgvAcc.CurrentRow.Cells["dgvTenTK"].Value.ToString();
-                    if (frm.txtTenTK.Text == "admin")
-                    {
-                        frm.cbbTenNV.Enabled = false;
-                        frm.txtCapDo.ReadOnly = true;
-                    }
-                    else
-                    {
-                        frm.cbbTenNV.Enabled = true;
-                        frm.txtCapDo.ReadOnly = false;
-                    }
-                    frm.txtMK.Text = dgvAcc.CurrentRow.Cells["dgvMatKhau"].Value.ToString();
-                    frm.cbbTenNV.SelectedValue = dgvAcc.CurrentRow.Cells["dgvMaNV"].Value.ToString().Split('-')[0].Trim();
-                    frm.txtCapDo.Text = dgvAcc.CurrentRow.Cells["dgvCapDo"].Value.ToString();
-                    frm.ShowDialog();
-                    if (txtSearchAcc.Text != "")
-                    {
-                        dgvAcc.DataSource = dbTK.TimKiemTaiKhoan(txtSearchAcc.Text);
-                    }
-                    else
-                    {
-                        LoadData();
-                    }
+                    frm.cbbTenNV.Enabled = false;
+                    frm.txtCapDo.ReadOnly = true;
                 }
-                else if (dgvAcc.CurrentCell.OwningColumn.Name == "dgvDel")
+                else
                 {
-                    
-                    if (dgvAcc.CurrentRow.Cells["dgvTenTK"].Value.ToString() == "admin")
+                    frm.cbbTenNV.Enabled = true;
+                    frm.txtCapDo.ReadOnly = false;
+                }
+                frm.txtMK.Text = dgvAcc.CurrentRow.Cells["dgvMatKhau"].Value.ToString();
+                frm.cbbTenNV.SelectedValue = dgvAcc.CurrentRow.Cells["dgvMaNV"].Value.ToString().Split('-')[0].Trim();
+                frm.txtCapDo.Text = dgvAcc.CurrentRow.Cells["dgvCapDo"].Value.ToString();
+                frm.ShowDialog();
+                if (txtSearchAcc.Text != "")
+                {
+                    dgvAcc.DataSource = dbTK.TimKiemTaiKhoan(txtSearchAcc.Text);
+                }
+                else
+                {
+                    LoadData();
+                }
+            }
+            else if (dgvAcc.CurrentCell.OwningColumn.Name == "dgvDel")
+            {
+
+                if (dgvAcc.CurrentRow.Cells["dgvTenTK"].Value.ToString() == "admin")
+                {
+                    MessageBox.Show("Không thể xoá tài khoản ADMIN");
+                    return;
+                }
+                DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    if (dbTK.XoaTaiKhoan(dgvAcc.CurrentRow.Cells["dgvTenTK"].Value.ToString(), ref err))
                     {
-                        MessageBox.Show("Không thể xoá tài khoản ADMIN");
-                        return;
-                    }
-                    DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
-                    {
-                        dbTK.XoaTaiKhoan(dgvAcc.CurrentRow.Cells["dgvTenTK"].Value.ToString(), ref err);
                         txtSearchAcc.Text = "";
                         LoadData();
                         MessageBox.Show("Xoá thành công!");
                     }
+                    else
+                    {
+                        MessageBox.Show("Xoá không thành công. Lỗi: '" + err + "'");
+                    }
                 }
             }
-            catch (SqlException)
-            {
-                MessageBox.Show("Không xóa được. Lỗi rồi!");
-            }
-
         }
 
         private void accountForm_Load(object sender, EventArgs e)
@@ -119,9 +118,9 @@ namespace QuanLyNhaHang
                 dgvAcc.DataSource = dbTK.TimKiemTaiKhoan(txtSearchAcc.Text);
                 dgvAcc.AutoResizeColumns();
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Không lấy được nội dung trong table DanhMuc. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được nội dung trong table TAIKHOAN. Lỗi rồi!!!" + ex.Message);
             }
         }
     }

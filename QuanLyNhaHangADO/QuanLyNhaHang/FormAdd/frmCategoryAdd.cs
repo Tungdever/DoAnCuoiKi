@@ -32,20 +32,26 @@ namespace QuanLyNhaHang
             if (txtID.ReadOnly == true)
             {
 
-                dbDM.CapNhatDanhMuc(txtID.Text, txtName.Text, ref err);
-                MessageBox.Show("Đã sửa xong!");
+                if (dbDM.CapNhatDanhMuc(txtID.Text, txtName.Text, ref err))
+                {
+                    MessageBox.Show("Đã sửa xong!");
+                }
+                else
+                {
+                    MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
+                }
             }
             else
             {
-                try
+                if (dbDM.ThemDanhMuc(txtID.Text, txtName.Text, ref err))
                 {
-                    dbDM.ThemDanhMuc(txtID.Text, txtName.Text, ref err);
                     MessageBox.Show("Đã thêm xong!");
                 }
-                catch (SqlException)
+                else
                 {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
+                    MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
                 }
+                
             }
             this.Close();
         }
@@ -53,11 +59,6 @@ namespace QuanLyNhaHang
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

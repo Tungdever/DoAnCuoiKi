@@ -36,22 +36,30 @@ namespace QuanLyNhaHang
             }
             if (txtTableID.ReadOnly == true)
             {
-                dbT.CapNhatTable(txtTableID.Text, txtTableName.Text, cbbTstate.Text, ref err);
-                // Load lại dữ liệu trên DataGridView
-                MessageBox.Show("Đã sửa xong!");
+                if (dbT.CapNhatTable(txtTableID.Text, txtTableName.Text, cbbTstate.Text, ref err))
+                {
+
+                    MessageBox.Show("Đã sửa xong!");
+                }
+                else
+                {
+                    MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
+                }
             }
             else
             {
-                try
+
+                if (dbT.ThemTable(txtTableID.Text, txtTableName.Text, cbbTstate.Text, ref err))
                 {
-                    dbT.ThemTable(txtTableID.Text, txtTableName.Text, cbbTstate.Text, ref err);
+
                     MessageBox.Show("Đã thêm xong!");
                 }
-                catch (SqlException)
+                else
                 {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
+                    MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
                 }
-            }
+
+            } 
             this.Close();
         }
     }

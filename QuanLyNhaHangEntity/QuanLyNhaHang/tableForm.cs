@@ -27,9 +27,9 @@ namespace QuanLyNhaHang
                 dgvTable.DataSource = dbT.LayTable();
                 dgvTable.AutoResizeColumns();
             }
-            catch(SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Lỗi rồi!!!");
+                MessageBox.Show("Không thể lấy nội dung trong table BAN. Lỗi: " + ex);
             }
         }
 
@@ -59,54 +59,52 @@ namespace QuanLyNhaHang
                 //Thay đổi dộ rộng cột
                 dgvTable.AutoResizeColumns();
             }
-            catch(SqlException) 
+            catch (SqlException ex)
             {
-                MessageBox.Show("Không lấy được nội dung trong table BAN. Lỗi rồi!!!");
+                MessageBox.Show("Không thể lấy nội dung trong table BAN. Lỗi: " + ex);
             }
         }
 
         private void dgvTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+
+            if (dgvTable.CurrentCell.OwningColumn.Name == "dgvEdit")
             {
-                if(dgvTable.CurrentCell.OwningColumn.Name == "dgvEdit")
+                frmTableAdd frm = new frmTableAdd();
+                frm.txtTableID.ReadOnly = true;
+                frm.txtTableName.ReadOnly = true;
+                List<string> listTstate = new List<string>();
+                listTstate.Add("Bàn trống");
+                listTstate.Add("Đã đặt");
+                frm.cbbTstate.DataSource = listTstate;
+                frm.txtTableID.Text = dgvTable.CurrentRow.Cells["dgvTid"].Value.ToString();
+                frm.txtTableName.Text = dgvTable.CurrentRow.Cells["dgvTname"].Value.ToString();
+                frm.cbbTstate.Text = dgvTable.CurrentRow.Cells["dgvTstate"].Value.ToString();
+                frm.ShowDialog();
+                if (txtSearchTable.Text != "")
                 {
-                    frmTableAdd frm = new frmTableAdd();
-                    frm.txtTableID.ReadOnly = true;
-                    frm.txtTableName.ReadOnly = true;
-                    List<string> listTstate = new List<string>();
-                    listTstate.Add("Bàn trống");
-                    listTstate.Add("Đã đặt");
-                    frm.cbbTstate.DataSource = listTstate;
-                    frm.txtTableID.Text = dgvTable.CurrentRow.Cells["dgvTid"].Value.ToString();
-                    frm.txtTableName.Text = dgvTable.CurrentRow.Cells["dgvTname"].Value.ToString();
-                    frm.cbbTstate.Text = dgvTable.CurrentRow.Cells["dgvTstate"].Value.ToString();
-                    frm.ShowDialog();
-                    if (txtSearchTable.Text != "")
-                    {
-                        dgvTable.DataSource = dbT.TimKiemTable(txtSearchTable.Text);
-                    }
-                    else
-                    {
-                        LoadData();
-                    }
+                    dgvTable.DataSource = dbT.TimKiemTable(txtSearchTable.Text);
                 }
-                else if(dgvTable.CurrentCell.OwningColumn.Name == "dgvDel")
+                else
                 {
-                    DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if(result == DialogResult.Yes) 
+                    LoadData();
+                }
+            }
+            else if (dgvTable.CurrentCell.OwningColumn.Name == "dgvDel")
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    if (dbT.XoaTable(dgvTable.CurrentRow.Cells["dgvTid"].Value.ToString(), ref err))
                     {
-                        dbT.XoaTable(dgvTable.CurrentRow.Cells["dgvTid"].Value.ToString(), ref err);
                         txtSearchTable.Text = "";
                         LoadData();
                         MessageBox.Show("Xoá thành công!");
                     }
+                    else MessageBox.Show("Xoá không thành công. Lỗi: '" + err + "'");
                 }
             }
-            catch(SqlException)
-            {
-                MessageBox.Show("Không xóa được. Lỗi rồi!");
-            }
         }
+        
     }
 }

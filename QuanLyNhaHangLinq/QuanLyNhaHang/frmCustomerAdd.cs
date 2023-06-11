@@ -72,7 +72,7 @@ namespace QuanLyNhaHang
             }
             catch (SqlException e)
             {
-                MessageBox.Show("Không lấy được nội dung." + e);
+                MessageBox.Show("Không lấy được nội dung. Lỗi: " + e);
             }
         }
 

@@ -52,7 +52,7 @@ namespace QuanLyNhaHang
             
             catch (SqlException ex)
 {
-                MessageBox.Show("Không lấy được Waiter trong Staff. Lỗi rồi!!!"+ex.Message);
+                MessageBox.Show("Không lấy được Waiter trong tblMain. Lỗi rồi!!!" + ex.Message);
             }
         }
 

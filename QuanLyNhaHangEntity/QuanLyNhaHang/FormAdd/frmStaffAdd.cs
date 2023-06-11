@@ -28,22 +28,18 @@ namespace QuanLyNhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(txtStaffID.ReadOnly == true )
+            if (txtStaffID.ReadOnly == true)
             {
-                dbNV.CapnhatNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text),ref err);
-                MessageBox.Show("Đã sửa xong!");
+                if (dbNV.CapnhatNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text), ref err))
+                    MessageBox.Show("Đã sửa xong!");
+                else MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
             }
             else
             {
-                try
-                {
-                    dbNV.ThemNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text), ref err);
-                    MessageBox.Show("Đã thêm xong!");
-                }
-                catch(SqlException)
-                {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
-                }
+
+                if (dbNV.ThemNhanVien(txtStaffID.Text, txtStaffName.Text, txtStaffPhone.Text, txtStaffRole.Text, int.Parse(txtSalary.Text), ref err))
+                MessageBox.Show("Đã thêm xong!");
+                else MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
             }
             this.Close();
         }

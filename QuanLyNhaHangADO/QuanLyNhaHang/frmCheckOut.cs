@@ -36,16 +36,15 @@ namespace QuanLyNhaHang
         {
 
             if (dbTblMain.UpdateCheckOut(billID, amt, received, change, "Paid", ref err))
-             { 
-             //   guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-                guna2MessageDialog1.Show("Saved Successfully");
+            {
+                //   guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                guna2MessageDialog1.Show("Lưu thành công");
                 this.Close();
-             }
-        }
-
-        private void txtBillAmount_TextChanged(object sender, EventArgs e)
-        {
-
+            }
+            else
+            {
+                guna2MessageDialog1.Show("Lưu không thành công");                
+            }
         }
 
         private void txtReceived_TextChanged_1(object sender, EventArgs e)
@@ -65,28 +64,6 @@ namespace QuanLyNhaHang
         {
             this.Close();
         }
-
-        private void txtBillAmount_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-      
 
     }
 }

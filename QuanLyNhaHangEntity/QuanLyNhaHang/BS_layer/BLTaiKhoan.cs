@@ -54,9 +54,17 @@ namespace QuanLyNhaHang.BS_layer
             tk.MatKhau= MatKhau;
             tk.MaNV = MaNV;
             tk.CapDoQuyen = CapDoQuyen;
-            qlnhEntity.TAIKHOANs.Add(tk);
-            qlnhEntity.SaveChanges();
-            return true;
+            try
+            {
+                qlnhEntity.TAIKHOANs.Add(tk);
+                qlnhEntity.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
 
         }
         public bool XoaTaiKhoan(string TenTaiKhoan, ref string err)
@@ -64,10 +72,18 @@ namespace QuanLyNhaHang.BS_layer
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
             TAIKHOAN tk = new TAIKHOAN();
             tk.TenTaiKhoan = TenTaiKhoan;
-            qlnhEntity.TAIKHOANs.Attach(tk);
-            qlnhEntity.TAIKHOANs.Remove(tk);
-            qlnhEntity.SaveChanges();
-            return true;
+            try
+            {
+                qlnhEntity.TAIKHOANs.Attach(tk);
+                qlnhEntity.TAIKHOANs.Remove(tk);
+                qlnhEntity.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         public bool CapNhatTaiKhoan(string TenTaiKhoan, string MatKhau, string MaNV, int CapDoQuyen, ref string err)
         {
@@ -75,14 +91,22 @@ namespace QuanLyNhaHang.BS_layer
             var tkQuery = (from tk in qlnhEntity.TAIKHOANs
                            where tk.TenTaiKhoan == TenTaiKhoan
                            select tk).SingleOrDefault();
-            if (tkQuery != null)
+            try
             {
-                tkQuery.MatKhau = MatKhau;
-                tkQuery.MaNV = MaNV;
-                tkQuery.CapDoQuyen = CapDoQuyen;
-                qlnhEntity.SaveChanges();
+                if (tkQuery != null)
+                {
+                    tkQuery.MatKhau = MatKhau;
+                    tkQuery.MaNV = MaNV;
+                    tkQuery.CapDoQuyen = CapDoQuyen;
+                    qlnhEntity.SaveChanges();
+                }
+                return true;
             }
-            return true;
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
         }
         
         

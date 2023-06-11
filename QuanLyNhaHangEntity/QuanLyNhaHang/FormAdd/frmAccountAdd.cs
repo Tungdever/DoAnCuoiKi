@@ -25,20 +25,17 @@ namespace QuanLyNhaHang
         {
             if (txtTenTK.ReadOnly == true)
             {
-                dbTK.CapNhatTaiKhoan(txtTenTK.Text, txtMK.Text, cbbTenNV.SelectedValue.ToString(), int.Parse(txtCapDo.Text), ref err);
-                MessageBox.Show("Đã sửa xong!");
+                if (dbTK.CapNhatTaiKhoan(txtTenTK.Text, txtMK.Text, cbbTenNV.SelectedValue.ToString(), int.Parse(txtCapDo.Text), ref err))
+                    MessageBox.Show("Đã sửa xong!");
+                else MessageBox.Show("Sửa không thành công. Lỗi: '" + err + "'");
             }
             else
             {
-                try
-                {
-                    dbTK.ThemTaiKhoan(txtTenTK.Text, txtMK.Text, cbbTenNV.SelectedValue.ToString(), int.Parse(txtCapDo.Text), ref err);
+
+                if (dbTK.ThemTaiKhoan(txtTenTK.Text, txtMK.Text, cbbTenNV.SelectedValue.ToString(), int.Parse(txtCapDo.Text), ref err))
                     MessageBox.Show("Đã thêm xong!");
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
-                }
+                else MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
+
             }
             this.Close();
         }
