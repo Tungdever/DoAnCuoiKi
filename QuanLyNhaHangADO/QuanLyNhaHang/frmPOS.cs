@@ -287,7 +287,7 @@ namespace QuanLyNhaHang
                 {
                     
                         if (!dbTblDetail.AddTblDetail(BillID, row.Cells["dgvMaSP"].Value.ToString(), row.Cells["dgvTenSP"].Value.ToString(), int.Parse(row.Cells["dgvQty"].Value.ToString()), float.Parse(row.Cells["dgvPrice"].Value.ToString()), float.Parse(row.Cells["dgvAmount"].Value.ToString()), ref err))
-                        else MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
+                        MessageBox.Show("Thêm không thành công. Lỗi: '" + err + "'");
 
 
 
