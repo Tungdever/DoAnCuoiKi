@@ -1,5 +1,6 @@
 ﻿using QuanLyNhaHang.BS_layer;
 using QuanLyNhaHang.FormReport;
+using QuanLyNhaHang.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,7 @@ namespace QuanLyNhaHang
         public int MainID = 0;
         public bool bonus;
         public string OrderType = "";
+        public bool edit = false;
         public frmBillList()
         {
             InitializeComponent();
@@ -69,6 +71,7 @@ namespace QuanLyNhaHang
                 if (dgvBillList.CurrentCell.OwningColumn.Name == "dgvEdit")
                 {
                     //Cap nhat gia tri cho bool Them ben formPos
+                    edit = true;
                     bonus = false;
                     MainID = Convert.ToInt32(dgvBillList.CurrentRow.Cells["dgvMaBill"].Value);
                     OrderType = dgvBillList.CurrentRow.Cells["dgvOrderType"].Value.ToString();
@@ -77,13 +80,14 @@ namespace QuanLyNhaHang
                 }
                 if (dgvBillList.CurrentCell.OwningColumn.Name == "dgvPrint")
                 {
+                    edit = false;
                     MainID = Convert.ToInt32(dgvBillList.CurrentRow.Cells["dgvMaBill"].Value);
                     try
                     {
                         dtBillPrint = new DataTable();
                         dtBillPrint.Clear();
                         //  dtBillPrint = dbTblMain.GetJoin(MainID).Tables[0];
-                        dtBillPrint = dbTblMain.GetJoin(MainID);
+                        dtBillPrint = dbTblMain.GetJoinRP(MainID);
                     }
                     catch (SqlException err)
                     {
@@ -91,12 +95,12 @@ namespace QuanLyNhaHang
                     }
 
                       frmPrint frm = new frmPrint();
-                    /* rptBill cr = new rptBill();
-                     cr.SetDataSource(dtBillPrint);
-                     frm.crystalReportViewer1.ReportSource = cr;
-                     frm.crystalReportViewer1.Refresh();
-                     frm.Show();*/
-                    Console.WriteLine("########");
+                    rptBill cr = new rptBill();
+                    cr.SetDataSource(dtBillPrint);
+                    frm.crystalReportViewer1.ReportSource = cr;
+                    frm.crystalReportViewer1.Refresh();
+                    frm.Show();
+                   
                 }
             }
 

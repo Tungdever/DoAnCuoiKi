@@ -320,7 +320,7 @@ namespace QuanLyNhaHang
 
 
             //Sau khi frm đóng
-            if(frm.MainID  > 0)
+            if(frm.MainID  > 0 && frm.edit == true)
             {
                 // Ra khỏi form Bill List 
                 Them = frm.bonus; //  Them  = false lúc này sẽ hiển thị Bill cần sửa lên dgvPOS

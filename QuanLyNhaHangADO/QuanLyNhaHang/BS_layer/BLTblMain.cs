@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,6 +35,11 @@ namespace QuanLyNhaHang.BS_layer
         {
             return db.ExecuteQueryDataSet("Select MaBill, TableName, WaiterName, aTime, orderType, status,total from tblMain where status <> 'Pending'", CommandType.Text);
         }
+        public DataSet GetMain(int MaBill)
+        {
+            return db.ExecuteQueryDataSet("SELECT * FROM tblMain WHERE MaBill = " + MaBill, CommandType.Text);
+        }
+
 
         //for billlist
         //public DataSet Get
@@ -41,7 +47,7 @@ namespace QuanLyNhaHang.BS_layer
 
         public int  AddTblMain(DateTime date, string time,  string TableName, string WaiterName , string Status, string orderType, double Total, double received,double change,string driverID, string cusName, string cusPhone, ref string err)
         {
-
+            //date.ToShortDateString();
 
             string sqlString = "Insert Into tblMain ( aDate, aTime, TableName, WaiterName, Status, orderType, total, received, change ,driverID, cusName, cusPhone) Values  (" + "'" +
 date.ToString("yyyy-MM-dd") + "', '" + time + "', N'" + TableName + "',N'" + WaiterName + "', '" + Status + "', '" + orderType + "', " +
@@ -83,6 +89,15 @@ Total + ", " + received + ", " + change + ", N'"+ driverID + "', '" + cusName + 
         public DataSet GetJoin(int MaBill)
         {
             return db.ExecuteQueryDataSet("Select * from tblMain m inner join tblDetails d on m.MaBill = d.MaBill WHERE m.MaBill = " + MaBill +"", CommandType.Text);
+        }
+
+        public DataSet GetJoinKIT(int MaBill)
+        {
+            // return db.ExecuteQueryDataSet("Select * from tblMain m inner join tblDetails d on m.MaBill = d.MaBill inner join SANPHAM s on s.MaSP = d.proID  WHERE m.MaBill = " + MaBill + "", CommandType.Text);
+            // return db.ExecuteQueryDataSet("SELECT *, d.proName AS proNameDetails FROM tblMain m INNER JOIN tblDetails d ON m.MaBill = d.MaBill WHERE m.MaBill = " + MaBill + " ", CommandType.Text);
+            return db.ExecuteQueryDataSet("SELECT DISTINCT * FROM tblMain m INNER JOIN tblDetails d ON m.MaBill = d.MaBill WHERE m.MaBill = " + MaBill, CommandType.Text);
+            // return db.ExecuteQueryDataSet("SELECT m.MaBill, m.Time, m.Status, m.Type, SUM(d.Qty) AS TotalQty, m.proName FROM tblMain m INNER JOIN tblDetails d ON m.MaBill = d.MaBill WHERE m.MaBill = " + MaBill + " GROUP BY m.MaBill, m.Time, m.Status, m.Type, m.proName", CommandType.Text);
+           // return db.ExecuteQueryDataSet("SELECT DISTINCT m.*, d.* FROM tblMain m INNER JOIN tblDetails d ON m.MaBill = d.MaBill WHERE m.MaBill = " + MaBill, CommandType.Text);
         }
         public DataSet GetJoinTABLE(int MaBill)
         {

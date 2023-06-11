@@ -24,6 +24,7 @@ namespace QuanLyNhaHang
         public int MainID = 0;
         public bool bonus;
         public string OrderType = "";
+        public bool edit = false;
         public frmBillList()
         {
             InitializeComponent();
@@ -61,6 +62,7 @@ namespace QuanLyNhaHang
                 if (dgvBillList.CurrentCell.OwningColumn.Name == "dgvEdit")
                 {
                     //Cap nhat gia tri cho bool Them ben formPos
+                    edit = true;
                     bonus = false;
                     MainID = Convert.ToInt32(dgvBillList.CurrentRow.Cells["dgvMaBill"].Value);
                     OrderType = dgvBillList.CurrentRow.Cells["dgvOrderType"].Value.ToString();
@@ -70,6 +72,7 @@ namespace QuanLyNhaHang
                 if(dgvBillList.CurrentCell.OwningColumn.Name == "dgvPrint")
                 {
                     MainID = Convert.ToInt32(dgvBillList.CurrentRow.Cells["dgvMaBill"].Value);
+                    edit = false;
                     try
                     {
                         dtBillPrint = new DataTable();

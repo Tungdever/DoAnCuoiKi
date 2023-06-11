@@ -1,10 +1,14 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Services.Description;
+using System.Windows.Markup;
 
 namespace QuanLyNhaHang.BS_layer
 {
@@ -237,6 +241,97 @@ namespace QuanLyNhaHang.BS_layer
             return dt;
 
         }
+        public DataTable GetJoinRP(int MaBill)
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+
+            var result = from m in qlNH.tblMains
+                         join d in qlNH.tblDetails on m.MaBill equals d.MaBill into details
+                         where m.MaBill == MaBill
+                         select new
+                         {
+                             Main = m,
+                             Details = details
+                         };
+
+            DataTable dt = new DataTable();
+
+            // Add columns to DataTable
+            dt.Columns.Add("MaBill", typeof(int));
+            dt.Columns.Add("aDate", typeof(string));
+            dt.Columns.Add("aTime", typeof(string));
+            dt.Columns.Add("TableName", typeof(string));
+            dt.Columns.Add("WaiterName", typeof(string));
+            dt.Columns.Add("status", typeof(string));
+            dt.Columns.Add("orderType", typeof(string));
+            dt.Columns.Add("total", typeof(float));
+            dt.Columns.Add("received", typeof(float));
+            dt.Columns.Add("change", typeof(float));
+            dt.Columns.Add("driverID", typeof(string));
+            dt.Columns.Add("cusName", typeof(string));
+            dt.Columns.Add("cusPhone", typeof(string));
+            dt.Columns.Add("DetailID", typeof(string));
+            dt.Columns.Add("qty", typeof(int));
+            dt.Columns.Add("price", typeof(float));
+            dt.Columns.Add("amount", typeof(float));
+
+            foreach (var item in result)
+            {
+                var main = item.Main;
+                //By including the details as a concatenated string within the main record, you avoid duplicating the main record for each detail record.
+                //This should resolve the issue of duplicated rows in the report.
+                // The duplication issue in the report occurs because you are using a DataTable to store the joined data from both tblMain and tblDetails tables.
+                // Since there can be multiple detail records for each main record, the join operation will create multiple rows for the same main record.
+                // need to adjust the way populating the DataTable when using LINQ. Instead of creating a new DataRow for each detail record,  concatenate the details into a single string and include it in the respective main record row
+                var details = string.Join(", ", item.Details.Select(d => d.proName + " (" + d.qty + ")"));
+                DataRow row = dt.NewRow();
+                row["MaBill"] = main.MaBill;
+                row["aDate"] = main.aDate.GetValueOrDefault().ToShortDateString(); //GetValueOrDefault() sẽ trả về giá trị ngày mặc định (một giá trị không null) nếu "aDate" là null.
+                row["aTime"] = main.aTime;
+                row["TableName"] = main.TableName;
+                row["WaiterName"] = main.WaiterName;
+                row["status"] = main.status;
+                row["orderType"] = main.orderType;
+                row["total"] = main.total;
+                row["received"] = main.received;
+                row["change"] = main.change;
+                row["driverID"] = main.driverID;
+                row["cusName"] = main.cusName;
+                row["cusPhone"] = main.cusPhone;
+                row["DetailID"] = details;
+                row["qty"] = DBNull.Value; // Set DBNull for subtotal rows
+                row["price"] = DBNull.Value; // Set DBNull for subtotal rows
+                row["amount"] = DBNull.Value; // Set DBNull for subtotal rows
+                dt.Rows.Add(row);
+
+                foreach (var detail in item.Details)
+                {
+                    DataRow detailRow = dt.NewRow();
+                    detailRow["MaBill"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["aDate"] = DBNull.Value;
+                    detailRow["aTime"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["TableName"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["WaiterName"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["status"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["orderType"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["total"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["received"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["change"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["driverID"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["cusName"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["cusPhone"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["DetailID"] = DBNull.Value; // Set DBNull for detail rows
+                    detailRow["qty"] = detail.qty;
+                    detailRow["price"] = detail.price;
+                    detailRow["amount"] = detail.amount;
+                    dt.Rows.Add(detailRow);
+                }
+            }
+
+            return dt;
+        }
+
+
 
         /*public List<> GetJoin1(int MaBill)
         {

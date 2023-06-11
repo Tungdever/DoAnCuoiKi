@@ -19,6 +19,8 @@ namespace QuanLyNhaHang
         {
             InitializeComponent();
         }
+        public DateTime sDate = DateTime.Now;
+        public DateTime eDate = DateTime.Now;
         BLReport dbReportCat = new BLReport();
         DataTable dtReportCat = null;
         private void btnReport_Click(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace QuanLyNhaHang
             try
             {
                 dtReportCat = new DataTable();
-                dtReportCat = dbReportCat.GetSaleByCatBetweenDate(Convert.ToDateTime(guna2DateTimePicker1.Value).Date, Convert.ToDateTime(guna2DateTimePicker2.Value).Date).Tables[0];
+                dtReportCat = dbReportCat.GetSaleByCatBetweenDate(sDate,eDate).Tables[0];
             }
 
             catch (SqlException error)
@@ -40,6 +42,22 @@ namespace QuanLyNhaHang
             frm.crystalReportViewer1.Refresh();
             frm.Show();
         
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            sDate = guna2DateTimePicker1.Value;
+        }
+
+        private void guna2DateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            eDate= guna2DateTimePicker2.Value;
+        }
+
+        private void frmSaleCatReport_Load(object sender, EventArgs e)
+        {
+            guna2DateTimePicker1.Value = sDate;
+            guna2DateTimePicker2.Value = eDate; 
         }
     }
 }

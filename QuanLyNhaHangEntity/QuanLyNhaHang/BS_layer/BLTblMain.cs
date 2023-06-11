@@ -251,7 +251,7 @@ namespace QuanLyNhaHang.BS_layer
                 foreach (var prop in properties)
                 {
                     dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
-                    Console.WriteLine(prop.Name);
+            
                 }
             }
             foreach (var item in result)
@@ -266,6 +266,176 @@ namespace QuanLyNhaHang.BS_layer
 
             return dt;
         }
+        public DataTable GetJoinRP(int MaBill)
+        {
+            /*QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+
+            var result = from m in qlnhEntity.tblMains
+                         join d in qlnhEntity.tblDetails on m.MaBill equals d.MaBill
+                         where m.MaBill == MaBill
+                         select new
+                         {
+                             Main = m,
+                             Detail = d
+                         };
+
+            DataTable dt = new DataTable();
+
+            // Add columns to DataTable
+            var mainProperties = typeof(tblMain).GetProperties();
+            foreach (var prop in mainProperties)
+            {
+                dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            }
+
+            var detailProperties = typeof(tblDetail).GetProperties();
+            foreach (var prop in detailProperties)
+            {
+                dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            }
+
+            foreach (var item in result)
+            {
+                var main = item.Main;
+                var detail = item.Detail;
+
+                DataRow row = dt.NewRow();
+
+                foreach (var prop in mainProperties)
+                {
+                    row[prop.Name] = prop.GetValue(main);
+                }
+
+                foreach (var prop in detailProperties)
+                {
+                    row[prop.Name] = prop.GetValue(detail);
+                }
+
+                dt.Rows.Add(row);
+            }
+
+            return dt;*/
+             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+
+                var result = from m in qlnhEntity.tblMains
+                             join d in qlnhEntity.tblDetails on m.MaBill equals d.MaBill
+                             where m.MaBill == MaBill
+                             select new
+                             {
+                                 m.MaBill,
+                                 m.aDate,
+                                 m.aTime,
+                                 m.TableName,
+                                 m.WaiterName,
+                                 m.status,
+                                 m.orderType,
+                                 m.total,
+                                 m.received,
+                                 m.change,
+                                 m.driverID,
+                                 m.cusName,
+                                 m.cusPhone,
+                                 d.DetailID,
+                                 d.proID,
+                                 d.proName,
+                                 d.qty,
+                                 d.price,
+                                 d.amount
+                             };
+
+                DataTable dt = new DataTable();
+                var properties = result.FirstOrDefault()?.GetType().GetProperties();
+                if (properties != null)
+                {
+                    foreach (var prop in properties)
+                    {
+                    //dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+                    //      if (prop.Name == "aDate" && prop.PropertyType == typeof(DateTime))
+                    if (prop.Name == "aDate")
+                        {
+                        dt.Columns.Add(prop.Name, typeof(string));
+                    }
+                    else
+                    {
+                        dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+                    }
+                }
+                }
+
+                var groupedResult = result.GroupBy(r => new
+                {
+                    r.MaBill,
+                    r.aDate,
+                    r.aTime,
+                    r.TableName,
+                    r.WaiterName,
+                    r.status,
+                    r.orderType,
+                    r.total,
+                    r.received,
+                    r.change,
+                    r.driverID,
+                    r.cusName,
+                    r.cusPhone
+                }).Select(g => new
+                {
+                    Main = g.Key,
+                    Details = g.Select(d => new
+                    {
+                        d.DetailID,
+                        d.proID,
+                        d.proName,
+                        d.qty,
+                        d.price,
+                        d.amount
+                    })
+                });
+
+                foreach (var item in groupedResult)
+                {
+                    DataRow row = dt.NewRow();
+                    foreach (var prop in item.Main.GetType().GetProperties())
+                    {
+                    if (prop.Name == "aDate" && prop.GetValue(item.Main) is DateTime dateValue)
+                    {
+                        //  row[prop.Name] = dateValue.ToShortDateString();
+                        row[prop.Name] = dateValue.ToString("dd/MM/yyyy");
+
+                    }
+                    else
+                    {
+                        row[prop.Name] = prop.GetValue(item.Main);
+                    }
+                }
+                    dt.Rows.Add(row);
+
+                    foreach (var detail in item.Details)
+                    {
+                        DataRow detailRow = dt.NewRow();
+                        detailRow["MaBill"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["aDate"] = DBNull.Value;
+                        detailRow["aTime"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["TableName"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["WaiterName"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["status"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["orderType"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["total"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["received"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["change"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["driverID"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["cusName"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["cusPhone"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["DetailID"] = DBNull.Value; // Set DBNull for detail rows
+                        detailRow["qty"] = detail.qty;
+                        detailRow["price"] = detail.price;
+                        detailRow["amount"] = detail.amount;
+                        dt.Rows.Add(detailRow);
+                    }
+                }
+            return dt;
+             
+        }
+
         public DataTable GetJoinTABLE(int maBill)
         {
             using (QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities())

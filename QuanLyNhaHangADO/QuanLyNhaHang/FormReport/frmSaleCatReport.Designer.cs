@@ -57,6 +57,7 @@
             this.guna2DateTimePicker1.Size = new System.Drawing.Size(300, 40);
             this.guna2DateTimePicker1.TabIndex = 1;
             this.guna2DateTimePicker1.Value = new System.DateTime(2023, 5, 29, 20, 44, 2, 143);
+            this.guna2DateTimePicker1.ValueChanged += new System.EventHandler(this.guna2DateTimePicker1_ValueChanged);
             // 
             // guna2DateTimePicker2
             // 
@@ -70,6 +71,7 @@
             this.guna2DateTimePicker2.Size = new System.Drawing.Size(300, 40);
             this.guna2DateTimePicker2.TabIndex = 3;
             this.guna2DateTimePicker2.Value = new System.DateTime(2023, 5, 29, 20, 44, 2, 143);
+            this.guna2DateTimePicker2.ValueChanged += new System.EventHandler(this.guna2DateTimePicker2_ValueChanged);
             // 
             // label2
             // 
@@ -80,7 +82,6 @@
             this.label2.Size = new System.Drawing.Size(103, 27);
             this.label2.TabIndex = 2;
             this.label2.Text = "End Date";
-
             // 
             // btnReport
             // 
@@ -114,7 +115,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmSaleCatReport";
             this.Text = "frmSaleCat";
-
+            this.Load += new System.EventHandler(this.frmSaleCatReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

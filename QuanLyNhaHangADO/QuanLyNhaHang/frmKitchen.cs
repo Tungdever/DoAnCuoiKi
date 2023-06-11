@@ -18,6 +18,8 @@ namespace QuanLyNhaHang
     public partial class frmKitchen : Form
     {
         BLTblMain dbTblMain = new BLTblMain();
+        BLTblDetail dbTblDetail = new BLTblDetail();
+        DataTable dtTblDetails = null;
         DataTable dtTblMain = null;
         DataTable dtTblJoin = null;
         string err;
@@ -152,21 +154,184 @@ namespace QuanLyNhaHang
             }
 
         }
+        
+
 
         private void bPrint_Click(object sender, EventArgs e)
         {
+            int ID = Convert.ToInt32((sender as Guna.UI2.WinForms.Guna2Button).Tag.ToString()); // Lất mã Bill
+            DataSet dataSet = new DataSet();
+
+            // Lấy dữ liệu từ phương thức GetMain
+            DataTable mainTable = dbTblMain.GetMain(ID).Tables[0].Copy() ;
+            mainTable.Columns.Add("FormattedDate", typeof(string));
+            foreach (DataRow row in mainTable.Rows)
+            {
+                DateTime aDate = Convert.ToDateTime(row["aDate"]);
+                string formattedDate = aDate.ToString("yyyy-MM-dd");
+                row["FormattedDate"] = formattedDate;
+            }
+            mainTable.Columns.Remove("aDate");
+            mainTable.Columns["FormattedDate"].ColumnName = "aDate";
+            mainTable.TableName = "tblMain";
+            dataSet.Tables.Add(mainTable);
+
+            // Lấy dữ liệu từ phương thức GetDetails
+            DataTable detailsTable = dbTblDetail.GetDetails(ID).Tables[0].Copy();
+            detailsTable.TableName = "tblDetails";
+            dataSet.Tables.Add(detailsTable);
             frmPrint frm = new frmPrint();
-            rptBill cr = new rptBill();
-            cr.SetDataSource(dtTblJoin);
+            rptKitchen cr = new rptKitchen();
+            cr.SetDataSource(dataSet);
             frm.crystalReportViewer1.ReportSource = cr;
             frm.crystalReportViewer1.Refresh();
-            frm.Show();
+            frm.Show(); 
+            /*dtTblJoin.Clear();
+            dtTblJoin = dbTblMain.GetJoinKIT(ID).Tables[0].Copy();
+            dtTblJoin.Columns.Add("FormattedDate", typeof(string));
+
+            foreach (DataRow row in dtTblJoin.Rows)
+            {
+                DateTime aDate = Convert.ToDateTime(row["aDate"]);
+                string formattedDate = aDate.ToString("yyyy-MM-dd");
+                row["FormattedDate"] = formattedDate;
+            }
+
+            // Loại bỏ cột cũ nếu cần
+            dtTblJoin.Columns.Remove("aDate");
+
+            // Đổi tên cột mới thành tên cột gốc nếu cần
+        //    dtTblJoin.Columns["FormattedDate"].ColumnName = "aDate";
+
+
+            // Tạo bảng tạm thời để lưu trữ các dòng dữ liệu duy nhất
+            DataTable distinctTable = dtTblJoin.DefaultView.ToTable(true, dtTblJoin.Columns.Cast<DataColumn>().Select(c => c.ColumnName).ToArray());
+
+            // Đổi tên cột mới thành tên cột gốc nếu cần
+            distinctTable.Columns["FormattedDate"].ColumnName = "aDate";
+            //    DataTable dtDistinct = dtTblJoin.DefaultView.ToTable(true, "qty", "proName");
+            // Tạo bảng dữ liệu mới chỉ chứa các cột cần thiết cho section 3
+            *//*            DataTable dtDetails = new DataTable();
+                        dtDetails.Columns.Add("proName", typeof(string));
+                        dtDetails.Columns.Add("qty", typeof(int));
+
+                        foreach (DataRow row in dtTblJoin.Rows)
+                        {
+                            string proName = row["proName"].ToString();
+                            int qty = Convert.ToInt32(row["qty"]);
+                            dtDetails.Rows.Add(proName, qty);
+                        }*//*
+            frmPrint frm = new frmPrint();
+            rptKitchen cr = new rptKitchen();
+           // cr.SetDataSource(dtTblJoin);
+            cr.SetDataSource(distinctTable);
+            //  cr.Database.Tables["tblDetails"].SetDataSource(dtDetails);
+            frm.crystalReportViewer1.ReportSource = cr;
+            frm.crystalReportViewer1.Refresh();
+            frm.Show();*/
+
+
+            /*
+                        //   dtTblJoin.Columns["aDate"].Expression = "aDate.ToShortDateString()";
+                        // Create a DataView to remove duplicates
+                        DataView view = new DataView(dtTblJoin);
+                        dtTblJoin = view.ToTable(true, dtTblJoin.Columns.Cast<DataColumn>().Select(c => c.ColumnName).ToArray());
+                        DataTable distinctTable = dtTblJoin.Clone(); // Tạo một bảng mới có cấu trúc giống dtTblJoin
+
+                        // List để lưu các giá trị proID đã thêm vào distinctTable
+                        List<string> addedProductIDs = new List<string>();
+
+                        foreach (DataRow row in dtTblJoin.Rows)
+                        {
+                            string proID = row["proID"].ToString();
+
+                            // Kiểm tra nếu proID chưa tồn tại trong danh sách
+                            if (!addedProductIDs.Contains(proID))
+                            {
+                                // Thêm dòng vào distinctTable
+                                DataRow newRow = distinctTable.NewRow();
+                                newRow.ItemArray = row.ItemArray; // Sao chép dữ liệu từ dòng gốc sang dòng mới
+                                distinctTable.Rows.Add(newRow);
+
+                                // Thêm proID vào danh sách
+                                addedProductIDs.Add(proID);
+                            }
+                        }*/
+
+            /*        var groupedRows = dtTblJoin.AsEnumerable()
+            .GroupBy(row => new { proName = row.Field<string>("proName"), qty = row.Field<int>("qty") })
+            .Select(group => group.First()); // Select the first row from each group
+
+                    // Create a new DataTable for unique rows
+                    DataTable uniqueRowsTable = dtTblJoin.Clone();
+
+                    // Add the unique rows to the new DataTable
+                    foreach (var row in groupedRows)
+                    {
+                        uniqueRowsTable.ImportRow(row);
+                    }
+                    frmPrint frm = new frmPrint();
+                    rptKitchen cr = new rptKitchen();
+                    cr.SetDataSource(uniqueRowsTable);
+                    //     cr.SetDataSource(dtDistinct);
+                    frm.crystalReportViewer1.ReportSource = cr;
+                    frm.crystalReportViewer1.Refresh();
+                    frm.Show();*/
+
+            // DataView dv = new DataView(dtTblJoin);
+
+            // Áp dụng varGrouped cho DataView
+
+
+
+            /* int ID = Convert.ToInt32((sender as Guna.UI2.WinForms.Guna2Button).Tag.ToString()); // Lấy mã Bill
+
+             // Lấy thông tin từ bảng tblMain
+             dtTblMain.Clear();
+             dtTblMain = dbTblMain.GetMain(ID).Tables[0].Copy();
+         dtTblDetails = new DataTable();
+             // Lấy thông tin từ bảng tblDetails
+
+             dtTblDetails = dbTblDetail.GetDetails(ID).Tables[0].Copy();
+
+             // Tạo một bảng mới để kết hợp thông tin từ tblMain và tblDetails
+             DataTable dtCombined = new DataTable();
+             dtCombined.Columns.Add("aDate", typeof(DateTime));
+             dtCombined.Columns.Add("status", typeof(string));
+             dtCombined.Columns.Add("orderType", typeof(string));
+        //     dtCombined.Columns.Add("Total", typeof(decimal));
+             dtCombined.Columns.Add("qty", typeof(int));
+             dtCombined.Columns.Add("proName", typeof(string));
+
+             // Lấy thông tin từ tblMain và thêm vào bảng mới
+             DateTime aDate = Convert.ToDateTime(dtTblMain.Rows[0]["aDate"]);
+             string status = dtTblMain.Rows[0]["status"].ToString();
+             string orderType = dtTblMain.Rows[0]["orderType"].ToString();
+           //  decimal totalAmount = Convert.ToDecimal(dtTblMain.Rows[0]["TotalAmount"]);
+
+             foreach (DataRow row in dtTblDetails.Rows)
+             {
+                 int qty = Convert.ToInt32(row["Qty"]);
+                 string proName = row["proName"].ToString();
+
+                 dtCombined.Rows.Add(aDate, status, orderType,  qty, proName);
+             }
+
+             // Tạo và hiển thị báo cáo
+             frmPrint frm = new frmPrint();
+             rptKitchen cr = new rptKitchen();
+             cr.SetDataSource(dtCombined);
+             frm.crystalReportViewer1.ReportSource = cr;
+             frm.crystalReportViewer1.Refresh();
+             frm.Show();
+         */
+
         }
 
         private void b_click(object sender, EventArgs e)
         {
 
-            int ID = Convert.ToInt32((sender as Guna.UI2.WinForms.Guna2Button).Tag.ToString());
+            int ID = Convert.ToInt32((sender as Guna.UI2.WinForms.Guna2Button).Tag.ToString()); //Laysas Mã bill
             guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
             guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
             if (guna2MessageDialog1.Show("Are you sure you want to delete?") == DialogResult.Yes)

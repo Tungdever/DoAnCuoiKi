@@ -24,6 +24,7 @@ namespace QuanLyNhaHang
         public int MainID = 0;
         public bool bonus;
         public string OrderType = "";
+        public bool edit = false;
         public frmBillList()
         {
             InitializeComponent();
@@ -71,6 +72,7 @@ namespace QuanLyNhaHang
                 //Khi ấn vào Edit có thể là sửa lại đơn hàng hoặc thanh toán
                 if (dgvBillList.CurrentCell.OwningColumn.Name == "dgvEdit")
                 {
+                    edit = true;    
                     //Cap nhat gia tri cho bool Them ben formPos
                     bonus = false;
                     MainID = Convert.ToInt32(dgvBillList.CurrentRow.Cells["dgvMaBill"].Value);
@@ -80,13 +82,14 @@ namespace QuanLyNhaHang
                 }
                 if (dgvBillList.CurrentCell.OwningColumn.Name == "dgvPrint")
                 {
+                    edit = false;
                     MainID = Convert.ToInt32(dgvBillList.CurrentRow.Cells["dgvMaBill"].Value);
                     try
                     {
                         dtBillPrint = new DataTable();
                         dtBillPrint.Clear();
                         //  dtBillPrint = dbTblMain.GetJoin(MainID).Tables[0];
-                        dtBillPrint = dbTblMain.GetJoin(MainID);
+                        dtBillPrint = dbTblMain.GetJoinRP(MainID);
                     }
                     catch (SqlException err)
                     {
@@ -99,7 +102,7 @@ namespace QuanLyNhaHang
                     frm.crystalReportViewer1.ReportSource = cr;
                     frm.crystalReportViewer1.Refresh();
                     frm.Show();
-                    Console.WriteLine("########");
+                   
                 }
             }
 
