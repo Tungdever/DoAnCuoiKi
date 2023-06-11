@@ -131,7 +131,7 @@
             this.txtBillAmount.SelectionStart = "".Length;
             this.txtBillAmount.Size = new System.Drawing.Size(396, 84);
             this.txtBillAmount.TabIndex = 17;
-            this.txtBillAmount.TextChanged += new System.EventHandler(this.txtBillAmount_TextChanged);
+
             // 
             // label2
             // 
