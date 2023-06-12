@@ -39,7 +39,11 @@ namespace QuanLyNhaHang.BS_layer
         {
             return db.ExecuteQueryDataSet("SELECT * FROM tblMain WHERE MaBill = " + MaBill, CommandType.Text);
         }
-
+       /* public DataSet GetMainBetDate(DateTime sDate, DateTime eDate)
+        {
+            return //db.ExecuteQueryDataSet("SELECT * FROM tblMain 
+        }
+*/
 
         //for billlist
         //public DataSet Get

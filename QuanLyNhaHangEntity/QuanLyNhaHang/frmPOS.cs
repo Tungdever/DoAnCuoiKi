@@ -607,7 +607,7 @@ namespace QuanLyNhaHang
             frm.billID = BillID; // Lấy giá trị Bill hiện tại truyền cho frm để có thể update cho dat
             frm.amt = Convert.ToDouble(lblTotal.Text); //truyền vào giá trị để khi ấn checkout hiện lên , giá trị Total hiện lên txtBillAmount
             frm.ShowDialog();
-            Console.WriteLine(TableName + "*****");
+          //  Console.WriteLine(TableName + "*****");
             if (TableName != "")
             {
                 UpdateSTATETABLE(TableID, TableName);

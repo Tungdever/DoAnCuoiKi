@@ -1,4 +1,6 @@
 ﻿using QuanLyNhaHang.BS_layer;
+using QuanLyNhaHang.FormReport;
+using QuanLyNhaHang.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -174,7 +176,16 @@ namespace QuanLyNhaHang
 
         private void bPrint_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            int ID = Convert.ToInt32((sender as Guna.UI2.WinForms.Guna2Button).Tag.ToString());
+            dtTblJoin = new DataTable();
+            dtTblJoin.Clear();
+            dtTblJoin = dbTblMain.GetJoinRP(ID);
+            frmPrint frm = new frmPrint();
+            rptKitchen cr = new rptKitchen();
+            cr.SetDataSource(dtTblJoin);
+            frm.crystalReportViewer1.ReportSource = cr;
+            frm.crystalReportViewer1.Refresh();
+            frm.Show();
         }
 
         private void frmKitchen_Load(object sender, EventArgs e)

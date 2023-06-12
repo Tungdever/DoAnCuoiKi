@@ -12,7 +12,7 @@ namespace QuanLyNhaHang
     {
         string ConnStr = "Data Source=(local);Initial Catalog=QuanLyNhaHang;Integrated Security=True";
         SqlConnection conn = null;
-        SqlCommand comm = null;
+        public SqlCommand comm = null;
         SqlDataAdapter da = null;
         public DAL()
         {

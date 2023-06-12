@@ -41,7 +41,7 @@ namespace QuanLyNhaHang.FormReport
             }
             catch (SqlException error)
             {
-                MessageBox.Show("Không Lấy được thực đơn. Lỗi: " + error);
+                MessageBox.Show("Không Lấy được thực đơn. Lỗi: " + error.Message);
             }
             frmPrint frm = new frmPrint();
             rptMenu cr = new rptMenu();
@@ -65,7 +65,7 @@ namespace QuanLyNhaHang.FormReport
             }
             catch (SqlException error)
             {
-                MessageBox.Show("Không Lấy được danh sách nhân viên. Lỗi: " + error);
+                MessageBox.Show("Không Lấy được danh sách nhân viên. Lỗi: " + error.Message);
             }
             frmPrint frm = new frmPrint();
             rptStaffList cr = new rptStaffList();
@@ -80,6 +80,8 @@ namespace QuanLyNhaHang.FormReport
         private void btnSaleByCategory_Click(object sender, EventArgs e)
         {
 
+            frmSaleCatReport frm = new frmSaleCatReport();
+            frm.Show();
         }
 
         private void btnRevenue_Click(object sender, EventArgs e)

@@ -56,7 +56,7 @@ namespace QuanLyNhaHang
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("Sửa không thành công. Lỗi: '" + ex + "'");
+                    MessageBox.Show("Sửa không thành công. Lỗi: '" + ex.Message + "'");
                 }
             }
             else
@@ -78,7 +78,7 @@ namespace QuanLyNhaHang
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("Thêm không thành công. Lỗi: '" + ex + "'");
+                    MessageBox.Show("Thêm không thành công. Lỗi: '" + ex.Message + "'");
                 }
             }
             this.Close();

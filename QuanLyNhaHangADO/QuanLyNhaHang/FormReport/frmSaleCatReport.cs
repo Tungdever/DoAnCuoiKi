@@ -22,13 +22,34 @@ namespace QuanLyNhaHang
         public DateTime sDate = DateTime.Now;
         public DateTime eDate = DateTime.Now;
         BLReport dbReportCat = new BLReport();
+        BLTblMain dbTbMain = new BLTblMain();
+        BLTblDetail dbTbDetail = new BLTblDetail();
+       // BLSanPham dbsan
         DataTable dtReportCat = null;
         private void btnReport_Click(object sender, EventArgs e)
         {
             try
             {
                 dtReportCat = new DataTable();
-                dtReportCat = dbReportCat.GetSaleByCatBetweenDate(sDate,eDate).Tables[0];
+               dtReportCat = dbReportCat.GetSaleByCatBetweenDate(sDate, eDate).Tables[0];
+                /*dtReportCat.Columns.Add("TenDM", typeof(string));
+                dtReportCat.Columns.Add("TenSP", typeof(string));
+                dtReportCat.Columns.Add("aDate", typeof(DateTime));
+                dtReportCat.Columns.Add("qty", typeof(int));
+                dtReportCat.Columns.Add("price", typeof(decimal));
+                dtReportCat.Columns.Add("amount", typeof(decimal));
+                foreach (DataRow row in dbReportCat.GetSaleByCatBetweenDate(sDate, eDate).Tables[0].Rows)
+                {
+                    DataRow newRow = dtReportCat.NewRow();
+                    newRow["TenDM"] = row["TenDM"];
+                    newRow["TenSP"] = row["TenSP"];
+                    newRow["aDate"] = row["aDate"];
+                    newRow["qty"] = row["qty"];
+                    newRow["price"] = row["price"];
+                    newRow["amount"] = row["amount"];
+                    dtReportCat.Rows.Add(newRow);
+                }
+                */
             }
 
             catch (SqlException error)

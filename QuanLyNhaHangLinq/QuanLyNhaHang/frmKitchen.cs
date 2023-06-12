@@ -80,6 +80,8 @@ namespace QuanLyNhaHang
                     lb4.Margin = new Padding(10, 5, 3, 10);
                     lb4.AutoSize = true;
 
+
+
                     /*        lb1.Text = "Table: " + dtTblMain.Rows[i]["TableName"].ToString();
                             lb2.Text = "Waiter Name: " + dtTblMain.Rows[i]["WaiterName"].ToString();
                             lb3.Text = "Order Time: " + dtTblMain.Rows[i]["aTime"].ToString();
@@ -180,7 +182,7 @@ namespace QuanLyNhaHang
             dtTblJoin.Clear();
             dtTblJoin = dbTblMain.GetJoinRP(ID);
             frmPrint frm = new frmPrint();
-            rptBill cr = new rptBill();
+            rptKitChen cr = new rptKitChen();
             cr.SetDataSource(dtTblJoin);
             frm.crystalReportViewer1.ReportSource = cr;
             frm.crystalReportViewer1.Refresh();
