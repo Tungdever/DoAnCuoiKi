@@ -42,6 +42,7 @@ namespace QuanLyNhaHang.Select
             foreach (DataRow row in dtTable.Rows)
             {
                 Guna.UI2.WinForms.Guna2Button b = new Guna.UI2.WinForms.Guna2Button();
+                Console.WriteLine(row["Tname"].ToString());
                 b.Text = row["Tname"].ToString();
                 b.Width = 150;
                 b.Height = 50;
