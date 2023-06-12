@@ -45,10 +45,10 @@ namespace QuanLyNhaHang.BS_layer
             dt.Columns.Add("AnhSP", typeof(byte[]));
             foreach (var p in sps)
             {
-                 byte[] imgdata = p.AnhSP.ToArray();
-           //     string imgdata = Convert.ToBase64String(p.AnhSP.ToArray());
+                byte[] imgdata = p.AnhSP.ToArray();
+                //     string imgdata = Convert.ToBase64String(p.AnhSP.ToArray());
                 dt.Rows.Add(p.MaSP, p.TenSP, p.MaLoaiSP, p.TenLoaiSP, p.GiaSP, imgdata);
-              //   Console.WriteLine(imgdata);
+                //   Console.WriteLine(imgdata);
             }
             return dt;
         }
@@ -89,22 +89,22 @@ namespace QuanLyNhaHang.BS_layer
 
             return query.ToList();
         }
-      /*  public Table<SANPHAM> LoadMenu()
-        {
-            *//*using (var qlNH = new QuanLyNhaHangDataContext())
-            {
-                
-                return qlNH.SANPHAMs;
-            }*//*
-            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
-            return qlNH.SANPHAMs;
-        }*/
+        /*  public Table<SANPHAM> LoadMenu()
+          {
+              *//*using (var qlNH = new QuanLyNhaHangDataContext())
+              {
+
+                  return qlNH.SANPHAMs;
+              }*//*
+              QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+              return qlNH.SANPHAMs;
+          }*/
         public DataTable TimKiemSanPham(string str)
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             var sps = from sp in qlNH.SANPHAMs
-                              where sp.TenSP.Contains(str)
-                              select sp;
+                      where sp.TenSP.Contains(str)
+                      select sp;
             DataTable dt = new DataTable();
             dt.Columns.Add("MaSP");
             dt.Columns.Add("TenSP");
@@ -137,7 +137,7 @@ namespace QuanLyNhaHang.BS_layer
             {
                 qlNH.SANPHAMs.InsertOnSubmit(sp);
                 qlNH.SANPHAMs.Context.SubmitChanges();
-                f =  true;
+                f = true;
             }
             catch (Exception ex)
             {
@@ -164,10 +164,30 @@ namespace QuanLyNhaHang.BS_layer
             }
 
         }
+        public bool XoaSanPhamTheoDM(string MaDM, ref string err)
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+            var spQuery = from sp in qlNH.SANPHAMs
+                          where sp.MaLoaiSP == MaDM
+                          select sp;
+            try
+            {
+                qlNH.SANPHAMs.DeleteAllOnSubmit(spQuery);
+                qlNH.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
+
+        }
         public bool CapNhatSanPham(string MaSP, string TenSP, string MaLoaiSP, string TenLoaiSP, float GiaSP, System.Drawing.Image AnhSP, ref string err)
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
-            try {
+            try
+            {
                 var spQuery = (from sp in qlNH.SANPHAMs
                                where sp.MaSP == MaSP
                                select sp).SingleOrDefault();
@@ -198,7 +218,7 @@ namespace QuanLyNhaHang.BS_layer
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             var sanphamList = (from sp in qlNH.SANPHAMs
                                where sp.MaSP == MaSP
-                               select sp.AnhSP).ToList();           
+                               select sp.AnhSP).ToList();
             List<byte[]> imageList = new List<byte[]>();
             foreach (var sanpham in sanphamList)
             {

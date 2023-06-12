@@ -26,7 +26,7 @@ namespace QuanLyNhaHang.BS_layer
         }
         public DataSet LoadMenu()
         {
-            return db.ExecuteQueryDataSet("select * from SanPham " , CommandType.Text);
+            return db.ExecuteQueryDataSet("select * from SanPham ", CommandType.Text);
         }
         public DataSet TimKiemSanPham(string str)
         {
@@ -34,7 +34,7 @@ namespace QuanLyNhaHang.BS_layer
         }
         public bool ThemSanPham(string MaSP, string TenSP, string MaLoaiSP, string TenLoaiSP, float GiaSP, Image AnhSP, ref string err)
         {
- 
+
             MemoryStream ms = new MemoryStream();
             System.Drawing.Image tmp = AnhSP;
             tmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
@@ -50,6 +50,11 @@ namespace QuanLyNhaHang.BS_layer
         public bool XoaSanPham(string MaSP, ref string err)
         {
             string sqlString = "Delete From SanPham Where MaSP='" + MaSP + "'";
+            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+        public bool XoaSanPhamTheoDM(string MaDM, ref string err)
+        {
+            string sqlString = "Delete From SanPham Where MaLoaiSP='" + MaDM + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 

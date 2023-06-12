@@ -1,4 +1,4 @@
-﻿    using QuanLyNhaHang.BS_layer;
+﻿using QuanLyNhaHang.BS_layer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +17,7 @@ namespace QuanLyNhaHang
         DataTable dtNV = null;
         string err;
         BLNhanVien dbNV = new BLNhanVien();
+        BLTaiKhoan dbTK = new BLTaiKhoan();
         public staffForm()
         {
             InitializeComponent();
@@ -29,11 +30,11 @@ namespace QuanLyNhaHang
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           frmStaffAdd frm = new frmStaffAdd();
-           frm.txtStaffID.ReadOnly = false;
-           frm.ShowDialog();
-           LoadData();
-       
+            frmStaffAdd frm = new frmStaffAdd();
+            frm.txtStaffID.ReadOnly = false;
+            frm.ShowDialog();
+            LoadData();
+
         }
         void LoadData()
         {
@@ -81,7 +82,7 @@ namespace QuanLyNhaHang
                 DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    if (dbNV.XoaNhanVien(dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString(), ref err))
+                    if (dbTK.XoaTaiKhoanTheoNV(dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString(), ref err) && dbNV.XoaNhanVien(dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString(), ref err))
                     {
                         txtSearchStaff.Text = "";
                         LoadData();
@@ -103,7 +104,7 @@ namespace QuanLyNhaHang
             {
                 dtNV = new DataTable();
                 dtNV.Clear();
-                DataSet ds  = dbNV.TimKiemNhanVien(txtSearchStaff.Text);
+                DataSet ds = dbNV.TimKiemNhanVien(txtSearchStaff.Text);
                 dtNV = ds.Tables[0];
                 // Đưa dữ liệu lên DataGridView
                 dgvStaff.DataSource = dtNV;

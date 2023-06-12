@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace QuanLyNhaHang.BS_layer
 {
     class BLTaiKhoan
-    {   
+    {
         BLNhanVien dbNV = new BLNhanVien();
         public DataTable LayTaiKhoan()
         {
@@ -24,7 +24,7 @@ namespace QuanLyNhaHang.BS_layer
             dt.Columns.Add("CapDoQuyen");
             foreach (var p in dms)
             {
-                dt.Rows.Add(p.TenTaiKhoan, p.MatKhau, dbNV.MaNV_TenNV(p.MaNV),p.CapDoQuyen);
+                dt.Rows.Add(p.TenTaiKhoan, p.MatKhau, dbNV.MaNV_TenNV(p.MaNV), p.CapDoQuyen);
             }
             return dt;
         }
@@ -51,7 +51,7 @@ namespace QuanLyNhaHang.BS_layer
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
             TAIKHOAN tk = new TAIKHOAN();
             tk.TenTaiKhoan = TenTaiKhoan;
-            tk.MatKhau= MatKhau;
+            tk.MatKhau = MatKhau;
             tk.MaNV = MaNV;
             tk.CapDoQuyen = CapDoQuyen;
             try
@@ -85,6 +85,27 @@ namespace QuanLyNhaHang.BS_layer
                 return false;
             }
         }
+        public bool XoaTaiKhoanTheoNV(string MaNV, ref string err)
+        {
+            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+            try
+            {
+                var TaiKhoanList = qlnhEntity.TAIKHOANs.Where(tk => tk.MaNV == MaNV).ToList();
+
+                foreach (var p in TaiKhoanList)
+                {
+                    qlnhEntity.TAIKHOANs.Remove(p);
+                }
+
+                qlnhEntity.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
+        }
         public bool CapNhatTaiKhoan(string TenTaiKhoan, string MatKhau, string MaNV, int CapDoQuyen, ref string err)
         {
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
@@ -108,15 +129,15 @@ namespace QuanLyNhaHang.BS_layer
                 return false;
             }
         }
-        
-        
+
+
         public bool DangNhap(string TenTaiKhoan, string MatKhau)
         {
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
             List<TAIKHOAN> tkQuery = (from tk in qlnhEntity.TAIKHOANs
-                          where tk.TenTaiKhoan == TenTaiKhoan && tk.MatKhau == MatKhau
-                          select tk).ToList();
-            if (tkQuery.Count > 0 )
+                                      where tk.TenTaiKhoan == TenTaiKhoan && tk.MatKhau == MatKhau
+                                      select tk).ToList();
+            if (tkQuery.Count > 0)
             {
                 return true;
             }

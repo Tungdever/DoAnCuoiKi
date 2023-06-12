@@ -80,7 +80,7 @@ namespace QuanLyNhaHang.BS_layer
         public bool ThemSanPham(string MaSP, string TenSP, string MaLoaiSP, string TenLoaiSP, float GiaSP, System.Drawing.Image AnhSP, ref string err)
         {
             try
-            { 
+            {
                 QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
                 SANPHAM sp = new SANPHAM();
                 MemoryStream ms = new MemoryStream();
@@ -113,6 +113,27 @@ namespace QuanLyNhaHang.BS_layer
             {
                 qlnhEntity.SANPHAMs.Attach(sp);
                 qlnhEntity.SANPHAMs.Remove(sp);
+                qlnhEntity.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
+        }
+        public bool XoaSanPhamTheoDM(string MaDM, ref string err)
+        {
+            QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
+            try
+            {
+                var sanPhamList = qlnhEntity.SANPHAMs.Where(sp => sp.MaLoaiSP == MaDM).ToList();
+
+                foreach (var p in sanPhamList)
+                {
+                    qlnhEntity.SANPHAMs.Remove(p);
+                }
+
                 qlnhEntity.SaveChanges();
                 return true;
             }
@@ -168,6 +189,6 @@ namespace QuanLyNhaHang.BS_layer
             }
             return imageList;
         }
-       
+
     }
 }

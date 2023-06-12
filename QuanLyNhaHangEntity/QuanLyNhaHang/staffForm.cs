@@ -16,6 +16,7 @@ namespace QuanLyNhaHang
     {
         string err;
         BLNhanVien dbNV = new BLNhanVien();
+        BLTaiKhoan dbTK = new BLTaiKhoan();
         public staffForm()
         {
             InitializeComponent();
@@ -83,7 +84,7 @@ namespace QuanLyNhaHang
                 DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    if (dbNV.XoaNhanVien(dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString(), ref err))
+                    if (dbTK.XoaTaiKhoanTheoNV(dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString(), ref err) && dbNV.XoaNhanVien(dgvStaff.CurrentRow.Cells["dgvManv"].Value.ToString(), ref err))
                     {
                         txtSearchStaff.Text = "";
                         LoadData();
@@ -93,6 +94,6 @@ namespace QuanLyNhaHang
                 }
             }
         }
-        
+
     }
 }

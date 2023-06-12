@@ -19,7 +19,7 @@ namespace QuanLyNhaHang.BS_layer
         }
         public DataTable LayTaiKhoan()
         {
-            DataSet TK =  db.ExecuteQueryDataSet("select * from TaiKhoan", CommandType.Text);
+            DataSet TK = db.ExecuteQueryDataSet("select * from TaiKhoan", CommandType.Text);
             DataTable dt = new DataTable();
             dt.Columns.Add("TenTaiKhoan");
             dt.Columns.Add("MatKhau");
@@ -51,6 +51,11 @@ namespace QuanLyNhaHang.BS_layer
             string sqlString = "Delete From TaiKhoan Where TenTaiKhoan='" + TenTaiKhoan + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
+        public bool XoaTaiKhoanTheoNV(string Manv, ref string err)
+        {
+            string sqlString = "DELETE FROM TaiKhoan WHERE Manv = '" + Manv + "'";
+            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
         public bool DangNhap(string TenTaiKhoan, string MatKhau)
         {
             string sqlString = "select * from TaiKhoan where TenTaiKhoan = '" + TenTaiKhoan + "' and MatKhau = '" + MatKhau + "' ";
@@ -78,7 +83,7 @@ namespace QuanLyNhaHang.BS_layer
                 dt.Rows.Add(tenTaiKhoan, matKhau, tenNV, capDoQuyen);
             }
             return dt;
-            
+
         }
         public bool CapNhatTaiKhoan(string TenTaiKhoan, string MatKhau, string MaNV, int CapDoQuyen, ref string err)
         {

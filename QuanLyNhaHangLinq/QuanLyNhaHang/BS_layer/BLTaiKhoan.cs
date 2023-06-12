@@ -29,7 +29,7 @@ namespace QuanLyNhaHang.BS_layer
             dt.Columns.Add("CapDoQuyen");
             foreach (var item in taikhoanList)
             {
-                dt.Rows.Add(item.TenTaiKhan,item.MatKhau, dbNV.MaNV_TenNV(item.MaNV), item.CapDoQuyen);
+                dt.Rows.Add(item.TenTaiKhan, item.MatKhau, dbNV.MaNV_TenNV(item.MaNV), item.CapDoQuyen);
             }
             return dt;
         }
@@ -67,8 +67,27 @@ namespace QuanLyNhaHang.BS_layer
                 qlNH.SubmitChanges();
                 f = true;
             }
-            catch ( Exception ex ) 
-            { 
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+            return f;
+        }
+        public bool XoaTaiKhoanTheoNV(string MaNV, ref string err)
+        {
+            bool f = false;
+            try
+            {
+                QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+                var tkQuerry = from tk in qlNH.TAIKHOANs
+                               where tk.MaNV == MaNV
+                               select tk;
+                qlNH.TAIKHOANs.DeleteAllOnSubmit(tkQuerry);
+                qlNH.SubmitChanges();
+                f = true;
+            }
+            catch (Exception ex)
+            {
                 err = ex.Message;
             }
             return f;
@@ -89,10 +108,10 @@ namespace QuanLyNhaHang.BS_layer
                     tkQuery.CapDoQuyen = CapDoQuyen;
                     qlNH.SubmitChanges();
                 }
-                f = true; 
+                f = true;
             }
-            catch (Exception ex ) 
-            { 
+            catch (Exception ex)
+            {
                 err = ex.Message;
             }
             return f;
@@ -101,9 +120,9 @@ namespace QuanLyNhaHang.BS_layer
         {
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             List<TAIKHOAN> tkQuery = (from tk in qlNH.TAIKHOANs
-                          where tk.TenTaiKhoan == TenTaiKhoan && tk.MatKhau == MatKhau
-                          select tk).ToList();
-            if (tkQuery.Count > 0 )
+                                      where tk.TenTaiKhoan == TenTaiKhoan && tk.MatKhau == MatKhau
+                                      select tk).ToList();
+            if (tkQuery.Count > 0)
             {
                 return true;
             }
@@ -114,7 +133,7 @@ namespace QuanLyNhaHang.BS_layer
         }
         public DataTable TimKiemTaiKhoan(string str)
         {
-            
+
             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
             var taikhoanList = from tk in qlNH.TAIKHOANs
                                where tk.TenTaiKhoan.Contains(str)
@@ -135,7 +154,7 @@ namespace QuanLyNhaHang.BS_layer
                 dt.Rows.Add(item.TenTaiKhan, item.MatKhau, dbNV.MaNV_TenNV(item.MaNV), item.CapDoQuyen);
             }
             return dt;
-            
+
         }
         public bool KT(string TenTaiKhoan)
         {

@@ -17,6 +17,7 @@ namespace QuanLyNhaHang
         DataTable dtDM = null;
         string err;
         BLDanhMuc dbDM = new BLDanhMuc();
+        BLSanPham dbSP = new BLSanPham();
         public categoryForm()
         {
             InitializeComponent();
@@ -73,18 +74,20 @@ namespace QuanLyNhaHang
                 DialogResult result = MessageBox.Show("Bạn có muốn xoá dòng này không?", "Câu hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    if (dbDM.XoaDanhMuc(dgvCategory.CurrentRow.Cells["dgvID"].Value.ToString(), ref err))
+                    if (dbSP.XoaSanPhamTheoDM(dgvCategory.CurrentRow.Cells["dgvID"].Value.ToString(), ref err) && dbDM.XoaDanhMuc(dgvCategory.CurrentRow.Cells["dgvID"].Value.ToString(), ref err))
                     {
+
                         txtSearchCategories.Text = "";
                         LoadData();
                         MessageBox.Show("Xoá thành công!");
+
                     }
                     else
                     {
                         MessageBox.Show("Xoá không thành công. Lỗi: '" + err + "'");
                     }
                 }
-            }            
+            }
 
         }
 
@@ -105,7 +108,7 @@ namespace QuanLyNhaHang
                 dgvCategory.DataSource = dtDM;
                 // Thay đổi độ rộng cột
                 dgvCategory.AutoResizeColumns();
-               
+
             }
             catch (SqlException ex)
             {
