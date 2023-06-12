@@ -334,170 +334,21 @@ namespace QuanLyNhaHang.BS_layer
             return dt;
         }
 
-        /* public DataTable GetSaleByCatBetweenDate(DateTime bDate, DateTime eDate)
-         {
-             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+        public DataTable GetSaleByCatBetweenDate(DateTime bDate, DateTime eDate)
+        {
+            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
 
-             var result = from m in qlNH.tblMains
-                          join d in qlNH.tblDetails on m.MaBill equals d.MaBill
-                          join p in qlNH.SANPHAMs on d.proID equals p.MaSP
-                          where m.aDate >= bDate && m.aDate <= eDate
-                          select new
-                          {
-                              m.aDate,
-                              d.qty,
-                              d.proName,
-                              d.price,
-                              d.amount,
-                              p.TenLoaiSP
-                          };
-             DataTable dt = new DataTable();
-             dt.Columns.Add("aDate", typeof(string));
-             dt.Columns.Add("qty", typeof(int));
-             dt.Columns.Add("proName", typeof(string));
-             dt.Columns.Add("price", typeof(float));
-             dt.Columns.Add("amount", typeof(float));
-             dt.Columns.Add("TenLoaiSP", typeof(string));
-             foreach (var item in result)
-             {
-                 DataRow row = dt.NewRow();
-                 row["aDate"] = item.aDate;
-                 row["qty"] = item.qty;
-                 row["proName"] = item.proName;
-                 row["price"] = item.price;
-                 row["amount"] = item.amount;
-                 row["TenLoaiSP"] = item.TenLoaiSP;
-                 dt.Rows.Add(row);
-             }
-
-             *//* var result = from m in qlNH.tblMains
-                           join d in qlNH.tblDetails on m.MaBill equals d.MaBill 
-                           join p in qlNH.SANPHAMs on d.proID equals p.MaSP
-                           where m.aDate >= bDate && m.aDate <= eDate 
-                       //    group d by d.DetailID into details
-                           select new
-                           {
-                               Main = m,
-                               Detail = d ,
-                               Product = p
-
-                           };*//*
-             var result = from m in qlNH.tblMains
-                          join d in qlNH.tblDetails on m.MaBill equals d.MaBill
+            var result = (from m in qlNH.tblMains
+                          join d in qlNH.tblDetails on m.MaBill equals d.MaBill into details
+                          from d in details.Distinct()
                           join p in qlNH.SANPHAMs on d.proID equals p.MaSP
                           where m.aDate >= bDate && m.aDate <= eDate
                           select new
                           {
                               Main = m,
-                              Details = d, 
+                              Details = details,
                               Product = p
-                          };
-
-             DataTable dt = new DataTable();
-
-             // Add columns to DataTable
-             dt.Columns.Add("MaBill", typeof(int));
-             dt.Columns.Add("aDate", typeof(string));
-
-             dt.Columns.Add("orderType", typeof(string));
-             dt.Columns.Add("DetailID", typeof(string));
-             dt.Columns.Add("proName", typeof(string));
-             dt.Columns.Add("qty", typeof(int));
-             dt.Columns.Add("price", typeof(float));
-             dt.Columns.Add("amount", typeof(float));
-             dt.Columns.Add("TenLoaiSP", typeof(string));
-             foreach (var item in result)
-             {
-                 var main = item.Main;
-                 var detail = item.Details;
-                 var product = item.Product;
-
-                 DataRow row = dt.NewRow();
-                 row["MaBill"] = main.MaBill;
-                 row["aDate"] = main.aDate.GetValueOrDefault().ToShortDateString();
-                 row["orderType"] = main.orderType;
-                 row["DetailID"] = DBNull.Value;
-                 row["proName"] = detail.proName;
-                 row["qty"] = detail.qty;
-                 row["price"] = detail.price;
-                 row["amount"] = detail.amount;
-
-                 row["TenLoaiSP"] = product.TenLoaiSP;
-                 row["DetailID"] = DBNull.Value;
-                 row["proName"] = DBNull.Value;
-                 row["price"] = DBNull.Value;
-                 row["amount"] = DBNull.Value;
-                 row["TenLoaiSP"] = DBNull.Value;
-
-                 dt.Rows.Add(row);
-                 foreach (var stuff in details)
-                 {
-                     DataRow detailRow = dt.NewRow();
-                     row["MaBill"] = DBNull.Value;
-                     row["aDate"] = DBNull.Value;
-                     row["orderType"] = DBNull.Value;
-                     row["DetailID"] = detail.DetailID;
-                     row["proName"] = detail.proName;
-                     row["qty"] = detail.qty;
-                     row["price"] = detail.price;
-                     row["amount"] = detail.amount;
-                     row["TenLoaiSP"] = product.TenLoaiSP;
-                 }
-             }
-             *//* var groupedResults = result.GroupBy(item => item.Main.MaBill); // Gom nhóm theo MaBill
-
-              foreach (var group in groupedResults)
-              {
-                  var main = group.First().Main;
-                  var details = group.Select(item => item.Details);
-                  var product = group.First().Product;
-
-                  DataRow row = dt.NewRow();
-                  row["MaBill"] = main.MaBill;
-                  row["aDate"] = main.aDate.GetValueOrDefault().ToShortDateString();
-                  row["orderType"] = main.orderType;
-
-                  foreach (var detail in details)
-                  {
-                      row["DetailID"] = detail.DetailID;
-                      row["proName"] = detail.proName;
-                      row["qty"] = detail.qty;
-                      row["price"] = detail.price;
-                      row["amount"] = detail.amount;
-
-                      dt.Rows.Add(row);
-                      row = dt.NewRow(); // Tạo một dòng mới cho bản ghi tiếp theo (nếu có)
-                      row["MaBill"] = main.MaBill;
-                      row["aDate"] = main.aDate.GetValueOrDefault().ToShortDateString();
-                      row["orderType"] = main.orderType;
-                  }
-
-                  row["DetailID"] = DBNull.Value;
-                  row["proName"] = DBNull.Value;
-                  row["price"] = DBNull.Value;
-                  row["amount"] = DBNull.Value;
-                  row["TenLoaiSP"] = product.TenLoaiSP;
-
-                  dt.Rows.Add(row);
-              }*//*
-
-
-             return dt;
-         }*/
-        public DataTable GetSaleByCatBetweenDate(DateTime bDate, DateTime eDate)
-        {
-            QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
-
-            var result = from m in qlNH.tblMains
-                         join d in qlNH.tblDetails on m.MaBill equals d.MaBill
-                         join p in qlNH.SANPHAMs on d.proID equals p.MaSP
-                         where m.aDate >= bDate && m.aDate <= eDate
-                         select new
-                         {
-                             Main = m,
-                             Detail = d,
-                             Product = p
-                         };
+                          }).GroupBy(x => x.Main.MaBill);
 
             DataTable dt = new DataTable();
 
@@ -512,28 +363,89 @@ namespace QuanLyNhaHang.BS_layer
             dt.Columns.Add("amount", typeof(float));
             dt.Columns.Add("TenLoaiSP", typeof(string));
 
-            foreach (var item in result)
+            foreach (var group in result)
             {
-                var main = item.Main;
-                var detail = item.Detail;
-                var product = item.Product;
-
+                var main = group.First().Main;
                 DataRow row = dt.NewRow();
                 row["MaBill"] = main.MaBill;
                 row["aDate"] = main.aDate.GetValueOrDefault().ToShortDateString();
                 row["orderType"] = main.orderType;
                 row["DetailID"] = DBNull.Value;
-                row["proName"] = detail.proName;
-                row["qty"] = detail.qty;
-                row["price"] = detail.price;
-                row["amount"] = detail.amount;
-                row["TenLoaiSP"] = product.TenLoaiSP;
-
+                row["proName"] = DBNull.Value;
+                row["price"] = DBNull.Value;
+                row["amount"] = DBNull.Value;
                 dt.Rows.Add(row);
+
+                foreach (var item in group)
+                {
+                    var detail = item.Details.First();
+                    var product = item.Product;
+
+                    DataRow detailRow = dt.NewRow();
+                    detailRow["MaBill"] = DBNull.Value;
+                    detailRow["aDate"] = DBNull.Value;
+                    detailRow["orderType"] = DBNull.Value;
+                    detailRow["TenLoaiSP"] = product.TenLoaiSP;
+                    detailRow["DetailID"] = detail.DetailID;
+                    detailRow["proName"] = detail.proName;
+                    detailRow["price"] = detail.price;
+                    detailRow["amount"] = detail.amount;
+                    dt.Rows.Add(detailRow);
+                }
             }
 
             return dt;
         }
+        /* public DataTable GetSaleByCatBetweenDate(DateTime bDate, DateTime eDate)
+         {
+             QuanLyNhaHangDataContext qlNH = new QuanLyNhaHangDataContext();
+
+             var result = from m in qlNH.tblMains
+                          join d in qlNH.tblDetails on m.MaBill equals d.MaBill
+                          join p in qlNH.SANPHAMs on d.proID equals p.MaSP
+                          where m.aDate >= bDate && m.aDate <= eDate
+                          select new
+                          {
+                              Main = m,
+                              Detail = d,
+                              Product = p
+                          };
+
+             DataTable dt = new DataTable();
+
+             // Add columns to DataTable
+             dt.Columns.Add("MaBill", typeof(int));
+             dt.Columns.Add("aDate", typeof(string));
+             dt.Columns.Add("orderType", typeof(string));
+             dt.Columns.Add("DetailID", typeof(string));
+             dt.Columns.Add("proName", typeof(string));
+             dt.Columns.Add("qty", typeof(int));
+             dt.Columns.Add("price", typeof(float));
+             dt.Columns.Add("amount", typeof(float));
+             dt.Columns.Add("TenLoaiSP", typeof(string));
+
+             foreach (var item in result)
+             {
+                 var main = item.Main;
+                 var detail = item.Detail;
+                 var product = item.Product;
+
+                 DataRow row = dt.NewRow();
+                 row["MaBill"] = main.MaBill;
+                 row["aDate"] = main.aDate.GetValueOrDefault().ToShortDateString();
+                 row["orderType"] = main.orderType;
+                 row["DetailID"] = DBNull.Value;
+                 row["proName"] = detail.proName;
+                 row["qty"] = detail.qty;
+                 row["price"] = detail.price;
+                 row["amount"] = detail.amount;
+                 row["TenLoaiSP"] = product.TenLoaiSP;
+
+                 dt.Rows.Add(row);
+             }
+
+             return dt;
+         }*/
 
 
         /*public List<> GetJoin1(int MaBill)

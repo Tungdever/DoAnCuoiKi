@@ -55,5 +55,12 @@ namespace QuanLyNhaHang.FormReport
             thongkeForm frm = new thongkeForm();
             frm.ShowDialog();
         }
+
+        private void btnSaleByCategory_Click(object sender, EventArgs e)
+        {
+
+            frmSaleCatReport frm = new frmSaleCatReport();
+            frm.Show();
+        }
     }
 }

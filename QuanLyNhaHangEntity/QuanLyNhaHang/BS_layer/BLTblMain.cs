@@ -485,6 +485,70 @@ namespace QuanLyNhaHang.BS_layer
                 return dt;
             }
         }
+        public DataTable GetSaleByCatBetweenDate(DateTime bDate, DateTime eDate)
+        {
+            using (QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities())
+            {
+                var result = (from m in qlnhEntity.tblMains
+                              join d in qlnhEntity.tblDetails on m.MaBill equals d.MaBill into details
+                              from d in details.Distinct()
+                              join p in qlnhEntity.SANPHAMs on d.proID equals p.MaSP
+                              where m.aDate >= bDate && m.aDate <= eDate
+                              select new
+                              {
+                                  Main = m,
+                                  Details = details,
+                                  Product = p
+                              }).GroupBy(x => x.Main.MaBill);
+
+                DataTable dt = new DataTable();
+
+                // Add columns to DataTable
+                dt.Columns.Add("MaBill", typeof(int));
+                dt.Columns.Add("aDate", typeof(string));
+                dt.Columns.Add("orderType", typeof(string));
+                dt.Columns.Add("DetailID", typeof(string));
+                dt.Columns.Add("proName", typeof(string));
+                dt.Columns.Add("qty", typeof(int));
+                dt.Columns.Add("price", typeof(float));
+                dt.Columns.Add("amount", typeof(float));
+                dt.Columns.Add("TenLoaiSP", typeof(string));
+
+                foreach (var group in result)
+                {
+                    var main = group.First().Main;
+                    DataRow row = dt.NewRow();
+                    row["MaBill"] = main.MaBill;
+                    row["aDate"] = main.aDate.GetValueOrDefault().ToShortDateString();
+                    row["orderType"] = main.orderType;
+                    row["DetailID"] = DBNull.Value;
+                    row["proName"] = DBNull.Value;
+                    row["price"] = DBNull.Value;
+                    row["amount"] = DBNull.Value;
+                    dt.Rows.Add(row);
+
+                    foreach (var item in group)
+                    {
+                        var detail = item.Details.First();
+                        var product = item.Product;
+
+                        DataRow detailRow = dt.NewRow();
+                        detailRow["MaBill"] = DBNull.Value;
+                        detailRow["aDate"] = DBNull.Value;
+                        detailRow["orderType"] = DBNull.Value;
+                        detailRow["TenLoaiSP"] = product.TenLoaiSP;
+                        detailRow["DetailID"] = detail.DetailID;
+                        detailRow["proName"] = detail.proName;
+                        detailRow["price"] = detail.price;
+                        detailRow["amount"] = detail.amount;
+                        dt.Rows.Add(detailRow);
+                    }
+                }
+
+                return dt;
+            }
+        }
+
         public string doanhthu(string ordertype, string month, string year)
         {
             QuanLyNhaHangEntities qlnhEntity = new QuanLyNhaHangEntities();
